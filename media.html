@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <canvas class="particle-canvas" id="particleCanvas"></canvas>
     <audio id="bgAudio" src="./知我.webm" preload="auto" loop autoplay></audio>
     <div class="ambient"></div>
     <header class="site-header">
@@ -29,6 +30,16 @@
     </header>
 
     <div class="controls-floating">
+      <label>
+        <span>特效</span>
+        <select id="modeSelect">
+          <option value="newyear" selected>马年</option>
+          <option value="aura">流萤</option>
+          <option value="star">星空</option>
+          <option value="ripple">涟漪</option>
+        </select>
+      </label>
+      <button class="control-btn" id="pauseToggle">暂停</button>
       <button class="control-btn" id="audioToggle">音乐播放</button>
     </div>
 
@@ -36,7 +47,6 @@
       <section class="section media" id="media">
         <div class="section-title">
           <h2>影视追番表</h2>
-          <p>仅保留影视表格与资源链接。</p>
         </div>
         <div class="media-links" id="mediaLinks"></div>
         <div class="media-table" id="mediaTables">加载中...</div>
@@ -47,76 +57,10 @@
       <p>© 2026 zz资源库 · 影视资源持续更新</p>
     </footer>
 
+    <script src="./script.js"></script>
     <script>
-      const themeToggle = document.getElementById("themeToggle");
       const mediaLinks = document.getElementById("mediaLinks");
       const mediaTables = document.getElementById("mediaTables");
-      const bgAudio = document.getElementById("bgAudio");
-      const audioToggle = document.getElementById("audioToggle");
-
-      const applyTheme = (theme) => {
-        document.body.setAttribute("data-theme", theme);
-        themeToggle.textContent = theme === "light" ? "暗色" : "亮色";
-        localStorage.setItem("theme", theme);
-      };
-
-      const savedTheme = localStorage.getItem("theme") || "dark";
-      applyTheme(savedTheme);
-
-      themeToggle.addEventListener("click", () => {
-        const nextTheme =
-          document.body.getAttribute("data-theme") === "light" ? "dark" : "light";
-        applyTheme(nextTheme);
-      });
-
-      const updateAudioToggle = () => {
-        if (!audioToggle || !bgAudio) {
-          return;
-        }
-        audioToggle.textContent = bgAudio.paused ? "播放" : "暂停";
-      };
-
-      const tryAutoPlay = () => {
-        if (!bgAudio) {
-          return;
-        }
-        const attempt = bgAudio.play();
-        if (attempt && typeof attempt.then === "function") {
-          attempt
-            .then(() => {
-              updateAudioToggle();
-            })
-            .catch(() => {
-              updateAudioToggle();
-            });
-        } else {
-          updateAudioToggle();
-        }
-      };
-
-      if (audioToggle) {
-        audioToggle.addEventListener("click", () => {
-          if (!bgAudio) {
-            return;
-          }
-          if (bgAudio.paused) {
-            bgAudio.play().then(updateAudioToggle);
-          } else {
-            bgAudio.pause();
-            updateAudioToggle();
-          }
-        });
-      }
-
-      document.addEventListener(
-        "click",
-        () => {
-          if (bgAudio && bgAudio.paused) {
-            bgAudio.play().then(updateAudioToggle);
-          }
-        },
-        { once: true }
-      );
 
       const normalizeLink = (url) => {
         if (!url) return "";
@@ -189,8 +133,6 @@
         .catch(() => {
           mediaTables.textContent = "读取失败，请确认影视资源.html与本页在同一目录。";
         });
-
-      tryAutoPlay();
     </script>
   </body>
 </html>

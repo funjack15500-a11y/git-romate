@@ -17,7 +17,16 @@
     <audio id="bgAudio" src="./知我.webm" preload="auto" loop autoplay></audio>
     <div class="ambient"></div>
     <header class="site-header">
-      <div class="logo">zz资源库</div>
+      <div class="logo">
+        <div class="logo-container">
+          <img src="touxiang.jpg" alt="Logo" class="logo-image" />
+          <div class="qrcode-popup">
+            <img src="qrcode.jpg" alt="QR Code" class="qrcode-image" />
+            <p class="qrcode-text">联系方式</p>
+          </div>
+        </div>
+        <span class="logo-text">浅望</span>
+      </div>
       <nav class="nav">
         <a href="#about">关于</a>
         <a href="#posts">文章</a>
@@ -33,6 +42,7 @@
       <label>
         <span>特效</span>
         <select id="modeSelect">
+          <option value="newyear">马年</option>
           <option value="aura">流萤</option>
           <option value="star">星空</option>
           <option value="ripple">涟漪</option>
@@ -44,6 +54,15 @@
 
     <main>
       <section class="hero">
+        <div class="hero-countdown-wrapper">
+          <div class="hero-countdown-label">
+            <span>🎓 距离毕业还有</span>
+          </div>
+          <div class="hero-countdown-time" id="gradCountdownLine">
+            --天 --:--:--
+          </div>
+        </div>
+
         <div class="hero-content">
           <p class="tagline">数字漫游者 / 创作与探索</p>
           <div class="sentence-carousel" id="sentenceCarousel">
@@ -56,6 +75,18 @@
               <h1 class="sentence-item">数字世界的筑梦师，用智慧的光芒照亮未来的道路。</h1>
               <h1 class="sentence-item">在技术与艺术的交汇处，绽放出最绚丽的生命之花。</h1>
               <h1 class="sentence-item">以键盘为琴，以屏幕为谱，弹奏出新时代的最强音。</h1>
+              <h1 class="sentence-item">星光不问赶路人，时光不负有心人。</h1>
+              <h1 class="sentence-item">大鹏一日同风起，扶摇直上九万里。</h1>
+              <h1 class="sentence-item">鲜衣怒马少年时，不负韶华行且知。</h1>
+              <h1 class="sentence-item">追风赶月莫停留，平芜尽处是春山。</h1>
+              <h1 class="sentence-item">既然选择了远方，便只顾风雨兼程。</h1>
+              <h1 class="sentence-item">生活明朗，万物可爱，人间值得，未来可期。</h1>
+              <h1 class="sentence-item">愿你在平凡的日子里，收获不平凡的感动与成长。</h1>
+              <h1 class="sentence-item">每一个清晨都是新的开始，每一次努力都有意义。</h1>
+              <h1 class="sentence-item">在这个瞬息万变的世界里，保持内心的宁静与坚定。</h1>
+              <h1 class="sentence-item">用热爱抵御岁月漫长，用真诚温暖每一个相遇。</h1>
+              <h1 class="sentence-item">人生没有白走的路，每一步都算数，每一步都值得。</h1>
+              <h1 class="sentence-item">在数字与艺术的交织中，发现生活的无限可能与美好。</h1>
             </div>
           </div>
           <p class="intro">
@@ -66,26 +97,23 @@
             <a class="btn ghost" href="#contact">合作邀请</a>
           </div>
           <div class="hero-stats">
-            <div>
-              <span class="stat-number" id="daysCount">0</span>
-              <span class="stat-label">写作天数</span>
+            <div class="stat-item">
+              <span class="stat-number">3</span>
+              <span class="stat-label">开源项目</span>
             </div>
-            <div>
-              <span class="stat-number">128</span>
-              <span class="stat-label">灵感片段</span>
+            <div class="stat-item">
+              <span class="stat-number">12</span>
+              <span class="stat-label">技术文章</span>
             </div>
-            <div>
-              <span class="stat-number">42</span>
-              <span class="stat-label">开发实践</span>
+            <div class="stat-item">
+              <span class="stat-number" id="siteViewsCount">0</span>
+              <span class="stat-label">访问次数</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" id="siteDaysCount">0</span>
+              <span class="stat-label">上线天数</span>
             </div>
           </div>
-        </div>
-        <div class="hero-card">
-          <div class="card-header">
-            <span>毕业倒计时</span>
-          </div>
-          <h3>距离毕业还有</h3>
-          <div class="countdown-line" id="gradCountdownLine">--天 --:--:--</div>
         </div>
       </section>
 
@@ -196,11 +224,11 @@
         <div class="contact-card">
           <div class="contact-info">
             <h3>邮箱</h3>
-            <p>hello@yourdomain.com</p>
+            <p><a href="mailto:funjack15500@gmail.com">funjack15500@gmail.com</a></p>
           </div>
           <div class="contact-info">
             <h3>社交</h3>
-            <p>微博 / 即刻 / GitHub</p>
+            <p>微博 / Google / GitHub</p>
           </div>
           <div class="contact-info">
             <h3>当前状态</h3>
@@ -211,7 +239,7 @@
     </main>
 
     <footer class="footer">
-      <p>© 2026 zz资源库 · 影视资源持续更新</p>
+      <p>© 2026 浅望 · 影视资源持续更新</p>
     </footer>
 
     <script src="./script.js"></script>

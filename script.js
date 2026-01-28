@@ -1,7 +1,6 @@
 const themeToggle = document.getElementById("themeToggle");
 const nowTime = document.getElementById("nowTime");
 const gradCountdownLine = document.getElementById("gradCountdownLine");
-const daysCount = document.getElementById("daysCount");
 const particleCanvas = document.getElementById("particleCanvas");
 const particleCtx = particleCanvas ? particleCanvas.getContext("2d") : null;
 const modeSelect = document.getElementById("modeSelect");
@@ -48,12 +47,6 @@ const updateGraduationCountdown = () => {
   }
 };
 
-const updateDays = () => {
-  const now = new Date();
-  const diff = Math.ceil((now - startDate) / (1000 * 60 * 60 * 24));
-  daysCount.textContent = diff.toString();
-};
-
 const revealItems = () => {
   const cards = document.querySelectorAll(
     ".about-card, .post-card, .project-card, .note-card, .contact-card"
@@ -75,15 +68,21 @@ const particleState = {
   sparks: [],
   orbiters: [],
   stars: [],
+  horses: [],
   palette: ["#7f7bff", "#24d2ff", "#ff7bdc"],
   mouse: { x: 0, y: 0, vx: 0, vy: 0, active: false },
-  mode: "aura",
+  mode: "newyear",
   paused: false,
-  ripple: { active: false, x: 0, y: 0, radius: 0 }
+  ripple: { active: false, x: 0, y: 0, radius: 0 },
+  tick: 0
 };
 
 const syncPalette = () => {
   if (!particleCtx) {
+    return;
+  }
+  if (particleState.mode === "newyear") {
+    particleState.palette = ["#ff0000", "#ffaa00", "#ffeb3b", "#d60000"];
     return;
   }
   const styles = getComputedStyle(document.body);
@@ -112,7 +111,7 @@ const initFloaters = () => {
     x: Math.random() * particleState.width,
     y: Math.random() * particleState.height,
     vx: (Math.random() - 0.5) * 0.4,
-    vy: (Math.random() - 0.5) * 0.4,
+    vy: particleState.mode === "newyear" ? 0.2 + Math.random() * 0.5 : (Math.random() - 0.5) * 0.4,
     radius: 1 + Math.random() * 2.4,
     alpha: 0.15 + Math.random() * 0.4,
     pulse: Math.random() * Math.PI * 2,
@@ -239,9 +238,66 @@ const renderParticles = () => {
   const { width, height, floaters, sparks, orbiters, mouse } = particleState;
   particleCtx.clearRect(0, 0, width, height);
   particleCtx.globalCompositeOperation = "lighter";
+  particleState.tick++;
 
   const focusX = mouse.active ? mouse.x : width * 0.5;
   const focusY = mouse.active ? mouse.y : height * 0.4;
+
+  if (particleState.mode === "newyear") {
+    // Spawn horses
+    if (particleState.tick % 10 === 0) {
+      const size = 30 + Math.random() * 50;
+      particleState.horses.push({
+        x: width + 50,
+        y: height * 0.1 + Math.random() * height * 0.8,
+        vx: -2 - Math.random() * 4,
+        vy: 0,
+        size: size,
+        oscillation: Math.random() * Math.PI * 2,
+        oscSpeed: 0.1 + Math.random() * 0.1,
+        color: Math.random() > 0.5 ? "#d60000" : "#ffaa00"
+      });
+    }
+
+    // Render and update horses
+    particleCtx.save();
+    for (let i = particleState.horses.length - 1; i >= 0; i--) {
+      const horse = particleState.horses[i];
+      horse.x += horse.vx;
+      horse.oscillation += horse.oscSpeed;
+      horse.y += Math.sin(horse.oscillation) * 2;
+      
+      // Add dust effect
+      if (Math.random() > 0.7) {
+        spawnSparks(horse.x + horse.size / 2, horse.y + horse.size / 2, 5);
+      }
+
+      particleCtx.font = `${horse.size}px "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif`;
+      particleCtx.textAlign = "center";
+      particleCtx.textBaseline = "middle";
+      // Slightly rotate to simulate running
+      const rotation = Math.sin(horse.oscillation) * 0.1;
+      
+      particleCtx.save();
+      particleCtx.translate(horse.x, horse.y);
+      particleCtx.rotate(rotation);
+      particleCtx.fillStyle = horse.color; // Note: FillStyle might not affect Emoji in all browsers
+      particleCtx.fillText("🐎", 0, 0);
+      particleCtx.restore();
+
+      if (horse.x < -100) {
+        particleState.horses.splice(i, 1);
+      }
+    }
+    particleCtx.restore();
+
+    // Random fireworks
+    if (particleState.tick % 60 === 0 && Math.random() > 0.4) {
+      const fx = Math.random() * width;
+      const fy = Math.random() * height * 0.5; // Upper part
+      spawnSparks(fx, fy, 60 + Math.random() * 80);
+    }
+  }
 
   if (particleState.mode === "star") {
     particleState.stars.forEach((star) => {
@@ -398,6 +454,9 @@ document.addEventListener(
 if (modeSelect) {
   modeSelect.addEventListener("change", (event) => {
     particleState.mode = event.target.value;
+    syncPalette();
+    // Reset particles to apply new behavior immediately if needed
+    // For now, just palette sync is enough as behavior is checked in render loop
   });
 }
 
@@ -411,12 +470,14 @@ if (pauseToggle) {
 window.addEventListener("scroll", revealItems);
 window.addEventListener("load", () => {
   updateTime();
-  updateDays();
   updateGraduationCountdown();
   revealItems();
   setInterval(updateTime, 1000);
   setInterval(updateGraduationCountdown, 1000);
   if (particleCtx) {
+    if (modeSelect) {
+      particleState.mode = modeSelect.value;
+    }
     syncPalette();
     resizeParticles();
     renderParticles();
@@ -498,3 +559,44 @@ if (sentenceCarousel && sentenceTrack && sentenceItems.length > 0) {
   // 窗口 resize 时重新计算
   window.addEventListener("resize", updateSentence);
 }
+
+// 网站上线天数计算
+const siteLaunchDate = new Date('2026-01-26'); // 网站上线日期
+
+function updateSiteDays() {
+  const now = new Date();
+  const diffTime = Math.abs(now - siteLaunchDate);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  
+  const siteDaysCount = document.getElementById('siteDaysCount');
+  if (siteDaysCount) {
+    siteDaysCount.textContent = diffDays;
+  }
+}
+
+// 访问次数统计
+function updateSiteViews() {
+  // 从localStorage获取访问次数
+  let views = localStorage.getItem('siteViews');
+  if (!views) {
+    views = 0;
+  }
+  
+  // 增加访问次数
+  views = parseInt(views) + 1;
+  
+  // 保存到localStorage
+  localStorage.setItem('siteViews', views);
+  
+  // 更新显示
+  const siteViewsCount = document.getElementById('siteViewsCount');
+  if (siteViewsCount) {
+    siteViewsCount.textContent = views;
+  }
+}
+
+// 初始化统计数据
+window.addEventListener("load", function() {
+  updateSiteDays();
+  updateSiteViews();
+});
