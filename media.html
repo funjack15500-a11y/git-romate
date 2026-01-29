@@ -17,7 +17,16 @@
     <audio id="bgAudio" src="./知我.webm" preload="auto" loop autoplay></audio>
     <div class="ambient"></div>
     <header class="site-header">
-      <div class="logo">zz资源库</div>
+      <div class="logo">
+        <div class="logo-container">
+          <img src="./touxiang.jpg" alt="Logo" class="logo-image">
+          <div class="qrcode-popup">
+            <img src="./qrcode.jpg" alt="QR Code" class="qrcode-image">
+            <p class="qrcode-text">联系方式</p>
+          </div>
+        </div>
+        <span class="logo-text">浅望</span>
+      </div>
       <nav class="nav">
         <a href="./index.html#about">关于</a>
         <a href="./index.html#posts">文章</a>
@@ -49,6 +58,124 @@
           <h2>影视追番表</h2>
         </div>
         <div class="media-links" id="mediaLinks"></div>
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="搜索影视资源..." class="search-input" oninput="if(this.value === '') searchMedia()" onkeypress="if(event.key === 'Enter') searchMedia()">
+          <button onclick="searchMedia()" class="search-button">搜索</button>
+        </div>
+        <script>
+        function searchMedia() {
+          console.log('搜索按钮点击');
+          const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+          console.log('搜索词:', searchTerm);
+          
+          const mediaTables = document.getElementById('mediaTables');
+          
+          if (!searchTerm) {
+            // 搜索词为空，显示所有表格
+            fetch('./影视资源表格.html')
+              .then(response => response.text())
+              .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                
+                const tables = Array.from(doc.querySelectorAll('table')).filter(table => {
+                  const text = table.textContent || '';
+                  return text.includes('剧名') && (text.includes('夸克') || text.includes('百度'));
+                });
+                
+                mediaTables.innerHTML = '';
+                tables.forEach(table => {
+                  const title = table.previousElementSibling && table.previousElementSibling.tagName === 'H2' ? table.previousElementSibling.textContent : '影视资源表';
+                  const wrapper = document.createElement('div');
+                  wrapper.className = 'media-table';
+                  const titleElement = document.createElement('h3');
+                  titleElement.textContent = title;
+                  wrapper.appendChild(titleElement);
+                  
+                  const cloned = table.cloneNode(true);
+                  cloned.querySelectorAll('a').forEach(link => {
+                    link.setAttribute('target', '_blank');
+                    link.setAttribute('rel', 'noopener');
+                  });
+                  wrapper.appendChild(cloned);
+                  mediaTables.appendChild(wrapper);
+                });
+              })
+              .catch(() => {
+                mediaTables.innerHTML = '<div style="text-align: center; padding: 40px;">加载失败，请稍后重试</div>';
+              });
+            return;
+          }
+          
+          // 重新加载并搜索
+          fetch('./影视资源表格.html')
+            .then(response => response.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(html, 'text/html');
+              
+              const tables = Array.from(doc.querySelectorAll('table')).filter(table => {
+                const text = table.textContent || '';
+                return text.includes('剧名') && (text.includes('夸克') || text.includes('百度'));
+              });
+              
+              const filteredTables = tables.filter(table => {
+                const title = table.previousElementSibling && table.previousElementSibling.tagName === 'H2' ? table.previousElementSibling.textContent : '影视资源表';
+                const content = table.textContent;
+                return title.toLowerCase().includes(searchTerm) || content.toLowerCase().includes(searchTerm);
+              });
+              
+              if (filteredTables.length === 0) {
+                mediaTables.innerHTML = '<div style="text-align: center; padding: 40px;">暂无相关影视资源</div>';
+                return;
+              }
+              
+              mediaTables.innerHTML = '';
+              filteredTables.forEach(table => {
+                const title = table.previousElementSibling && table.previousElementSibling.tagName === 'H2' ? table.previousElementSibling.textContent : '影视资源表';
+                const wrapper = document.createElement('div');
+                wrapper.className = 'media-table';
+                const titleElement = document.createElement('h3');
+                
+                // 高亮标题中的搜索词
+                titleElement.innerHTML = highlightText(title, searchTerm);
+                wrapper.appendChild(titleElement);
+                
+                const cloned = table.cloneNode(true);
+                
+                // 高亮表格内容中的搜索词
+                highlightTableContent(cloned, searchTerm);
+                
+                cloned.querySelectorAll('a').forEach(link => {
+                  link.setAttribute('target', '_blank');
+                  link.setAttribute('rel', 'noopener');
+                });
+                wrapper.appendChild(cloned);
+                mediaTables.appendChild(wrapper);
+              });
+            })
+            .catch(() => {
+              mediaTables.innerHTML = '<div style="text-align: center; padding: 40px;">搜索失败，请稍后重试</div>';
+            });
+        }
+        
+        // 高亮文本中的搜索词
+        function highlightText(text, searchTerm) {
+          if (!searchTerm) return text;
+          const regex = new RegExp(`(${searchTerm})`, 'gi');
+          return text.replace(regex, '<span style="background-color: #ffeb3b; color: #000; padding: 0 2px; border-radius: 2px;">$1</span>');
+        }
+        
+        // 高亮表格内容中的搜索词
+        function highlightTableContent(table, searchTerm) {
+          const cells = table.querySelectorAll('td, th');
+          cells.forEach(cell => {
+            if (cell.textContent) {
+              cell.innerHTML = highlightText(cell.textContent, searchTerm);
+            }
+          });
+        }
+        </script>
         <div class="media-table" id="mediaTables">加载中...</div>
       </section>
     </main>
@@ -92,7 +219,11 @@
         return current || "影视资源表";
       };
 
-      fetch("./影视资源.html")
+      // 全局变量
+      window.originalTables = [];
+      window.mediaTables = document.getElementById("mediaTables");
+
+      fetch("./影视资源表格.html")
         .then((response) => response.text())
         .then((html) => {
           const parser = new DOMParser();
@@ -113,26 +244,122 @@
             return;
           }
 
-          mediaTables.innerHTML = "";
-          tables.forEach((table) => {
-            const wrapper = document.createElement("div");
-            wrapper.className = "media-table";
-            const title = document.createElement("h3");
-            title.textContent = findHeadingForTable(doc, table);
-            wrapper.appendChild(title);
-
+          // 保存原始表格数据
+          window.originalTables = tables.map((table) => {
+            const title = findHeadingForTable(doc, table);
             const cloned = table.cloneNode(true);
             cloned.querySelectorAll("a").forEach((link) => {
               link.setAttribute("target", "_blank");
               link.setAttribute("rel", "noopener");
             });
-            wrapper.appendChild(cloned);
-            mediaTables.appendChild(wrapper);
+            return { title, table: cloned };
           });
+
+          // 渲染所有表格
+          window.renderTables(window.originalTables);
+
+          // 添加搜索功能
+          const searchButton = document.getElementById('searchButton');
+          const searchInput = document.getElementById('searchInput');
+          
+          console.log('搜索按钮元素:', searchButton);
+          console.log('搜索输入框元素:', searchInput);
+          
+          if (searchButton) {
+            // 移除可能存在的旧事件监听器
+            searchButton.onclick = null;
+            // 添加新的点击事件监听器
+            searchButton.addEventListener('click', function(e) {
+              e.preventDefault();
+              console.log('搜索按钮点击');
+              performSearch();
+            });
+            console.log('搜索按钮点击事件已绑定');
+          }
+          
+          if (searchInput) {
+            searchInput.addEventListener('keypress', (e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                console.log('回车键搜索');
+                performSearch();
+              }
+            });
+            console.log('回车键搜索事件已绑定');
+          }
+          
+          console.log('搜索功能初始化完成');
+          console.log('原始表格数量:', originalTables.length);
         })
         .catch(() => {
           mediaTables.textContent = "读取失败，请确认影视资源.html与本页在同一目录。";
         });
+
+      // 全局渲染函数
+      window.renderTables = function(tablesData) {
+        mediaTables.innerHTML = "";
+        
+        if (!tablesData.length) {
+          const noResult = document.createElement("div");
+          noResult.className = "media-table";
+          noResult.style.textAlign = "center";
+          noResult.style.padding = "40px";
+          noResult.textContent = "暂无相关影视资源。";
+          mediaTables.appendChild(noResult);
+          return;
+        }
+
+        tablesData.forEach(({ title, table }) => {
+          const wrapper = document.createElement("div");
+          wrapper.className = "media-table";
+          const titleElement = document.createElement("h3");
+          titleElement.textContent = title;
+          wrapper.appendChild(titleElement);
+          wrapper.appendChild(table);
+          mediaTables.appendChild(wrapper);
+        });
+      }
+
+      // 全局搜索函数
+      window.performSearch = function() {
+        console.log('执行搜索');
+        const searchInput = document.getElementById('searchInput');
+        if (!searchInput) {
+          console.error('搜索输入框未找到');
+          return;
+        }
+        
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        console.log('搜索词:', searchTerm);
+        
+        if (!searchTerm) {
+          console.log('搜索词为空，显示所有结果');
+          window.renderTables(window.originalTables);
+          return;
+        }
+
+        // 过滤表格数据
+        console.log('开始过滤表格，原始表格数量:', window.originalTables.length);
+        
+        // 对每个表格进行搜索
+        const filteredTables = [];
+        
+        window.originalTables.forEach(({ title, table }) => {
+          // 检查标题是否包含搜索词
+          const titleMatch = title.toLowerCase().includes(searchTerm);
+          // 检查表格内容是否包含搜索词
+          const contentMatch = table.textContent.toLowerCase().includes(searchTerm);
+          
+          console.log('表格标题:', title, '标题匹配:', titleMatch, '内容匹配:', contentMatch);
+          
+          if (titleMatch || contentMatch) {
+            filteredTables.push({ title, table });
+          }
+        });
+        
+        console.log('过滤后表格数量:', filteredTables.length);
+        window.renderTables(filteredTables);
+      }
     </script>
   </body>
 </html>

@@ -244,17 +244,17 @@ const renderParticles = () => {
   const focusY = mouse.active ? mouse.y : height * 0.4;
 
   if (particleState.mode === "newyear") {
-    // Spawn horses
-    if (particleState.tick % 10 === 0) {
-      const size = 30 + Math.random() * 50;
+    // Spawn horses - reduced frequency
+    if (particleState.tick % 30 === 0 && particleState.horses.length < 8) {
+      const size = 25 + Math.random() * 35;
       particleState.horses.push({
         x: width + 50,
         y: height * 0.1 + Math.random() * height * 0.8,
-        vx: -2 - Math.random() * 4,
+        vx: -1.5 - Math.random() * 2.5,
         vy: 0,
         size: size,
         oscillation: Math.random() * Math.PI * 2,
-        oscSpeed: 0.1 + Math.random() * 0.1,
+        oscSpeed: 0.08 + Math.random() * 0.08,
         color: Math.random() > 0.5 ? "#d60000" : "#ffaa00"
       });
     }
@@ -265,23 +265,23 @@ const renderParticles = () => {
       const horse = particleState.horses[i];
       horse.x += horse.vx;
       horse.oscillation += horse.oscSpeed;
-      horse.y += Math.sin(horse.oscillation) * 2;
+      horse.y += Math.sin(horse.oscillation) * 1.5;
       
-      // Add dust effect
-      if (Math.random() > 0.7) {
-        spawnSparks(horse.x + horse.size / 2, horse.y + horse.size / 2, 5);
+      // Add dust effect - reduced frequency
+      if (Math.random() > 0.85) {
+        spawnSparks(horse.x + horse.size / 2, horse.y + horse.size / 2, 3);
       }
 
       particleCtx.font = `${horse.size}px "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif`;
       particleCtx.textAlign = "center";
       particleCtx.textBaseline = "middle";
       // Slightly rotate to simulate running
-      const rotation = Math.sin(horse.oscillation) * 0.1;
+      const rotation = Math.sin(horse.oscillation) * 0.08;
       
       particleCtx.save();
       particleCtx.translate(horse.x, horse.y);
       particleCtx.rotate(rotation);
-      particleCtx.fillStyle = horse.color; // Note: FillStyle might not affect Emoji in all browsers
+      particleCtx.fillStyle = horse.color;
       particleCtx.fillText("🐎", 0, 0);
       particleCtx.restore();
 
@@ -291,71 +291,144 @@ const renderParticles = () => {
     }
     particleCtx.restore();
 
-    // Random fireworks
-    if (particleState.tick % 60 === 0 && Math.random() > 0.4) {
+    // Random fireworks - reduced frequency and intensity
+    if (particleState.tick % 120 === 0 && Math.random() > 0.6) {
       const fx = Math.random() * width;
-      const fy = Math.random() * height * 0.5; // Upper part
-      spawnSparks(fx, fy, 60 + Math.random() * 80);
+      const fy = Math.random() * height * 0.5;
+      spawnSparks(fx, fy, 30 + Math.random() * 40);
     }
   }
 
-  if (particleState.mode === "star") {
+  if (particleState.mode === "aura") {
+    // 流萤特效：快速移动的光点，轨迹明显
+    particleState.floaters.forEach((particle) => {
+      particle.pulse += particle.pulseSpeed * 2;
+      const pulse = Math.sin(particle.pulse) * 0.6 + 0.8;
+      const dx = particle.x - focusX;
+      const dy = particle.y - focusY;
+      const dist = Math.hypot(dx, dy);
+      if (mouse.active && dist < 150) {
+        const force = (1 - dist / 150) * 1.2;
+        particle.vx += (dx / (dist || 1)) * force * 0.2;
+        particle.vy += (dy / (dist || 1)) * force * 0.2;
+      }
+      particle.x += particle.vx * 1.5;
+      particle.y += particle.vy * 1.5;
+      particle.vx *= 0.95;
+      particle.vy *= 0.95;
+      
+      // 添加轨迹效果
+      particleCtx.globalAlpha = particle.alpha * pulse * 0.3;
+      particleCtx.fillStyle = particle.color;
+      particleCtx.beginPath();
+      particleCtx.arc(particle.x - particle.vx * 10, particle.y - particle.vy * 10, particle.radius * 0.8, 0, Math.PI * 2);
+      particleCtx.fill();
+      
+      // 主光点
+      particleCtx.globalAlpha = particle.alpha * pulse;
+      particleCtx.fillStyle = particle.color;
+      particleCtx.beginPath();
+      particleCtx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+      particleCtx.fill();
+      
+      if (particle.x < -40) particle.x = width + 40;
+      if (particle.x > width + 40) particle.x = -40;
+      if (particle.y < -40) particle.y = height + 40;
+      if (particle.y > height + 40) particle.y = -40;
+    });
+  } else if (particleState.mode === "star") {
+    // 星空特效：更多星星，不同大小和闪烁模式
     particleState.stars.forEach((star) => {
-      star.twinkle += star.twinkleSpeed;
-      const twinkle = Math.sin(star.twinkle) * 0.4 + 0.6;
+      star.twinkle += star.twinkleSpeed * 1.5;
+      const twinkle = Math.sin(star.twinkle) * 0.6 + 0.4;
       particleCtx.globalAlpha = star.alpha * twinkle;
       particleCtx.fillStyle = star.color;
+      
+      // 星星外圈光晕
+      particleCtx.beginPath();
+      particleCtx.arc(star.x, star.y, star.size * 2, 0, Math.PI * 2);
+      particleCtx.fill();
+      
+      // 星星主体
+      particleCtx.globalAlpha = star.alpha * (twinkle + 0.2);
       particleCtx.beginPath();
       particleCtx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
       particleCtx.fill();
+      
+      // 随机添加流星效果
+      if (Math.random() < 0.001) {
+        particleState.sparks.push({
+          x: Math.random() * width,
+          y: 0,
+          vx: (Math.random() - 0.5) * 3,
+          vy: Math.random() * 2 + 3,
+          radius: 2 + Math.random() * 3,
+          life: 60 + Math.floor(Math.random() * 40),
+          age: 0,
+          color: star.color
+        });
+      }
+    });
+  } else if (particleState.mode === "ripple") {
+    // 涟漪特效：多层涟漪，颜色渐变
+    if (particleState.ripple.active) {
+      particleState.ripple.radius += 3;
+      const rippleAlpha = Math.max(0, 0.8 - particleState.ripple.radius / 200);
+      
+      // 多层涟漪
+      for (let i = 0; i < 3; i++) {
+        const layerRadius = particleState.ripple.radius - i * 30;
+        if (layerRadius > 0) {
+          const layerAlpha = rippleAlpha * (1 - i * 0.3);
+          particleCtx.strokeStyle = particleState.palette[i % particleState.palette.length] || "#24d2ff";
+          particleCtx.lineWidth = 2 - i * 0.5;
+          particleCtx.globalAlpha = layerAlpha;
+          particleCtx.beginPath();
+          particleCtx.arc(
+            particleState.ripple.x,
+            particleState.ripple.y,
+            layerRadius,
+            0,
+            Math.PI * 2
+          );
+          particleCtx.stroke();
+        }
+      }
+      
+      if (rippleAlpha <= 0) {
+        particleState.ripple.active = false;
+      }
+    }
+    
+    // 添加水滴效果
+    if (Math.random() < 0.01) {
+      particleState.sparks.push({
+        x: particleState.mouse.x + (Math.random() - 0.5) * 100,
+        y: particleState.mouse.y + (Math.random() - 0.5) * 100,
+        vx: (Math.random() - 0.5) * 2,
+        vy: (Math.random() - 0.5) * 2,
+        radius: 1 + Math.random() * 2,
+        life: 30 + Math.floor(Math.random() * 20),
+        age: 0,
+        color: particleState.palette[1] || "#24d2ff"
+      });
+    }
+  }
+
+  // 只在非aura模式下执行orbiters和sparks
+  if (particleState.mode !== "aura") {
+    orbiters.forEach((orbiter, index) => {
+      orbiter.angle += orbiter.speed;
+      const swing = Math.sin(orbiter.angle * 2.2 + index) * 12;
+      const x = focusX + Math.cos(orbiter.angle) * (orbiter.radius + swing);
+      const y = focusY + Math.sin(orbiter.angle) * (orbiter.radius * 0.6 + swing);
+      particleCtx.globalAlpha = orbiter.alpha;
+      particleCtx.fillStyle = orbiter.color;
+      particleCtx.beginPath();
+      particleCtx.arc(x, y, orbiter.size, 0, Math.PI * 2);
+      particleCtx.fill();
     });
   }
-
-  if (particleState.mode === "ripple" && particleState.ripple.active) {
-    particleState.ripple.radius += 2.6;
-    const rippleAlpha = Math.max(0, 0.6 - particleState.ripple.radius / 240);
-    particleCtx.strokeStyle = particleState.palette[1] || "#24d2ff";
-    particleCtx.lineWidth = 1.5;
-    particleCtx.globalAlpha = rippleAlpha;
-    particleCtx.beginPath();
-    particleCtx.arc(
-      particleState.ripple.x,
-      particleState.ripple.y,
-      particleState.ripple.radius,
-      0,
-      Math.PI * 2
-    );
-    particleCtx.stroke();
-    if (rippleAlpha <= 0) {
-      particleState.ripple.active = false;
-    }
-  }
-
-  floaters.forEach((particle) => {
-    particle.pulse += particle.pulseSpeed;
-    const pulse = Math.sin(particle.pulse) * 0.4 + 0.6;
-    const dx = particle.x - focusX;
-    const dy = particle.y - focusY;
-    const dist = Math.hypot(dx, dy);
-    if (mouse.active && dist < 180) {
-      const force = (1 - dist / 180) * 0.6;
-      particle.vx += (dx / (dist || 1)) * force * 0.18;
-      particle.vy += (dy / (dist || 1)) * force * 0.18;
-    }
-    particle.x += particle.vx;
-    particle.y += particle.vy;
-    particle.vx *= 0.98;
-    particle.vy *= 0.98;
-    if (particle.x < -40) particle.x = width + 40;
-    if (particle.x > width + 40) particle.x = -40;
-    if (particle.y < -40) particle.y = height + 40;
-    if (particle.y > height + 40) particle.y = -40;
-    particleCtx.globalAlpha = particle.alpha * pulse;
-    particleCtx.fillStyle = particle.color;
-    particleCtx.beginPath();
-    particleCtx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-    particleCtx.fill();
-  });
 
   for (let i = sparks.length - 1; i >= 0; i -= 1) {
     const spark = sparks[i];
