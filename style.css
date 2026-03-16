@@ -1331,6 +1331,37 @@ footer {
   max-width: 14ch;
 }
 
+.blog-home .sentence-carousel {
+  height: 72px;
+  margin: 26px 0 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.blog-home .sentence-track {
+  position: relative;
+  min-height: 72px;
+}
+
+.blog-home .sentence-item {
+  left: 0;
+  top: 0;
+  width: 100%;
+  text-align: left;
+  transform: translateY(14px);
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  color: color-mix(in srgb, var(--text) 92%, var(--accent) 8%);
+  font-size: clamp(1.08rem, 1.7vw, 1.28rem);
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.blog-home .sentence-item.active {
+  transform: translateY(0);
+}
+
 .blog-home .intro {
   max-width: 720px;
   margin: 22px 0 0;
@@ -1729,6 +1760,12 @@ footer {
   .blog-home .note-card,
   .blog-home .contact-card {
     padding: 22px;
+  }
+
+  .blog-home .sentence-carousel,
+  .blog-home .sentence-track {
+    height: 96px;
+    min-height: 96px;
   }
 
   .blog-home main {
