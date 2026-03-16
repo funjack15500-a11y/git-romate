@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <audio id="bgAudio" src="./知我.webm" preload="auto" loop autoplay></audio>
     <div class="ambient"></div>
     <header class="site-header">
       <div class="logo">
@@ -36,6 +37,11 @@
       </nav>
       <button class="theme-toggle" id="themeToggle">暗色</button>
     </header>
+
+    <div class="controls-floating controls-floating--audio">
+      <span>背景音乐</span>
+      <button class="control-btn" id="audioToggle">音乐播放</button>
+    </div>
 
     <main>
       <section class="section media" id="media">

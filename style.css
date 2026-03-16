@@ -237,6 +237,15 @@ body[data-theme="light"] .ambient {
   color: var(--muted);
 }
 
+.controls-floating > span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.controls-floating--audio {
+  gap: 10px;
+}
+
 .controls-floating select {
   background: var(--surface-strong);
   border: 1px solid var(--border);
