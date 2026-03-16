@@ -1209,6 +1209,16 @@ footer {
   gap: 14px;
 }
 
+.blog-home .logo-image {
+  animation: blogAvatarSpin 14s linear infinite;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.05), 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.blog-home .logo-image:hover {
+  transform: none;
+  animation-duration: 5s;
+}
+
 .blog-home .logo-text {
   font-size: 18px;
   letter-spacing: 0.22em;
@@ -1324,13 +1334,6 @@ footer {
   font-family: "Noto Serif SC", "Noto Sans SC", serif;
 }
 
-.blog-home .hero-main h1 {
-  font-size: clamp(2.4rem, 4vw, 4.5rem);
-  line-height: 1.08;
-  letter-spacing: -0.03em;
-  max-width: 14ch;
-}
-
 .blog-home .sentence-carousel {
   height: 72px;
   margin: 26px 0 10px;
@@ -1360,6 +1363,25 @@ footer {
 
 .blog-home .sentence-item.active {
   transform: translateY(0);
+}
+
+.blog-home .sentence-carousel--headline {
+  height: 196px;
+  margin: 10px 0 18px;
+}
+
+.blog-home .sentence-carousel--headline .sentence-track {
+  min-height: 196px;
+}
+
+.blog-home .sentence-carousel--headline .sentence-item {
+  font-family: "Noto Serif SC", "Noto Sans SC", serif;
+  font-size: clamp(2.35rem, 4.2vw, 4.8rem);
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: -0.035em;
+  max-width: 12ch;
+  color: var(--text);
 }
 
 .blog-home .intro {
@@ -1768,6 +1790,12 @@ footer {
     min-height: 96px;
   }
 
+  .blog-home .sentence-carousel--headline,
+  .blog-home .sentence-carousel--headline .sentence-track {
+    height: 168px;
+    min-height: 168px;
+  }
+
   .blog-home main {
     padding: 32px 5vw 88px;
     gap: 68px;
@@ -1791,5 +1819,15 @@ footer {
   .blog-home .controls-floating {
     right: 50%;
     transform: translateX(50%);
+  }
+}
+
+@keyframes blogAvatarSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }

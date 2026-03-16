@@ -578,7 +578,7 @@ const sentenceItems = sentenceCarousel?.querySelectorAll(".sentence-item");
 if (sentenceCarousel && sentenceTrack && sentenceItems.length > 0) {
   let currentIndex = 0;
   let isAutoPlaying = true;
-  const interval = 3000; // 3秒切换一次
+  const interval = 4200; // 更适合首页主标题的轮播节奏
 
   const updateSentence = () => {
     // 重置所有句子状态
