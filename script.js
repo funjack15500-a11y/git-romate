@@ -19,13 +19,8 @@ const updateTime = () => {
   }
 };
 
-const getGraduationTarget = (baseDate) => {
-  const year = baseDate.getFullYear();
-  const targetThisYear = new Date(year, 5, 23, 0, 0, 0);
-  if (baseDate > targetThisYear) {
-    return new Date(year + 1, 5, 23, 0, 0, 0);
-  }
-  return targetThisYear;
+const getGraduationTarget = () => {
+  return new Date(2026, 5, 21, 0, 0, 0);
 };
 
 const updateGraduationCountdown = () => {
@@ -33,7 +28,7 @@ const updateGraduationCountdown = () => {
     return;
   }
   const now = new Date();
-  const target = getGraduationTarget(now);
+  const target = getGraduationTarget();
   const diffMs = Math.max(0, target - now);
   const daysLeft = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
   const hours = Math.floor((diffMs / (1000 * 60 * 60)) % 24);
