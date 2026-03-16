@@ -415,6 +415,59 @@
         document.head.appendChild(style);
     }
 
+    function ensureLightChromeStyles()
+    {
+        if (document.getElementById('customLightChromeStyles'))
+        {
+            return;
+        }
+
+        var style = document.createElement('style');
+        style.id = 'customLightChromeStyles';
+        style.textContent = [
+            'body.geEditor.geClassic{background:#edf1f5 !important;color:#111827 !important;}',
+            '#geInfo{background:#edf1f5 !important;}',
+            '.customShell{background:#f7f8fa !important;border:1px solid #d7dde5 !important;box-shadow:0 20px 44px rgba(15,23,42,0.08) !important;}',
+            '.customShell:before,.customShell:after{display:none !important;}',
+            '.customShell h1,#geStatus,#customShellIntro,#customShellHint,.brandSubline,.brandEyebrow{color:#111827 !important;text-shadow:none !important;}',
+            '.brandEyebrow{background:#eef2f6 !important;border-color:#d7dde5 !important;}',
+            '.brandMarkFrame{background:#ffffff !important;border-color:#d7dde5 !important;box-shadow:0 12px 24px rgba(15,23,42,0.06) !important;}',
+            '.geEditor>.geMenubarContainer,.geEditor>.geToolbarContainer:not(.geSketch *),.geEditor>.geSidebarContainer,.geEditor>.geTabContainer,.geDialog,html div.mxWindow{background:#f3f5f7 !important;border:1px solid #d6dbe1 !important;box-shadow:0 12px 28px rgba(15,23,42,0.08) !important;backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}',
+            '.geEditor>.geSidebarContainer:not(.geFormatContainer){background:#eef1f4 !important;}',
+            '.geEditor>.geSidebarContainer.geFormatContainer{background:#eef1f4 !important;}',
+            '.geEditor>.geToolbarContainer:not(.geSketch *){background:#f3f5f7 !important;}',
+            '.geEditor>.geTabContainer{background:#eceff3 !important;}',
+            '.geEditor>.geDiagramContainer{background:#ffffff !important;border:1px solid #d6dbe1 !important;box-shadow:0 18px 36px rgba(15,23,42,0.08) !important;}',
+            '.geEditor>.geHsplit{background:#d7dde5 !important;box-shadow:none !important;}',
+            '.geMenubarContainer,.geToolbarContainer,.geSidebarContainer,.geFormatContainer,.geTabContainer,.geDialog,div.mxWindow{color:#111827 !important;}',
+            '.geMenubarContainer *:not(input):not(select):not(textarea):not(option),.geToolbarContainer *:not(input):not(select):not(textarea):not(option),.geSidebarContainer *:not(input):not(select):not(textarea):not(option),.geFormatContainer *:not(input):not(select):not(textarea):not(option),.geTabContainer *:not(input):not(select):not(textarea):not(option),.geDialog *:not(input):not(select):not(textarea):not(option),div.mxWindow *:not(input):not(select):not(textarea):not(option){color:#111827 !important;text-shadow:none !important;opacity:1 !important;}',
+            '.geMenubarContainer .geItem,.geMenubarContainer a,.geMenubarContainer .geFilename,.geToolbarContainer .geButton,.geToolbarContainer .geLabel,.geTabContainer .geTab,.geTabContainer .geTabItem,.geSidebarContainer .geTitle,.geSidebarText,.geSidebarContainer button,.geSidebarContainer a,.geFormatContainer label,.geFormatContainer .geLabel,div.geFormatContainer span,div.geFormatContainer div,div.geFormatContainer td,div.geFormatContainer a{color:#111827 !important;font-weight:500;opacity:1 !important;}',
+            '.geMenubarContainer .geItem:hover,.geToolbarContainer .geButton:hover,.geToolbarContainer .geButton.geActiveItem,.geTabContainer .geTab:hover,.geSidebarContainer button:hover,.geButton:hover:not(.mxDisabled,.mxDisabled *,[disabled],.gePageTab *,.geSimpleMainMenu *,.geBtn *,.geButtonGroup *,.geAdaptiveAsset,.gePrimaryBtn){background:#e5e7eb !important;color:#111827 !important;}',
+            '.geActiveItem:not(.geButton *, .geButton *),.gePageTab .geButton:hover:not([disabled]),.geButtonGroup .geButton:hover:not([disabled]){background:#e5e7eb !important;color:#111827 !important;}',
+            '.geMenubarContainer .geFilename{color:#111827 !important;background:#ffffff !important;border:1px solid #d6dbe1 !important;}',
+            '.geToolbarContainer .geButton img,.geToolbarContainer .geButton .geAdaptiveAsset,.geSidebarContainer img,.geMenubarContainer img{filter:none !important;opacity:0.9 !important;}',
+            '.geSidebarContainer input,.geSidebarContainer select,.geFormatContainer input,.geFormatContainer select,.geFormatContainer textarea,.geDialog input,.geDialog select,.geDialog textarea{background:#ffffff !important;color:#111827 !important;border:1px solid #cfd6de !important;box-shadow:none !important;}',
+            '.geSidebarContainer input::placeholder,.geFormatContainer input::placeholder,.geDialog input::placeholder{color:#6b7280 !important;}',
+            '.geFormatContainer .geBtn,.geDialog .geBtn,.geSidebarContainer .geBtn,.geButtonContainer .gePrimaryBtn:not(.geEmbedBtn){color:#111827 !important;background:#f8fafc !important;border:1px solid #d1d5db !important;box-shadow:none !important;}',
+            '.geFormatContainer .geBtn:hover,.geDialog .geBtn:hover,.geSidebarContainer .geBtn:hover,.geButtonContainer .gePrimaryBtn:not(.geEmbedBtn):hover{background:#eceff3 !important;color:#111827 !important;}',
+            '.geButtonContainer .gePrimaryBtn .geButton{color:#111827 !important;}',
+            '.geFormatContainer input[type="checkbox"],.geDialog input[type="checkbox"]{accent-color:#4b5563 !important;}',
+            '.geEditor>.geSidebarContainer.geFormatContainer .geTab,.geEditor>.geSidebarContainer.geFormatContainer .geTabItem{color:#111827 !important;background:#e5e7eb !important;border-color:#d1d5db !important;}',
+            '.geEditor>.geSidebarContainer.geFormatContainer .geTab:not(.mxDisabled):hover{background:#dde2e8 !important;}',
+            '.geEditor>.geSidebarContainer.geFormatContainer .geTab.geActiveItem,.geEditor>.geSidebarContainer.geFormatContainer .geTabItem.geActiveItem{color:#111827 !important;background:#ffffff !important;border-color:#d1d5db !important;}',
+            '.mxPopupMenu{background:#ffffff !important;border:1px solid #d1d5db !important;box-shadow:0 18px 36px rgba(15,23,42,0.08) !important;}',
+            '.mxPopupMenuItem,.mxPopupMenuItem div,.mxPopupMenuItem td{color:#111827 !important;background:#ffffff !important;}',
+            'table.mxPopupMenu tr.mxPopupMenuItemHover,.mxPopupMenuItem:hover{background:#eef2f6 !important;color:#111827 !important;}',
+            '#customLangSwitcher.customLangSwitcher--editor{border-right:1px solid #d1d5db !important;}',
+            '#customLangSwitcher.customLangSwitcher--editor .customLangTrack{background:#e5e7eb !important;box-shadow:none !important;}',
+            '#customLangSwitcher.customLangSwitcher--editor .customLangTrack button{color:#111827 !important;background:transparent !important;}',
+            '#customLangSwitcher.customLangSwitcher--editor .customLangTrack button:hover{background:#dde2e8 !important;color:#111827 !important;}',
+            '#customLangSwitcher.customLangSwitcher--editor .customLangTrack button.active{background:#ffffff !important;color:#111827 !important;border:1px solid #d1d5db !important;box-shadow:none !important;}',
+            '@media (max-width: 720px){.geEditor>.geMenubarContainer,.geEditor>.geToolbarContainer:not(.geSketch *),.geEditor>.geSidebarContainer,.geEditor>.geTabContainer{box-shadow:0 8px 18px rgba(15,23,42,0.06) !important;}}'
+        ].join('');
+        document.head.appendChild(style);
+    }
+
     function getSwitcherMountTarget()
     {
         return document.querySelector('.geMenubar .geButtonContainer') ||
@@ -594,6 +647,7 @@
         ensureBrandStyles();
         ensureContrastStyles();
         ensureNeutralWorkspaceStyles();
+        ensureLightChromeStyles();
         applyShellLanguage(preferredLanguage);
         scheduleSwitcherMount(preferredLanguage);
         scheduleResourceOverrides(preferredLanguage);
