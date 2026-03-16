@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图表工作台 | 个人博客</title>
+    <meta
+      name="description"
+      content="在个人博客中集成的图表工作台，支持流程图、UML、ER、网络图与通用架构设计。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500;700&family=Noto+Sans+SC:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="workspace-page">
+    <canvas class="particle-canvas" id="particleCanvas"></canvas>
+    <div class="ambient"></div>
+
+    <header class="site-header">
+      <div class="logo">
+        <div class="logo-container">
+          <img src="./touxiang.jpg" alt="Logo" class="logo-image" />
+          <div class="qrcode-popup">
+            <img src="./qrcode.jpg" alt="QR Code" class="qrcode-image" />
+            <p class="qrcode-text">联系方式</p>
+          </div>
+        </div>
+        <span class="logo-text">浅望</span>
+      </div>
+      <nav class="nav">
+        <a href="./index.html#about">关于</a>
+        <a href="./index.html#posts">文章</a>
+        <a href="./index.html#projects">项目</a>
+        <a href="./index.html#notes">随记</a>
+        <a href="./media.html">追番</a>
+        <a class="active" href="./diagram.html">图表</a>
+        <a href="./index.html#contact">联系</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle">暗色</button>
+    </header>
+
+    <div class="controls-floating">
+      <label>
+        <span>特效</span>
+        <select id="modeSelect">
+          <option value="newyear">马年</option>
+          <option value="aura" selected>流萤</option>
+          <option value="star">星空</option>
+          <option value="ripple">涟漪</option>
+        </select>
+      </label>
+      <button class="control-btn" id="pauseToggle">暂停</button>
+    </div>
+
+    <main>
+      <section class="hero workspace-hero">
+        <div class="workspace-hero-panel">
+          <span class="workspace-kicker">Embedded Diagram Lab</span>
+          <h1>把图表编辑器接入到个人博客里</h1>
+          <p class="intro workspace-intro">
+            这里是站内版图表工作台。你可以直接在博客域名下创建流程图、架构图、UML、
+            ER 和网络图，不需要跳到外部站点。
+          </p>
+          <div class="hero-actions workspace-actions">
+            <a
+              class="btn primary"
+              href="./diagram-workspace/index.html?lang=zh&v=20260316d"
+              target="_blank"
+              rel="noopener"
+            >
+              新标签打开编辑器
+            </a>
+            <a class="btn ghost" href="./index.html#projects">返回项目页</a>
+          </div>
+          <div class="workspace-metrics">
+            <div class="workspace-metric">
+              <span class="workspace-metric-number">站内</span>
+              <span class="workspace-metric-label">同域部署</span>
+            </div>
+            <div class="workspace-metric">
+              <span class="workspace-metric-number">双语</span>
+              <span class="workspace-metric-label">中英文切换</span>
+            </div>
+            <div class="workspace-metric">
+              <span class="workspace-metric-number">本地</span>
+              <span class="workspace-metric-label">浏览器保存</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section workspace-shell-section">
+        <div class="section-title">
+          <h2>图表工作台</h2>
+          <p>下面这个内嵌区域就是编辑器本体，直接可用。</p>
+        </div>
+
+        <div class="workspace-surface">
+          <div class="workspace-toolbar">
+            <div class="workspace-toolbar-copy">
+              <span class="workspace-pill">已接入博客主站</span>
+              <p>支持流程图、UML、ER、网络图与通用架构设计。</p>
+            </div>
+            <div class="workspace-toolbar-actions">
+              <a
+                class="btn ghost"
+                href="./diagram-workspace/index.html?lang=en&v=20260316d"
+                target="_blank"
+                rel="noopener"
+              >
+                EN View
+              </a>
+              <a
+                class="btn primary"
+                href="./diagram-workspace/index.html?lang=zh&v=20260316d"
+                target="_blank"
+                rel="noopener"
+              >
+                全屏打开
+              </a>
+            </div>
+          </div>
+
+          <div class="workspace-frame">
+            <iframe
+              class="workspace-iframe"
+              src="./diagram-workspace/index.html?lang=zh&v=20260316d"
+              title="图表工作台"
+              allow="clipboard-read; clipboard-write; fullscreen"
+            ></iframe>
+          </div>
+
+          <div class="workspace-note">
+            <p>
+              提示：如果你要单独分享编辑器，可以直接发
+              <code>/diagram-workspace/</code>；如果你想保留博客氛围感，用当前这个页面更合适。
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 浅望 · 图表工作台已接入个人博客</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

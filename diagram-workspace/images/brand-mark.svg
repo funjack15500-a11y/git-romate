@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="brandTitle brandDesc">
+  <title id="brandTitle">Diagram Workspace Brand Mark</title>
+  <desc id="brandDesc">A layered diagram mark inside a rounded square.</desc>
+  <defs>
+    <linearGradient id="bg" x1="20" y1="14" x2="108" y2="114" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#243246"/>
+      <stop offset="1" stop-color="#121a27"/>
+    </linearGradient>
+    <linearGradient id="warm" x1="28" y1="35" x2="100" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#efb04b"/>
+      <stop offset="1" stop-color="#d48a1a"/>
+    </linearGradient>
+    <linearGradient id="cool" x1="28" y1="76" x2="100" y2="92" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#dce9f8"/>
+      <stop offset="1" stop-color="#a8c0df"/>
+    </linearGradient>
+  </defs>
+  <rect x="12" y="12" width="104" height="104" rx="28" fill="url(#bg)"/>
+  <path d="M28 34h54l18 14H46z" fill="url(#warm)"/>
+  <path d="M28 34h54l18 14H46z" fill="none" stroke="#f5c97c" stroke-width="2"/>
+  <path d="M28 55h54l18 14H46z" fill="#fff7ea"/>
+  <path d="M28 55h54l18 14H46z" fill="none" stroke="#edd6b2" stroke-width="2"/>
+  <path d="M28 76h54l18 14H46z" fill="url(#cool)"/>
+  <path d="M28 76h54l18 14H46z" fill="none" stroke="#b6cde8" stroke-width="2"/>
+  <path d="M43 44h31" stroke="#fff3df" stroke-width="4" stroke-linecap="round" opacity=".78"/>
+  <path d="M43 65h31" stroke="#7e8fa5" stroke-width="4" stroke-linecap="round" opacity=".52"/>
+  <path d="M43 86h31" stroke="#4e627d" stroke-width="4" stroke-linecap="round" opacity=".42"/>
+  <circle cx="94" cy="33" r="6" fill="#ffd8a4"/>
+</svg>

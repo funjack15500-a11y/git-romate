@@ -1,0 +1,17 @@
+{
+    "name": "图表工作台",
+    "short_name": "图表工作台",
+    "description": "一个双语、自托管的图表工作台，适合流程图、UML、ER、网络图和通用架构设计。",
+    "icons": [
+        { "src": "brand-mark.svg", "type": "image/svg+xml", "sizes": "any", "purpose": "any maskable" },
+        { "src": "../favicon.ico", "type": "image/x-icon", "sizes": "16x16 32x32" },
+        { "src": "icon-192.png", "type": "image/png", "sizes": "192x192" },
+        { "src": "icon-512.png", "type": "image/png", "sizes": "512x512" },
+        { "src": "icon-192-maskable.png", "type": "image/png", "sizes": "192x192", "purpose": "maskable" },
+        { "src": "icon-512-maskable.png", "type": "image/png", "sizes": "512x512", "purpose": "maskable" }
+    ],
+    "theme_color": "#d48a1a",
+    "background_color": "#121a27",
+    "display": "standalone",
+    "start_url": "../index.html"
+}
