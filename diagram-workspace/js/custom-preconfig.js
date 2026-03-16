@@ -392,6 +392,26 @@
         document.head.appendChild(style);
     }
 
+    function ensureNeutralWorkspaceStyles()
+    {
+        if (document.getElementById('customNeutralWorkspaceStyles'))
+        {
+            return;
+        }
+
+        var style = document.createElement('style');
+        style.id = 'customNeutralWorkspaceStyles';
+        style.textContent = [
+            'body.geEditor.geClassic{background:#e7edf4 !important;color:#e8f0fb;}',
+            'body.geEditor.geClassic:before,body.geEditor.geClassic:after{display:none !important;}',
+            '#geInfo{background:#e7edf4 !important;}',
+            '.customShell{background:linear-gradient(180deg, rgba(34,52,76,0.86), rgba(22,34,51,0.76)) !important;box-shadow:0 22px 44px rgba(15,23,42,0.12), var(--glass-highlight) !important;}',
+            '.geEditor>.geDiagramContainer{box-shadow:0 18px 36px rgba(15,23,42,0.12), inset 0 1px 0 rgba(255,255,255,0.16) !important;}',
+            '.geEditor>.geMenubarContainer,.geEditor>.geToolbarContainer,.geEditor>.geSidebarContainer,.geEditor>.geTabContainer{box-shadow:0 14px 28px rgba(15,23,42,0.1), var(--glass-highlight) !important;}'
+        ].join('');
+        document.head.appendChild(style);
+    }
+
     function getSwitcherMountTarget()
     {
         return document.querySelector('.geMenubar .geButtonContainer') ||
@@ -570,6 +590,7 @@
     {
         ensureBrandStyles();
         ensureContrastStyles();
+        ensureNeutralWorkspaceStyles();
         applyShellLanguage(preferredLanguage);
         scheduleSwitcherMount(preferredLanguage);
         scheduleResourceOverrides(preferredLanguage);
