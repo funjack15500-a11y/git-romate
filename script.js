@@ -467,7 +467,9 @@ const renderParticles = () => {
 
 const applyTheme = (theme) => {
   document.body.setAttribute("data-theme", theme);
-  themeToggle.textContent = theme === "light" ? "暗色" : "亮色";
+  if (themeToggle) {
+    themeToggle.textContent = theme === "light" ? "暗色" : "亮色";
+  }
   localStorage.setItem("theme", theme);
   syncPalette();
 };
@@ -475,11 +477,13 @@ const applyTheme = (theme) => {
 const savedTheme = localStorage.getItem("theme") || "dark";
 applyTheme(savedTheme);
 
-themeToggle.addEventListener("click", () => {
-  const nextTheme =
-    document.body.getAttribute("data-theme") === "light" ? "dark" : "light";
-  applyTheme(nextTheme);
-});
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const nextTheme =
+      document.body.getAttribute("data-theme") === "light" ? "dark" : "light";
+    applyTheme(nextTheme);
+  });
+}
 
 const updateAudioToggle = () => {
   if (!audioToggle || !bgAudio) {
@@ -514,15 +518,17 @@ if (audioToggle) {
   });
 }
 
-document.addEventListener(
-  "click",
-  () => {
-    if (bgAudio && bgAudio.paused) {
-      bgAudio.play().then(updateAudioToggle);
-    }
-  },
-  { once: true }
-);
+if (bgAudio) {
+  document.addEventListener(
+    "click",
+    () => {
+      if (bgAudio.paused) {
+        bgAudio.play().then(updateAudioToggle);
+      }
+    },
+    { once: true }
+  );
+}
 
 if (modeSelect) {
   modeSelect.addEventListener("change", (event) => {
@@ -555,15 +561,19 @@ window.addEventListener("load", () => {
     resizeParticles();
     renderParticles();
   }
-  tryAutoPlay();
+  if (bgAudio) {
+    tryAutoPlay();
+  }
 });
 
-window.addEventListener("resize", resizeParticles);
-window.addEventListener("mousemove", handlePointerMove);
-window.addEventListener("touchmove", handleTouchMove, { passive: true });
-window.addEventListener("mouseleave", () => {
-  particleState.mouse.active = false;
-});
+if (particleCtx) {
+  window.addEventListener("resize", resizeParticles);
+  window.addEventListener("mousemove", handlePointerMove);
+  window.addEventListener("touchmove", handleTouchMove, { passive: true });
+  window.addEventListener("mouseleave", () => {
+    particleState.mouse.active = false;
+  });
+}
 
 // 句子轮播功能
 const sentenceCarousel = document.getElementById("sentenceCarousel");

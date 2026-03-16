@@ -358,6 +358,40 @@
         document.head.appendChild(style);
     }
 
+    function ensureContrastStyles()
+    {
+        if (document.getElementById('customContrastStyles'))
+        {
+            return;
+        }
+
+        var style = document.createElement('style');
+        style.id = 'customContrastStyles';
+        style.textContent = [
+            'body.geEditor.geClassic{color:#e8f0fb;}',
+            '.geEditor>.geMenubarContainer{background:linear-gradient(180deg, #29415e 0%, #1c2f49 100%) !important;border-color:rgba(255,255,255,0.12) !important;box-shadow:0 20px 36px rgba(4,10,20,0.22) !important;}',
+            '.geEditor>.geToolbarContainer:not(.geSketch *){background:linear-gradient(180deg, #223650 0%, #18283e 100%) !important;border-color:rgba(255,255,255,0.1) !important;}',
+            '.geEditor>.geSidebarContainer:not(.geFormatContainer){background:linear-gradient(180deg, #213754 0%, #17273d 100%) !important;}',
+            '.geEditor>.geSidebarContainer.geFormatContainer{background:linear-gradient(180deg, #223650 0%, #17273d 100%) !important;}',
+            '.geEditor>.geTabContainer{background:linear-gradient(180deg, #1f3149 0%, #152336 100%) !important;}',
+            '.geEditor>.geDiagramContainer{background:#eef2f7 !important;}',
+            '.geMenubarContainer .geItem,.geMenubarContainer a,.geMenubarContainer .geFilename,.geToolbarContainer,.geToolbarContainer .geButton,.geToolbarContainer .geLabel,.geTabContainer .geTab,.geSidebarContainer,.geSidebarContainer .geTitle,.geSidebarText,.geFormatContainer,.geFormatContainer label,.geFormatContainer .geLabel,div.geFormatContainer span,div.geFormatContainer div,div.geFormatContainer td,div.geFormatContainer a,div.geDialog,div.mxWindow{color:#e8f0fb !important;text-shadow:none !important;}',
+            '.geMenubarContainer .geItem:hover,.geToolbarContainer .geButton:hover,.geToolbarContainer .geButton.geActiveItem,.geTabContainer .geTab:hover{background:rgba(255,255,255,0.12) !important;color:#ffffff !important;}',
+            '.geMenubarContainer .geFilename{color:#f8fbff !important;background:rgba(255,255,255,0.08) !important;border:1px solid rgba(255,255,255,0.08) !important;}',
+            '.geToolbarContainer .geButton img,.geToolbarContainer .geButton .geAdaptiveAsset,.geSidebarContainer img,.geMenubarContainer img{filter:brightness(1.75) contrast(1.15);}',
+            '.geSidebarContainer input,.geSidebarContainer select,.geFormatContainer input,.geFormatContainer select,.geFormatContainer textarea,.geDialog input,.geDialog select,.geDialog textarea{background:rgba(255,255,255,0.96) !important;color:#142133 !important;border:1px solid rgba(15,23,42,0.16) !important;}',
+            '.geFormatContainer .geBtn,.geDialog .geBtn{color:#142133 !important;background:rgba(255,255,255,0.96) !important;border-color:rgba(15,23,42,0.14) !important;}',
+            '.geFormatContainer .geBtn:hover,.geDialog .geBtn:hover{background:#ffffff !important;box-shadow:0 8px 16px rgba(15,23,42,0.12) !important;}',
+            '.geFormatContainer input[type="checkbox"],.geDialog input[type="checkbox"]{accent-color:' + BRAND.accent + ';}',
+            '.geEditor>.geSidebarContainer.geFormatContainer .geTab,.geEditor>.geSidebarContainer.geFormatContainer .geTabItem{color:#10223a !important;background:rgba(255,255,255,0.92) !important;}',
+            '.geEditor>.geSidebarContainer.geFormatContainer .geTab:not(.mxDisabled):hover{background:#ffffff !important;}',
+            '#customLangSwitcher.customLangSwitcher--editor .customLangTrack button{color:#e8f0fb !important;}',
+            '#customLangSwitcher.customLangSwitcher--editor .customLangTrack button.active{color:#fff4d9 !important;background:rgba(212,138,26,0.24) !important;}',
+            '@media (max-width: 720px){.geMenubar{padding-left:58px;}.geFilenameContainer{right:110px;}.geEditor>.geMenubarContainer{height:64px;}.geEditor>.geToolbarContainer:not(.geSketch *){height:48px;}}'
+        ].join('');
+        document.head.appendChild(style);
+    }
+
     function getSwitcherMountTarget()
     {
         return document.querySelector('.geMenubar .geButtonContainer') ||
@@ -535,6 +569,7 @@
     document.addEventListener('DOMContentLoaded', function ()
     {
         ensureBrandStyles();
+        ensureContrastStyles();
         applyShellLanguage(preferredLanguage);
         scheduleSwitcherMount(preferredLanguage);
         scheduleResourceOverrides(preferredLanguage);
