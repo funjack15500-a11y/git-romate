@@ -3,25 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>zz资源库 | 影视资源</title>
+    <title>浅望 | 个人博客与创作实验室</title>
+    <meta
+      name="description"
+      content="浅望的个人博客，记录前端、创作、影视资源整理、图表工作台与日常灵感。"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500;700&family=Noto+Sans+SC:wght@300;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500;700&family=Noto+Sans+SC:wght@300;500;700&family=Noto+Serif+SC:wght@600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body>
+  <body class="blog-home">
     <audio id="bgAudio" src="./知我.webm" preload="auto" loop autoplay></audio>
     <div class="ambient"></div>
+
     <header class="site-header">
       <div class="logo">
         <div class="logo-container">
-          <img src="touxiang.jpg" alt="Logo" class="logo-image" />
+          <img src="touxiang.jpg" alt="浅望头像" class="logo-image" />
           <div class="qrcode-popup">
-            <img src="qrcode.jpg" alt="QR Code" class="qrcode-image" />
-            <p class="qrcode-text">联系方式</p>
+            <img src="qrcode.jpg" alt="联系二维码" class="qrcode-image" />
+            <p class="qrcode-text">扫码联系我</p>
           </div>
         </div>
         <span class="logo-text">浅望</span>
@@ -30,7 +35,7 @@
         <a href="#about">关于</a>
         <a href="#posts">文章</a>
         <a href="#projects">项目</a>
-        <a href="#notes">随记</a>
+        <a href="#notes">近况</a>
         <a href="media.html">追番</a>
         <a href="diagram.html">图表</a>
         <a href="#contact">联系</a>
@@ -43,229 +48,271 @@
       <button class="control-btn" id="audioToggle">音乐播放</button>
     </div>
 
-    <main>
-      <section class="hero">
-        <div class="hero-countdown-wrapper">
-          <div class="hero-countdown-label">
-            <span>🎓 距离毕业还有</span>
+    <main class="home-main">
+      <section class="hero blog-hero">
+        <div class="editorial-shell">
+          <div class="hero-main editorial-card">
+            <div class="hero-kicker-row">
+              <span class="eyebrow">PERSONAL BLOG / CREATIVE LAB</span>
+              <span class="hero-time-chip">现在时间 · <strong id="nowTime">--:--</strong></span>
+            </div>
+            <h1>把技术、创作、影视资源和图表工作流，整理成一个更好读也更好用的个人博客。</h1>
+            <p class="intro">
+              这里不是单纯的展示页，而是我的数字工作台。你可以顺着文章阅读，也可以直接进入影视资源库、
+              图表编辑器和实验项目区，快速找到你真正想看的内容。
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#posts">先看精选内容</a>
+              <a class="btn ghost" href="#projects">浏览作品与实验</a>
+            </div>
+            <div class="hero-chip-list">
+              <span>前端体验</span>
+              <span>内容整理</span>
+              <span>影视追番</span>
+              <span>图表工作流</span>
+              <span>个人创作</span>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-number">4</span>
+                <span class="stat-label">核心栏目</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">12</span>
+                <span class="stat-label">持续更新主题</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" id="siteViewsCount">0</span>
+                <span class="stat-label">累计访问</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" id="siteDaysCount">0</span>
+                <span class="stat-label">运行天数</span>
+              </div>
+            </div>
           </div>
-          <div class="hero-countdown-time" id="gradCountdownLine">
-            --天 --:--:--
-          </div>
-        </div>
 
-        <div class="hero-content">
-          <p class="tagline">数字漫游者 / 创作与探索</p>
-          <div class="sentence-carousel" id="sentenceCarousel">
-            <div class="sentence-track">
-              <h1 class="sentence-item">把好奇写成光，把思考写成路，在数字的天空中自由翱翔。</h1>
-              <h1 class="sentence-item">以天地为纸，以科技为笔，书写属于这个时代的壮丽史诗。</h1>
-              <h1 class="sentence-item">在代码的森林中漫步，在创意的海洋里扬帆远航。</h1>
-              <h1 class="sentence-item">每一次敲击都是心跳，每一个字节都是灵魂的共鸣。</h1>
-              <h1 class="sentence-item">让灵感如星芒般闪耀，让思想如江河般奔腾不息。</h1>
-              <h1 class="sentence-item">数字世界的筑梦师，用智慧的光芒照亮未来的道路。</h1>
-              <h1 class="sentence-item">在技术与艺术的交汇处，绽放出最绚丽的生命之花。</h1>
-              <h1 class="sentence-item">以键盘为琴，以屏幕为谱，弹奏出新时代的最强音。</h1>
-              <h1 class="sentence-item">星光不问赶路人，时光不负有心人。</h1>
-              <h1 class="sentence-item">大鹏一日同风起，扶摇直上九万里。</h1>
-              <h1 class="sentence-item">鲜衣怒马少年时，不负韶华行且知。</h1>
-              <h1 class="sentence-item">追风赶月莫停留，平芜尽处是春山。</h1>
-              <h1 class="sentence-item">既然选择了远方，便只顾风雨兼程。</h1>
-              <h1 class="sentence-item">生活明朗，万物可爱，人间值得，未来可期。</h1>
-              <h1 class="sentence-item">愿你在平凡的日子里，收获不平凡的感动与成长。</h1>
-              <h1 class="sentence-item">每一个清晨都是新的开始，每一次努力都有意义。</h1>
-              <h1 class="sentence-item">在这个瞬息万变的世界里，保持内心的宁静与坚定。</h1>
-              <h1 class="sentence-item">用热爱抵御岁月漫长，用真诚温暖每一个相遇。</h1>
-              <h1 class="sentence-item">人生没有白走的路，每一步都算数，每一步都值得。</h1>
-              <h1 class="sentence-item">在数字与艺术的交织中，发现生活的无限可能与美好。</h1>
-              <h1 class="sentence-item">想，全是问题；做，才有答案。</h1>
-              <h1 class="sentence-item">你有多自律，就有多自由。</h1>
-              <h1 class="sentence-item">所有难过，难是难，但总会过。</h1>
-              <h1 class="sentence-item">把行动交给现在，把结果交给时间。</h1>
-              <h1 class="sentence-item">有输得起的勇气，才会有赢得到的底气。</h1>
-              <h1 class="sentence-item">勇敢地迈出第一步，是治愈焦虑的良药。</h1>
-              <h1 class="sentence-item">有风有雨是人生的常态，迎难而上才能逆风翻盘。</h1>
-              <h1 class="sentence-item">读书就是用最低廉的成本走最高级的成长路。</h1>
-              <h1 class="sentence-item">努力提升自己，永远比仰望别人有意义。</h1>
-              <h1 class="sentence-item">记住，能打败自己的永远只有下一秒的自己。</h1>
-              <h1 class="sentence-item">躲起来的星星也在努力发光，你也要加油。</h1>
-              <h1 class="sentence-item">焦虑不会消除明天的悲伤，它只会消耗今天的力量。</h1>
-              <h1 class="sentence-item">人生，从外打破是压力，从内打破是成长。</h1>
-              <h1 class="sentence-item">真正困住你的不是困难本身，而是你对自己的负面暗示。</h1>
-              <h1 class="sentence-item">不是因为看见了成功才坚持，是只有坚持才会看见成功。</h1>
-              <h1 class="sentence-item">成功其实很简单，就是比失败击倒你们的次数多一次。</h1>
-              <h1 class="sentence-item">很多时候，能力决定你能走多快，人品决定你能走多远。</h1>
-              <h1 class="sentence-item">当你成长为一株向日葵，才能吸引来更多的阳光与正能量。</h1>
-              <h1 class="sentence-item">人生的淡定和从容，都是从学到的本领修炼来的气定神闲。</h1>
-              <h1 class="sentence-item">那些夜以继日的奋斗，终将让你养成持续努力的习惯，成为你追求梦想的勇气和力量。</h1>
+          <aside class="hero-rail">
+            <div class="hero-side-card countdown-panel">
+              <p class="rail-label">毕业倒计时</p>
+              <div class="hero-countdown-time" id="gradCountdownLine">--天 --:--:--</div>
+              <p class="rail-note">目标日期：2026 年 6 月 21 日</p>
             </div>
-          </div>
-          <p class="intro">
-            我记录技术、生活与灵感的交汇。这里是我的宇宙日记本，欢迎你一起旅行。
-          </p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#posts">阅读最新</a>
-            <a class="btn ghost" href="#contact">合作邀请</a>
-          </div>
-          <div class="hero-stats">
-            <div class="stat-item">
-              <span class="stat-number">3</span>
-              <span class="stat-label">开源项目</span>
+
+            <div class="hero-side-card about-card">
+              <p class="rail-label">现在在做</p>
+              <ul class="status-list">
+                <li><span>博客内容结构升级</span><em>进行中</em></li>
+                <li><span>图表工作台体验打磨</span><em>持续迭代</em></li>
+                <li><span>影视资源页维护</span><em>长期更新</em></li>
+              </ul>
             </div>
-            <div class="stat-item">
-              <span class="stat-number">12</span>
-              <span class="stat-label">技术文章</span>
+
+            <div class="hero-side-card post-card">
+              <p class="rail-label">快捷入口</p>
+              <div class="quick-links">
+                <a class="quick-link" href="media.html">进入影视资源库</a>
+                <a class="quick-link" href="diagram.html">进入图表工作台</a>
+                <a class="quick-link" href="#contact">联系与合作方式</a>
+              </div>
             </div>
-            <div class="stat-item">
-              <span class="stat-number" id="siteViewsCount">0</span>
-              <span class="stat-label">访问次数</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number" id="siteDaysCount">0</span>
-              <span class="stat-label">上线天数</span>
-            </div>
-          </div>
+          </aside>
         </div>
       </section>
 
       <section class="section about" id="about">
-        <div class="section-title">
-          <h2>关于我</h2>
-          <p>专注打造有温度的数字体验。</p>
+        <div class="section-heading">
+          <span class="eyebrow">ABOUT</span>
+          <div class="section-title">
+            <h2>一个更像“个人工作室”的博客首页</h2>
+            <p>参考优秀技术博客与个人站点的内容优先布局，把信息层级梳理得更清楚。</p>
+          </div>
         </div>
         <div class="about-grid">
-          <div class="about-card">
-            <h3>身份</h3>
-            <p>产品设计师 · 前端工程师 · 创作者</p>
-          </div>
-          <div class="about-card">
-            <h3>关注</h3>
-            <p>设计系统、跨团队协作、交互表达、叙事体验</p>
-          </div>
-          <div class="about-card">
-            <h3>信念</h3>
-            <p>用清晰的结构与细节，让复杂变得可感知。</p>
-          </div>
+          <article class="about-card">
+            <h3>我关注什么</h3>
+            <p>前端体验、设计细节、内容整理、图表工具与能长期维护的个人数字空间。</p>
+          </article>
+          <article class="about-card">
+            <h3>我想呈现什么</h3>
+            <p>不是单一“炫技”页面，而是让访客一眼知道你写什么、做什么、最近在更新什么。</p>
+          </article>
+          <article class="about-card">
+            <h3>这个博客的定位</h3>
+            <p>一半是作品集，一半是记录本，也是一块持续进化的前端实验场。</p>
+          </article>
         </div>
       </section>
 
       <section class="section posts" id="posts">
-        <div class="section-title">
-          <h2>最新文章</h2>
-          <p>记录灵感与技术实践的清单。</p>
+        <div class="section-heading">
+          <span class="eyebrow">FEATURED STORIES</span>
+          <div class="section-title">
+            <h2>先看最值得打开的内容</h2>
+            <p>把首页从平均展示改成有主次的阅读入口，让真正重要的内容先被看见。</p>
+          </div>
         </div>
-        <div class="posts-grid">
-          <article class="post-card">
+        <div class="stories-layout">
+          <article class="post-card story-feature">
+            <div class="story-badge">Featured</div>
             <div class="post-meta">2026.01.26 · 影视资源</div>
-            <h3>影视追番表：热门连载 / 已完结合集</h3>
-            <p>追更与完结影视资源索引，支持跳转夸克与百度网盘。</p>
-            <a class="post-link" href="media.html">阅读全文</a>
+            <h3>影视追番表：热门连载、已完结合集与站内跳转入口</h3>
+            <p>
+              这是博客里最实用的一块内容。我把影视资源整理成了可快速筛选、可直接跳转的入口页，
+              让它不只是一个清单，而是一个真正能持续使用的工具页。
+            </p>
+            <div class="story-footer">
+              <a class="post-link" href="media.html">打开资源页</a>
+              <span>适合第一次访问博客时优先浏览</span>
+            </div>
           </article>
-          <article class="post-card">
-            <div class="post-meta">2026.01.12 · 创作心法</div>
-            <h3>在信息洪流里慢下来：我如何持续写作</h3>
-            <p>从灵感捕捉到结构化输出，建立可复用的创作流程。</p>
-            <a class="post-link" href="#">阅读全文</a>
-          </article>
-          <article class="post-card">
-            <div class="post-meta">2025.12.28 · 前端工程</div>
-            <h3>让动画服务叙事：沉浸式页面的实现路径</h3>
-            <p>动效不仅是装饰，更是信息层级的设计语言。</p>
-            <a class="post-link" href="#">阅读全文</a>
-          </article>
+
+          <div class="story-stack">
+            <article class="post-card">
+              <div class="post-meta">2026.01.12 · 创作方法</div>
+              <h3>如何把灵感、笔记和碎片想法整理成可继续写下去的文章</h3>
+              <p>从选题、结构到发布，建立一个更轻但更稳定的个人写作流。</p>
+              <a class="post-link" href="#notes">查看思路</a>
+            </article>
+            <article class="post-card">
+              <div class="post-meta">2025.12.28 · 前端表达</div>
+              <h3>沉浸式页面不是堆特效，而是让排版、留白和节奏一起讲故事</h3>
+              <p>比起炫，更重要的是读者有没有抓到重点、有没有继续往下看的意愿。</p>
+              <a class="post-link" href="#projects">看项目表达</a>
+            </article>
+            <article class="post-card">
+              <div class="post-meta">2026.03.16 · 新增功能</div>
+              <h3>把图表工作台直接嵌进博客，形成站内可用的工具入口</h3>
+              <p>这是从个人博客走向个人产品的一步，也让站点更有辨识度。</p>
+              <a class="post-link" href="diagram.html">进入图表页</a>
+            </article>
+          </div>
         </div>
       </section>
 
       <section class="section projects" id="projects">
-        <div class="section-title">
-          <h2>精选项目</h2>
-          <p>从想法到落地的实验场。</p>
-        </div>
-        <div class="projects-grid">
-          <div class="project-card">
-            <h3>Flow Atlas</h3>
-            <p>多维度工作流可视化工具，帮助团队找到效率瓶颈。</p>
-            <div class="project-tags">
-              <span>产品策略</span>
-              <span>数据可视化</span>
-            </div>
+        <div class="section-heading">
+          <span class="eyebrow">PROJECTS</span>
+          <div class="section-title">
+            <h2>作品与实验，不再只是普通卡片</h2>
+            <p>把项目区做得更像产品目录，让人能快速理解每个项目解决什么问题。</p>
           </div>
-          <div class="project-card">
+        </div>
+        <div class="projects-grid projects-grid--editorial">
+          <article class="project-card">
+            <h3>Flow Atlas</h3>
+            <p>面向流程梳理和团队协作的信息地图，用更清晰的结构把复杂任务拆解出来。</p>
+            <div class="project-tags">
+              <span>工作流可视化</span>
+              <span>产品思维</span>
+            </div>
+          </article>
+          <article class="project-card">
             <h3>Halo Notes</h3>
-            <p>个人知识图谱系统，快速关联灵感与素材。</p>
+            <p>把灵感、笔记和素材变成可追踪的知识链路，适合个人长期积累与回看。</p>
             <div class="project-tags">
               <span>知识管理</span>
-              <span>交互设计</span>
+              <span>个人系统</span>
             </div>
-          </div>
-          <div class="project-card">
+          </article>
+          <article class="project-card">
             <h3>Echo Studio</h3>
-            <p>为创作者打造的播客协作空间，强调情绪化表达。</p>
+            <p>围绕创作协作与表达效率设计的小型实验项目，关注内容如何被更顺畅地生产。</p>
             <div class="project-tags">
+              <span>内容协作</span>
               <span>创作工具</span>
-              <span>品牌体验</span>
             </div>
-          </div>
-          <div class="project-card project-card-featured">
+          </article>
+          <article class="project-card project-card-featured">
             <h3>Diagram Workspace</h3>
-            <p>把站内图表编辑器作为独立工作台接入博客，支持流程图、UML、ER、网络图和通用架构设计。</p>
+            <p>把图表编辑器做成博客里的独立工作台，支持流程图、UML、ER 和通用架构草图。</p>
             <div class="project-tags">
               <span>图表编辑</span>
-              <span>自托管</span>
-              <span>站内嵌入</span>
+              <span>站内工具</span>
+              <span>自托管体验</span>
             </div>
             <div class="project-actions">
               <a class="post-link" href="diagram.html">进入工作台</a>
-              <a class="post-link" href="diagram-workspace/index.html?lang=zh&v=20260316g" target="_blank" rel="noopener">新窗口打开</a>
+              <a
+                class="post-link"
+                href="diagram-workspace/index.html?lang=zh&v=20260316g"
+                target="_blank"
+                rel="noopener"
+                >新窗口打开</a
+              >
             </div>
-          </div>
+          </article>
         </div>
       </section>
 
       <section class="section notes" id="notes">
-        <div class="section-title">
-          <h2>灵感随记</h2>
-          <p>当下想法的闪光碎片。</p>
+        <div class="section-heading">
+          <span class="eyebrow">NOW / NOTES</span>
+          <div class="section-title">
+            <h2>最近在想什么，接下来打算做什么</h2>
+            <p>参考优秀博客常见的 Now 页和简短动态区，把持续更新感放回首页。</p>
+          </div>
         </div>
-        <div class="notes-grid">
-          <div class="note-card">
-            <p>把复杂问题拆成节奏，让推进本身成为一种奖励。</p>
+        <div class="notes-board">
+          <div class="notes-column">
+            <article class="note-card">
+              <p>好的博客首页，不是一次性把所有内容堆上来，而是先告诉访客“从哪里开始看”。</p>
+            </article>
+            <article class="note-card">
+              <p>真正耐看的页面，往往赢在留白、标题层级和每一块内容之间的关系，而不是特效数量。</p>
+            </article>
+            <article class="note-card">
+              <p>把资源页、工具页和文章页统一到一个视觉体系里，博客就会更像一个完整产品。</p>
+            </article>
           </div>
-          <div class="note-card">
-            <p>如果页面是一首歌，那段落就是鼓点，动效是呼吸。</p>
-          </div>
-          <div class="note-card">
-            <p>选择少数关键指标，比追逐所有数据更能提升方向感。</p>
-          </div>
+          <article class="note-card note-card-large">
+            <h3>接下来准备继续优化</h3>
+            <ul class="roadmap-list">
+              <li>补一页真正的文章详情模板，让博客从首页延伸到完整阅读体验。</li>
+              <li>给影视资源页和图表页做统一封面与介绍模块，形成站内一致入口。</li>
+              <li>继续压缩视觉噪音，让内容、链接和更新状态更容易被扫到。</li>
+            </ul>
+          </article>
         </div>
       </section>
 
       <section class="section contact" id="contact">
-        <div class="section-title">
-          <h2>保持联系</h2>
-          <p>让想法成为合作。</p>
+        <div class="section-heading">
+          <span class="eyebrow">CONTACT</span>
+          <div class="section-title">
+            <h2>保持联系，也欢迎一起做点东西</h2>
+            <p>如果你想交流页面设计、博客优化、工具搭建或内容整理，都可以通过下面的方式找到我。</p>
+          </div>
         </div>
-        <div class="contact-card">
-          <div class="contact-info">
-            <h3>邮箱</h3>
-            <p><a href="mailto:funjack15500@gmail.com">funjack15500@gmail.com</a></p>
-          </div>
-          <div class="contact-info">
-            <h3>社交</h3>
-            <p>微博 / Google / GitHub</p>
-          </div>
-          <div class="contact-info">
-            <h3>当前状态</h3>
-            <p>接受新项目 · 远程协作</p>
-          </div>
+        <div class="contact-grid">
+          <article class="contact-card contact-card-primary">
+            <div class="contact-info">
+              <h3>邮箱</h3>
+              <p><a href="mailto:funjack15500@gmail.com">funjack15500@gmail.com</a></p>
+            </div>
+            <div class="contact-info">
+              <h3>协作方向</h3>
+              <p>博客优化、内容整理、页面设计、前端体验打磨</p>
+            </div>
+          </article>
+          <article class="contact-card">
+            <div class="contact-info">
+              <h3>在线状态</h3>
+              <p>接受新项目交流，支持远程协作与轻量咨询。</p>
+            </div>
+            <div class="contact-info">
+              <h3>站内入口</h3>
+              <p>影视页、图表页、音乐模块与后续文章页都会继续统一打磨。</p>
+            </div>
+          </article>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <p>© 2026 浅望 · 影视资源持续更新</p>
+      <p>© 2026 浅望 · 个人博客与创作实验室</p>
     </footer>
 
-    <script src="./script.js?v=20260316h"></script>
+    <script src="./script.js?v=20260316i"></script>
   </body>
 </html>
