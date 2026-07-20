@@ -678,3 +678,88 @@ window.addEventListener("load", function() {
   updateSiteDays();
   updateSiteViews();
 });
+
+// ========== UI interactions refresh ==========
+
+const siteHeader = document.getElementById("siteHeader");
+const scrollProgress = document.getElementById("scrollProgress");
+const backToTop = document.getElementById("backToTop");
+const navToggle = document.getElementById("navToggle");
+const siteNav = document.getElementById("siteNav");
+const gradProgressFill = document.getElementById("gradProgressFill");
+
+const updateScrollChrome = () => {
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? Math.min(100, (scrollTop / docHeight) * 100) : 0;
+
+  if (scrollProgress) {
+    scrollProgress.style.width = `${progress}%`;
+  }
+
+  if (siteHeader) {
+    siteHeader.classList.toggle("is-scrolled", scrollTop > 12);
+  }
+
+  if (backToTop) {
+    backToTop.classList.toggle("is-visible", scrollTop > 420);
+  }
+
+  // Active nav by section
+  if (siteNav) {
+    const anchors = Array.from(siteNav.querySelectorAll('a[href^="#"]'));
+    let currentId = "";
+    anchors.forEach((link) => {
+      const id = link.getAttribute("href").slice(1);
+      const section = document.getElementById(id);
+      if (!section) return;
+      const top = section.getBoundingClientRect().top;
+      if (top <= 140) {
+        currentId = id;
+      }
+    });
+    anchors.forEach((link) => {
+      const id = link.getAttribute("href").slice(1);
+      link.classList.toggle("active", Boolean(currentId) && id === currentId);
+    });
+  }
+};
+
+const updateGradProgress = () => {
+  if (!gradProgressFill) return;
+  const start = new Date(2024, 8, 1).getTime(); // approx start of senior year window
+  const end = getGraduationTarget().getTime();
+  const now = Date.now();
+  const ratio = Math.max(0, Math.min(1, (now - start) / (end - start)));
+  gradProgressFill.style.width = `${Math.round(ratio * 100)}%`;
+};
+
+if (navToggle && siteNav) {
+  navToggle.addEventListener("click", () => {
+    const open = document.body.classList.toggle("nav-open");
+    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    navToggle.setAttribute("aria-label", open ? "关闭菜单" : "打开菜单");
+  });
+
+  siteNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      document.body.classList.remove("nav-open");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.setAttribute("aria-label", "打开菜单");
+    });
+  });
+}
+
+if (backToTop) {
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+window.addEventListener("scroll", updateScrollChrome, { passive: true });
+window.addEventListener("resize", updateScrollChrome);
+window.addEventListener("load", () => {
+  updateScrollChrome();
+  updateGradProgress();
+  setInterval(updateGradProgress, 60000);
+});

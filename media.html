@@ -3,50 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>zz资源库 | 影视追番表</title>
+    <title>影视资源库 | 浅望</title>
+    <meta name="description" content="浅望博客影视追番表：热门连载、已完结合集与网盘资源入口。" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500;700&family=Noto+Sans+SC:wght@300;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500;700&family=Noto+Sans+SC:wght@300;500;700&family=Noto+Serif+SC:wght@600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.css?v=20260720a" />
   </head>
-  <body>
-    <audio id="bgAudio" src="./知我.webm" preload="auto" loop autoplay></audio>
+  <body class="media-page blog-home">
+    <audio id="bgAudio" src="./知我.webm" preload="auto" loop></audio>
     <div class="ambient"></div>
-    <header class="site-header">
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+    <header class="site-header" id="siteHeader">
       <div class="logo">
         <div class="logo-container">
-          <img src="./touxiang.jpg" alt="Logo" class="logo-image">
+          <img src="./touxiang.jpg" alt="浅望头像" class="logo-image" />
           <div class="qrcode-popup">
-            <img src="./qrcode.jpg" alt="QR Code" class="qrcode-image">
-            <p class="qrcode-text">联系方式</p>
+            <img src="./qrcode.jpg" alt="联系二维码" class="qrcode-image" />
+            <p class="qrcode-text">扫码联系我</p>
           </div>
         </div>
-        <span class="logo-text">浅望</span>
+        <a class="logo-text" href="./index.html">浅望</a>
       </div>
-      <nav class="nav">
+      <nav class="nav" id="siteNav">
         <a href="./index.html#about">关于</a>
         <a href="./index.html#posts">文章</a>
         <a href="./index.html#projects">项目</a>
-        <a href="./index.html#notes">随记</a>
-        <a href="./media.html">追番</a>
+        <a href="./index.html#notes">近况</a>
+        <a class="active" href="./media.html">追番</a>
         <a href="./diagram.html">图表</a>
         <a href="./index.html#contact">联系</a>
       </nav>
-      <button class="theme-toggle" id="themeToggle">暗色</button>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换主题">暗色</button>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </header>
 
     <div class="controls-floating controls-floating--audio">
       <span>背景音乐</span>
-      <button class="control-btn" id="audioToggle">音乐播放</button>
+      <button class="control-btn" id="audioToggle" type="button">音乐播放</button>
     </div>
+    <button class="back-to-top" id="backToTop" type="button" aria-label="回到顶部">↑</button>
 
     <main>
       <section class="section media" id="media">
-        <div class="section-title">
-          <h2>影视追番表</h2>
+        <div class="media-hero">
+          <span class="eyebrow">MEDIA LIBRARY</span>
+          <div class="section-title">
+            <h2>影视追番表</h2>
+            <p>整理热门连载、已完结合集与网盘资源入口，支持站内搜索，方便快速找到想看的内容。</p>
+          </div>
         </div>
         <div class="media-links" id="mediaLinks"></div>
         <div class="search-container">
@@ -175,7 +187,7 @@
       <p>© 2026 zz资源库 · 影视资源持续更新</p>
     </footer>
 
-    <script src="./script.js?v=20260316h"></script>
+    <script src="./script.js?v=20260720a"></script>
     <script>
       const mediaLinks = document.getElementById("mediaLinks");
       const mediaTables = document.getElementById("mediaTables");

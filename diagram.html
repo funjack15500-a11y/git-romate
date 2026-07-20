@@ -14,30 +14,32 @@
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500;700&family=Noto+Sans+SC:wght@300;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.css?v=20260720a" />
   </head>
   <body class="workspace-page">
-    <header class="site-header">
+    <header class="site-header" id="siteHeader">
       <div class="logo">
         <div class="logo-container">
-          <img src="./touxiang.jpg" alt="Logo" class="logo-image" />
+          <img src="./touxiang.jpg" alt="浅望头像" class="logo-image" />
           <div class="qrcode-popup">
-            <img src="./qrcode.jpg" alt="QR Code" class="qrcode-image" />
-            <p class="qrcode-text">联系方式</p>
+            <img src="./qrcode.jpg" alt="联系二维码" class="qrcode-image" />
+            <p class="qrcode-text">扫码联系我</p>
           </div>
         </div>
-        <span class="logo-text">浅望</span>
+        <a class="logo-text" href="./index.html">浅望</a>
       </div>
-      <nav class="nav">
+      <nav class="nav" id="siteNav">
         <a href="./index.html#about">关于</a>
         <a href="./index.html#posts">文章</a>
         <a href="./index.html#projects">项目</a>
-        <a href="./index.html#notes">随记</a>
+        <a href="./index.html#notes">近况</a>
         <a href="./media.html">追番</a>
         <a class="active" href="./diagram.html">图表</a>
         <a href="./index.html#contact">联系</a>
       </nav>
-      <button class="theme-toggle" id="themeToggle">暗色</button>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换主题">暗色</button>
+      </div>
     </header>
 
     <main>
@@ -132,6 +134,6 @@
       <p>© 2026 浅望 · 图表工作台已接入个人博客</p>
     </footer>
 
-    <script src="./script.js?v=20260316h"></script>
+    <script src="./script.js?v=20260720a"></script>
   </body>
 </html>
