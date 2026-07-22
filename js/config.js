@@ -1,4 +1,4 @@
-﻿/**
+/**
  * 站点配置 — 换品牌 / GitHub / 文案只改这一处
  */
 window.SITE_CONFIG = {
