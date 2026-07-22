@@ -1,375 +1,159 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>浅望 | 个人博客与创作实验室</title>
-    <meta
-      name="description"
-      content="浅望的个人博客，记录前端、创作、影视资源整理、图表工作台与日常灵感。"
-    />
-    <meta name="theme-color" content="#09111f" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500;700&family=Noto+Sans+SC:wght@300;500;700&family=Noto+Serif+SC:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./style.css?v=20260720a" />
-  </head>
-  <body class="blog-home">
-    <audio id="bgAudio" src="./知我.webm" preload="auto" loop></audio>
-    <canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
-    <div class="ambient"></div>
-    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spark Prompts — AI 提示词画廊</title>
+  <meta name="description" content="精选 AI 提示词画廊：图像生成、写作、编程、办公效率。支持搜索、分类、收藏与一键复制。可部署到 GitHub Pages。" />
+  <meta name="keywords" content="AI Prompt, 提示词, ChatGPT, Gemini, Midjourney, Prompt Gallery, GitHub Pages" />
+  <meta name="theme-color" content="#5b5cff" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Spark Prompts — AI 提示词画廊" />
+  <meta property="og:description" content="精选 AI 提示词，一键复制，支持分类与收藏。" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <!-- 在线字体可选；离线时自动回退系统字体，见 css/styles.css -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="#" class="logo">
+      <span class="logo-mark">✦</span>
+      Spark Prompts
+    </a>
+    <div class="header-actions">
+      <button type="button" class="icon-btn" id="themeToggle" aria-label="切换主题"></button>
+      <a class="btn btn-secondary" href="https://github.com" target="_blank" rel="noopener" id="githubLink" style="padding: 8px 14px; height: 40px;">
+        <svg height="18" width="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+        </svg>
+        <span class="header-github-text">GitHub</span>
+      </a>
+    </div>
+  </header>
 
-    <header class="site-header" id="siteHeader">
-      <div class="logo">
-        <div class="logo-container">
-          <img src="touxiang.jpg" alt="浅望头像" class="logo-image" />
-          <div class="qrcode-popup">
-            <img src="qrcode.jpg" alt="联系二维码" class="qrcode-image" />
-            <p class="qrcode-text">扫码联系我</p>
-          </div>
+  <section class="hero">
+    <div class="hero-badge">✦ AI Prompt Gallery · 静态可分享</div>
+    <h1>更好的提示词<br /><span>一键即用</span></h1>
+    <p>
+      精选图像生成、写作、编程与办公提示词。搜索、筛选、收藏、复制 ——
+      纯前端站点，轻松部署到 GitHub Pages 并用自定义域名分享。
+    </p>
+    <div class="hero-actions">
+      <a href="#gallery" class="btn btn-primary">浏览提示词</a>
+      <a href="#howto" class="btn btn-secondary">如何部署</a>
+    </div>
+    <div class="stats">
+      <div class="stat">
+        <strong id="totalCount">0</strong>
+        <span>提示词</span>
+      </div>
+      <div class="stat">
+        <strong id="resultCount">0</strong>
+        <span>当前结果</span>
+      </div>
+      <div class="stat">
+        <strong id="favCount">0</strong>
+        <span>我的收藏</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <div class="controls">
+      <div class="search-bar">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="search" id="searchInput" placeholder="搜索提示词、标签、内容…" autocomplete="off" />
+      </div>
+      <div class="filters">
+        <div class="category-dropdown">
+          <button type="button" class="category-trigger" id="categoryTrigger">
+            <span id="categoryText">全部</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M1 1L5 5L9 1" />
+            </svg>
+          </button>
+          <div class="category-options" id="categoryOptions"></div>
         </div>
-        <a class="logo-text" href="./index.html">浅望</a>
+        <button type="button" class="filter-btn active" data-filter="all">全部类型</button>
+        <button type="button" class="filter-btn" data-filter="recent-week">近一周</button>
+        <button type="button" class="filter-btn" data-filter="generate">生成</button>
+        <button type="button" class="filter-btn" data-filter="edit">编辑</button>
+        <button type="button" class="filter-btn" data-filter="favorites">收藏</button>
       </div>
-
-      <nav class="nav" id="siteNav">
-        <a href="#about">关于</a>
-        <a href="#posts">文章</a>
-        <a href="./prompts/">提示词</a>
-        <a href="#projects">项目</a>
-        <a href="#notes">近况</a>
-        <a href="media.html">追番</a>
-        <a href="diagram.html">图表</a>
-        <a href="#contact">联系</a>
-      </nav>
-
-      <div class="header-actions">
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换主题">暗色</button>
-        <button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </header>
-
-    <div class="controls-floating controls-floating--audio">
-      <span>背景音乐</span>
-      <button class="control-btn" id="audioToggle" type="button">音乐播放</button>
     </div>
 
-    <button class="back-to-top" id="backToTop" type="button" aria-label="回到顶部">↑</button>
+    <div class="announcement" id="announcement">
+      <div id="announcementSlides"></div>
+      <div class="announcement-dots" id="announcementDots"></div>
+    </div>
 
-    <main class="home-main">
-      <section class="hero blog-hero">
-        <div class="editorial-shell">
-          <div class="hero-main editorial-card">
-            <div class="hero-kicker-row">
-              <span class="eyebrow">
-                <span class="live-dot" aria-hidden="true"></span>
-                PERSONAL BLOG / CREATIVE LAB
-              </span>
-              <span class="hero-time-chip">现在时间 · <strong id="nowTime">--:--</strong></span>
-            </div>
+    <div id="promptsGrid" class="grid" aria-live="polite"></div>
+  </section>
 
-            <div
-              class="sentence-carousel sentence-carousel--hero sentence-carousel--headline"
-              id="sentenceCarousel"
-              aria-live="polite"
-            >
-              <div class="sentence-track">
-                <h1 class="sentence-item">星光不问赶路人，时光不负有心人。</h1>
-                <h1 class="sentence-item">既然选择了远方，便只顾风雨兼程。</h1>
-                <h1 class="sentence-item">把行动交给现在，把结果交给时间。</h1>
-                <h1 class="sentence-item">你有多自律，就有多自由。</h1>
-                <h1 class="sentence-item">勇敢迈出第一步，答案才会慢慢出现。</h1>
-                <h1 class="sentence-item">每一次认真努力，都会在未来某天回响。</h1>
-                <h1 class="sentence-item">生活明朗，万物可爱，人间值得，未来可期。</h1>
-              </div>
-            </div>
-
-            <p class="intro">
-              这里不是单纯的展示页，而是我的数字工作台。你可以顺着文章阅读，也可以直接进入影视资源库、
-              图表编辑器和实验项目区，快速找到你真正想看的内容。
-            </p>
-
-            <div class="hero-actions">
-              <a class="btn primary" href="#posts">先看精选内容</a>
-              <a class="btn ghost" href="#projects">浏览作品与实验</a>
-              <a class="btn ghost" href="media.html">打开影视资源库</a>
-            </div>
-
-            <div class="hero-chip-list">
-              <span>前端体验</span>
-              <span>内容整理</span>
-              <span>影视追番</span>
-              <span>图表工作流</span>
-              <span>个人创作</span>
-            </div>
-
-            <div class="hero-stats">
-              <div class="stat-item">
-                <span class="stat-number">4</span>
-                <span class="stat-label">核心栏目</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">12</span>
-                <span class="stat-label">持续更新主题</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number" id="siteViewsCount">0</span>
-                <span class="stat-label">累计访问</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number" id="siteDaysCount">0</span>
-                <span class="stat-label">运行天数</span>
-              </div>
-            </div>
-          </div>
-
-          <aside class="hero-rail">
-            <div class="hero-side-card countdown-panel">
-              <p class="rail-label">毕业倒计时</p>
-              <div class="hero-countdown-time" id="gradCountdownLine">--天 --:--:--</div>
-              <p class="rail-note">目标日期：2026 年 6 月 21 日</p>
-              <div class="countdown-bar" aria-hidden="true">
-                <span class="countdown-bar-fill" id="gradProgressFill"></span>
-              </div>
-            </div>
-
-            <div class="hero-side-card about-card">
-              <p class="rail-label">现在在做</p>
-              <ul class="status-list">
-                <li><span>博客内容结构升级</span><em class="status-tag status-tag--active">进行中</em></li>
-                <li><span>图表工作台体验打磨</span><em class="status-tag">持续迭代</em></li>
-                <li><span>影视资源页维护</span><em class="status-tag">长期更新</em></li>
-              </ul>
-            </div>
-
-            <div class="hero-side-card post-card">
-              <p class="rail-label">快捷入口</p>
-              <div class="quick-links">
-                <a class="quick-link" href="media.html"><span>进入影视资源库</span></a>
-                <a class="quick-link" href="diagram.html"><span>进入图表工作台</span></a>
-                <a class="quick-link" href="#contact"><span>联系与合作方式</span></a>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="section about" id="about">
-        <div class="section-heading">
-          <span class="eyebrow">ABOUT</span>
-          <div class="section-title">
-            <h2>一个更像“个人工作室”的博客首页</h2>
-            <p>参考优秀技术博客与个人站点的内容优先布局，把信息层级梳理得更清楚。</p>
-          </div>
-        </div>
-        <div class="about-grid">
-          <article class="about-card reveal-card">
-            <div class="card-icon" aria-hidden="true">01</div>
-            <h3>我关注什么</h3>
-            <p>前端体验、设计细节、内容整理、图表工具与能长期维护的个人数字空间。</p>
-          </article>
-          <article class="about-card reveal-card">
-            <div class="card-icon" aria-hidden="true">02</div>
-            <h3>我想呈现什么</h3>
-            <p>不是单一“炫技”页面，而是让访客一眼知道你写什么、做什么、最近在更新什么。</p>
-          </article>
-          <article class="about-card reveal-card">
-            <div class="card-icon" aria-hidden="true">03</div>
-            <h3>这个博客的定位</h3>
-            <p>一半是作品集，一半是记录本，也是一块持续进化的前端实验场。</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section posts" id="posts">
-        <div class="section-heading">
-          <span class="eyebrow">FEATURED STORIES</span>
-          <div class="section-title">
-            <h2>先看最值得打开的内容</h2>
-            <p>把首页从平均展示改成有主次的阅读入口，让真正重要的内容先被看见。</p>
-          </div>
-        </div>
-        <div class="stories-layout">
-          <article class="post-card story-feature reveal-card">
-            <div class="story-badge">Featured</div>
-            <div class="post-meta">2026.01.26 · 影视资源</div>
-            <h3>影视追番表：热门连载、已完结合集与站内跳转入口</h3>
-            <p>
-              这是博客里最实用的一块内容。我把影视资源整理成了可快速筛选、可直接跳转的入口页，
-              让它不只是一个清单，而是一个真正能持续使用的工具页。
-            </p>
-            <div class="story-footer">
-              <a class="post-link" href="media.html">打开资源页 →</a>
-              <span>适合第一次访问博客时优先浏览</span>
-            </div>
-          </article>
-
-          <div class="story-stack">
-            <article class="post-card reveal-card">
-              <div class="post-meta">2026.01.12 · 创作方法</div>
-              <h3>如何把灵感、笔记和碎片想法整理成可继续写下去的文章</h3>
-              <p>从选题、结构到发布，建立一个更轻但更稳定的个人写作流。</p>
-              <a class="post-link" href="#notes">查看思路 →</a>
-            </article>
-            <article class="post-card reveal-card">
-              <div class="post-meta">2025.12.28 · 前端表达</div>
-              <h3>沉浸式页面不是堆特效，而是让排版、留白和节奏一起讲故事</h3>
-              <p>比起炫，更重要的是读者有没有抓到重点、有没有继续往下看的意愿。</p>
-              <a class="post-link" href="#projects">看项目表达 →</a>
-            </article>
-            <article class="post-card reveal-card">
-              <div class="post-meta">2026.03.16 · 新增功能</div>
-              <h3>把图表工作台直接嵌进博客，形成站内可用的工具入口</h3>
-              <p>这是从个人博客走向个人产品的一步，也让站点更有辨识度。</p>
-              <a class="post-link" href="diagram.html">进入图表页 →</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section projects" id="projects">
-        <div class="section-heading">
-          <span class="eyebrow">PROJECTS</span>
-          <div class="section-title">
-            <h2>作品与实验，不再只是普通卡片</h2>
-            <p>把项目区做得更像产品目录，让人能快速理解每个项目解决什么问题。</p>
-          </div>
-        </div>
-        <div class="projects-grid projects-grid--editorial">
-          <article class="project-card reveal-card">
-            <div class="project-index">01</div>
-            <h3>Flow Atlas</h3>
-            <p>面向流程梳理和团队协作的信息地图，用更清晰的结构把复杂任务拆解出来。</p>
-            <div class="project-tags">
-              <span>工作流可视化</span>
-              <span>产品思维</span>
-            </div>
-          </article>
-          <article class="project-card reveal-card">
-            <div class="project-index">02</div>
-            <h3>Halo Notes</h3>
-            <p>把灵感、笔记和素材变成可追踪的知识链路，适合个人长期积累与回看。</p>
-            <div class="project-tags">
-              <span>知识管理</span>
-              <span>个人系统</span>
-            </div>
-          </article>
-          <article class="project-card reveal-card">
-            <div class="project-index">03</div>
-            <h3>Echo Studio</h3>
-            <p>围绕创作协作与表达效率设计的小型实验项目，关注内容如何被更顺畅地生产。</p>
-            <div class="project-tags">
-              <span>内容协作</span>
-              <span>创作工具</span>
-            </div>
-          </article>
-          <article class="project-card project-card-featured reveal-card">
-            <div class="project-index">04</div>
-            <h3>Diagram Workspace</h3>
-            <p>把图表编辑器做成博客里的独立工作台，支持流程图、UML、ER 和通用架构草图。</p>
-            <div class="project-tags">
-              <span>图表编辑</span>
-              <span>站内工具</span>
-              <span>自托管体验</span>
-            </div>
-            <div class="project-actions">
-              <a class="post-link" href="diagram.html">进入工作台 →</a>
-              <a
-                class="post-link"
-                href="diagram-workspace/index.html?lang=zh&v=20260720a"
-                target="_blank"
-                rel="noopener"
-                >新窗口打开 ↗</a
-              >
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section notes" id="notes">
-        <div class="section-heading">
-          <span class="eyebrow">NOW / NOTES</span>
-          <div class="section-title">
-            <h2>最近在想什么，接下来打算做什么</h2>
-            <p>参考优秀博客常见的 Now 页和简短动态区，把持续更新感放回首页。</p>
-          </div>
-        </div>
-        <div class="notes-board">
-          <div class="notes-column">
-            <article class="note-card reveal-card">
-              <p>好的博客首页，不是一次性把所有内容堆上来，而是先告诉访客“从哪里开始看”。</p>
-            </article>
-            <article class="note-card reveal-card">
-              <p>真正耐看的页面，往往赢在留白、标题层级和每一块内容之间的关系，而不是特效数量。</p>
-            </article>
-            <article class="note-card reveal-card">
-              <p>把资源页、工具页和文章页统一到一个视觉体系里，博客就会更像一个完整产品。</p>
-            </article>
-          </div>
-          <article class="note-card note-card-large reveal-card">
-            <h3>接下来准备继续优化</h3>
-            <ul class="roadmap-list">
-              <li>补一页真正的文章详情模板，让博客从首页延伸到完整阅读体验。</li>
-              <li>给影视资源页和图表页做统一封面与介绍模块，形成站内一致入口。</li>
-              <li>继续压缩视觉噪音，让内容、链接和更新状态更容易被扫到。</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="section contact" id="contact">
-        <div class="section-heading">
-          <span class="eyebrow">CONTACT</span>
-          <div class="section-title">
-            <h2>保持联系，也欢迎一起做点东西</h2>
-            <p>如果你想交流页面设计、博客优化、工具搭建或内容整理，都可以通过下面的方式找到我。</p>
-          </div>
-        </div>
-        <div class="contact-grid">
-          <article class="contact-card contact-card-primary reveal-card">
-            <div class="contact-info">
-              <h3>邮箱</h3>
-              <p><a href="mailto:funjack15500@gmail.com">funjack15500@gmail.com</a></p>
-            </div>
-            <div class="contact-info">
-              <h3>协作方向</h3>
-              <p>博客优化、内容整理、页面设计、前端体验打磨</p>
-            </div>
-          </article>
-          <article class="contact-card reveal-card">
-            <div class="contact-info">
-              <h3>在线状态</h3>
-              <p><span class="status-online">可协作</span> 接受新项目交流，支持远程协作与轻量咨询。</p>
-            </div>
-            <div class="contact-info">
-              <h3>站内入口</h3>
-              <p>影视页、图表页、音乐模块与后续文章页都会继续统一打磨。</p>
-            </div>
-          </article>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <strong>浅望</strong>
-          <span>个人博客与创作实验室</span>
-        </div>
-        <div class="footer-links">
-          <a href="media.html">影视资源</a>
-          <a href="diagram.html">图表工作台</a>
-          <a href="#contact">联系我</a>
-        </div>
-        <p>© 2026 浅望 · Built with care</p>
+  <section id="howto" class="howto">
+    <h2>部署到 GitHub Pages</h2>
+    <div class="howto-grid">
+      <div class="howto-item">
+        <div class="num">1</div>
+        <h3>推送到仓库</h3>
+        <p>把 <code>spark-prompts</code> 目录内容推到 GitHub 仓库（建议仓库名与站点一致）。</p>
       </div>
-    </footer>
+      <div class="howto-item">
+        <div class="num">2</div>
+        <h3>开启 Pages</h3>
+        <p>Settings → Pages → Source 选 Deploy from a branch，分支 main，目录 /root。</p>
+      </div>
+      <div class="howto-item">
+        <div class="num">3</div>
+        <h3>自定义域名</h3>
+        <p>根目录添加 <code>CNAME</code> 文件写入域名，DNS 配置 A/CNAME 指向 GitHub Pages。</p>
+      </div>
+      <div class="howto-item">
+        <div class="num">4</div>
+        <h3>扩展词库</h3>
+        <p>编辑 <code>js/data.js</code> 中的 <code>PROMPT_DATA</code>，保存后刷新即可。</p>
+      </div>
+    </div>
+  </section>
 
-    <script src="./script.js?v=20260720a"></script>
-  </body>
+  <footer class="site-footer">
+    <p>© <span id="footerYear">2026</span> <span id="footerName">Spark Prompts</span> · 纯静态开源友好站点</p>
+    <p>方案文档见 <code>docs/完整方案.md</code> · 可自由二次定制</p>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <div class="modal-cover" id="modalCover">
+        <button type="button" class="modal-close" id="modalClose" aria-label="关闭">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h2 id="modalTitle">标题</h2>
+        <p class="modal-summary" id="modalSummary"></p>
+        <div class="modal-tags" id="modalTags"></div>
+        <div class="prompt-box" id="modalPrompt"></div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-primary" id="copyBtn">复制提示词</button>
+          <button type="button" class="btn btn-secondary" id="modalFavBtn">收藏</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
 </html>
