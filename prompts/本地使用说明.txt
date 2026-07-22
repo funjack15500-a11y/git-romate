@@ -1,0 +1,41 @@
+Spark Prompts — 本地使用说明
+================================
+
+【推荐】方式一：一键本地服务器（双击即可）
+  双击  start.bat
+  - 自动选择 Python / Node / PowerShell 启动本地服务
+  - 浏览器会打开 http://127.0.0.1:8080/
+  - 关闭黑色窗口即停止服务
+
+【最简单】方式二：直接打开 HTML
+  双击  打开网页.bat
+  或直接双击  index.html
+  - 不需要安装任何软件
+  - 页面、搜索、筛选、收藏均可使用
+  - 若「复制提示词」在某些浏览器受限，请改用方式一
+
+【命令行】方式三
+  cd 到本目录后执行：
+    python -m http.server 8080 --bind 127.0.0.1
+  或：
+    powershell -ExecutionPolicy Bypass -File tools\local-server.ps1
+
+【修改提示词】
+  用记事本/VS Code 打开  js\data.js
+  编辑 PROMPT_DATA 数组，保存后刷新浏览器
+
+【目录说明】
+  index.html     网页入口
+  css\           样式
+  js\data.js     提示词数据（主要改这里）
+  js\app.js      交互逻辑
+  start.bat      推荐：本地服务器
+  打开网页.bat   直接打开页面
+  tools\         本地服务器脚本
+
+【完整方案（架构/上线/路线图）】
+  打开 docs\完整方案.md
+
+【以后分享到 GitHub】
+  1. 改 js\config.js 里的 githubUrl
+  2. 见 README.md 与 docs\完整方案.md 第 5 节
