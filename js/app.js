@@ -215,10 +215,16 @@
         return `
         <article class="card ${anime ? "card-anime" : ""}" data-id="${item.id}" tabindex="0" role="button" aria-label="查看 ${escapeHtml(item.title)}">
           <div class="card-cover" style="background:${item.cover}">
+            ${
+              item.preview
+                ? `<img class="card-preview-img" src="${escapeHtml(item.preview)}" alt="" loading="lazy" decoding="async" />`
+                : ""
+            }
             <span class="card-shine" aria-hidden="true"></span>
             <span class="card-corner" aria-hidden="true"></span>
-            <span class="card-emoji">${item.emoji || "✨"}</span>
+            <span class="card-emoji">${item.preview ? "" : item.emoji || "✨"}</span>
             ${anime ? `<span class="card-badge-anime">萌</span>` : ""}
+            ${item.preview ? `<span class="card-badge-img">图</span>` : ""}
             <div class="card-actions">
               <button type="button" class="card-icon-btn card-copy" data-copy="${item.id}" aria-label="快速复制" title="快速复制">${copyIconSvg()}</button>
               <button type="button" class="card-icon-btn card-fav ${fav ? "active" : ""}" data-fav="${item.id}" aria-label="${fav ? "取消收藏" : "收藏"}" title="${fav ? "取消收藏" : "收藏"}">
