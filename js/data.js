@@ -1,7 +1,6 @@
 /**
  * Spark Prompts — 内嵌回退数据（file:// 或 prompts.json 失败时使用）
  * 权威源：根目录 prompts.json
- * 同步命令：node tools/build-data.mjs
  */
 window.PROMPT_DATA = [
   {
@@ -739,13 +738,637 @@ window.PROMPT_DATA = [
     "emoji": "⚠️",
     "summary": "概率×影响矩阵与应对 owner。",
     "prompt": "为项目「{{项目}}」生成风险登记表。\n\n背景：{{背景}}\n截止：{{截止}}\n\n表格列：风险、类别、概率、影响、分数、触发信号、缓解措施、应急计划、Owner、状态。\n至少 8 条，按分数降序。"
+  },
+  {
+    "id": "sakura-moon-sakura",
+    "title": "月下樱庭 · 和风夜景",
+    "category": "图像生成",
+    "tags": [
+      "文生图",
+      "和风",
+      "夜景"
+    ],
+    "type": "generate",
+    "date": "2026-07-23",
+    "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
+    "emoji": "🎨",
+    "summary": "一幅细腻的日系插画：夜晚的神社石阶两侧开满樱花，纸灯笼发出柔和的淡粉色光，远处鸟…",
+    "prompt": "一幅细腻的日系插画：夜晚的神社石阶两侧开满樱花，纸灯笼发出柔和的淡粉色光，远处鸟居隐在薄雾里。镜头略微仰视，空气中有缓慢飘落的花瓣，色调以深紫、樱粉与暖金为主，电影感光影，8k，干净构图。"
+  },
+  {
+    "id": "sakura-q-sticker",
+    "title": "Q版角色 LINE 表情包",
+    "category": "二次元",
+    "tags": [
+      "表情包",
+      "角色",
+      "Q版"
+    ],
+    "type": "generate",
+    "date": "2026-07-22",
+    "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
+    "emoji": "💬",
+    "summary": "把角色做成 9 宫格 LINE 风格 Q 版表情包：开心、无语、害羞、生气、得意…",
+    "prompt": "把角色做成 9 宫格 LINE 风格 Q 版表情包：开心、无语、害羞、生气、得意、哭泣、吃瓜、加班、睡觉。白底、粗线条、高可读面部表情，统一头身比例，适合聊天软件使用。"
+  },
+  {
+    "id": "sakura-glass-ppt",
+    "title": "渐变玻璃风格 PPT 页",
+    "category": "设计",
+    "tags": [
+      "信息图",
+      "PPT",
+      "设计"
+    ],
+    "type": "generate",
+    "date": "2026-07-21",
+    "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
+    "emoji": "📊",
+    "summary": "生成一页渐变玻璃拟态风格的 PPT 封面：标题清晰，副标题简短，背景为深蓝到紫的…",
+    "prompt": "生成一页渐变玻璃拟态风格的 PPT 封面：标题清晰，副标题简短，背景为深蓝到紫的柔和渐变，前景有半透明卡片、细描边与微光点。留白充足，适合商务与科技主题。"
+  },
+  {
+    "id": "sakura-city-poster",
+    "title": "城市海报艺术生成",
+    "category": "图像生成",
+    "tags": [
+      "海报",
+      "文生图",
+      "城市"
+    ],
+    "type": "generate",
+    "date": "2026-07-20",
+    "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
+    "emoji": "🪧",
+    "summary": "为指定城市生成艺术海报：大胆字体排版 + 地标剪影 + 霓虹夜色。竖构图，标题可…",
+    "prompt": "为指定城市生成艺术海报：大胆字体排版 + 地标剪影 + 霓虹夜色。竖构图，标题可替换，整体有独立杂志封面感，避免杂乱元素，突出城市气质。"
+  },
+  {
+    "id": "sakura-recipe-flow",
+    "title": "手绘食谱流程图",
+    "category": "图像生成",
+    "tags": [
+      "美食",
+      "信息图",
+      "插画"
+    ],
+    "type": "generate",
+    "date": "2026-07-19",
+    "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
+    "emoji": "🍱",
+    "summary": "把一道菜的制作过程画成手绘流程图：原料清单、关键步骤、火候提示、装盘建议。温暖纸…",
+    "prompt": "把一道菜的制作过程画成手绘流程图：原料清单、关键步骤、火候提示、装盘建议。温暖纸质背景，可爱图标，阅读路径清晰，中文标注。"
+  },
+  {
+    "id": "sakura-travel-journal",
+    "title": "旅行手账插画页",
+    "category": "图像生成",
+    "tags": [
+      "旅游",
+      "插画",
+      "手账"
+    ],
+    "type": "generate",
+    "date": "2026-07-18",
+    "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
+    "emoji": "✈️",
+    "summary": "生成一页旅行手账风插画：地图碎片、票根、拍立得照片框、手写备注与小贴纸。色调柔和…",
+    "prompt": "生成一页旅行手账风插画：地图碎片、票根、拍立得照片框、手写备注与小贴纸。色调柔和，像从真实旅途里撕下来的一页，适合做 vlog 封面或日记页。"
+  },
+  {
+    "id": "sakura-whiteboard",
+    "title": "论文转教授白板板书",
+    "category": "设计",
+    "tags": [
+      "总结",
+      "教育",
+      "信息图"
+    ],
+    "type": "edit",
+    "date": "2026-07-17",
+    "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
+    "emoji": "📝",
+    "summary": "把复杂论文内容转成大学教授白板板书：左侧核心结论，中间推导步骤，右侧关键公式/概…",
+    "prompt": "把复杂论文内容转成大学教授白板板书：左侧核心结论，中间推导步骤，右侧关键公式/概念。手写感但不潦草，重点用彩色粉笔圈出，适合课堂讲解。"
+  },
+  {
+    "id": "sakura-comic-summary",
+    "title": "文章转漫画风格总结",
+    "category": "二次元",
+    "tags": [
+      "漫画",
+      "总结",
+      "二次元"
+    ],
+    "type": "edit",
+    "date": "2026-07-16",
+    "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
+    "emoji": "📖",
+    "summary": "将长文总结为 4-6 格漫画：每格一个关键观点，角色对话自然，旁白简洁。日系漫画…",
+    "prompt": "将长文总结为 4-6 格漫画：每格一个关键观点，角色对话自然，旁白简洁。日系漫画分镜，黑白为主、网点与速度线适度，结尾给行动建议。"
+  },
+  {
+    "id": "sakura-polaroid-90s",
+    "title": "90 年代宝丽来派对感",
+    "category": "图像编辑",
+    "tags": [
+      "滤镜",
+      "写真",
+      "复古"
+    ],
+    "type": "edit",
+    "date": "2026-07-15",
+    "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
+    "emoji": "🎞️",
+    "summary": "把照片转成 90 年代末宝丽来派对氛围：轻微漏光、偏暖色、颗粒感、边框留白，人物…",
+    "prompt": "把照片转成 90 年代末宝丽来派对氛围：轻微漏光、偏暖色、颗粒感、边框留白，人物表情自然松弛，像从旧相册里翻出的一张。"
+  },
+  {
+    "id": "sakura-blindbox-avatar",
+    "title": "3D 盲盒风头像",
+    "category": "二次元",
+    "tags": [
+      "头像",
+      "3D",
+      "Q版"
+    ],
+    "type": "generate",
+    "date": "2026-07-14",
+    "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
+    "emoji": "🧊",
+    "summary": "生成 3D 盲盒风格头像：大头身子、柔软材质、干净棚拍光、纯色背景。保留人物识别…",
+    "prompt": "生成 3D 盲盒风格头像：大头身子、柔软材质、干净棚拍光、纯色背景。保留人物识别特征（发型/眼镜/配饰），可爱但不幼稚，适合社交媒体头像。"
+  },
+  {
+    "id": "sakura-ui-wire-to-hi",
+    "title": "UI 手绘稿转高保真",
+    "category": "设计",
+    "tags": [
+      "UI",
+      "产品",
+      "设计"
+    ],
+    "type": "edit",
+    "date": "2026-07-13",
+    "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
+    "emoji": "📱",
+    "summary": "将手绘线框升级为高保真移动端界面：统一组件间距、现代字体层级、柔和阴影与品牌色。…",
+    "prompt": "将手绘线框升级为高保真移动端界面：统一组件间距、现代字体层级、柔和阴影与品牌色。输出整洁界面，不改变原有信息架构。"
+  },
+  {
+    "id": "sakura-myth-q-group",
+    "title": "中国神话 Q 版角色组图",
+    "category": "二次元",
+    "tags": [
+      "插画",
+      "神话",
+      "Q版"
+    ],
+    "type": "generate",
+    "date": "2026-07-12",
+    "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
+    "emoji": "🖌️",
+    "summary": "绘制一组中国神话角色的 Q 版组合插画：统一头身与配色体系，服饰细节可辨认，背景…",
+    "prompt": "绘制一组中国神话角色的 Q 版组合插画：统一头身与配色体系，服饰细节可辨认，背景是祥云与淡金纹样。整体喜庆又现代，适合周边与壁纸。"
+  },
+  {
+    "id": "sakura-room-makeover",
+    "title": "户型图生成全屋方案",
+    "category": "设计",
+    "tags": [
+      "装修",
+      "设计",
+      "3D"
+    ],
+    "type": "edit",
+    "date": "2026-07-11",
+    "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
+    "emoji": "🏠",
+    "summary": "根据户型图给出全屋软装方案示意：动线说明、主色板、家具摆放与灯光建议。输出简洁图…",
+    "prompt": "根据户型图给出全屋软装方案示意：动线说明、主色板、家具摆放与灯光建议。输出简洁图解 + 关键区域效果描述，风格可选日式/北欧/原木。"
+  },
+  {
+    "id": "sakura-promo-cover",
+    "title": "自媒体爆款封面",
+    "category": "图像生成",
+    "tags": [
+      "封面",
+      "海报",
+      "运营"
+    ],
+    "type": "generate",
+    "date": "2026-07-10",
+    "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
+    "emoji": "🔥",
+    "summary": "生成高点击率自媒体封面：大标题不超过 12 字，强对比色，主体清晰，角落放小卖点…",
+    "prompt": "生成高点击率自媒体封面：大标题不超过 12 字，强对比色，主体清晰，角落放小卖点标签。竖版 3:4，避免过度堆字，适合 B 站/小红书。"
+  },
+  {
+    "id": "sakura-pet-meme",
+    "title": "宠物表情包制作器",
+    "category": "二次元",
+    "tags": [
+      "表情包",
+      "宠物",
+      "趣味"
+    ],
+    "type": "edit",
+    "date": "2026-07-09",
+    "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
+    "emoji": "💬",
+    "summary": "基于宠物照片生成 6 张表情包：求摸摸、傲娇、饿了、装睡、委屈、出击。保留原宠物…",
+    "prompt": "基于宠物照片生成 6 张表情包：求摸摸、傲娇、饿了、装睡、委屈、出击。保留原宠物特征，夸张表情但不过度变形，底部可加短中文。"
+  },
+  {
+    "id": "sakura-coser-photo",
+    "title": "动漫角色真实感 COS 写真",
+    "category": "二次元",
+    "tags": [
+      "写真",
+      "角色",
+      "摄影"
+    ],
+    "type": "edit",
+    "date": "2026-07-08",
+    "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
+    "emoji": "📷",
+    "summary": "把角色设定转成超写实 COS 摄影棚拍：准确服装结构、自然皮肤质感、电影级布光。…",
+    "prompt": "把角色设定转成超写实 COS 摄影棚拍：准确服装结构、自然皮肤质感、电影级布光。半身构图，背景简洁，强调角色辨识度与高级质感。"
+  },
+  {
+    "id": "sakura-isometric-office",
+    "title": "3D 等距家庭办公场景",
+    "category": "图像生成",
+    "tags": [
+      "3D",
+      "插画",
+      "场景"
+    ],
+    "type": "generate",
+    "date": "2026-07-07",
+    "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
+    "emoji": "📦",
+    "summary": "3D 等距视角的家庭办公小场景：书桌、绿植、显示器、咖啡与窗光。柔和全局光，干净…",
+    "prompt": "3D 等距视角的家庭办公小场景：书桌、绿植、显示器、咖啡与窗光。柔和全局光，干净材质，像可收藏的微缩模型，适合产品介绍配图。"
+  },
+  {
+    "id": "sakura-tactical-collage",
+    "title": "战术监控风拼贴图",
+    "category": "图像编辑",
+    "tags": [
+      "拼贴",
+      "编辑",
+      "风格"
+    ],
+    "type": "edit",
+    "date": "2026-07-06",
+    "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
+    "emoji": "🗂️",
+    "summary": "将多张素材拼成战术监控风格拼贴：时间戳、坐标框、扫描线、分屏标注。冷色调，信息密…",
+    "prompt": "将多张素材拼成战术监控风格拼贴：时间戳、坐标框、扫描线、分屏标注。冷色调，信息密度高但不乱，适合赛事高光或分析封面。"
+  },
+  {
+    "id": "sakura-kids-crayon",
+    "title": "儿童绘本蜡笔插画",
+    "category": "图像生成",
+    "tags": [
+      "插画",
+      "绘本",
+      "可爱"
+    ],
+    "type": "generate",
+    "date": "2026-07-05",
+    "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
+    "emoji": "🖌️",
+    "summary": "用儿童图书蜡笔风格表现故事场景：粗笔触、明亮但不过曝、角色圆润友善。构图留白给文…",
+    "prompt": "用儿童图书蜡笔风格表现故事场景：粗笔触、明亮但不过曝、角色圆润友善。构图留白给文字，适合 3-6 岁读者的绘本内页。"
+  },
+  {
+    "id": "sakura-knowledge-map",
+    "title": "概念可视化知识地图",
+    "category": "设计",
+    "tags": [
+      "总结",
+      "信息图",
+      "学习"
+    ],
+    "type": "generate",
+    "date": "2026-07-04",
+    "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
+    "emoji": "📝",
+    "summary": "把一个复杂概念画成知识地图：中心主题 + 分支要点 + 关系箭头 + 简短注释。…",
+    "prompt": "把一个复杂概念画成知识地图：中心主题 + 分支要点 + 关系箭头 + 简短注释。扁平插画风，颜色分区明确，适合复习笔记与课堂投影。"
+  },
+  {
+    "id": "sakura-film-still",
+    "title": "胶片感人像写真",
+    "category": "图像编辑",
+    "tags": [
+      "写真",
+      "滤镜",
+      "人像"
+    ],
+    "type": "edit",
+    "date": "2026-07-23",
+    "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
+    "emoji": "📷",
+    "summary": "生成胶片感人像：轻微暗角、细腻颗粒、自然皮肤、柔和逆光。情绪安静，构图有呼吸感，…",
+    "prompt": "生成胶片感人像：轻微暗角、细腻颗粒、自然皮肤、柔和逆光。情绪安静，构图有呼吸感，像独立电影剧照，而不是网红滤镜。"
+  },
+  {
+    "id": "sakura-ecommerce-model",
+    "title": "电商模特试穿展示",
+    "category": "图像编辑",
+    "tags": [
+      "电商",
+      "服装",
+      "产品"
+    ],
+    "type": "generate",
+    "date": "2026-07-22",
+    "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
+    "emoji": "🛍️",
+    "summary": "制作干净的电商试穿图：人物姿态自然，服装版型清楚，背景浅色，光影统一。可生成正侧…",
+    "prompt": "制作干净的电商试穿图：人物姿态自然，服装版型清楚，背景浅色，光影统一。可生成正侧背面三视图，突出面料质感与剪裁。"
+  },
+  {
+    "id": "sakura-menu-native",
+    "title": "原生感菜单翻译卡",
+    "category": "写作与对话",
+    "tags": [
+      "旅游",
+      "翻译",
+      "实用"
+    ],
+    "type": "edit",
+    "date": "2026-07-21",
+    "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
+    "emoji": "✈️",
+    "summary": "把外语菜单转成原生感双语卡片：保留菜名风格，给出口味、主要食材与过敏提示。版式像…",
+    "prompt": "把外语菜单转成原生感双语卡片：保留菜名风格，给出口味、主要食材与过敏提示。版式像当地餐厅手写菜单，信息清楚不机翻腔。"
+  },
+  {
+    "id": "sakura-character-sheet",
+    "title": "专业级 2D 角色设定图",
+    "category": "二次元",
+    "tags": [
+      "角色",
+      "设定",
+      "二次元"
+    ],
+    "type": "generate",
+    "date": "2026-07-20",
+    "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
+    "emoji": "👤",
+    "summary": "输出角色设定三视图 + 表情差分 + 配色标注。线稿干净，服装结构合理，细节注释…",
+    "prompt": "输出角色设定三视图 + 表情差分 + 配色标注。线稿干净，服装结构合理，细节注释清晰，适合后续动画或插画延展。"
+  },
+  {
+    "id": "write-wechat-official",
+    "title": "公众号长文结构",
+    "category": "写作与对话",
+    "tags": [
+      "公众号",
+      "结构",
+      "运营"
+    ],
+    "type": "generate",
+    "date": "2026-07-23",
+    "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
+    "emoji": "📰",
+    "summary": "从选题到结尾 CTA 的完整公众号成稿框架。",
+    "prompt": "请写一篇公众号文章：\n主题：{{主题}}\n受众：{{受众}}\n风格：{{风格}}\n\n输出：\n1. 标题 5 个（含数字/反差/痛点）\n2. 开头 100 字钩子\n3. 正文小标题结构 + 每段要点\n4. 金句 3 条\n5. 结尾引导关注/转发\n6. 封面文案建议\n要求：口语可读，少空话，信息密度高。"
+  },
+  {
+    "id": "write-script-shortvideo",
+    "title": "短视频分镜脚本",
+    "category": "写作与对话",
+    "tags": [
+      "短视频",
+      "脚本",
+      "分镜"
+    ],
+    "type": "generate",
+    "date": "2026-07-22",
+    "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
+    "emoji": "🎬",
+    "summary": "15–60 秒口播+画面提示的完整分镜表。",
+    "prompt": "为主题「{{主题}}」写短视频脚本（时长 {{秒}} 秒，平台 {{平台}}）。\n\n表格列：时间轴 | 画面 | 口播 | 字幕 | 音效/BGM\n要求：前 3 秒钩子；中段信息点清晰；结尾 CTA；口语自然。"
+  },
+  {
+    "id": "code-regex-helper",
+    "title": "正则表达式助手",
+    "category": "编程",
+    "tags": [
+      "正则",
+      "文本",
+      "工具"
+    ],
+    "type": "generate",
+    "date": "2026-07-21",
+    "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
+    "emoji": "🔎",
+    "summary": "根据需求写出可测的正则与解释。",
+    "prompt": "需求：{{描述}}\n语言/引擎：{{引擎}}\n\n请给出：\n1. 正则表达式\n2. 逐段解释\n3. 匹配/不匹配示例各 3 个\n4. 常见坑\n5. 可直接运行的测试代码片段"
+  },
+  {
+    "id": "code-git-message",
+    "title": "Git Commit 信息",
+    "category": "编程",
+    "tags": [
+      "Git",
+      "规范",
+      "协作"
+    ],
+    "type": "generate",
+    "date": "2026-07-20",
+    "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
+    "emoji": "📎",
+    "summary": "按 Conventional Commits 写清晰提交说明。",
+    "prompt": "根据改动描述生成 commit message（Conventional Commits）：\n改动：{{diff摘要}}\n\n输出 3 个备选：\n- type(scope): subject\n- body（为何改）\n- footer（破坏性变更如有）\n中文或英文按用户语言。"
+  },
+  {
+    "id": "biz-prd-lite",
+    "title": "轻量 PRD 模板",
+    "category": "效率办公",
+    "tags": [
+      "PRD",
+      "产品",
+      "需求"
+    ],
+    "type": "generate",
+    "date": "2026-07-19",
+    "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
+    "emoji": "📄",
+    "summary": "把模糊需求写成可评审的一页纸 PRD。",
+    "prompt": "把以下想法写成轻量 PRD：\n{{想法}}\n\n结构：背景与目标、用户故事、范围 In/Out、主流程、边界与异常、数据与埋点、验收标准、开放问题。语言简洁可执行。"
+  },
+  {
+    "id": "biz-interview-prep",
+    "title": "面试题拆解",
+    "category": "效率办公",
+    "tags": [
+      "面试",
+      "准备",
+      "表达"
+    ],
+    "type": "generate",
+    "date": "2026-07-18",
+    "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
+    "emoji": "🎤",
+    "summary": "STAR 法则拆面试题并给示范回答。",
+    "prompt": "岗位：{{岗位}}\n问题：{{问题}}\n我的经历要点：{{要点}}\n\n请用 STAR 输出：示范回答、可追问点、避坑提醒、30 秒精简版。"
+  },
+  {
+    "id": "img-pixel-art",
+    "title": "像素风角色",
+    "category": "图像生成",
+    "tags": [
+      "像素",
+      "游戏",
+      "角色"
+    ],
+    "type": "generate",
+    "date": "2026-07-23",
+    "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
+    "emoji": "👾",
+    "summary": "复古游戏像素立绘，干净色板可当素材。",
+    "prompt": "16-bit pixel art character of [CHARACTER], side view idle pose, limited color palette, clean pixels, no anti-aliasing blur, game asset style, transparent-looking background, crisp edges, nostalgic SNES vibe --ar 1:1"
+  },
+  {
+    "id": "img-cyberpunk-street",
+    "title": "赛博朋克街景",
+    "category": "图像生成",
+    "tags": [
+      "赛博朋克",
+      "街景",
+      "夜景"
+    ],
+    "type": "generate",
+    "date": "2026-07-22",
+    "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
+    "emoji": "🌃",
+    "summary": "霓虹雨夜街道，适合壁纸与概念图。",
+    "prompt": "Cyberpunk rainy street at night, neon signs in Japanese and Chinese, wet reflections, dense crowd silhouettes, volumetric fog, cinematic wide shot, teal and magenta lights, ultra detailed, blade runner atmosphere --ar 16:9"
+  },
+  {
+    "id": "anime-vtuber-model",
+    "title": "VTuber 立绘设定",
+    "category": "二次元",
+    "tags": [
+      "VTuber",
+      "立绘",
+      "直播"
+    ],
+    "type": "generate",
+    "date": "2026-07-23",
+    "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
+    "emoji": "📺",
+    "summary": "可做 Live2D 的半身立绘与配色说明。",
+    "prompt": "Anime VTuber half-body illustration of [NAME], expressive eyes, signature hair accessory, streaming-friendly bright palette, clean lines, soft cel shading, transparent-ish simple background, high readability at small size, official art --ar 3:4"
+  },
+  {
+    "id": "anime-storyboard",
+    "title": "日系分镜脚本",
+    "category": "二次元",
+    "tags": [
+      "分镜",
+      "动画",
+      "脚本"
+    ],
+    "type": "generate",
+    "date": "2026-07-21",
+    "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
+    "emoji": "🎞️",
+    "summary": "按镜头表输出分镜描述与台词。",
+    "prompt": "把剧情「{{剧情}}」写成 8-12 个日系动画分镜。\n每镜：镜号、景别、镜头运动、画面描述、台词/SE、时长建议。\n风格参考：{{风格}}。结尾给一张情绪曲线。"
+  },
+  {
+    "id": "edit-style-transfer",
+    "title": "画风迁移",
+    "category": "图像编辑",
+    "tags": [
+      "风格迁移",
+      "编辑",
+      "插画"
+    ],
+    "type": "edit",
+    "date": "2026-07-20",
+    "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
+    "emoji": "🎭",
+    "summary": "保留构图与主体，迁移到指定画风。",
+    "prompt": "Apply style transfer to the uploaded image: keep composition, pose, and identity. Restyle as [STYLE] (e.g. ghibli / ukiyo-e / watercolor). Preserve main subjects, no new objects, cohesive lighting and palette."
+  },
+  {
+    "id": "design-icon-set",
+    "title": "统一图标套件",
+    "category": "设计",
+    "tags": [
+      "图标",
+      "UI",
+      "套件"
+    ],
+    "type": "generate",
+    "date": "2026-07-17",
+    "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
+    "emoji": "⬡",
+    "summary": "同一套描边与圆角的业务图标清单。",
+    "prompt": "为功能模块 {{模块列表}} 设计统一线性图标规范：2px 描边、圆角、24px 网格、视觉重心一致。输出每个图标的隐喻说明 + SVG 路径思路，避免过于具象。"
+  },
+  {
+    "id": "write-resume-bullet",
+    "title": "简历项目量化",
+    "category": "效率办公",
+    "tags": [
+      "简历",
+      "求职",
+      "量化"
+    ],
+    "type": "edit",
+    "date": "2026-07-23",
+    "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
+    "emoji": "🧾",
+    "summary": "把流水账经历改成可量化的简历 bullet。",
+    "prompt": "将下列经历改成简历 bullet（中英文各一版）：\n{{经历}}\n\n要求：动作动词开头；尽量量化结果；每条一行；去掉虚词；按影响力排序。"
+  },
+  {
+    "id": "write-debate-sides",
+    "title": "正反方辩论提纲",
+    "category": "写作与对话",
+    "tags": [
+      "辩论",
+      "论证",
+      "结构"
+    ],
+    "type": "generate",
+    "date": "2026-07-16",
+    "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
+    "emoji": "⚖️",
+    "summary": "同一议题的双方论点、反驳与总结。",
+    "prompt": "议题：{{议题}}\n请输出：正方 5 论点 + 反方 5 论点 + 互相反驳 + 各自 1 分钟总结陈词。要求论据具体，避免人身攻击。"
+  },
+  {
+    "id": "code-changelog",
+    "title": "Changelog 撰写",
+    "category": "编程",
+    "tags": [
+      "发布",
+      "文档",
+      "版本"
+    ],
+    "type": "generate",
+    "date": "2026-07-15",
+    "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
+    "emoji": "📦",
+    "summary": "按 Keep a Changelog 风格整理版本说明。",
+    "prompt": "根据提交/PR 列表写 Changelog（版本 {{version}}）：\n{{列表}}\n\n分类：Added / Changed / Fixed / Removed / Security\n面向用户可读，技术细节可折叠为「开发者注」。"
   }
 ];
 
 window.ANNOUNCEMENTS = [
   {
-    "title": "欢迎来到二次元友好词库 🌸",
-    "body": "粉紫光晕、樱花与星光已就绪。点「二次元专区」直达角色与场景提示词。"
+    "title": "词库已更新 · 共 85 条",
+    "body": "已并入樱词示例与实用模板，支持搜索「月下」「盲盒」「公众号」等关键词。"
   },
   {
     "title": "快捷键",
