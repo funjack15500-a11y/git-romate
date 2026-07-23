@@ -1,5 +1,5 @@
 /**
- * 灵动词库 — 内嵌回退数据（已过滤 NSFW）
+ * 灵动词库 — 内嵌回退数据
  */
 window.PROMPT_DATA = [
   {
@@ -12,7 +12,7 @@ window.PROMPT_DATA = [
       "光影"
     ],
     "type": "generate",
-    "date": "2026-07-18",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "🎬",
     "summary": "戏剧性光影与浅景深，适合角色海报与概念人像。",
@@ -28,7 +28,7 @@ window.PROMPT_DATA = [
       "极简"
     ],
     "type": "generate",
-    "date": "2026-07-15",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #94a3b8 100%)",
     "emoji": "📦",
     "summary": "干净背景与柔光，适合电商主图与品牌展示。",
@@ -44,7 +44,7 @@ window.PROMPT_DATA = [
       "等距"
     ],
     "type": "generate",
-    "date": "2026-07-10",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🏙️",
     "summary": "俯视等距科幻城市场景，细节丰富可作壁纸。",
@@ -60,7 +60,7 @@ window.PROMPT_DATA = [
       "水彩"
     ],
     "type": "generate",
-    "date": "2026-07-08",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #fef3c7 0%, #fdba74 40%, #f472b6 100%)",
     "emoji": "🍜",
     "summary": "手绘水彩风格菜品，适合菜单与内容配图。",
@@ -76,7 +76,7 @@ window.PROMPT_DATA = [
       "矢量感"
     ],
     "type": "generate",
-    "date": "2026-07-19",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "✒️",
     "summary": "简洁可缩放的标志概念，适合早期品牌探索。",
@@ -92,7 +92,7 @@ window.PROMPT_DATA = [
       "摄影"
     ],
     "type": "generate",
-    "date": "2026-07-21",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c1222 0%, #1e3a5f 50%, #f59e0b 100%)",
     "emoji": "🌃",
     "summary": "城市建筑光轨与玻璃反光，适合氛围海报。",
@@ -108,7 +108,7 @@ window.PROMPT_DATA = [
       "角色"
     ],
     "type": "generate",
-    "date": "2026-07-17",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #312e81 0%, #818cf8 50%, #fbcfe8 100%)",
     "emoji": "🖌️",
     "summary": "现代扁平矢量角色，适合 App 与落地页。",
@@ -124,7 +124,7 @@ window.PROMPT_DATA = [
       "纹理"
     ],
     "type": "generate",
-    "date": "2026-07-06",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #4ade80 50%, #ecfccb 100%)",
     "emoji": "🍃",
     "summary": "叶脉与水珠细节，适合壁纸与材质参考。",
@@ -140,7 +140,7 @@ window.PROMPT_DATA = [
       "UI"
     ],
     "type": "generate",
-    "date": "2026-07-22",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 45%, #a5b4fc 100%)",
     "emoji": "🧊",
     "summary": "柔和 3D 图标，适合桌面与营销素材。",
@@ -156,7 +156,7 @@ window.PROMPT_DATA = [
       "风格统一"
     ],
     "type": "edit",
-    "date": "2026-07-12",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #064e3b 0%, #10b981 50%, #a7f3d0 100%)",
     "emoji": "✨",
     "summary": "保留主体，替换场景并匹配光影色调。",
@@ -172,7 +172,7 @@ window.PROMPT_DATA = [
       "修复"
     ],
     "type": "edit",
-    "date": "2026-07-05",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #bfdbfe 100%)",
     "emoji": "🔍",
     "summary": "提升清晰度与纹理，避免过度锐化。",
@@ -188,7 +188,7 @@ window.PROMPT_DATA = [
       "LUT"
     ],
     "type": "edit",
-    "date": "2026-07-14",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #431407 0%, #ea580c 45%, #0ea5e9 100%)",
     "emoji": "🎚️",
     "summary": "统一色调与对比，做出片感而不破坏主体。",
@@ -204,7 +204,7 @@ window.PROMPT_DATA = [
       "编辑"
     ],
     "type": "edit",
-    "date": "2026-07-20",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #c026d3 50%, #f5d0fe 100%)",
     "emoji": "🪞",
     "summary": "改服装/场景时锁定脸部身份与五官。",
@@ -220,7 +220,7 @@ window.PROMPT_DATA = [
       "补全"
     ],
     "type": "edit",
-    "date": "2026-07-09",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1f2937 0%, #6b7280 50%, #e5e7eb 100%)",
     "emoji": "🧹",
     "summary": "干净移除指定物体并自然补全背景。",
@@ -236,7 +236,7 @@ window.PROMPT_DATA = [
       "通用"
     ],
     "type": "generate",
-    "date": "2026-07-20",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4c1d95 0%, #7c3aed 50%, #c4b5fd 100%)",
     "emoji": "🤖",
     "summary": "结构化、可靠的默认系统提示词模板。",
@@ -252,7 +252,7 @@ window.PROMPT_DATA = [
       "文案"
     ],
     "type": "generate",
-    "date": "2026-07-16",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📕",
     "summary": "口语化、有钩子、带话题标签的种草结构。",
@@ -268,7 +268,7 @@ window.PROMPT_DATA = [
       "大纲"
     ],
     "type": "generate",
-    "date": "2026-07-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "📝",
     "summary": "从主题生成可直接开写的深度文章大纲。",
@@ -284,7 +284,7 @@ window.PROMPT_DATA = [
       "双语"
     ],
     "type": "edit",
-    "date": "2026-07-07",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "🌐",
     "summary": "保留原意，输出自然地道的目标语言版本。",
@@ -300,7 +300,7 @@ window.PROMPT_DATA = [
       "沟通"
     ],
     "type": "generate",
-    "date": "2026-07-13",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #134e4a 0%, #14b8a6 50%, #99f6e4 100%)",
     "emoji": "✉️",
     "summary": "礼貌清晰、有行动号召的中英文邮件。",
@@ -316,7 +316,7 @@ window.PROMPT_DATA = [
       "创作"
     ],
     "type": "generate",
-    "date": "2026-07-04",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #db2777 50%, #fce7f3 100%)",
     "emoji": "📖",
     "summary": "三幕式节拍，适合短视频脚本与短篇。",
@@ -332,7 +332,7 @@ window.PROMPT_DATA = [
       "润色"
     ],
     "type": "edit",
-    "date": "2026-07-11",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fef3c7 100%)",
     "emoji": "✂️",
     "summary": "砍掉水分，保留信息密度与语气。",
@@ -348,7 +348,7 @@ window.PROMPT_DATA = [
       "清单"
     ],
     "type": "generate",
-    "date": "2026-07-14",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🧑‍💻",
     "summary": "系统性审查 PR，覆盖正确性与可维护性。",
@@ -364,7 +364,7 @@ window.PROMPT_DATA = [
       "学习"
     ],
     "type": "generate",
-    "date": "2026-07-02",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "📖",
     "summary": "把复杂代码讲清楚，并生成教学向注释。",
@@ -380,7 +380,7 @@ window.PROMPT_DATA = [
       "排查"
     ],
     "type": "generate",
-    "date": "2026-07-18",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7f1d1d 0%, #ef4444 50%, #fecaca 100%)",
     "emoji": "🐛",
     "summary": "从现象到假设验证，结构化排查问题。",
@@ -396,7 +396,7 @@ window.PROMPT_DATA = [
       "后端"
     ],
     "type": "generate",
-    "date": "2026-07-10",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #2563eb 50%, #93c5fd 100%)",
     "emoji": "🔌",
     "summary": "资源建模、错误码与分页约定。",
@@ -412,7 +412,7 @@ window.PROMPT_DATA = [
       "覆盖"
     ],
     "type": "generate",
-    "date": "2026-07-15",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "🧪",
     "summary": "覆盖边界与异常路径的测试用例。",
@@ -428,7 +428,7 @@ window.PROMPT_DATA = [
       "技术债"
     ],
     "type": "generate",
-    "date": "2026-07-08",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #312e81 0%, #8b5cf6 50%, #ddd6fe 100%)",
     "emoji": "🧱",
     "summary": "小步安全重构，可回滚、可验证。",
@@ -444,7 +444,7 @@ window.PROMPT_DATA = [
       "体验"
     ],
     "type": "generate",
-    "date": "2026-07-09",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🎨",
     "summary": "从层级、对比、无障碍与一致性做界面评审。",
@@ -460,7 +460,7 @@ window.PROMPT_DATA = [
       "规范"
     ],
     "type": "generate",
-    "date": "2026-07-16",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f766e 0%, #2dd4bf 50%, #ccfbf1 100%)",
     "emoji": "📐",
     "summary": "颜色、字号、间距与组件层级约定。",
@@ -476,7 +476,7 @@ window.PROMPT_DATA = [
       "产品"
     ],
     "type": "generate",
-    "date": "2026-07-03",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e3a8a 0%, #60a5fa 50%, #dbeafe 100%)",
     "emoji": "🗺️",
     "summary": "从目标到完成态的关键路径与异常分支。",
@@ -492,7 +492,7 @@ window.PROMPT_DATA = [
       "行动项"
     ],
     "type": "generate",
-    "date": "2026-07-11",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "📋",
     "summary": "从杂乱笔记提炼决议与可追踪行动项。",
@@ -508,7 +508,7 @@ window.PROMPT_DATA = [
       "管理"
     ],
     "type": "generate",
-    "date": "2026-06-20",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #713f12 0%, #eab308 50%, #fef08a 100%)",
     "emoji": "🎯",
     "summary": "把模糊目标写成可衡量的 O 与 KR。",
@@ -524,7 +524,7 @@ window.PROMPT_DATA = [
       "进度"
     ],
     "type": "generate",
-    "date": "2026-07-19",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e293b 0%, #64748b 50%, #e2e8f0 100%)",
     "emoji": "📅",
     "summary": "本周进展、风险、下周计划一页说清。",
@@ -540,7 +540,7 @@ window.PROMPT_DATA = [
       "HR"
     ],
     "type": "generate",
-    "date": "2026-07-07",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #312e81 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "💼",
     "summary": "职责清晰、要求分层、有吸引力的职位描述。",
@@ -556,7 +556,7 @@ window.PROMPT_DATA = [
       "决策"
     ],
     "type": "generate",
-    "date": "2026-07-05",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #38bdf8 50%, #e0f2fe 100%)",
     "emoji": "📊",
     "summary": "围绕业务问题的 SWOT 与行动建议。",
@@ -572,7 +572,7 @@ window.PROMPT_DATA = [
       "插画"
     ],
     "type": "generate",
-    "date": "2026-07-22",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🌸",
     "summary": "人设卡 + 文生图提示词，方便统一画风。",
@@ -588,7 +588,7 @@ window.PROMPT_DATA = [
       "氛围"
     ],
     "type": "generate",
-    "date": "2026-07-21",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #831843 0%, #f472b6 45%, #fce7f3 100%)",
     "emoji": "🌺",
     "summary": "春日樱花与光粒子，适合壁纸与封面。",
@@ -604,7 +604,7 @@ window.PROMPT_DATA = [
       "贴纸"
     ],
     "type": "generate",
-    "date": "2026-07-18",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #5b21b6 0%, #a78bfa 50%, #fbcfe8 100%)",
     "emoji": "😺",
     "summary": "一套可爱 Q 版情绪贴纸提示词。",
@@ -620,7 +620,7 @@ window.PROMPT_DATA = [
       "科幻"
     ],
     "type": "generate",
-    "date": "2026-07-12",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #6366f1 40%, #f472b6 100%)",
     "emoji": "🤖",
     "summary": "精细机甲部件与角色融合的半身立绘。",
@@ -636,7 +636,7 @@ window.PROMPT_DATA = [
       "角色扮演"
     ],
     "type": "generate",
-    "date": "2026-07-17",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #701a75 0%, #e879f9 50%, #fae8ff 100%)",
     "emoji": "💬",
     "summary": "按人设口吻回复，适合角色卡与剧情。",
@@ -652,7 +652,7 @@ window.PROMPT_DATA = [
       "编辑"
     ],
     "type": "edit",
-    "date": "2026-07-13",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #9d174d 0%, #fb7185 50%, #fecdd3 100%)",
     "emoji": "🎀",
     "summary": "保留线稿结构，柔和赛璐璐上色。",
@@ -700,7 +700,7 @@ window.PROMPT_DATA = [
       "数据库"
     ],
     "type": "generate",
-    "date": "2026-07-21",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #bfdbfe 100%)",
     "emoji": "🗄️",
     "summary": "索引、执行计划与改写建议。",
@@ -716,7 +716,7 @@ window.PROMPT_DATA = [
       "转化"
     ],
     "type": "generate",
-    "date": "2026-07-22",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #831843 0%, #f43f5e 50%, #fecdd3 100%)",
     "emoji": "🚀",
     "summary": "Hero 到 CTA 的完整转化文案骨架。",
@@ -732,7 +732,7 @@ window.PROMPT_DATA = [
       "清单"
     ],
     "type": "generate",
-    "date": "2026-07-20",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7f1d1d 0%, #f87171 50%, #fee2e2 100%)",
     "emoji": "⚠️",
     "summary": "概率×影响矩阵与应对 owner。",
@@ -764,7 +764,7 @@ window.PROMPT_DATA = [
       "Q版"
     ],
     "type": "generate",
-    "date": "2026-07-22",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "💬",
     "summary": "把角色做成 9 宫格 LINE 风格 Q 版表情包：开心、无语、害羞、生气、得意…",
@@ -780,7 +780,7 @@ window.PROMPT_DATA = [
       "设计"
     ],
     "type": "generate",
-    "date": "2026-07-21",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "📊",
     "summary": "生成一页渐变玻璃拟态风格的 PPT 封面：标题清晰，副标题简短，背景为深蓝到紫的…",
@@ -796,7 +796,7 @@ window.PROMPT_DATA = [
       "城市"
     ],
     "type": "generate",
-    "date": "2026-07-20",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🪧",
     "summary": "为指定城市生成艺术海报：大胆字体排版 + 地标剪影 + 霓虹夜色。竖构图，标题可…",
@@ -813,7 +813,7 @@ window.PROMPT_DATA = [
       "插画"
     ],
     "type": "generate",
-    "date": "2026-07-19",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🍱",
     "summary": "把一道菜的制作过程画成手绘流程图：原料清单、关键步骤、火候提示、装盘建议。温暖纸…",
@@ -829,7 +829,7 @@ window.PROMPT_DATA = [
       "手账"
     ],
     "type": "generate",
-    "date": "2026-07-18",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "✈️",
     "summary": "生成一页旅行手账风插画：地图碎片、票根、拍立得照片框、手写备注与小贴纸。色调柔和…",
@@ -845,7 +845,7 @@ window.PROMPT_DATA = [
       "信息图"
     ],
     "type": "edit",
-    "date": "2026-07-17",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "📝",
     "summary": "把复杂论文内容转成大学教授白板板书：左侧核心结论，中间推导步骤，右侧关键公式/概…",
@@ -861,7 +861,7 @@ window.PROMPT_DATA = [
       "二次元"
     ],
     "type": "edit",
-    "date": "2026-07-16",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "📖",
     "summary": "将长文总结为 4-6 格漫画：每格一个关键观点，角色对话自然，旁白简洁。日系漫画…",
@@ -877,7 +877,7 @@ window.PROMPT_DATA = [
       "复古"
     ],
     "type": "edit",
-    "date": "2026-07-15",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🎞️",
     "summary": "把照片转成 90 年代末宝丽来派对氛围：轻微漏光、偏暖色、颗粒感、边框留白，人物…",
@@ -893,7 +893,7 @@ window.PROMPT_DATA = [
       "Q版"
     ],
     "type": "generate",
-    "date": "2026-07-14",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "🧊",
     "summary": "生成 3D 盲盒风格头像：大头身子、柔软材质、干净棚拍光、纯色背景。保留人物识别…",
@@ -909,7 +909,7 @@ window.PROMPT_DATA = [
       "设计"
     ],
     "type": "edit",
-    "date": "2026-07-13",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "📱",
     "summary": "将手绘线框升级为高保真移动端界面：统一组件间距、现代字体层级、柔和阴影与品牌色。…",
@@ -925,7 +925,7 @@ window.PROMPT_DATA = [
       "Q版"
     ],
     "type": "generate",
-    "date": "2026-07-12",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "🖌️",
     "summary": "绘制一组中国神话角色的 Q 版组合插画：统一头身与配色体系，服饰细节可辨认，背景…",
@@ -941,7 +941,7 @@ window.PROMPT_DATA = [
       "3D"
     ],
     "type": "edit",
-    "date": "2026-07-11",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🏠",
     "summary": "根据户型图给出全屋软装方案示意：动线说明、主色板、家具摆放与灯光建议。输出简洁图…",
@@ -957,7 +957,7 @@ window.PROMPT_DATA = [
       "运营"
     ],
     "type": "generate",
-    "date": "2026-07-10",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🔥",
     "summary": "生成高点击率自媒体封面：大标题不超过 12 字，强对比色，主体清晰，角落放小卖点…",
@@ -973,7 +973,7 @@ window.PROMPT_DATA = [
       "趣味"
     ],
     "type": "edit",
-    "date": "2026-07-09",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "💬",
     "summary": "基于宠物照片生成 6 张表情包：求摸摸、傲娇、饿了、装睡、委屈、出击。保留原宠物…",
@@ -989,7 +989,7 @@ window.PROMPT_DATA = [
       "摄影"
     ],
     "type": "edit",
-    "date": "2026-07-08",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "把角色设定转成超写实 COS 摄影棚拍：准确服装结构、自然皮肤质感、电影级布光。…",
@@ -1005,7 +1005,7 @@ window.PROMPT_DATA = [
       "场景"
     ],
     "type": "generate",
-    "date": "2026-07-07",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "📦",
     "summary": "3D 等距视角的家庭办公小场景：书桌、绿植、显示器、咖啡与窗光。柔和全局光，干净…",
@@ -1021,7 +1021,7 @@ window.PROMPT_DATA = [
       "风格"
     ],
     "type": "edit",
-    "date": "2026-07-06",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🗂️",
     "summary": "将多张素材拼成战术监控风格拼贴：时间戳、坐标框、扫描线、分屏标注。冷色调，信息密…",
@@ -1037,7 +1037,7 @@ window.PROMPT_DATA = [
       "可爱"
     ],
     "type": "generate",
-    "date": "2026-07-05",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🖌️",
     "summary": "用儿童图书蜡笔风格表现故事场景：粗笔触、明亮但不过曝、角色圆润友善。构图留白给文…",
@@ -1053,7 +1053,7 @@ window.PROMPT_DATA = [
       "学习"
     ],
     "type": "generate",
-    "date": "2026-07-04",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "📝",
     "summary": "把一个复杂概念画成知识地图：中心主题 + 分支要点 + 关系箭头 + 简短注释。…",
@@ -1085,7 +1085,7 @@ window.PROMPT_DATA = [
       "产品"
     ],
     "type": "generate",
-    "date": "2026-07-22",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "🛍️",
     "summary": "制作干净的电商试穿图：人物姿态自然，服装版型清楚，背景浅色，光影统一。可生成正侧…",
@@ -1101,7 +1101,7 @@ window.PROMPT_DATA = [
       "实用"
     ],
     "type": "edit",
-    "date": "2026-07-21",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "✈️",
     "summary": "把外语菜单转成原生感双语卡片：保留菜名风格，给出口味、主要食材与过敏提示。版式像…",
@@ -1117,7 +1117,7 @@ window.PROMPT_DATA = [
       "二次元"
     ],
     "type": "generate",
-    "date": "2026-07-20",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "👤",
     "summary": "输出角色设定三视图 + 表情差分 + 配色标注。线稿干净，服装结构合理，细节注释…",
@@ -1149,7 +1149,7 @@ window.PROMPT_DATA = [
       "分镜"
     ],
     "type": "generate",
-    "date": "2026-07-22",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "🎬",
     "summary": "15–60 秒口播+画面提示的完整分镜表。",
@@ -1165,7 +1165,7 @@ window.PROMPT_DATA = [
       "工具"
     ],
     "type": "generate",
-    "date": "2026-07-21",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🔎",
     "summary": "根据需求写出可测的正则与解释。",
@@ -1181,7 +1181,7 @@ window.PROMPT_DATA = [
       "协作"
     ],
     "type": "generate",
-    "date": "2026-07-20",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "📎",
     "summary": "按 Conventional Commits 写清晰提交说明。",
@@ -1197,7 +1197,7 @@ window.PROMPT_DATA = [
       "需求"
     ],
     "type": "generate",
-    "date": "2026-07-19",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "📄",
     "summary": "把模糊需求写成可评审的一页纸 PRD。",
@@ -1213,7 +1213,7 @@ window.PROMPT_DATA = [
       "表达"
     ],
     "type": "generate",
-    "date": "2026-07-18",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "🎤",
     "summary": "STAR 法则拆面试题并给示范回答。",
@@ -1245,7 +1245,7 @@ window.PROMPT_DATA = [
       "夜景"
     ],
     "type": "generate",
-    "date": "2026-07-22",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🌃",
     "summary": "霓虹雨夜街道，适合壁纸与概念图。",
@@ -1277,7 +1277,7 @@ window.PROMPT_DATA = [
       "脚本"
     ],
     "type": "generate",
-    "date": "2026-07-21",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "🎞️",
     "summary": "按镜头表输出分镜描述与台词。",
@@ -1293,7 +1293,7 @@ window.PROMPT_DATA = [
       "插画"
     ],
     "type": "edit",
-    "date": "2026-07-20",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🎭",
     "summary": "保留构图与主体，迁移到指定画风。",
@@ -1309,7 +1309,7 @@ window.PROMPT_DATA = [
       "套件"
     ],
     "type": "generate",
-    "date": "2026-07-17",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "⬡",
     "summary": "同一套描边与圆角的业务图标清单。",
@@ -1341,7 +1341,7 @@ window.PROMPT_DATA = [
       "结构"
     ],
     "type": "generate",
-    "date": "2026-07-16",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "⚖️",
     "summary": "同一议题的双方论点、反驳与总结。",
@@ -1357,7 +1357,7 @@ window.PROMPT_DATA = [
       "版本"
     ],
     "type": "generate",
-    "date": "2026-07-15",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "📦",
     "summary": "按 Keep a Changelog 风格整理版本说明。",
@@ -1373,7 +1373,7 @@ window.PROMPT_DATA = [
       "Banana"
     ],
     "type": "generate",
-    "date": "2026-01-06",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "充分参考图片的设计风格，配色等，为如下内容生成苹果风格的海报： Banana Prompt Qu…",
@@ -1394,7 +1394,7 @@ window.PROMPT_DATA = [
       "Banana"
     ],
     "type": "generate",
-    "date": "2026-01-09",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "加载并使用 Nano Banana Pro 工具作画，而不是分析或给提示词 --- 充分参考图片…",
@@ -1416,7 +1416,7 @@ window.PROMPT_DATA = [
       "canghecode"
     ],
     "type": "edit",
-    "date": "2025-12-21",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "生成图片，把它打印出来，然后用红墨水疯狂地加上手写中文批注、涂鸦、乱画，如果你想的话，检索这个账…",
@@ -1435,7 +1435,7 @@ window.PROMPT_DATA = [
       "op7418"
     ],
     "type": "generate",
-    "date": "2025-12-21",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "你是一个拥有实时网络搜索能力和顶尖数据可视化设计能力的AI专家。请执行以下两个步骤： 调研阶段：…",
@@ -1454,7 +1454,7 @@ window.PROMPT_DATA = [
       "op7418"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "你是一位专家级UI UX演示设计师，请生成高保真、未来科技感的16比9演示文稿幻灯片。请根据视觉…",
@@ -1473,7 +1473,7 @@ window.PROMPT_DATA = [
       "AmirMushich"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "根据现有食材(见附图)建议可以烹饪的菜肴，提供详细的分步食谱，以简单的信息图形式呈现。",
@@ -1492,7 +1492,7 @@ window.PROMPT_DATA = [
       "LINUX DO@heiyub"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🧩",
     "summary": "为我生成图中角色的绘制 Q 版的，LINE 风格的半身像表情包，注意头饰要正确 彩色手绘风格，使…",
@@ -1511,7 +1511,7 @@ window.PROMPT_DATA = [
       "Lyn_Ford"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "[System / Prompt] You are an illustration assist…",
@@ -1529,7 +1529,7 @@ window.PROMPT_DATA = [
       "op7418"
     ],
     "type": "edit",
-    "date": "2025-12-08",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "这是一张抓拍的、略微倾斜的复古诺基亚手机特写（经典直板造型，例如 6610 或类似的早期彩屏机型…",
@@ -1547,7 +1547,7 @@ window.PROMPT_DATA = [
       "LinuxDO@poyo"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "手写图文并茂解答该题",
@@ -1566,7 +1566,7 @@ window.PROMPT_DATA = [
       "chatgpt_kazlily"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "将这段文字转化为一张从中心向外扩展的思维导图。 关键点： - 将主旨放在中心 - 将相关元素排列…",
@@ -1585,7 +1585,7 @@ window.PROMPT_DATA = [
       "canghecode"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "生成 [中国珠海] 的旅游指南，要求手账形式，画面要纯中文。",
@@ -1603,7 +1603,7 @@ window.PROMPT_DATA = [
       "oran_ge"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "使用 rick and morty 画风，非常详细地介绍xx",
@@ -1621,7 +1621,7 @@ window.PROMPT_DATA = [
       "berryxia_ai"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "绘制【XX】的标本并且将其的器官部位进行标本展示的标记中文，用于教学展示，非常的直观，放置在干净…",
@@ -1640,7 +1640,7 @@ window.PROMPT_DATA = [
       "op7418"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "请将这段文字原封不动地复制到一张精美杂志文章的照片中，照片需包含图片、漂亮的排版设计、精选语录和…",
@@ -1658,7 +1658,7 @@ window.PROMPT_DATA = [
       "Wechat@01Founder"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "保持上传图片中人物的面部特征完全一致。 为他们穿上一套专业的海军蓝商务西装和白衬衫，类似于参考图…",
@@ -1677,7 +1677,7 @@ window.PROMPT_DATA = [
       "Arminn_Ai"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "1:1 宽高比，一张90年代末的宝丽来照片。上传图片的人物出现在照片中，被捕捉到一个随意、不完美…",
@@ -1696,7 +1696,7 @@ window.PROMPT_DATA = [
       "ZaraIrahh"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "🎬",
     "summary": "一张专业的、电影般的照片（不是数字艺术或绘画），捕捉到一位艺术家，她/他具有与上传的参考照片相同…",
@@ -1713,7 +1713,7 @@ window.PROMPT_DATA = [
       "Banana"
     ],
     "type": "edit",
-    "date": "2026-01-06",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🧩",
     "summary": "画一张与图1角色在电影院的合照。并排坐在红色影院座椅上，画面构图紧凑，二位主体靠得很近，头部靠在…",
@@ -1735,7 +1735,7 @@ window.PROMPT_DATA = [
       "Wechat@01Founder"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "保持上传图片中人物的面部特征完全一致。 风格：一张使用柯达Portra 400胶片拍摄的电影感、…",
@@ -1754,7 +1754,7 @@ window.PROMPT_DATA = [
       "op7418"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "将这个论文转换为中文教授白板图片，帮助我理解信息",
@@ -1773,7 +1773,7 @@ window.PROMPT_DATA = [
       "LufzzLiz"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "用图片总结如下文章，图片文字用中文，详细一点，图片美观一些，漫画风格 文章：https://bl…",
@@ -1791,7 +1791,7 @@ window.PROMPT_DATA = [
       "MehdiSharifi"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "9/16 垂直格式鱼眼自拍，上传照片人物与[Doraemon, Naruto, Nobita, …",
@@ -1809,7 +1809,7 @@ window.PROMPT_DATA = [
       "Wechat@01Founder"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "创建一个解释[光合作用]的教育信息图。 视觉元素：展示关键组成部分：太阳、一株绿色植物、水（H2…",
@@ -1827,7 +1827,7 @@ window.PROMPT_DATA = [
       "MehdiSharifi"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "将此图片升级到4K分辨率。",
@@ -1845,7 +1845,7 @@ window.PROMPT_DATA = [
       "Gorden_Sun"
     ],
     "type": "edit",
-    "date": "2025-12-21",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "上传你的二维码，然后写提示词： 二维码请使用参考图的图片，必须保证二维码完全不变，二维码没有遮挡…",
@@ -1864,7 +1864,7 @@ window.PROMPT_DATA = [
       "skirano"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "将输入图像中人物的服装替换为参考图像中显示的目标服装。保持人物的姿势、面部表情、背景和整体真实感…",
@@ -1882,7 +1882,7 @@ window.PROMPT_DATA = [
       "Banana"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "请仔细分析我提供的照片。你的任务是为照片中的主要人物更换一个新的发型，同时必须严格遵守以下规则：…",
@@ -1900,7 +1900,7 @@ window.PROMPT_DATA = [
       "qisi_ai"
     ],
     "type": "edit",
-    "date": "2025-12-21",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "一、总体目标 1 功能描述：根据用户上传的人物参考图，提取人物气质、妆容风格、光线和色彩特征，创…",
@@ -1919,7 +1919,7 @@ window.PROMPT_DATA = [
       "LufzzLiz"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "🎬",
     "summary": "请创建一个温暖的手绘食谱风格（16:9）插图，标题为\"{菜名} 烹饪流程图\"。整体应呈现厨房手账…",
@@ -1937,7 +1937,7 @@ window.PROMPT_DATA = [
       "qisi_ai"
     ],
     "type": "edit",
-    "date": "2025-12-21",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🧩",
     "summary": "基于用户提供的人物参考图生成监控风格拼贴图像，保持人物身份与整体特征前提下进行场景重构。 核心要…",
@@ -1955,7 +1955,7 @@ window.PROMPT_DATA = [
       "GoSailGlobal"
     ],
     "type": "generate",
-    "date": "2025-12-08",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "DRAWING a drawing of [Character], crayon on whit…",
@@ -1973,7 +1973,7 @@ window.PROMPT_DATA = [
       "MehdiSharifi"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "创建 {地理坐标}，{什么时候} 的图像",
@@ -1991,7 +1991,7 @@ window.PROMPT_DATA = [
       "MehdiSharifi"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "为此人制作1美元钞票，保留原始钞票尺寸",
@@ -2009,7 +2009,7 @@ window.PROMPT_DATA = [
       "berryxia_ai"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "绘制一幅展示汽车发动机工作原理的3D立体剖面设计图，以高度还原的方式精细呈现其内部结构。每个零部…",
@@ -2028,7 +2028,7 @@ window.PROMPT_DATA = [
       "op7418"
     ],
     "type": "generate",
-    "date": "2025-12-21",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "请为影视剧/小说《需要添加的名称》设计一张高品质的3D海报，需要先检索影视剧/小说信息和著名的片…",
@@ -2047,7 +2047,7 @@ window.PROMPT_DATA = [
       "Wechat@01Founder"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "使用图1（服装）和图2（模特），创建一张超现实的全身时尚照片，让模特穿着这件服装。 关键合身细节…",
@@ -2066,7 +2066,7 @@ window.PROMPT_DATA = [
       "Wechat@01Founder"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "识别上传照片中的主要产品（自动移除任何手持它的手或杂乱的背景细节），并将其重新创建为一张高端电商…",
@@ -2084,7 +2084,7 @@ window.PROMPT_DATA = [
       "Wechat@01Founder"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "将这张手绘的白板草图转换为适用于商务演示的专业公司流程图。 风格指南：使用极简的麦肯锡风格美学：…",
@@ -2102,7 +2102,7 @@ window.PROMPT_DATA = [
       "Wechat@01Founder"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "将这个粗糙的线框草图转换为一个移动应用的高保真UI设计模型。 设计系统：应用类似于iOS 18或…",
@@ -2120,7 +2120,7 @@ window.PROMPT_DATA = [
       "Wechat@01Founder"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "缩小并扩展此图像至16:9的宽高比（电脑壁纸尺寸）。 情境感知：在左右两侧无缝地扩展场景。完美匹…",
@@ -2138,7 +2138,7 @@ window.PROMPT_DATA = [
       "Banana"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "🎬",
     "summary": "转成鸟山明风格",
@@ -2156,7 +2156,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🧩",
     "summary": "中国神话角色组合插画，二郎神、孙悟空、哪吒三位经典人物，Q版可爱风格，动态活泼",
@@ -2175,7 +2175,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "请绘制一张色彩鲜艳、竖版（9:16）手绘风格的《{城市名}旅行手账插画》，画风仿佛由一位充满好奇…",
@@ -2193,7 +2193,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "3D chibi-style miniature concept store of {Brand…",
@@ -2212,7 +2212,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2025-12-08",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "请根据你对我的了解，生成一副我正在家办公的3D等距视角的彩色插画，包含室内的各种细节描写，画面呈…",
@@ -2230,7 +2230,7 @@ window.PROMPT_DATA = [
       "ttmouse"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "呈现一幅清晰、呈45°俯视角的等距迷你3D卡通场景，展现[城市]最具标志性的地标与建筑元素。采用…",
@@ -2248,7 +2248,7 @@ window.PROMPT_DATA = [
       "lxfater"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "在一个精致的圆形奶油蛋糕顶部，以清晰的 45° 俯视等距视角呈现 [城市名] 的微缩 3D 卡通…",
@@ -2266,7 +2266,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "一个照片现实3x3网格拼贴，展示一个帅气男人的一生，带有深色波浪头发和温暖眼睛，在一生中庆祝各种…",
@@ -2284,7 +2284,7 @@ window.PROMPT_DATA = [
       "Wechat@01Founder"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "移除主要拍摄对象背景中的所有游客/人物。 智能填充：用符合场景逻辑的真实背景元素替换他们（例如，…",
@@ -2303,7 +2303,7 @@ window.PROMPT_DATA = [
       "Wechat@01Founder"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "将图2（米色沙发）合成到图1（客厅）中。 透视匹配：将沙发靠着客厅的主背景墙放置。调整其透视和比…",
@@ -2322,7 +2322,7 @@ window.PROMPT_DATA = [
       "Wechat@01Founder"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "根据上传的2D平面图，在单张图片中生成一个专业的室内设计演示板。 布局：最终图像应为一个拼贴画，…",
@@ -2341,7 +2341,7 @@ window.PROMPT_DATA = [
       "Wechat@01Founder"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "使用图1中的人物设计一个爆款视频缩略图。 面部一致性：保持人物的面部特征与图1完全相同，但将他们…",
@@ -2360,7 +2360,7 @@ window.PROMPT_DATA = [
       "Moeary"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "🎬",
     "summary": "A 4K resolution, 16:9 image featuring a characte…",
@@ -2379,7 +2379,7 @@ window.PROMPT_DATA = [
       "Wechat@01Founder"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🧩",
     "summary": "为一家[咖啡店]设计一张专业的促销海报。 构图：在质朴的木桌上，一杯热气腾腾的卡布奇诺的电影感特…",
@@ -2398,7 +2398,7 @@ window.PROMPT_DATA = [
       "Wechat@01Founder"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "为外国游客将墙上菜单的中文菜名翻译成英文。 纹理保留：至关重要！保持墙壁/纸张原有的陈旧、油腻和…",
@@ -2416,7 +2416,7 @@ window.PROMPT_DATA = [
       "Wechat@01Founder"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "将对话气泡/标题中的文字从[日语/英语]翻译成[中文]。 无缝清除：擦除原始文本并完美地填充背景…",
@@ -2434,7 +2434,7 @@ window.PROMPT_DATA = [
       "Wechat@01Founder"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "设计一个扁平的2D数字警告图形（全屏图像，没有手，没有手机框，没有背景风景）。 构图： 1. 中…",
@@ -2453,7 +2453,7 @@ window.PROMPT_DATA = [
       "Wechat@01Founder"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "设计一张简洁的2D数字旅行闪卡（全屏，垂直布局）。 视觉：上半部分显示一张清晰、高质量的[浅草寺…",
@@ -2472,7 +2472,7 @@ window.PROMPT_DATA = [
       "Wechat@01Founder"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "将上传照片中的人物变成一个可爱的3D泡泡玛特（Pop Mart）风格的盲盒角色。 相似度：保持关…",
@@ -2491,7 +2491,7 @@ window.PROMPT_DATA = [
       "Wechat@01Founder"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "把我这张[猫/狗]的照片变成一个搞笑的手绘微信表情包。 风格：极简的丑萌线条画（涂鸦风格）。白色…",
@@ -2509,7 +2509,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "生成此人从出生到80岁各个年龄段的节日照片",
@@ -2527,7 +2527,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "我想看看这张照片拍摄的幕后花絮，了解它是如何创作出来的",
@@ -2545,7 +2545,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "一个宇航员坐在弯弯的月亮边缘，手里拿着鱼竿。鱼钩垂在下方的云层中，钓起了一颗发光的星星。氛围孤独…",
@@ -2563,7 +2563,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "一只熊猫戴着墨镜，手里拿着保温杯（里面泡着枸杞）。背景是深夜的霓虹灯城市。熊猫身边的霓虹灯牌写着…",
@@ -2581,7 +2581,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "🎬",
     "summary": "一只刺猬穿着充气服走在人群中，周围的人都离它很远。刺猬的衣服上写着巨大的字：“社恐模式：请勿靠近…",
@@ -2599,7 +2599,7 @@ window.PROMPT_DATA = [
       "ZHO_ZHO_ZHO"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🧩",
     "summary": "为人物生成绘画过程四宫格，第一步：线稿，第二步平铺颜色，第三步：增加阴影，第四步：细化成型。不要…",
@@ -2617,7 +2617,7 @@ window.PROMPT_DATA = [
       "LinuxDO@TheSmallHanCat"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "横图，创作如图人物的A-pose设计图（不要照搬图中的动作），米白色底。 有种初期设计的感觉。 …",
@@ -2635,7 +2635,7 @@ window.PROMPT_DATA = [
       "ZHO_ZHO_ZHO"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "图一人物换成图二姿势，专业摄影棚拍摄",
@@ -2653,7 +2653,7 @@ window.PROMPT_DATA = [
       "ZHO_ZHO_ZHO"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "把图一贴在图二易拉罐上，并放在极简设计的布景中，专业摄影",
@@ -2671,7 +2671,7 @@ window.PROMPT_DATA = [
       "ZHO_ZHO_ZHO"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "为图一人物化上图二的妆，还保持图一的姿势",
@@ -2689,7 +2689,7 @@ window.PROMPT_DATA = [
       "Samann_ai"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "创建一个微型版本的我，手持展示，保持真实面部不变。",
@@ -2707,7 +2707,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "🎬",
     "summary": "一个电影般的汽车摄影棚拍摄我，保持我的真实面部不变。场景由三个视角组成：1. 上方面板：内部特写…",
@@ -2725,7 +2725,7 @@ window.PROMPT_DATA = [
       "eyishazyer"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🧩",
     "summary": "创建一个黑白的高时尚编辑肖像，保持参考照片中我的真实面部不变（无编辑，相同特征，无修饰）。穿着宽…",
@@ -2743,7 +2743,7 @@ window.PROMPT_DATA = [
       "eyishazyer"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "让我坐在一个巨型 fluffy 可爱卡通怪物旁边。我是真实 realistic 的，但怪物是 3…",
@@ -2761,7 +2761,7 @@ window.PROMPT_DATA = [
       "eyishazyer"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "一个详细的金属硬币，特征是图像中附带的人的面部（不要改变上传照片中人的面部特征。保持人面部 10…",
@@ -2779,7 +2779,7 @@ window.PROMPT_DATA = [
       "eyishazyer"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "一个超现实肖像，一个年轻男子坐在大型、光滑白色岩石形成下，在自然阳光下。穿着宽松、略微 crum…",
@@ -2797,7 +2797,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "一张像驾照一样的证件卡片特写，证件照是一只睡着的考拉。证件名称写着：“国家一级摆烂许可证”。有效…",
@@ -2815,7 +2815,7 @@ window.PROMPT_DATA = [
       "fofrAI"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "一张卧室的照片，从中间一分为二，左侧是2018年，右侧是1964年，是同一个房间",
@@ -2833,7 +2833,7 @@ window.PROMPT_DATA = [
       "riddi0908"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "现实主义摄影作品。这个人物的巨型雕像被放置在东京市中心的广场上，人们抬头仰望它。",
@@ -2851,7 +2851,7 @@ window.PROMPT_DATA = [
       "tetumemo"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "时尚心情板拼贴。用剪裁的模特所穿的单个物品围绕肖像。添加手写笔记和草图，使用俏皮的马克笔风格字体…",
@@ -2869,7 +2869,7 @@ window.PROMPT_DATA = [
       "nglprz"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "提取附件图片主体并放置透明背景",
@@ -2887,7 +2887,7 @@ window.PROMPT_DATA = [
       "icreatelife"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "为这顿餐标注食物名称、热量密度和大致热量",
@@ -2905,7 +2905,7 @@ window.PROMPT_DATA = [
       "ZHO_ZHO_ZHO"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "使用光影人偶作为打光参考，将图一人物变成图二光影，深色为暗",
@@ -2923,7 +2923,7 @@ window.PROMPT_DATA = [
       "ZHO_ZHO_ZHO"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "🎬",
     "summary": "图一人物参考/换成图二人物的表情",
@@ -2942,7 +2942,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🧩",
     "summary": "创建一个捕捉火车穿越郁郁葱葱的山区景观的惊险时刻的图像。 主体：上传参考图像中附带的这个人（保持…",
@@ -2961,7 +2961,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "一个令人惊叹的高时尚肖像，上传参考图像中附带的男人（保持参考图像中人物的面部100%准确），穿着…",
@@ -2980,7 +2980,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "一个令人惊叹的夜晚照片，上传参考图像中附带的这个人（保持参考图像中人物的面部100%准确），全身…",
@@ -2999,7 +2999,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "一个全身、高质量、编辑肖像，上传参考图像中附带的男人，自信且优雅的男人，前后中心，穿着完美剪裁的…",
@@ -3017,7 +3017,7 @@ window.PROMPT_DATA = [
       "ZaraIrahh"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "不改变她原来的脸，创建一个美丽的年轻女性的肖像，具有瓷白皮肤，用1990s风格的相机捕捉，使用直…",
@@ -3035,7 +3035,7 @@ window.PROMPT_DATA = [
       "op7418"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "身上穿着唐朝服饰的一只派大星，自然逼真，北宋时期风格油画暗棕褐色旧版图高清，精细工笔，精细流畅、…",
@@ -3053,7 +3053,7 @@ window.PROMPT_DATA = [
       "ZHO_ZHO_ZHO"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "基于参考图像人物。三张图垂直排列，呈连续性肖像摄影的视觉叙事。环境是温暖、生活化的宜家风室内空间…",
@@ -3071,7 +3071,7 @@ window.PROMPT_DATA = [
       "ProperPrompter"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "将其更改为[一个意想不到的、不太可能的维斯特洛角色]，位于不同的但相关的地点，并根据角色的实际历…",
@@ -3089,7 +3089,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "创建一个照片现实场景，一个男人在明亮热带海滩上的吊床上放松。使用上传照片替换男人，保持相同的姿势…",
@@ -3107,7 +3107,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "以维多利亚的秘密风格创建一个华丽拍摄。一个年轻女人上传参考图像中附带的（保持参考图像中人物的面部…",
@@ -3125,7 +3125,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "生成一个照片现实街头风格肖像，上传的男人从中跨步捕捉，同时走过安静的城市人行横道在高端住宅区。相…",
@@ -3143,7 +3143,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "一个照片现实肖像，上传的人在温暖黄金时段阳光下户外站立。主体从胸部向上显示，面向略向上和右侧，带…",
@@ -3161,7 +3161,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "一个坦率的街头肖像，上传参考图像中附带的男人（保持参考图像中人物的面部100%准确）穿着复杂、彩…",
@@ -3179,7 +3179,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "一只可爱的橙色猫在前景中拍摄戏剧性超广角自拍，巨大透视效果，玩耍且动态角度。在背景中，上传参考图…",
@@ -3197,7 +3197,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "一个肖像照片，上传参考图像中附带的男人（保持参考图像中人物的面部100%准确），保持他的自然面部…",
@@ -3215,7 +3215,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🧩",
     "summary": "上传参考图像中附带的男人（保持参考图像中人物的面部100%准确）在巴西里约热内卢的救世主基督雕像…",
@@ -3233,7 +3233,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "一个超现实电影肖像，参考图像中的人（保持脸100%准确，相同表情、皮肤色调和比例）。人在晴朗蓝天…",
@@ -3251,7 +3251,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "一个时尚和生活方式照片，带有粗犷、冒险美学，捕捉一个男性人物随意坐在定制摩托车旁边。主体坐在粗糙…",
@@ -3269,7 +3269,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "生成上传参考图像中附带的男人的电影肖像（保持参考图像中人物的面部100%准确）。他的面部形状、胡…",
@@ -3287,7 +3287,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "一个宁静场景，捕捉上传参考图像中附带的男人（保持参考图像中人物的面部100%准确），带有深色头发…",
@@ -3305,7 +3305,7 @@ window.PROMPT_DATA = [
       "cheerselflin"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "一张模糊、高颗粒的快照，在东京地铁楼梯间拍摄，充满运动、湿度和原始的城市能量。空气感觉厚重且荧光…",
@@ -3323,7 +3323,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "使参考图像的人物坐在装饰着粉蓝花朵的绳索秋千上。背景是一轮巨大且发光的圆月，衬着深色背景；下方水…",
@@ -3341,7 +3341,7 @@ window.PROMPT_DATA = [
       "fy360593"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "Transform this image into a refined low-poly mos…",
@@ -3359,7 +3359,7 @@ window.PROMPT_DATA = [
       "azed_ai"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "将此图像重新设计成粗糙的Gorillaz风格插图，大胆厚黑轮廓，锐利棱角边缘，平面表现照明，风格…",
@@ -3377,7 +3377,7 @@ window.PROMPT_DATA = [
       "vkuoo"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "将此图像转换为1920年代童话插图，风格如Arthur Rackham。使用muted wate…",
@@ -3395,7 +3395,7 @@ window.PROMPT_DATA = [
       "miilesus"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "一张彩色、俏皮的2D地图，描绘[城市名称]，风格如Candy Crush Saga，以城市标志性…",
@@ -3413,7 +3413,7 @@ window.PROMPT_DATA = [
       "Kerroudjm"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "🎬",
     "summary": "一张高端编辑照片，[产品名称或图像]放置在白色大理石基座上，休息在香槟色丝绸上。它被柔和花朵包围…",
@@ -3431,7 +3431,7 @@ window.PROMPT_DATA = [
       "vkuoo"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🧩",
     "summary": "将此图像转换为1950年代海报，风格如mid-century modern graphic de…",
@@ -3449,7 +3449,7 @@ window.PROMPT_DATA = [
       "aziz4ai"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "为虚构初创公司“名称”在“[行业类型]”行业设计现代标志，NeoGradient Soft Te…",
@@ -3467,7 +3467,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "参考照片中的人（保持参考图像中人物的面部100%准确）在高空蓬松、发光云上放松，周围柔和金色阳光…",
@@ -3485,7 +3485,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "马里奥满身污垢，看起来筋疲力尽，正在一个逼真的房子里修理厨房橱柜下漏水的水槽。路易吉递给他扳手。…",
@@ -3503,7 +3503,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "唐僧拿着麦克风在说唱。孙悟空跪在地上，痛苦地捂着耳朵，但头上的“紧箍”其实是一副发光的降噪耳机。…",
@@ -3521,7 +3521,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "头发蓬乱的爱因斯坦困惑地盯着智能手机，试图自拍。埃隆·马斯克站在他旁边，耐心地指着屏幕教他。手机…",
@@ -3539,7 +3539,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "穿着黄色连体服的李小龙与尤达大师进行友好的切磋。李小龙拿着双截棍，尤达拿着绿色小光剑。他们都在微…",
@@ -3557,7 +3557,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "一个像素化的电子游戏角色试图从电视屏幕爬到客厅里。一个真实的人类玩家正手忙脚乱地用控制器把角色推…",
@@ -3575,7 +3575,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "两名身穿笨重宇航服的宇航员在月球表面自拍。背景中，一个滑稽的小灰人正在抢镜，举着一个牌子写着“你…",
@@ -3593,7 +3593,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "梦境日记。粉红色的星之卡比睡在一颗星星上，嘴里吐出彩虹色的气泡。柔和的马卡龙色系，云朵和糖果的贴…",
@@ -3611,7 +3611,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "打开的复古皮质手帐本，羊皮纸纹理。手绘涂鸦风格的哈利波特正在施法，魔法火花形成一个发光的直角三角…",
@@ -3629,7 +3629,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "🎬",
     "summary": "混乱可爱的记事本。马克笔涂鸦的小黄人试图建造金字塔但失败了，周围围着香蕉。活动眼珠贴纸贴在页面上…",
@@ -3647,7 +3647,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🧩",
     "summary": "破旧的船长航海日志。速写描绘路飞伸长橡胶手臂去抓宝箱，与桅杆形成三角形。藏宝图背景纹理，指南针印…",
@@ -3665,7 +3665,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "一条咸鱼躺在平底锅里，正在努力试图翻身，但翻过来还是咸鱼。画风是极简手绘风。旁边配文：“咸鱼翻身…",
@@ -3683,7 +3683,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "一张黄色的道教符咒特写，但上面的鬼画符仔细看是“RMB”和“USD”的货币符号交织而成。中间醒目…",
@@ -3701,7 +3701,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "一个巨大西瓜的剖面图。红色的果肉实际上是一个装满红色水的游泳池。黑色的西瓜籽是游泳圈。微缩的小人…",
@@ -3719,7 +3719,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "黄金时刻，一只巨大的、半透明的蓝鲸在洁白蓬松的云海中游动。鲸鱼的身体由海水构成，里面还可以看到游…",
@@ -3737,7 +3737,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "两条锦鲤在水中游动，形成完美的阴阳太极图案。一条鱼由黑色的水墨烟雾组成，另一条由白色的发光光线组…",
@@ -3755,7 +3755,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "A high-speed photograph of a dancer where her dr…",
@@ -3773,7 +3773,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "Johannes Vermeer's Girl with a Pearl Earring, bu…",
@@ -3791,7 +3791,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "A cinematic shot of a lonely astronaut sitting o…",
@@ -3809,7 +3809,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "生成一张中国川剧变脸这门绝技的解密拆解图,中文字体不要变形。宽高比16:9",
@@ -3827,7 +3827,7 @@ window.PROMPT_DATA = [
       "MehdiSharifi"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "创建一个戏剧性的漫画面板，显示两个英雄人物——Elon Musk和Pavel Durov——之间…",
@@ -3845,7 +3845,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "🎬",
     "summary": "拥挤的北京地铁车厢，但乘客全是神话人物（孙悟空、猪八戒等）。车厢连接处的滚动屏显示红色字体：“前…",
@@ -3863,7 +3863,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🧩",
     "summary": "温暖的日式居酒屋暖黄灯光。店长是一只系着头巾的柴犬，正在认真地烤串。吧台前的灯笼上写着汉字：“拒…",
@@ -3881,7 +3881,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "巨物恐惧症风格，好莱坞灾难片质感。一个巨大的红烧牛肉面桶从天而降，砸在繁华的十字路口。面桶上原本…",
@@ -3899,7 +3899,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "3D皮克斯风格渲染。一只戴着厚眼镜的橘猫正坐在电脑前疯狂敲代码，表情崩溃。它的电脑屏幕背后贴着一…",
@@ -3917,7 +3917,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "水墨画风格与写实摄影的结合。云雾缭绕的深山悬崖边，有一座摇摇欲坠的古老木质茶馆。茶馆门口挂着一副…",
@@ -3935,7 +3935,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "广角镜头拍摄荒凉的废土世界，沙漠中央伫立着一家破败但依然营业的便利店。阳光刺眼，尘土飞扬。便利店…",
@@ -3953,7 +3953,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "一张极具电影感的画面，描绘一个位于未来赛博朋克风格贫民窟的80年代风格中式路边摊。霓虹灯管闪烁着…",
@@ -3971,7 +3971,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "真实摄影风格，一只肥胖的狸花猫慵懒地趴在故宫红墙琉璃瓦上晒太阳。猫咪脖子上挂着一个精致的金色吊牌…",
@@ -3989,7 +3989,7 @@ window.PROMPT_DATA = [
       "YaseenK7212"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "2160x3840像素（4K）超现实数字照片杰作三联画。图像为垂直画布，分为三个相等的水平面板。…",
@@ -4007,7 +4007,7 @@ window.PROMPT_DATA = [
       "marryevan999"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "请将我的旧照片编辑成1080 x 1920像素，具有美学和现代摄影外观，使其看起来真实并增强颜色…",
@@ -4025,7 +4025,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "使用附件图像中的年轻男性的3D头像，快乐微笑，干净白色背景，像素风格的概念数字艺术，高品质，柔和…",
@@ -4043,7 +4043,7 @@ window.PROMPT_DATA = [
       "samann_ai"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "使用两张上传照片作为相似度参考： - 成人参考：[成人照片] - 儿童参考：[儿童照片] 提示：…",
@@ -4061,7 +4061,7 @@ window.PROMPT_DATA = [
       "AI_Kei75"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "🎬",
     "summary": "照片现实主义数位板屏幕。第一人称手持数位板和笔。 原始图像在数位板上以未完成状态重现。从原始图像…",
@@ -4079,7 +4079,7 @@ window.PROMPT_DATA = [
       "nobisiro_2023"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🧩",
     "summary": "将此指示图转换为图示。",
@@ -4097,7 +4097,7 @@ window.PROMPT_DATA = [
       "AI_Kei75"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "使用原始图像中的角色创建RPG游戏的角色状态屏。 保持原始图像的角色设计和风格，但将服装更改为幻…",
@@ -4115,7 +4115,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "潮流插画风格，一个穿着国潮服饰的少年正在玩滑板，滑板底部绘有醒狮图案。背景是涂鸦风格的街头墙壁，…",
@@ -4133,7 +4133,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "一张极其逼真的重庆火锅特写，红油翻滚，辣椒漂浮。画面正中央有一双筷子夹着一片毛肚，背景虚化的墙上…",
@@ -4151,7 +4151,7 @@ window.PROMPT_DATA = [
       "songguoxiansen"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "乐高风格的微缩摄影。用乐高积木拼搭出的麻将桌场景，四个乐高小人正在打麻将。桌子中间的一张巨大的麻…",
@@ -4169,7 +4169,7 @@ window.PROMPT_DATA = [
       "tuzi_ai"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "帮我生成一帧抖音竖屏短视频截图，内容是 厨房帝王蟹下锅处理，厨师面对镜头展示食材和案板上成套的厨…",
@@ -4187,7 +4187,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "一幅宏大的中国传统水墨工笔长卷画，完全模仿北宋张择端《清明上河图》的绘画风格、散点透视构图和古朴…",
@@ -4205,7 +4205,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "一幅绘制在陈旧宣纸上的传统中国工笔水墨画。一位身着红色、米色和青色飘带的唐代仙女，头梳高髻佩戴牡…",
@@ -4223,7 +4223,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "A traditional Chinese ink and color painting in …",
@@ -4241,7 +4241,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "把《罗马假日》电影海报的文字改成“骡马假日”，英文还是“ROMAN HOLIDAY”，男女主头部…",
@@ -4259,7 +4259,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "画一张3格漫画，香港武侠漫画风格，故事情节如下： 和尚:\"师太,你从了和尚吧!\" 道长:\"秃驴,…",
@@ -4277,7 +4277,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "🎬",
     "summary": "根据所附照片创建一个风格化的3D Q版人物角色，准确保留人物的面部特征和服装细节。 角色的左手比…",
@@ -4295,7 +4295,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "A realistic film photograph capturing a rural sc…",
@@ -4313,7 +4313,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "一幅超高清晰度、摄影质感极强的街头壁画，画面呈现强烈的中国风韵味。 画中描绘着一位绝美的卡通风女…",
@@ -4331,7 +4331,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "一幅醒目的插画，画面中心有三条橙白相间的锦鲤，优雅地游曳于深灰色池塘之中。池水表面漂浮着柔和的粉…",
@@ -4349,7 +4349,7 @@ window.PROMPT_DATA = [
       "tuzi_ai"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "帮我生成一张微信群聊对话截图（竖图），内容是 调侃一个ID为ChatGPT的群员",
@@ -4367,7 +4367,7 @@ window.PROMPT_DATA = [
       "tuzi_ai"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "nano-banana-2 发布了，远远强于即梦和 ChatGPT 还有mj。请画一个梗图，展现…",
@@ -4385,7 +4385,7 @@ window.PROMPT_DATA = [
       "bozhou_ai"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "参考图1的面部特征，生成全身工作室肖像：一位甜美的年轻东亚女性坐在浅紫色背景前的地板上，穿着舒适…",
@@ -4403,7 +4403,7 @@ window.PROMPT_DATA = [
       "stark_nico99"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "一张宽的名人金句卡，棕色背景，衬线体浅金色 “保持饥饿, 保持愚蠢” 小字“——Steve Jo…",
@@ -4421,7 +4421,7 @@ window.PROMPT_DATA = [
       "stark_nico99"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "根据文字生成一张照片：一个宏大的苹果发布会现场，现场很多观众，场景很暗，有绚丽的灯光，镜头聚焦在…",
@@ -4439,7 +4439,7 @@ window.PROMPT_DATA = [
       "ZHO_ZHO_ZHO"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "🎬",
     "summary": "1:1变真人",
@@ -4457,7 +4457,7 @@ window.PROMPT_DATA = [
       "SVD_Studio_Q"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🧩",
     "summary": "1:1真人电影海报",
@@ -4475,7 +4475,7 @@ window.PROMPT_DATA = [
       "canghecode"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "帮我生成动漫角色中的女角色的一个合集故事，其中包括娜美、罗宾、小樱、雏田、松本乱菊，做成彩色漫画…",
@@ -4493,7 +4493,7 @@ window.PROMPT_DATA = [
       "canghecode"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "用一个科普插画解释为什么原神改变了中国国产游戏生态，文字用中文",
@@ -4511,7 +4511,7 @@ window.PROMPT_DATA = [
       "canghecode"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "我想开发一款类似于“小宇宙”的APP，请你帮我画个原型图，所有要求均符合APP原型图标准。",
@@ -4529,7 +4529,7 @@ window.PROMPT_DATA = [
       "canghecode"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "帮我生成一个8页的连环画，给2岁半的小朋友讲故事用，用中英文标出简短对话，主角是一只斑马和一只大…",
@@ -4547,7 +4547,7 @@ window.PROMPT_DATA = [
       "canghecode"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "请为“采菊东篱下，悠然见南山。”这首诗配图。",
@@ -4565,7 +4565,7 @@ window.PROMPT_DATA = [
       "canghecode"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "画出《百年孤独》中的重要人物关系图，用中文表示关系。",
@@ -4583,7 +4583,7 @@ window.PROMPT_DATA = [
       "canghecode"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "请为《滕王阁序》生成一个古老的手稿页，有星星和旁注的墨水图，书页风格",
@@ -4601,7 +4601,7 @@ window.PROMPT_DATA = [
       "canghecode"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "做一些具有教育意义的条漫，使用中文，讲清赤壁之战，图文信息丰富。（在阿真基础上做了些改动）",
@@ -4619,7 +4619,7 @@ window.PROMPT_DATA = [
       "canghecode"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "我想做一页PPT 关于AI Agent的应用场景，你自行帮我设计一下，要求科技主题的。文字为中文",
@@ -4637,7 +4637,7 @@ window.PROMPT_DATA = [
       "canghecode"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "我要举办一场活动 主题为“AI赋能发明创新”，时间为2025年11月20日上午10点，地点在北京…",
@@ -4655,7 +4655,7 @@ window.PROMPT_DATA = [
       "xmliisu"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "🎬",
     "summary": "{ \"prompt_breakdown\": { \"subject_parameters\": { …",
@@ -4673,7 +4673,7 @@ window.PROMPT_DATA = [
       "xmliisu"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🧩",
     "summary": "{ \"prompt_structure\": { \"subject_preservation\": …",
@@ -4691,7 +4691,7 @@ window.PROMPT_DATA = [
       "xmliisu"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "{ \"image_description\": { \"overall_composition\": …",
@@ -4709,7 +4709,7 @@ window.PROMPT_DATA = [
       "xmliisu"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "{ \"image_description\": { \"subject\": { \"identity\"…",
@@ -4727,7 +4727,7 @@ window.PROMPT_DATA = [
       "_MehdiSharifi_"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "一部 16:9 的宽景电影镜头，中间是一个单独的居中头像，展示的是漩涡鸣人，脸部从中间垂直分开。…",
@@ -4745,7 +4745,7 @@ window.PROMPT_DATA = [
       "Samann_ai"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "以提供的肖像照片为基础。 不要改变人物的面部、表情、年龄、肤色或性别。只需在上方叠加一个干净、极…",
@@ -4763,7 +4763,7 @@ window.PROMPT_DATA = [
       "ShreyaYadav___"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "创建一个超写实的人物肖像（保留确切的真实面部和身体特征，不做任何改动），8K高分辨率的超现实肖像…",
@@ -4781,7 +4781,7 @@ window.PROMPT_DATA = [
       "canghecode"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "帮我生成英雄联盟的游戏界面，中路亚索正在清理兵线",
@@ -4799,7 +4799,7 @@ window.PROMPT_DATA = [
       "tuzi_ai"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "兔子 API 站点（https://api.tu-zi.com/ 模型（谷歌的最新画图模型），该…",
@@ -4817,7 +4817,7 @@ window.PROMPT_DATA = [
       "tuzi_ai"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "Create an addictively intriguing 12 part story w…",
@@ -4835,7 +4835,7 @@ window.PROMPT_DATA = [
       "Zieeett"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "将图像制作成白天和等距视图仅限[建筑]",
@@ -4853,7 +4853,7 @@ window.PROMPT_DATA = [
       "op7418"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "这张照片很无聊很平淡。增强它！增加对比度，提升色彩，改善光线使其更丰富，你可以裁剪和删除影响构图…",
@@ -4871,7 +4871,7 @@ window.PROMPT_DATA = [
       "op7418"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "🎬",
     "summary": "将照片转换为俯视角度并标记摄影师的位置",
@@ -4889,7 +4889,7 @@ window.PROMPT_DATA = [
       "Gorden_Sun"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🧩",
     "summary": "Character emotions sheet, multiple expressions o…",
@@ -4907,7 +4907,7 @@ window.PROMPT_DATA = [
       "balconychy"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "以九宫格的方式生成这个人不同发型的头像",
@@ -4924,7 +4924,7 @@ window.PROMPT_DATA = [
       "Banana"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "请重新构想照片中的人物，使其完全符合某个特定年代的风格。这包括人物的服装、发型、照片的整体画质和…",
@@ -4942,7 +4942,7 @@ window.PROMPT_DATA = [
       "LinuxDO@Bensong"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "高分辨率的黑白肖像摄影作品，采用编辑类与艺术摄影风格。保持人物面部特征一致，仅改变姿态与构图。背…",
@@ -4960,7 +4960,7 @@ window.PROMPT_DATA = [
       "LinuxDO@DT2025"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "将用户提供的2D图片生成一张高品质、照片级的3D模型手办图片。手办应制作精良，细致入微地捕捉2D…",
@@ -4978,7 +4978,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "复古宣传海报风格，突出中文文字，背景为红黄放射状图案。画面中心位置有一位美丽的年轻女性，以精致复…",
@@ -4996,7 +4996,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "生成一张摆放于桌面上的动漫风格手办照片，以日常随手用手机拍摄的轻松休闲视角呈现。手办模型以附件中…",
@@ -5014,7 +5014,7 @@ window.PROMPT_DATA = [
       "azed_ai"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "一张特写照片，展示一个被人手握住的可爱多彩钥匙串。钥匙串的造型为 [参考图片] 的 Q 版风格。…",
@@ -5032,7 +5032,7 @@ window.PROMPT_DATA = [
       "Anima_Labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "根据此物体（提供的照片）创作一个原创生物。该生物应看起来像是属于一个奇幻怪物捕捉宇宙，具有受复古…",
@@ -5050,7 +5050,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "给 {西北工业大学} 画一个拟人化的3D Q版美少女形象，体现学校 {航空航天航海三航} 特色",
@@ -5068,7 +5068,7 @@ window.PROMPT_DATA = [
       "umesh_ai"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "一个 [东方巨龙] 的基础轮廓剪影。背景为亮黄色，剪影为纯黑色实心填充。",
@@ -5086,7 +5086,7 @@ window.PROMPT_DATA = [
       "umesh_ai"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "🎬",
     "summary": "一张黑白照片，展示了一个[主体]在磨砂或半透明表面后的模糊剪影。其[部分]轮廓清晰，紧贴表面，与…",
@@ -5104,7 +5104,7 @@ window.PROMPT_DATA = [
       "thisdudelikesAI"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🧩",
     "summary": "将这张照片变成一个摇头娃娃：头部稍微放大，保持面部准确，身体卡通化。[把它放在书架上]。",
@@ -5122,7 +5122,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "创建一个照片现实肖像，上传参考图像中附带的男人（保持参考图像中人物的面部100%准确）站在鹅卵石…",
@@ -5140,7 +5140,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "一个情绪化的、高分辨率编辑肖像，上传照片中的男人（保持他的脸100%准确）。他坐在一个复古电吉他…",
@@ -5158,7 +5158,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "上传参考图像中附带的男人（保持参考图像中人物的面部100%准确）穿着纯棕色圆领毛衣和白色工装裤，…",
@@ -5176,7 +5176,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "土耳其卡帕多西亚日出时的梦幻肖像。背景中数十个热气球充斥天空。上传参考图像中的模特站在屋顶露台上…",
@@ -5194,7 +5194,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "超现实的电影低调中等肖像，一只狗将它的吻部压在主体的耳朵上，仿佛在低语秘密；狗抬起一只前爪覆盖自…",
@@ -5212,7 +5212,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "一个超现实的广角自拍照片，上传参考图像中附带的男人（附带照片中，100%保留脸部）在快速流动的白…",
@@ -5230,7 +5230,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "使用上传的脸部图像作为严格锁定的身份参考，保留确切的面部特征、比例、皮肤纹理、自然头发和面部表情…",
@@ -5248,7 +5248,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "一个高度电影化的旅行照片，上传参考图像中附带的男人（保持参考图像中人物的面部100%准确）在日出…",
@@ -5266,7 +5266,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "创建一个附带人的肖像，作为一级方程式赛车手在赛道上摆姿势，坐在经典法拉利赛车的侧面。 他穿着红色…",
@@ -5284,7 +5284,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "一个电影冬季美容编辑肖像，一个女人戴着蓬松白色人造毛乌纱卡帽、露肩蓬松白色毛大衣、白色手套，以及…",
@@ -5302,7 +5302,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "一个高角度、动作镜头，一支狗拉雪橇队在覆盖雪的路径上奔跑，通过光秃秃的森林。上传参考图像中附带的…",
@@ -5320,7 +5320,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "一个超现实的16K肖像，上传参考中的男人，在迪拜VIP俱乐部中，保持参考照片中他的确切面部特征（…",
@@ -5338,7 +5338,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "创建一个照片现实自拍，上传参考图像中附带的男人（保持参考图像中人物的面部100%准确）在开阔的海…",
@@ -5356,7 +5356,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "一个肖像大小的高度细节照片图像，一个快乐的、上传参考图像中附带的男人（保持参考图像中人物的面部1…",
@@ -5374,7 +5374,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "一个超现实编辑街头时尚照片，上传参考图像中附带的男人（保持参考图像中人物的面部100%准确）拿着…",
@@ -5392,7 +5392,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "创建一个照片现实奢侈时尚活动场景，上传参考图像中附带的男人遛六只斑点狗在高端城市公园中。男人的脸…",
@@ -5410,7 +5410,7 @@ window.PROMPT_DATA = [
       "NanoBanana_labs"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "创建一个照片现实场景，上传参考图像中的男人（保持脸100%准确）在拥挤的家庭派对上跳舞。将身体形…",
@@ -5428,7 +5428,7 @@ window.PROMPT_DATA = [
       "berryxia_ai"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "三只[动物类型]在标志性[地标]前的特写自拍照，它们表情各异，拍摄于黄金时刻，采用电影般的灯光。…",
@@ -5446,7 +5446,7 @@ window.PROMPT_DATA = [
       "ZHO_ZHO_ZHO"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "🎬",
     "summary": "超写实，从上往下俯视角拍摄，一个美丽的ins模特【安妮海瑟薇 / 见参考图片】，有着精致美丽的妆…",
@@ -5464,7 +5464,7 @@ window.PROMPT_DATA = [
       "umesh_ai"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🧩",
     "summary": "将图像转换为绘制在古老羊皮纸上的古代藏宝图。地图包含详细的元素，如海洋上的帆船、海岸线上的古老港…",
@@ -5482,7 +5482,7 @@ window.PROMPT_DATA = [
       "egeberkina"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "一个超逼真的3D渲染图，展示了四个机械键盘键帽，排列成紧密的2x2网格，所有键帽相互接触。从等轴…",
@@ -5500,7 +5500,7 @@ window.PROMPT_DATA = [
       "terry623"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "从上方俯瞰的超高细节迷你【Cyberpunk】景观，采用倾斜移轴鏡頭效果。场景中充满如玩具般的元…",
@@ -5518,7 +5518,7 @@ window.PROMPT_DATA = [
       "egeberkina"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "高精度的 3D 渲染图，按照 emoji 图标 {👍} 展示一个金属质感的徽章，固定在竖直的商…",
@@ -5536,7 +5536,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "一张黑白线描涂色插画，适合直接打印在标准尺寸（8.5x11英寸）的纸张上，无纸张边框。整体插画风…",
@@ -5554,7 +5554,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "在字母中融入单词的含义，将图形和字母巧妙融合在一起。 单词：{ beautify } 下面加上单…",
@@ -5572,7 +5572,7 @@ window.PROMPT_DATA = [
       "rezzycheck"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "双重曝光，Midjourney 风格，融合、混合、叠加的双重曝光图像，双重曝光风格。一幅由 Yu…",
@@ -5590,7 +5590,7 @@ window.PROMPT_DATA = [
       "umesh_ai"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "一幅铅笔素描画，描绘了 [Subject 1] 与 [Subject 2] 互动的场景，其中 […",
@@ -5608,7 +5608,7 @@ window.PROMPT_DATA = [
       "ZHO_ZHO_ZHO"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "创建图片 一个可爱Q版的硅胶护腕托，外形基于【🐼】表情，采用柔软的食品级硅胶材质，表面为亲肤哑…",
@@ -5626,7 +5626,7 @@ window.PROMPT_DATA = [
       "umesh_ai"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "一幅数字插画，描绘了一个 [SUBJECT]，其结构由一组发光、干净且纯净的蓝色线条勾勒而成。画…",
@@ -5644,7 +5644,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "以清晰的45°俯视角度，展示一个等距微缩模型场景，内容为[上海东方明珠塔、外滩]等城市特色建筑，…",
@@ -5662,7 +5662,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "🎬",
     "summary": "创建一幅高度精细且色彩鲜艳的乐高版上海外滩景象。前景呈现经典的外滩历史建筑群，用乐高砖块精致还原…",
@@ -5680,7 +5680,7 @@ window.PROMPT_DATA = [
       "azed_ai"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🧩",
     "summary": "一张高质量的照片，展示一个可爱的陶瓷[物体/动物]形状的花盆，表面光滑，里面装满了各种生机勃勃的…",
@@ -5698,7 +5698,7 @@ window.PROMPT_DATA = [
       "jiamimaodashu"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "请画一张极其平凡无奇的iPhone 自拍照，没有明确的主体或构图感，就像是随手一拍的快照。照片略…",
@@ -5716,7 +5716,7 @@ window.PROMPT_DATA = [
       "egeberkina"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "retexture the image attached based on the json b…",
@@ -5734,7 +5734,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "一枚精致的水晶球静静摆放在窗户旁温暖柔和的桌面上，背景虚化而朦胧，暖色调的阳光轻柔地穿透水晶球，…",
@@ -5752,7 +5752,7 @@ window.PROMPT_DATA = [
       "photis (Sora)"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "{The Lord of the Rings} 风格的动漫电影海报，动漫画风为《恶魔高中 DXD…",
@@ -5770,7 +5770,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "根据所附照片创建一个风格化的3D Q版人物角色，准确保留人物的面部特征和服装细节。角色的左手比心…",
@@ -5788,7 +5788,7 @@ window.PROMPT_DATA = [
       "umesh_ai"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "生成一张照片：捕捉了白天的场景，天空中散落的云彩组成了 [主体/物体] 的形状，位于 [地点] …",
@@ -5806,7 +5806,7 @@ window.PROMPT_DATA = [
       "egeberkina"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "创建一个极简主义的 8 位像素风格的 [🍔] 标志，居中放置在纯白背景上。使用有限的复古调色板…",
@@ -5824,7 +5824,7 @@ window.PROMPT_DATA = [
       "egeberkina"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "一个纸艺风格的\"🔥\"图标，漂浮在纯白背景上。这个表情符号由彩色剪纸手工制作而成，具有可见的纸张…",
@@ -5842,7 +5842,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "一位美丽的女子身穿粉色旗袍，头戴精致的花饰，秀发中点缀着色彩缤纷的花朵，颈间装饰着优雅的白色蕾丝…",
@@ -5860,7 +5860,7 @@ window.PROMPT_DATA = [
       "berryxia_ai"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "创建一张 RPG 收藏风格的数字角色卡。角色设定为 {Programmer}，自信地站立，配有与…",
@@ -5878,7 +5878,7 @@ window.PROMPT_DATA = [
       "ZHO_ZHO_ZHO"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "🎬",
     "summary": "把图片人物生成变成 Q 版可爱俄罗斯套娃🪆，大到小一共五个，放在精致的木桌上，横幅3:2比例",
@@ -5896,7 +5896,7 @@ window.PROMPT_DATA = [
       "balconychy"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🧩",
     "summary": "将照片里的转换成Q版 3D人物，父母婚礼服饰，孩子是美丽的花童。 父母，西式婚礼服饰，父亲礼服，…",
@@ -5914,7 +5914,7 @@ window.PROMPT_DATA = [
       "balconychy"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "将附图中的人物转换成水晶球场景。整体环境：水晶球放在窗户旁桌面上，背景模糊，暖色调。阳光透过球体…",
@@ -5932,7 +5932,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "微型立体场景呈现，运用移轴摄影的技法，呈现出Q版【孙悟空三打白骨精】场景",
@@ -5950,7 +5950,7 @@ window.PROMPT_DATA = [
       "azed_ai"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "一则简约且富有创意的广告，设置在纯白背景上。 一个真实的 [真实物体] 与手绘黑色墨水涂鸦相结合…",
@@ -5968,7 +5968,7 @@ window.PROMPT_DATA = [
       "hellokaton"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "创建一张日系萌系双格漫画，上下排列，主题：少女总统的工作日常。角色形象: 将上传的附件转换为日系…",
@@ -5986,7 +5986,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "一个卡通风格的角色，头部是一个带笑脸的电脑显示器，穿着手套和靴子，正开心地跳跃穿过一个发光的蓝色…",
@@ -6004,7 +6004,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "创作一张手绘风格的信息图卡片，比例为9:16竖版。卡片主题鲜明，背景为带有纸质肌理的米色或米白色…",
@@ -6022,7 +6022,7 @@ window.PROMPT_DATA = [
       "op7418"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "一个柔和的3D卡通风格[品牌产品]雕塑，由光滑的粘土般纹理和鲜艳的柔和色彩制成，放置在简约的等距…",
@@ -6040,7 +6040,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "画一个马桶：## 艺术风格简介：极简主义3D插画（Minimalist 3D Illustrat…",
@@ -6058,7 +6058,7 @@ window.PROMPT_DATA = [
       "gizakdag"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "将一个简单平面的矢量图标 [🎃] 转化为柔软、立体、毛茸茸的可爱物体。整体造型被浓密的毛发完全…",
@@ -6076,7 +6076,7 @@ window.PROMPT_DATA = [
       "balconychy"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "将照片里的转换成Q版 3D人物，父母婚礼服饰，孩子是美丽的花童。父母，西式婚礼服饰，父亲礼服，母…",
@@ -6094,7 +6094,7 @@ window.PROMPT_DATA = [
       "balconychy"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "🎬",
     "summary": "将附图中的人物转换成可爱Q版3D造型 场景：在豪华游轮最顶尖的船头，船头是尖的。 男士带着女士站…",
@@ -6112,7 +6112,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🧩",
     "summary": "多层折叠式纸雕立体绘本，放在一张书桌上，背景纯净突出主题，绘本呈现出立体翻页书般的风格，比例为3…",
@@ -6130,7 +6130,7 @@ window.PROMPT_DATA = [
       "richardchang"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "创建一套动漫风格的贴纸集合，包含多个不同表情和姿势的卡通角色，每个贴纸都有白色边框，色彩鲜艳，风…",
@@ -6148,7 +6148,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "35 毫米胶片风格的照片：莫斯科漂浮在天空中的飞行岛屿上。",
@@ -6166,7 +6166,7 @@ window.PROMPT_DATA = [
       "ZHO_ZHO_ZHO"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "为图片人物生成不同职业风的OOTD，时尚穿搭和配饰，和人物色系一致的纯色背景，Q版 3d，c4d…",
@@ -6184,7 +6184,7 @@ window.PROMPT_DATA = [
       "ZHO_ZHO_ZHO"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "把这张照片设计成一个极简扁平插画风格的Q版贴纸，厚白边，保留人物特征，风格要可爱一些，人物要超出…",
@@ -6202,7 +6202,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "创作一套全新的 chibi sticker，共六个独特姿势，以用户形象为主角： 1. 双手比出剪…",
@@ -6220,7 +6220,7 @@ window.PROMPT_DATA = [
       "ZHO_ZHO_ZHO"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "《大师麦片》：根据我上传的照片的人物特征判断，为他生成一个符合他特质的燕麦片搭配（比如蔬菜、水果…",
@@ -6238,7 +6238,7 @@ window.PROMPT_DATA = [
       "0xdlk"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "使用以下 JSON 配置文件生成一个马桶： { \"art_style_profile\": { \"…",
@@ -6256,7 +6256,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "把照片中的人物变成 Funko Pop 公仔包装盒的风格，以等距视角（isometric）呈现，…",
@@ -6274,7 +6274,7 @@ window.PROMPT_DATA = [
       "balconychy"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "画图：画一个小红书封面。 要求： 有足够的吸引力吸引用户点击； 字体醒目，选择有个性的字体； 文…",
@@ -6292,7 +6292,7 @@ window.PROMPT_DATA = [
       "leon_yuan2001"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "请创作一套以 [参考图片中的角色] 为主角的Q版表情包，共9个，排列成3x3网格。 设计要求： …",
@@ -6310,7 +6310,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "🎬",
     "summary": "以手机随手拍摄的日常风格，桌面上摆放着一款 【成龙】动漫手办，动作夸张帅气，装备齐全。同时，真实…",
@@ -6328,7 +6328,7 @@ window.PROMPT_DATA = [
       "TheRelianceAI"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🧩",
     "summary": "一张超写实的俯拍摄影作品，展示了一个米色纸板盒内的3D打印立体模型，盒盖由两只人手撑开。盒子内部…",
@@ -6346,7 +6346,7 @@ window.PROMPT_DATA = [
       "Gdgtify"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "复古CRT电脑启动屏幕，最终显示为[形状或标志]的ASCII艺术。",
@@ -6364,7 +6364,7 @@ window.PROMPT_DATA = [
       "Alittlefatwhale"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "基于附件中的人物，生成一个二次元风格的徽章的照片，要求： 材质：流苏 形状：圆形 画面主体：一只…",
@@ -6382,7 +6382,7 @@ window.PROMPT_DATA = [
       "balconychy"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "将照片里的两个人转换成Q版 3D人物，中式古装婚礼，大红颜色，背景“囍”字剪纸风格图案。 服饰要…",
@@ -6400,7 +6400,7 @@ window.PROMPT_DATA = [
       "ZHO_ZHO_ZHO"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #e94560 100%)",
     "emoji": "📝",
     "summary": "为我生成讽刺海报：GPT 4o 狂卷，都别干图像AI了 还是送外卖吧",
@@ -6418,7 +6418,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #4a044e 0%, #ec4899 40%, #f9a8d4 100%)",
     "emoji": "🍌",
     "summary": "将场景中的角色转化为3D Q版风格，同时保持原本的场景布置和服装造型不变。",
@@ -6436,7 +6436,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #1e1b4b 0%, #6366f1 50%, #c7d2fe 100%)",
     "emoji": "✨",
     "summary": "根据照片上的内容打造一款细致精美、萌趣可爱的3D渲染收藏摆件，装置在柔和粉彩色调、温馨浪漫的展示…",
@@ -6454,7 +6454,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0f172a 0%, #312e81 50%, #06b6d4 100%)",
     "emoji": "🎨",
     "summary": "一幅讽刺漫画风格的插画，采用复古美式漫画风格，背景是一个多层货架，货架上都是一样的红色棒球帽，帽…",
@@ -6472,7 +6472,7 @@ window.PROMPT_DATA = [
       "ZHO_ZHO_ZHO"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #7c2d12 0%, #f97316 50%, #fed7aa 100%)",
     "emoji": "🖼️",
     "summary": "根据我上传的照片，生成一张纵向比例的照片，使用以下提示词：经典乐高人偶风格，一个微缩场景 —— …",
@@ -6490,7 +6490,7 @@ window.PROMPT_DATA = [
       "LinuxDO@synbio"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #14532d 0%, #22c55e 50%, #bbf7d0 100%)",
     "emoji": "🖌️",
     "summary": "截取图片人像头部，帮我做成 2 寸证件照，要求： 1、白底 2、职业正装 3、正脸 4、完全保持…",
@@ -6508,7 +6508,7 @@ window.PROMPT_DATA = [
       "ZHO_ZHO_ZHO"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #881337 0%, #f43f5e 50%, #fda4af 100%)",
     "emoji": "📷",
     "summary": "为我生成我的房间设计（床、书架、沙发、绿植、电脑桌和电脑），墙上挂着绘画，窗外是城市夜景。可爱 …",
@@ -6526,7 +6526,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #164e63 0%, #06b6d4 50%, #a5f3fc 100%)",
     "emoji": "🎬",
     "summary": "照片中的角色的 3D Q 版形象穿过传送门，牵着观众的手，在将观众拉向前时动态地回头一看。传送门…",
@@ -6544,7 +6544,7 @@ window.PROMPT_DATA = [
       "egeberkina"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #3b0764 0%, #a855f7 50%, #e9d5ff 100%)",
     "emoji": "🧩",
     "summary": "一个超写实的等距视角 3D 渲染图，展示了一个微型电脑工作空间，置于一个半透明的机械键盘键帽内，…",
@@ -6562,7 +6562,7 @@ window.PROMPT_DATA = [
       "ZHO_ZHO_ZHO"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #422006 0%, #f59e0b 50%, #fde68a 100%)",
     "emoji": "🌸",
     "summary": "将 {❄️} 变成一个柔软的 3D 丝绸质感物体。整个物体表面包裹着顺滑流动的丝绸面料，带有超现…",
@@ -6580,7 +6580,7 @@ window.PROMPT_DATA = [
       "madpencil_"
     ],
     "type": "generate",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #7dd3fc 100%)",
     "emoji": "💫",
     "summary": "倾斜的第一人称视角拍摄，一只手握着一支超现实的冰棒。冰棒有着透明的蓝色外壳，里面展现了一个水下场…",
@@ -6598,7 +6598,7 @@ window.PROMPT_DATA = [
       "dotey"
     ],
     "type": "edit",
-    "date": "2026-01-01",
+    "date": "2026-07-23",
     "cover": "linear-gradient(135deg, #111827 0%, #374151 40%, #f97316 100%)",
     "emoji": "🪄",
     "summary": "将场景中的角色转化为3D Q版风格，放在一张拍立得照片上，相纸被一只手拿着，照片中的角色正从拍立…",
@@ -6610,16 +6610,16 @@ window.PROMPT_DATA = [
 
 window.ANNOUNCEMENTS = [
   {
-    "title": "欢迎来到灵动词库 · 我的作品集",
-    "body": "整站视觉与交互由我搭建。词库可搜可藏，对照表可看效果再复制。内容已做安全过滤。"
+    "title": "欢迎来到灵动词库",
+    "body": "整站视觉与交互由我搭建。词库可搜、可筛、可藏，一键复制即用。内容已做安全过滤。"
   },
   {
-    "title": "效果图对照表",
-    "body": "导航点「对照表」，边看预览边拿提示词。已移除不适宜内容。"
+    "title": "今日更新",
+    "body": "词库日期已统一到今日，界面精简为专注画廊体验，加载更快。"
   },
   {
     "title": "持续更新中",
-    "body": "我会继续补自己的模板与精选条目，欢迎收藏本站。"
+    "body": "我会继续补充自己的模板与精选条目，欢迎收藏本站。"
   }
 ];
 

@@ -610,9 +610,9 @@ img {
 
 /* Gallery */
 .gallery {
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 24px clamp(16px, 4vw, 32px) 80px;
+  padding: 20px clamp(16px, 4vw, 36px) 96px;
 }
 
 .controls {
@@ -931,8 +931,8 @@ img {
 /* Grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+  gap: 20px;
 }
 
 .card {
@@ -946,6 +946,7 @@ img {
   display: flex;
   flex-direction: column;
   position: relative;
+  will-change: transform;
 }
 
 .card::before {

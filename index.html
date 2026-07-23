@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>灵动词库 — 我的 AI 提示词作品集</title>
-  <meta name="description" content="灵动词库：亲自整理与设计的 AI 提示词作品集。图像、二次元、写作、编程、办公效率，支持搜索收藏与效果图对照。" />
+  <meta name="description" content="灵动词库：亲自整理与设计的 AI 提示词作品集。图像、二次元、写作、编程、办公效率，支持搜索、筛选与一键复制。" />
   <meta name="keywords" content="灵动词库, AI 提示词, Prompt, 作品集, 二次元, 图像生成, Lingdong" />
   <meta name="author" content="Lingdong" />
   <meta name="theme-color" content="#c026d3" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="灵动词库 — 我的 AI 提示词作品集" />
-  <meta property="og:description" content="亲自整理的提示词画廊与效果图对照，一键复制即用。" />
+  <meta property="og:description" content="亲自整理的提示词画廊，搜索收藏，一键复制即用。" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,7 +37,6 @@
     </a>
     <nav class="header-nav" aria-label="站内导航">
       <a href="#gallery">词库</a>
-      <a href="#showcase">对照表</a>
       <a href="#about">关于</a>
     </nav>
     <div class="header-actions">
@@ -60,16 +59,15 @@
       <span class="deco-float d4">❀</span>
       <span class="deco-float d5">☆</span>
     </div>
-    <div class="hero-badge">✦ 个人作品 · 持续更新</div>
+    <div class="hero-badge">✦ 个人作品 · 今日更新</div>
     <p class="hero-kicker">LINGDONG PROMPTS · CURATED BY ME</p>
     <h1 class="hero-title">这是我整理的<br /><span>提示词作品集</span></h1>
     <p class="hero-lead">
       页面结构、视觉风格与交互都是我自己搭的。词库按场景精选，能搜、能筛、能收藏，
-      还有<strong>效果图对照表</strong>——看到结果再决定复制哪一条。
+      点开卡片即可<strong>一键复制</strong>到你常用的 AI 工具。
     </p>
     <div class="hero-actions">
       <a href="#gallery" class="btn btn-primary">浏览我的词库</a>
-      <a href="#showcase" class="btn btn-secondary">效果图对照</a>
       <a href="#about" class="btn btn-ghost">关于本站</a>
     </div>
     <div class="stats">
@@ -139,62 +137,6 @@
     <div id="promptsGrid" class="grid" aria-live="polite"></div>
   </section>
 
-  <!-- 效果图对照（我的收录展示） -->
-  <section id="showcase" class="banana-section showcase-section">
-    <div class="banana-head showcase-head">
-      <div class="banana-head-text">
-        <p class="banana-kicker">✦ WORKBOOK · 效果图对照</p>
-        <h2>我整理的提示词 × 效果预览</h2>
-        <p class="banana-desc">
-          这一页是我自己做的对照表：左边看效果，右边拿提示词。支持搜索、分类、分页，
-          点「复制」就能直接贴进 Gemini / ChatGPT / 绘图工具。持续补充中。
-        </p>
-      </div>
-      <div class="banana-stat-badge showcase-badge">
-        <strong id="bnTotalBadge">0</strong>
-        <span>条对照样本</span>
-      </div>
-    </div>
-
-    <div class="banana-controls">
-      <div class="search-bar bn-search">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <input type="search" id="bnSearch" placeholder="在我的对照表里搜索…" autocomplete="off" />
-      </div>
-      <select id="bnCategory" class="sort-select" aria-label="分类筛选"></select>
-      <div class="bn-mode-group" role="group" aria-label="类型">
-        <button type="button" class="bn-mode-btn active" data-mode="all">全部</button>
-        <button type="button" class="bn-mode-btn" data-mode="generate">生成</button>
-        <button type="button" class="bn-mode-btn" data-mode="edit">编辑</button>
-      </div>
-    </div>
-    <p class="bn-count-line" id="bnCount"></p>
-
-    <div class="bn-table-wrap">
-      <table class="bn-table" aria-label="提示词效果图对照表">
-        <thead>
-          <tr>
-            <th class="col-no">#</th>
-            <th class="col-thumb">效果图</th>
-            <th class="col-title">标题 / 摘要</th>
-            <th class="col-cat">分类</th>
-            <th class="col-mode">类型</th>
-            <th class="col-author">收录</th>
-            <th class="col-actions">操作</th>
-          </tr>
-        </thead>
-        <tbody id="bnTableBody"></tbody>
-      </table>
-      <div class="bn-empty" id="bnEmpty" hidden>没有匹配的条目，试试其他关键词。</div>
-    </div>
-
-    <div class="bn-cards" id="bnCards" aria-label="移动端卡片列表"></div>
-    <div class="bn-pager" id="bnPager"></div>
-  </section>
-
   <section id="about" class="howto about-section">
     <h2>关于这个作品</h2>
     <div class="howto-grid">
@@ -206,7 +148,7 @@
       <div class="howto-item">
         <div class="num">UI</div>
         <h3>我负责什么</h3>
-        <p>站点架构、界面设计、交互逻辑、词库整理与对照表呈现——整站由我搭建与维护。</p>
+        <p>站点架构、界面设计、交互逻辑与词库整理——整站由我搭建与维护。</p>
       </div>
       <div class="howto-item">
         <div class="num">库</div>
@@ -216,12 +158,12 @@
       <div class="howto-item">
         <div class="num">→</div>
         <h3>怎么用</h3>
-        <p>逛词库或打开对照表 → 看效果 → 复制提示词 → 粘贴到你常用的 AI 工具里微调使用。</p>
+        <p>浏览词库 → 搜索或筛选 → 打开卡片 → 复制提示词 → 粘贴到你常用的 AI 工具里微调使用。</p>
       </div>
     </div>
     <p class="about-credit">
-      部分效果图示例参考了社区公开词库资源（MIT），已重新编排进本站结构。
-      本站域名 <strong>lingdongtech.de5.net</strong> · 作者 <strong id="aboutAuthor">Lingdong</strong>
+      本站专注提示词画廊体验，内容已做安全过滤。
+      域名 <strong>lingdongtech.de5.net</strong> · 作者 <strong id="aboutAuthor">Lingdong</strong>
     </p>
   </section>
 
@@ -264,35 +206,10 @@
     </svg>
   </button>
 
-  <!-- Banana detail modal -->
-  <div class="modal-backdrop bn-modal-backdrop" id="bnModal" role="dialog" aria-modal="true" aria-labelledby="bnModalTitle">
-    <div class="modal bn-modal">
-      <div class="bn-modal-visual">
-        <img id="bnModalImg" alt="" hidden />
-        <button type="button" class="modal-close" id="bnModalClose" aria-label="关闭">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 6L6 18M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-      <div class="modal-body">
-        <h2 id="bnModalTitle">标题</h2>
-        <div class="modal-tags" id="bnModalMeta"></div>
-        <div class="bn-modal-refs" id="bnModalRefs" hidden></div>
-        <div class="prompt-box" id="bnModalPrompt"></div>
-        <div class="modal-actions">
-          <button type="button" class="btn btn-primary" id="bnModalCopy">复制提示词</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div class="toast" id="toast" role="status"></div>
 
   <script src="js/config.js"></script>
   <script src="js/data.js"></script>
-  <script src="js/banana-showcase.js"></script>
   <script src="js/app.js"></script>
-  <script src="js/banana-table.js"></script>
 </body>
 </html>
