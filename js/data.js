@@ -1,5 +1,5 @@
 /**
- * Spark Prompts — 内嵌回退数据
+ * 灵动词库 — 内嵌回退数据
  */
 window.PROMPT_DATA = [
   {
@@ -7207,24 +7207,16 @@ window.PROMPT_DATA = [
 
 window.ANNOUNCEMENTS = [
   {
-    "title": "已导入 Banana 词库 · 现共 407 条",
-    "body": "来自 Banana Prompt Quicker 公开词库（MIT）。可搜索「海报」「表情包」「吐槽」等。"
+    "title": "欢迎来到灵动词库 · 我的作品集",
+    "body": "整站视觉与交互由我搭建。词库可搜可藏，对照表可看效果再复制。"
   },
   {
-    "title": "词库已更新 · 共 85 条",
-    "body": "已并入樱词示例与实用模板，支持搜索「月下」「盲盒」「公众号」等关键词。"
+    "title": "效果图对照表已上线",
+    "body": "导航点「对照表」，边看预览边拿提示词，适合快速挑选灵感。"
   },
   {
-    "title": "快捷键",
-    "body": "按 / 或 Ctrl+K 聚焦搜索；Esc 关闭详情；卡片复制图标一键复制全文。"
-  },
-  {
-    "title": "分享与深链",
-    "body": "详情弹窗「复制链接」得到 #p=id 地址，打开即可直达该提示词。"
-  },
-  {
-    "title": "扩展词库",
-    "body": "优先编辑 prompts.json，再运行 node tools/build-data.mjs 同步 data.js 回退包。"
+    "title": "持续更新中",
+    "body": "我会继续补自己的模板与精选条目，欢迎收藏本站。"
   }
 ];
 

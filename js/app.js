@@ -657,10 +657,13 @@
   function applySiteConfig() {
     const cfg = window.SITE_CONFIG || {};
     if (cfg.name) {
-      document.title = `${cfg.name} — ${cfg.tagline || "AI 提示词画廊"}`;
+      document.title = `${cfg.name} — ${cfg.tagline || "我的 AI 提示词作品集"}`;
       const logo = document.querySelector(".logo");
       if (logo) {
-        logo.innerHTML = `<span class="logo-mark">🌸</span><span class="logo-text"><strong>${escapeHtml(cfg.name)}</strong><small>星闪词库 · 二次元友好</small></span>`;
+        const sub = cfg.nameEn
+          ? `${escapeHtml(cfg.nameEn)} · ${escapeHtml(cfg.brandNote || "我的作品")}`
+          : escapeHtml(cfg.brandNote || "我的提示词作品集");
+        logo.innerHTML = `<span class="logo-mark">✦</span><span class="logo-text"><strong>${escapeHtml(cfg.name)}</strong><small>${sub}</small></span>`;
       }
     }
     if (cfg.githubUrl) {
@@ -671,8 +674,23 @@
     if (yearEl && cfg.year) yearEl.textContent = String(cfg.year);
     const nameEl = $("#footerName");
     if (nameEl && cfg.name) nameEl.textContent = cfg.name;
+    ["#footerAuthor", "#aboutAuthor"].forEach((sel) => {
+      const el = $(sel);
+      if (el && cfg.author) el.textContent = cfg.author;
+    });
+    if (cfg.siteUrl) {
+      const fs = $("#footerSite");
+      if (fs) {
+        fs.href = cfg.siteUrl;
+        try {
+          fs.textContent = new URL(cfg.siteUrl).host;
+        } catch {
+          fs.textContent = cfg.siteUrl;
+        }
+      }
+    }
     if (cfg.debug) {
-      console.info("[Spark Prompts]", cfg.name, "prompts:", (window.PROMPT_DATA || []).length);
+      console.info("[Lingdong]", cfg.name, "prompts:", (window.PROMPT_DATA || []).length);
     }
   }
 
