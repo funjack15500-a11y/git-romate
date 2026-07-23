@@ -3,6 +3,7 @@
 
   const FAV_KEY = "spark-prompts-favorites";
   const THEME_KEY = "spark-prompts-theme";
+  const SORT_KEY = "spark-prompts-sort";
 
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -11,7 +12,9 @@
     query: "",
     category: "全部",
     filter: "all", // all | recent-week | generate | edit | favorites
+    sort: loadSort(),
     favorites: loadFavorites(),
+    activeId: null,
   };
 
   function loadFavorites() {
@@ -27,6 +30,22 @@
       localStorage.setItem(FAV_KEY, JSON.stringify([...state.favorites]));
     } catch {
       /* file:// 或隐私模式可能不可写，忽略 */
+    }
+  }
+
+  function loadSort() {
+    try {
+      return localStorage.getItem(SORT_KEY) || "newest";
+    } catch {
+      return "newest";
+    }
+  }
+
+  function saveSort() {
+    try {
+      localStorage.setItem(SORT_KEY, state.sort);
+    } catch {
+      /* ignore */
     }
   }
 
@@ -69,7 +88,7 @@
 
   function getFiltered() {
     const q = state.query.trim().toLowerCase();
-    return (window.PROMPT_DATA || []).filter((item) => {
+    let list = (window.PROMPT_DATA || []).filter((item) => {
       if (state.category !== "全部" && item.category !== state.category) return false;
       if (state.filter === "generate" && item.type !== "generate") return false;
       if (state.filter === "edit" && item.type !== "edit") return false;
@@ -81,6 +100,26 @@
         .toLowerCase();
       return hay.includes(q);
     });
+
+    list = list.slice();
+    const byDate = (a, b) => new Date(b.date) - new Date(a.date);
+    switch (state.sort) {
+      case "oldest":
+        list.sort((a, b) => new Date(a.date) - new Date(b.date));
+        break;
+      case "title":
+        list.sort((a, b) => a.title.localeCompare(b.title, "zh-CN"));
+        break;
+      case "category":
+        list.sort((a, b) => {
+          const c = a.category.localeCompare(b.category, "zh-CN");
+          return c || a.title.localeCompare(b.title, "zh-CN");
+        });
+        break;
+      default:
+        list.sort(byDate);
+    }
+    return list;
   }
 
   function heartSvg(filled) {
@@ -90,16 +129,81 @@
     return `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`;
   }
 
+  function copyIconSvg() {
+    return `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+  }
+
+  function filterLabel(f) {
+    return (
+      {
+        all: "全部类型",
+        "recent-week": "近一周",
+        generate: "生成",
+        edit: "编辑",
+        favorites: "收藏",
+      }[f] || f
+    );
+  }
+
+  function hasActiveFilters() {
+    return (
+      state.query.trim() !== "" ||
+      state.category !== "全部" ||
+      state.filter !== "all"
+    );
+  }
+
+  function updateChips() {
+    const chips = $("#activeChips");
+    if (!chips) return;
+    const parts = [];
+    if (state.query.trim()) {
+      parts.push(
+        `<button type="button" class="chip" data-chip="query">搜索：${escapeHtml(state.query.trim())} <span aria-hidden="true">×</span></button>`
+      );
+    }
+    if (state.category !== "全部") {
+      parts.push(
+        `<button type="button" class="chip" data-chip="category">分类：${escapeHtml(state.category)} <span aria-hidden="true">×</span></button>`
+      );
+    }
+    if (state.filter !== "all") {
+      parts.push(
+        `<button type="button" class="chip" data-chip="filter">类型：${escapeHtml(filterLabel(state.filter))} <span aria-hidden="true">×</span></button>`
+      );
+    }
+    chips.innerHTML = parts.join("");
+    chips.hidden = parts.length === 0;
+    const reset = $("#resetFilters");
+    if (reset) reset.classList.toggle("visible", hasActiveFilters());
+  }
+
+  function updateResultLine(count) {
+    const n = $("#resultCount");
+    if (n) n.textContent = String(count);
+    const inline = $("#resultCountInline");
+    if (inline) inline.textContent = String(count);
+    const line = $("#resultLine");
+    if (line) {
+      const q = state.query.trim();
+      line.innerHTML = q
+        ? `找到 <strong>${count}</strong> 条与「${escapeHtml(q)}」相关`
+        : `共 <strong id="resultCountInline">${count}</strong> 条`;
+    }
+  }
+
   function renderGrid() {
     const grid = $("#promptsGrid");
     const list = getFiltered();
-    $("#resultCount").textContent = String(list.length);
+    updateResultLine(list.length);
+    updateChips();
 
     if (!list.length) {
       grid.innerHTML = `
         <div class="empty">
           <strong>没有找到匹配的提示词</strong>
-          试试调整搜索词或筛选条件
+          <p>试试调整搜索词或筛选条件</p>
+          <button type="button" class="btn btn-secondary" id="emptyReset">清除筛选</button>
         </div>`;
       return;
     }
@@ -111,9 +215,12 @@
         <article class="card" data-id="${item.id}" tabindex="0" role="button" aria-label="查看 ${escapeHtml(item.title)}">
           <div class="card-cover" style="background:${item.cover}">
             <span class="card-emoji">${item.emoji || "✨"}</span>
-            <button type="button" class="card-fav ${fav ? "active" : ""}" data-fav="${item.id}" aria-label="${fav ? "取消收藏" : "收藏"}">
-              ${heartSvg(fav)}
-            </button>
+            <div class="card-actions">
+              <button type="button" class="card-icon-btn card-copy" data-copy="${item.id}" aria-label="快速复制" title="快速复制">${copyIconSvg()}</button>
+              <button type="button" class="card-icon-btn card-fav ${fav ? "active" : ""}" data-fav="${item.id}" aria-label="${fav ? "取消收藏" : "收藏"}" title="${fav ? "取消收藏" : "收藏"}">
+                ${heartSvg(fav)}
+              </button>
+            </div>
           </div>
           <div class="card-body">
             <h3 class="card-title">${escapeHtml(item.title)}</h3>
@@ -124,6 +231,7 @@
                 .slice(0, 2)
                 .map((t) => `<span class="tag">${escapeHtml(t)}</span>`)
                 .join("")}
+              <span class="card-date">${escapeHtml(item.date || "")}</span>
             </div>
           </div>
         </article>`;
@@ -143,9 +251,22 @@
     return (window.PROMPT_DATA || []).find((p) => p.id === id);
   }
 
+  function promptDeepLink(id) {
+    const base = location.href.split("#")[0];
+    return `${base}#p=${encodeURIComponent(id)}`;
+  }
+
+  function setHashForPrompt(id) {
+    const next = `#p=${encodeURIComponent(id)}`;
+    if (location.hash !== next) {
+      history.replaceState(null, "", next);
+    }
+  }
+
   function openModal(id) {
     const item = findById(id);
     if (!item) return;
+    state.activeId = id;
     const backdrop = $("#modalBackdrop");
     $("#modalCover").style.background = item.cover;
     $("#modalTitle").textContent = item.title;
@@ -159,6 +280,14 @@
         : `<span class="tag">生成类</span>`,
     ].join("");
 
+    const lenEl = $("#promptLen");
+    if (lenEl) {
+      const chars = item.prompt.length;
+      lenEl.textContent = `${chars.toLocaleString()} 字符`;
+    }
+    const dateEl = $("#modalDate");
+    if (dateEl) dateEl.textContent = item.date ? `更新于 ${item.date}` : "";
+
     const favBtn = $("#modalFavBtn");
     const fav = state.favorites.has(item.id);
     favBtn.dataset.id = item.id;
@@ -166,6 +295,7 @@
     favBtn.classList.toggle("active", fav);
 
     $("#copyBtn").dataset.prompt = item.prompt;
+    setHashForPrompt(id);
     backdrop.classList.add("open");
     document.body.style.overflow = "hidden";
     $("#modalClose").focus();
@@ -174,6 +304,14 @@
   function closeModal() {
     $("#modalBackdrop").classList.remove("open");
     document.body.style.overflow = "";
+    if (state.activeId) {
+      const card = $(`.card[data-id="${state.activeId}"]`);
+      if (card) card.focus();
+    }
+    state.activeId = null;
+    if (location.hash.startsWith("#p=")) {
+      history.replaceState(null, "", location.pathname + location.search + "#gallery");
+    }
   }
 
   function toggleFavorite(id) {
@@ -186,6 +324,7 @@
     if (modalOpen && $("#modalFavBtn").dataset.id === id) {
       const fav = state.favorites.has(id);
       $("#modalFavBtn").innerHTML = `${heartSvg(fav)} ${fav ? "已收藏" : "收藏"}`;
+      $("#modalFavBtn").classList.toggle("active", fav);
     }
   }
 
@@ -233,11 +372,41 @@
     const options = $("#categoryOptions");
     const cats = window.CATEGORIES || ["全部"];
     options.innerHTML = cats
-      .map(
-        (c) =>
-          `<button type="button" class="category-option ${c === state.category ? "active" : ""}" data-cat="${escapeHtml(c)}">${escapeHtml(c)}</button>`
-      )
+      .map((c) => {
+        const label = c === "全部" ? "全部分类" : c;
+        return `<button type="button" class="category-option ${c === state.category ? "active" : ""}" role="option" data-cat="${escapeHtml(c)}" aria-selected="${c === state.category}">${escapeHtml(label)}</button>`;
+      })
       .join("");
+  }
+
+  function setCategory(cat) {
+    state.category = cat;
+    const text = cat === "全部" ? "全部分类" : cat;
+    $("#categoryText").textContent = text;
+    $$(".category-option").forEach((el) => {
+      const on = el.dataset.cat === state.category;
+      el.classList.toggle("active", on);
+      el.setAttribute("aria-selected", on ? "true" : "false");
+    });
+    renderGrid();
+  }
+
+  function setFilter(filter) {
+    state.filter = filter;
+    $$(".filter-btn[data-filter]").forEach((b) =>
+      b.classList.toggle("active", b.dataset.filter === filter)
+    );
+    renderGrid();
+  }
+
+  function resetFilters() {
+    state.query = "";
+    const input = $("#searchInput");
+    if (input) input.value = "";
+    const clear = $("#searchClear");
+    if (clear) clear.hidden = true;
+    setCategory("全部");
+    setFilter("all");
   }
 
   function initAnnouncements() {
@@ -282,43 +451,106 @@
     setInterval(() => go((idx + 1) % list.length), 5000);
   }
 
+  function syncSearchClear() {
+    const clear = $("#searchClear");
+    if (clear) clear.hidden = !state.query.trim();
+  }
+
+  function openFromHash() {
+    const hash = location.hash || "";
+    const m = hash.match(/^#p=([^&]+)/);
+    if (!m) return;
+    const id = decodeURIComponent(m[1]);
+    if (findById(id)) {
+      openModal(id);
+      // scroll gallery into view underneath
+      const gal = $("#gallery");
+      if (gal) gal.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
   function bindEvents() {
-    $("#searchInput").addEventListener("input", (e) => {
+    const searchInput = $("#searchInput");
+    searchInput.addEventListener("input", (e) => {
       state.query = e.target.value;
+      syncSearchClear();
       renderGrid();
     });
 
-    $("#categoryTrigger").addEventListener("click", (e) => {
+    $("#searchClear")?.addEventListener("click", () => {
+      state.query = "";
+      searchInput.value = "";
+      syncSearchClear();
+      searchInput.focus();
+      renderGrid();
+    });
+
+    const catTrigger = $("#categoryTrigger");
+    catTrigger.addEventListener("click", (e) => {
       e.stopPropagation();
-      $("#categoryOptions").classList.toggle("open");
+      const open = $("#categoryOptions").classList.toggle("open");
+      catTrigger.setAttribute("aria-expanded", open ? "true" : "false");
     });
 
     $("#categoryOptions").addEventListener("click", (e) => {
       const btn = e.target.closest("[data-cat]");
       if (!btn) return;
-      state.category = btn.dataset.cat;
-      $("#categoryText").textContent = state.category;
-      $$(".category-option").forEach((el) =>
-        el.classList.toggle("active", el.dataset.cat === state.category)
-      );
+      setCategory(btn.dataset.cat);
       $("#categoryOptions").classList.remove("open");
-      renderGrid();
+      catTrigger.setAttribute("aria-expanded", "false");
     });
 
     document.addEventListener("click", () => {
       $("#categoryOptions").classList.remove("open");
+      catTrigger.setAttribute("aria-expanded", "false");
     });
 
-    $$(".filter-btn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        $$(".filter-btn").forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-        state.filter = btn.dataset.filter;
+    $$(".filter-btn[data-filter]").forEach((btn) => {
+      btn.addEventListener("click", () => setFilter(btn.dataset.filter));
+    });
+
+    $("#resetFilters")?.addEventListener("click", resetFilters);
+
+    const sortSelect = $("#sortSelect");
+    if (sortSelect) {
+      sortSelect.value = state.sort;
+      sortSelect.addEventListener("change", () => {
+        state.sort = sortSelect.value;
+        saveSort();
         renderGrid();
       });
+    }
+
+    $("#activeChips")?.addEventListener("click", (e) => {
+      const chip = e.target.closest("[data-chip]");
+      if (!chip) return;
+      const kind = chip.dataset.chip;
+      if (kind === "query") {
+        state.query = "";
+        searchInput.value = "";
+        syncSearchClear();
+      } else if (kind === "category") {
+        setCategory("全部");
+        return;
+      } else if (kind === "filter") {
+        setFilter("all");
+        return;
+      }
+      renderGrid();
     });
 
     $("#promptsGrid").addEventListener("click", (e) => {
+      if (e.target.closest("#emptyReset")) {
+        resetFilters();
+        return;
+      }
+      const copyBtn = e.target.closest("[data-copy]");
+      if (copyBtn) {
+        e.stopPropagation();
+        const item = findById(copyBtn.dataset.copy);
+        if (item) copyText(item.prompt);
+        return;
+      }
       const fav = e.target.closest("[data-fav]");
       if (fav) {
         e.stopPropagation();
@@ -342,7 +574,25 @@
       if (e.target === $("#modalBackdrop")) closeModal();
     });
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeModal();
+      if (e.key === "Escape") {
+        if ($("#modalBackdrop").classList.contains("open")) closeModal();
+        return;
+      }
+      // / 聚焦搜索（非输入态）
+      const tag = (e.target && e.target.tagName) || "";
+      const typing =
+        tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || e.target?.isContentEditable;
+      if (!typing && e.key === "/" && !e.ctrlKey && !e.metaKey) {
+        e.preventDefault();
+        searchInput.focus();
+        searchInput.select();
+      }
+      // Ctrl/Cmd+K 聚焦搜索
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        searchInput.focus();
+        searchInput.select();
+      }
     });
 
     $("#copyBtn").addEventListener("click", () => {
@@ -354,7 +604,37 @@
       if (id) toggleFavorite(id);
     });
 
+    $("#shareBtn")?.addEventListener("click", async () => {
+      const id = state.activeId || $("#modalFavBtn").dataset.id;
+      if (!id) return;
+      await copyText(promptDeepLink(id));
+    });
+
     $("#themeToggle").addEventListener("click", toggleTheme);
+
+    window.addEventListener("hashchange", () => {
+      if (location.hash.startsWith("#p=")) openFromHash();
+      else if ($("#modalBackdrop").classList.contains("open")) {
+        $("#modalBackdrop").classList.remove("open");
+        document.body.style.overflow = "";
+        state.activeId = null;
+      }
+    });
+
+    const backTop = $("#backTop");
+    const onScroll = () => {
+      if (!backTop) return;
+      backTop.classList.toggle("show", window.scrollY > 480);
+      const bar = $("#controlsBar");
+      if (bar) {
+        bar.classList.toggle("is-stuck", window.scrollY > 320);
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    backTop?.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
   }
 
   function applySiteConfig() {
@@ -363,7 +643,7 @@
       document.title = `${cfg.name} — ${cfg.tagline || "AI 提示词画廊"}`;
       const logo = document.querySelector(".logo");
       if (logo) {
-        logo.innerHTML = `<span class="logo-mark">✦</span> ${escapeHtml(cfg.name)}`;
+        logo.innerHTML = `<span class="logo-mark">🌸</span> ${escapeHtml(cfg.name)}`;
       }
     }
     if (cfg.githubUrl) {
@@ -379,15 +659,80 @@
     }
   }
 
-  function boot() {
+  function applyBundle(data) {
+    if (!data || typeof data !== "object") return false;
+    if (Array.isArray(data.prompts) && data.prompts.length) {
+      window.PROMPT_DATA = data.prompts;
+    }
+    if (Array.isArray(data.categories) && data.categories.length) {
+      window.CATEGORIES = data.categories;
+    }
+    if (Array.isArray(data.announcements) && data.announcements.length) {
+      window.ANNOUNCEMENTS = data.announcements;
+    }
+    return Array.isArray(window.PROMPT_DATA) && window.PROMPT_DATA.length > 0;
+  }
+
+  /**
+   * HTTP(S) 下优先拉取 prompts.json；file:// 或失败时使用 data.js 内嵌数据。
+   */
+  async function loadPromptBundle() {
+    const cfg = window.SITE_CONFIG || {};
+    const url = cfg.promptsUrl || "prompts.json";
+    const isHttp = /^https?:$/i.test(location.protocol);
+
+    if (!isHttp) {
+      if (cfg.debug) console.info("[Spark Prompts] file:// 使用内嵌 data.js");
+      return { source: "embedded", ok: !!(window.PROMPT_DATA || []).length };
+    }
+
+    try {
+      const res = await fetch(url, { cache: "no-cache" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      if (!applyBundle(data)) throw new Error("invalid prompts.json");
+      if (cfg.debug) {
+        console.info("[Spark Prompts] loaded", url, "count:", window.PROMPT_DATA.length);
+      }
+      return { source: "json", ok: true };
+    } catch (err) {
+      console.warn("[Spark Prompts] prompts.json 加载失败，回退 data.js", err);
+      return {
+        source: "embedded-fallback",
+        ok: !!(window.PROMPT_DATA || []).length,
+      };
+    }
+  }
+
+  function initSakuraField() {
+    const field = $("#sakuraField");
+    if (!field || field.dataset.ready) return;
+    field.dataset.ready = "1";
+    const count = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 18;
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement("span");
+      p.className = "petal";
+      p.style.left = `${Math.random() * 100}%`;
+      p.style.animationDuration = `${8 + Math.random() * 12}s`;
+      p.style.animationDelay = `${-Math.random() * 12}s`;
+      p.style.opacity = String(0.35 + Math.random() * 0.45);
+      p.style.transform = `scale(${0.6 + Math.random() * 0.9})`;
+      field.appendChild(p);
+    }
+  }
+
+  async function boot() {
     applySiteConfig();
     initTheme();
+    initSakuraField();
+    await loadPromptBundle();
     initCategories();
     initAnnouncements();
     bindEvents();
     updateTotalStat();
     updateFavStat();
     renderGrid();
+    openFromHash();
   }
 
   if (document.readyState === "loading") {
