@@ -6,7 +6,7 @@ window.SITE_CONFIG = {
   name: "灵动词库",
   nameEn: "Lingdong Prompts",
   tagline: "我的 AI 提示词作品集",
-  description: "亲自整理与设计的提示词画廊：图像、二次元、写作、编程与办公。搜索、筛选、收藏、一键复制。",
+  description: "亲自整理的 AI 提示词画廊：图像生成/编辑、海报、二次元、写作、编程、提示工程等清晰分类。搜索、筛选、收藏、一键复制。",
   author: "Lingdong",
   brandNote: "Designed & curated by me",
   githubUrl: "https://github.com/funjack15500-a11y/git-romate",
