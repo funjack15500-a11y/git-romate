@@ -657,12 +657,12 @@
   function applySiteConfig() {
     const cfg = window.SITE_CONFIG || {};
     if (cfg.name) {
-      document.title = `${cfg.name} — ${cfg.tagline || "我的 AI 提示词作品集"}`;
+      document.title = `${cfg.name} — ${cfg.tagline || "AI 提示词库"}`;
       const logo = document.querySelector(".logo");
       if (logo) {
         const sub = cfg.nameEn
-          ? `${escapeHtml(cfg.nameEn)} · ${escapeHtml(cfg.brandNote || "我的作品")}`
-          : escapeHtml(cfg.brandNote || "我的提示词作品集");
+          ? `${escapeHtml(cfg.nameEn)} · ${escapeHtml(cfg.brandNote || "Prompt Gallery")}`
+          : escapeHtml(cfg.brandNote || "Prompt Gallery");
         logo.innerHTML = `<span class="logo-mark">✦</span><span class="logo-text"><strong>${escapeHtml(cfg.name)}</strong><small>${sub}</small></span>`;
       }
     }
@@ -674,10 +674,6 @@
     if (yearEl && cfg.year) yearEl.textContent = String(cfg.year);
     const nameEl = $("#footerName");
     if (nameEl && cfg.name) nameEl.textContent = cfg.name;
-    ["#footerAuthor", "#aboutAuthor"].forEach((sel) => {
-      const el = $(sel);
-      if (el && cfg.author) el.textContent = cfg.author;
-    });
     if (cfg.siteUrl) {
       const fs = $("#footerSite");
       if (fs) {
@@ -692,6 +688,158 @@
     if (cfg.debug) {
       console.info("[Lingdong]", cfg.name, "prompts:", (window.PROMPT_DATA || []).length);
     }
+  }
+
+  function pickShowcaseItems(n = 24) {
+    const list = [...(window.PROMPT_DATA || [])];
+    if (!list.length) return [];
+    // prefer variety across categories
+    const byCat = new Map();
+    for (const p of list) {
+      const c = p.category || "其他";
+      if (!byCat.has(c)) byCat.set(c, []);
+      byCat.get(c).push(p);
+    }
+    const cats = [...byCat.keys()];
+    const picked = [];
+    let i = 0;
+    while (picked.length < Math.min(n, list.length) && i < list.length * 2) {
+      const cat = cats[i % cats.length];
+      const bucket = byCat.get(cat);
+      if (bucket && bucket.length) {
+        const idx = Math.floor(Math.random() * bucket.length);
+        const item = bucket.splice(idx, 1)[0];
+        if (item) picked.push(item);
+      }
+      i++;
+    }
+    // fallback fill
+    while (picked.length < Math.min(n, list.length)) {
+      const p = list[picked.length % list.length];
+      if (!picked.includes(p)) picked.push(p);
+      else break;
+    }
+    return picked;
+  }
+
+  function chipHtml(item) {
+    return `<button type="button" class="ticker-chip" data-id="${escapeHtml(item.id)}" title="${escapeHtml(item.title)}">
+      <span class="tc-emoji">${escapeHtml(item.emoji || "✦")}</span>
+      <span class="tc-title">${escapeHtml(item.title)}</span>
+      <span class="tc-cat">${escapeHtml(item.category || "")}</span>
+    </button>`;
+  }
+
+  function initHeroTicker() {
+    const trackA = $("#tickerTrackA");
+    const trackB = $("#tickerTrackB");
+    if (!trackA) return;
+    const items = pickShowcaseItems(28);
+    if (!items.length) return;
+    const half = Math.ceil(items.length / 2);
+    const rowA = items.slice(0, half);
+    const rowB = items.slice(half).length ? items.slice(half) : items.slice().reverse();
+    // duplicate for seamless loop
+    const htmlA = [...rowA, ...rowA].map(chipHtml).join("");
+    const htmlB = [...rowB, ...rowB].map(chipHtml).join("");
+    trackA.innerHTML = htmlA;
+    if (trackB) trackB.innerHTML = htmlB;
+
+    const open = (e) => {
+      const btn = e.target.closest(".ticker-chip");
+      if (!btn?.dataset.id) return;
+      openModal(btn.dataset.id);
+    };
+    trackA.addEventListener("click", open);
+    trackB?.addEventListener("click", open);
+  }
+
+  function initSpotlight() {
+    const stage = $("#spotlightStage");
+    const dots = $("#spotlightDots");
+    if (!stage) return;
+    const items = pickShowcaseItems(8);
+    if (!items.length) {
+      $("#heroSpotlight")?.setAttribute("hidden", "");
+      return;
+    }
+    let idx = 0;
+    let timer = null;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    stage.innerHTML = items
+      .map(
+        (p, i) => `<article class="spotlight-card ${i === 0 ? "active" : ""}" data-i="${i}" data-id="${escapeHtml(p.id)}" role="button" tabindex="0">
+        <div class="sp-meta">
+          <span class="sp-emoji">${escapeHtml(p.emoji || "✦")}</span>
+          <span>${escapeHtml(p.category || "")}</span>
+          <span>·</span>
+          <span>${p.type === "edit" ? "编辑" : "生成"}</span>
+        </div>
+        <div class="sp-title">${escapeHtml(p.title)}</div>
+        <div class="sp-summary">${escapeHtml(p.summary || p.prompt?.slice(0, 80) || "")}</div>
+      </article>`
+      )
+      .join("");
+
+    if (dots) {
+      dots.innerHTML = items
+        .map(
+          (_, i) =>
+            `<button type="button" class="${i === 0 ? "active" : ""}" data-i="${i}" aria-label="第 ${i + 1} 条"></button>`
+        )
+        .join("");
+    }
+
+    function show(n) {
+      idx = (n + items.length) % items.length;
+      $$(".spotlight-card", stage).forEach((el, i) => el.classList.toggle("active", i === idx));
+      if (dots) {
+        $$("button", dots).forEach((el, i) => el.classList.toggle("active", i === idx));
+      }
+    }
+
+    function next() {
+      show(idx + 1);
+    }
+    function prev() {
+      show(idx - 1);
+    }
+
+    function arm() {
+      if (reduce) return;
+      clearInterval(timer);
+      timer = setInterval(next, 4200);
+    }
+
+    $("#spotNext")?.addEventListener("click", () => {
+      next();
+      arm();
+    });
+    $("#spotPrev")?.addEventListener("click", () => {
+      prev();
+      arm();
+    });
+    dots?.addEventListener("click", (e) => {
+      const b = e.target.closest("button[data-i]");
+      if (!b) return;
+      show(+b.dataset.i);
+      arm();
+    });
+    stage.addEventListener("click", (e) => {
+      const card = e.target.closest(".spotlight-card");
+      if (!card?.dataset.id) return;
+      openModal(card.dataset.id);
+    });
+    stage.addEventListener("keydown", (e) => {
+      if (e.key !== "Enter" && e.key !== " ") return;
+      const card = e.target.closest(".spotlight-card");
+      if (!card?.dataset.id) return;
+      e.preventDefault();
+      openModal(card.dataset.id);
+    });
+
+    arm();
   }
 
   function applyBundle(data) {
@@ -780,6 +928,8 @@
     await loadPromptBundle();
     initCategories();
     initAnnouncements();
+    initHeroTicker();
+    initSpotlight();
     bindEvents();
     updateTotalStat();
     updateFavStat();

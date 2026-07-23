@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>灵动词库 — 我的 AI 提示词作品集</title>
-  <meta name="description" content="灵动词库：亲自整理的 AI 提示词作品集。图像生成/编辑、海报物料、二次元、写作、编程、提示工程等分类，支持搜索、筛选与一键复制。" />
-  <meta name="keywords" content="灵动词库, AI 提示词, Prompt, 作品集, 二次元, 图像生成, Lingdong" />
+  <title>灵动词库 — AI 提示词库</title>
+  <meta name="description" content="灵动词库：可搜索、可筛选、一键复制的 AI 提示词库。覆盖图像生成/编辑、海报、二次元、写作、编程与提示工程等分类。" />
+  <meta name="keywords" content="灵动词库, AI 提示词, Prompt, 提示词库, 二次元, 图像生成, Lingdong" />
   <meta name="author" content="Lingdong" />
   <meta name="theme-color" content="#c026d3" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="灵动词库 — 我的 AI 提示词作品集" />
-  <meta property="og:description" content="亲自整理的提示词画廊，搜索收藏，一键复制即用。" />
+  <meta property="og:title" content="灵动词库 — AI 提示词库" />
+  <meta property="og:description" content="可搜索筛选的提示词画廊，一键复制即用。" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,12 +32,12 @@
       <span class="logo-mark">✦</span>
       <span class="logo-text">
         <strong>灵动词库</strong>
-        <small>Lingdong · 我的提示词作品集</small>
+        <small>Lingdong · Prompt Gallery</small>
       </span>
     </a>
     <nav class="header-nav" aria-label="站内导航">
       <a href="#gallery">词库</a>
-      <a href="#about">关于</a>
+      <a href="#about">说明</a>
     </nav>
     <div class="header-actions">
       <button type="button" class="icon-btn" id="themeToggle" aria-label="切换主题"></button>
@@ -59,17 +59,39 @@
       <span class="deco-float d4">❀</span>
       <span class="deco-float d5">☆</span>
     </div>
-    <div class="hero-badge">✦ 个人作品 · 分类焕新</div>
-    <p class="hero-kicker">LINGDONG PROMPTS · CURATED BY ME</p>
-    <h1 class="hero-title">这是我整理的<br /><span>提示词作品集</span></h1>
+    <div class="hero-badge">✦ Prompt Gallery</div>
+    <p class="hero-kicker">LINGDONG · AI PROMPTS</p>
+    <h1 class="hero-title">发现好用的<br /><span>AI 提示词</span></h1>
     <p class="hero-lead">
-      页面结构、视觉风格与交互都是我自己搭的。词库按<strong>海报、信息图、二次元、写作、编程、提示工程</strong>等场景分类，
-      能搜、能筛、能收藏，点开卡片即可<strong>一键复制</strong>到你常用的 AI 工具。
+      按<strong>海报、信息图、二次元、写作、编程、提示工程</strong>等分类浏览，
+      支持搜索、筛选与收藏，点开即可<strong>一键复制</strong>到常用 AI 工具。
     </p>
     <div class="hero-actions">
-      <a href="#gallery" class="btn btn-primary">浏览我的词库</a>
-      <a href="#about" class="btn btn-ghost">关于本站</a>
+      <a href="#gallery" class="btn btn-primary">浏览词库</a>
+      <a href="#about" class="btn btn-ghost">使用说明</a>
     </div>
+
+    <!-- 滚动播报：热门条目 -->
+    <div class="hero-ticker" aria-label="词库滚动预览">
+      <div class="ticker-label">热门</div>
+      <div class="ticker-viewport">
+        <div class="ticker-track" id="tickerTrackA"></div>
+      </div>
+    </div>
+    <div class="hero-ticker hero-ticker-b" aria-hidden="true">
+      <div class="ticker-viewport">
+        <div class="ticker-track ticker-track-rev" id="tickerTrackB"></div>
+      </div>
+    </div>
+
+    <!-- 精选卡片轮播 -->
+    <div class="hero-spotlight" id="heroSpotlight" aria-label="精选提示词轮播">
+      <button type="button" class="spotlight-nav prev" id="spotPrev" aria-label="上一条">‹</button>
+      <div class="spotlight-stage" id="spotlightStage"></div>
+      <button type="button" class="spotlight-nav next" id="spotNext" aria-label="下一条">›</button>
+      <div class="spotlight-dots" id="spotlightDots"></div>
+    </div>
+
     <div class="stats">
       <div class="stat bubble-stat">
         <strong id="totalCount">0</strong>
@@ -81,7 +103,7 @@
       </div>
       <div class="stat bubble-stat">
         <strong id="favCount">0</strong>
-        <span>我的收藏</span>
+        <span>已收藏</span>
       </div>
     </div>
   </section>
@@ -138,38 +160,38 @@
   </section>
 
   <section id="about" class="howto about-section">
-    <h2>关于这个作品</h2>
+    <h2>使用说明</h2>
     <div class="howto-grid">
       <div class="howto-item">
-        <div class="num">✦</div>
-        <h3>为什么做</h3>
-        <p>好用的提示词不该散落在收藏夹。我想做一个<strong>属于自己的</strong>、打开就能抄的灵感站。</p>
+        <div class="num">1</div>
+        <h3>浏览与搜索</h3>
+        <p>按分类筛选，或用搜索框关键词匹配标题、标签与正文。</p>
       </div>
       <div class="howto-item">
-        <div class="num">UI</div>
-        <h3>我负责什么</h3>
-        <p>站点架构、界面设计、交互逻辑与词库整理——整站由我搭建与维护。</p>
+        <div class="num">2</div>
+        <h3>打开卡片</h3>
+        <p>点任意条目查看完整提示词、摘要与标签。</p>
       </div>
       <div class="howto-item">
-        <div class="num">库</div>
-        <h3>内容怎么来</h3>
-        <p>部分条目为自写模板；部分精选公开优质提示词并统一格式，方便检索与一键复制。</p>
+        <div class="num">3</div>
+        <h3>一键复制</h3>
+        <p>复制后粘贴到 Gemini、ChatGPT 或其它 AI 工具，按场景微调即可。</p>
       </div>
       <div class="howto-item">
-        <div class="num">→</div>
-        <h3>怎么用</h3>
-        <p>浏览词库 → 搜索或筛选 → 打开卡片 → 复制提示词 → 粘贴到你常用的 AI 工具里微调使用。</p>
+        <div class="num">4</div>
+        <h3>收藏常用</h3>
+        <p>收藏会保存在本机浏览器，方便下次快速筛选。</p>
       </div>
     </div>
     <p class="about-credit">
-      本站专注提示词画廊体验，内容已做安全过滤。
-      域名 <strong>lingdongtech.de5.net</strong> · 作者 <strong id="aboutAuthor">Lingdong</strong>
+      内容已做基础安全过滤，持续补充中。
+      <strong>lingdongtech.de5.net</strong>
     </p>
   </section>
 
   <footer class="site-footer">
-    <p class="footer-brand">© <span id="footerYear">2026</span> <span id="footerName">灵动词库</span> · Made by <span id="footerAuthor">me</span></p>
-    <p class="footer-sub">个人提示词作品集 · <a href="https://lingdongtech.de5.net/" id="footerSite">lingdongtech.de5.net</a></p>
+    <p class="footer-brand">© <span id="footerYear">2026</span> <span id="footerName">灵动词库</span></p>
+    <p class="footer-sub">AI 提示词库 · <a href="https://lingdongtech.de5.net/" id="footerSite">lingdongtech.de5.net</a></p>
   </footer>
 
   <!-- Modal -->
