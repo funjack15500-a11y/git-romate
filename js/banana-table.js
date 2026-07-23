@@ -296,7 +296,7 @@
       if (btn.dataset.page === "prev") state.page = Math.max(1, state.page - 1);
       if (btn.dataset.page === "next") state.page += 1;
       renderTable();
-      $("#bananaTable")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      $("#showcase")?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
 
     $("#bnModalClose")?.addEventListener("click", closeDetail);
@@ -310,7 +310,7 @@
 
   function boot() {
     if (!getBundle().rows?.length) {
-      const sec = $("#bananaTable");
+      const sec = $("#showcase") || $("#bananaTable");
       if (sec) sec.hidden = true;
       return;
     }

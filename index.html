@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spark Prompts — AI 提示词画廊</title>
-  <meta name="description" content="精选 AI 提示词画廊：图像生成、写作、编程、办公效率。支持搜索、分类、收藏与一键复制。可部署到 GitHub Pages。" />
-  <meta name="keywords" content="AI Prompt, 提示词, ChatGPT, Gemini, Midjourney, Prompt Gallery, GitHub Pages" />
+  <title>灵动词库 — 我的 AI 提示词作品集</title>
+  <meta name="description" content="灵动词库：亲自整理与设计的 AI 提示词作品集。图像、二次元、写作、编程、办公效率，支持搜索收藏与效果图对照。" />
+  <meta name="keywords" content="灵动词库, AI 提示词, Prompt, 作品集, 二次元, 图像生成, Lingdong" />
+  <meta name="author" content="Lingdong" />
   <meta name="theme-color" content="#c026d3" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Spark Prompts — AI 提示词画廊" />
-  <meta property="og:description" content="精选 AI 提示词，一键复制，支持分类与收藏。" />
+  <meta property="og:title" content="灵动词库 — 我的 AI 提示词作品集" />
+  <meta property="og:description" content="亲自整理的提示词画廊与效果图对照，一键复制即用。" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <!-- 在线字体可选；离线时自动回退系统字体，见 css/styles.css -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body class="anime-skin">
+<body class="anime-skin brand-lingdong">
   <div class="bg-layer" aria-hidden="true">
     <div class="orb orb-a"></div>
     <div class="orb orb-b"></div>
@@ -29,19 +29,24 @@
 
   <header class="site-header">
     <a href="#" class="logo">
-      <span class="logo-mark">🌸</span>
+      <span class="logo-mark">✦</span>
       <span class="logo-text">
-        <strong>Spark Prompts</strong>
-        <small>星闪词库 · 二次元友好</small>
+        <strong>灵动词库</strong>
+        <small>Lingdong · 我的提示词作品集</small>
       </span>
     </a>
+    <nav class="header-nav" aria-label="站内导航">
+      <a href="#gallery">词库</a>
+      <a href="#showcase">对照表</a>
+      <a href="#about">关于</a>
+    </nav>
     <div class="header-actions">
       <button type="button" class="icon-btn" id="themeToggle" aria-label="切换主题"></button>
       <a class="btn btn-secondary" href="https://github.com" target="_blank" rel="noopener" id="githubLink" style="padding: 8px 14px; height: 40px;">
         <svg height="18" width="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
           <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
         </svg>
-        <span class="header-github-text">GitHub</span>
+        <span class="header-github-text">源码</span>
       </a>
     </div>
   </header>
@@ -55,22 +60,22 @@
       <span class="deco-float d4">❀</span>
       <span class="deco-float d5">☆</span>
     </div>
-    <div class="hero-badge">🌸 二次元风 · AI 提示词画廊</div>
-    <p class="hero-kicker">ようこそ · Prompt Gallery</p>
-    <h1 class="hero-title">更好的提示词<br /><span>像樱花一样好用</span></h1>
+    <div class="hero-badge">✦ 个人作品 · 持续更新</div>
+    <p class="hero-kicker">LINGDONG PROMPTS · CURATED BY ME</p>
+    <h1 class="hero-title">这是我整理的<br /><span>提示词作品集</span></h1>
     <p class="hero-lead">
-      收集图像、角色、写作与编程灵感。搜索、筛选、收藏、一键复制 ——
-      把灵感像贴纸一样贴进对话框。
+      页面结构、视觉风格与交互都是我自己搭的。词库按场景精选，能搜、能筛、能收藏，
+      还有<strong>效果图对照表</strong>——看到结果再决定复制哪一条。
     </p>
     <div class="hero-actions">
-      <a href="#gallery" class="btn btn-primary">逛词库 ✨</a>
-      <a href="#bananaTable" class="btn btn-secondary">🍌 效果图表格</a>
-      <a href="#gallery" class="btn btn-ghost" id="jumpAnime" data-cat-jump="二次元">二次元专区</a>
+      <a href="#gallery" class="btn btn-primary">浏览我的词库</a>
+      <a href="#showcase" class="btn btn-secondary">效果图对照</a>
+      <a href="#about" class="btn btn-ghost">关于本站</a>
     </div>
     <div class="stats">
       <div class="stat bubble-stat">
         <strong id="totalCount">0</strong>
-        <span>提示词</span>
+        <span>收录提示词</span>
       </div>
       <div class="stat bubble-stat">
         <strong id="resultCount">0</strong>
@@ -134,22 +139,20 @@
     <div id="promptsGrid" class="grid" aria-live="polite"></div>
   </section>
 
-  <!-- Banana 效果图表格 -->
-  <section id="bananaTable" class="banana-section">
-    <div class="banana-head">
+  <!-- 效果图对照（我的收录展示） -->
+  <section id="showcase" class="banana-section showcase-section">
+    <div class="banana-head showcase-head">
       <div class="banana-head-text">
-        <p class="banana-kicker">🍌 Banana Prompt Quicker · 精选一览</p>
-        <h2>提示词 × 效果图对照表</h2>
+        <p class="banana-kicker">✦ WORKBOOK · 效果图对照</p>
+        <h2>我整理的提示词 × 效果预览</h2>
         <p class="banana-desc">
-          从公开词库整理的标题、分类、作者与生成效果预览。支持搜索筛选、分页浏览，一键复制完整提示词。
-          数据来源
-          <a href="https://github.com/glidea/banana-prompt-quicker" target="_blank" rel="noopener">glidea/banana-prompt-quicker</a>
-          （MIT）。
+          这一页是我自己做的对照表：左边看效果，右边拿提示词。支持搜索、分类、分页，
+          点「复制」就能直接贴进 Gemini / ChatGPT / 绘图工具。持续补充中。
         </p>
       </div>
-      <div class="banana-stat-badge">
+      <div class="banana-stat-badge showcase-badge">
         <strong id="bnTotalBadge">0</strong>
-        <span>条带图示例</span>
+        <span>条对照样本</span>
       </div>
     </div>
 
@@ -159,9 +162,9 @@
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
-        <input type="search" id="bnSearch" placeholder="搜索表格：标题、作者、提示词…" autocomplete="off" />
+        <input type="search" id="bnSearch" placeholder="在我的对照表里搜索…" autocomplete="off" />
       </div>
-      <select id="bnCategory" class="sort-select" aria-label="Banana 分类"></select>
+      <select id="bnCategory" class="sort-select" aria-label="分类筛选"></select>
       <div class="bn-mode-group" role="group" aria-label="类型">
         <button type="button" class="bn-mode-btn active" data-mode="all">全部</button>
         <button type="button" class="bn-mode-btn" data-mode="generate">生成</button>
@@ -171,7 +174,7 @@
     <p class="bn-count-line" id="bnCount"></p>
 
     <div class="bn-table-wrap">
-      <table class="bn-table" aria-label="Banana 提示词对照表">
+      <table class="bn-table" aria-label="提示词效果图对照表">
         <thead>
           <tr>
             <th class="col-no">#</th>
@@ -179,7 +182,7 @@
             <th class="col-title">标题 / 摘要</th>
             <th class="col-cat">分类</th>
             <th class="col-mode">类型</th>
-            <th class="col-author">作者</th>
+            <th class="col-author">收录</th>
             <th class="col-actions">操作</th>
           </tr>
         </thead>
@@ -192,35 +195,39 @@
     <div class="bn-pager" id="bnPager"></div>
   </section>
 
-  <section id="howto" class="howto">
-    <h2>部署到 GitHub Pages</h2>
+  <section id="about" class="howto about-section">
+    <h2>关于这个作品</h2>
     <div class="howto-grid">
       <div class="howto-item">
-        <div class="num">1</div>
-        <h3>推送到仓库</h3>
-        <p>把 <code>spark-prompts</code> 目录内容推到 GitHub 仓库（建议仓库名与站点一致）。</p>
+        <div class="num">✦</div>
+        <h3>为什么做</h3>
+        <p>好用的提示词不该散落在收藏夹。我想做一个<strong>属于自己的</strong>、打开就能抄的灵感站。</p>
       </div>
       <div class="howto-item">
-        <div class="num">2</div>
-        <h3>开启 Pages</h3>
-        <p>Settings → Pages → Source 选 Deploy from a branch，分支 main，目录 /root。</p>
+        <div class="num">UI</div>
+        <h3>我负责什么</h3>
+        <p>站点架构、界面设计、交互逻辑、词库整理与对照表呈现——整站由我搭建与维护。</p>
       </div>
       <div class="howto-item">
-        <div class="num">3</div>
-        <h3>自定义域名</h3>
-        <p>根目录添加 <code>CNAME</code> 文件写入域名，DNS 配置 A/CNAME 指向 GitHub Pages。</p>
+        <div class="num">库</div>
+        <h3>内容怎么来</h3>
+        <p>部分条目为自写模板；部分精选公开优质提示词并统一格式，方便检索与一键复制。</p>
       </div>
       <div class="howto-item">
-        <div class="num">4</div>
-        <h3>扩展词库</h3>
-        <p>编辑根目录 <code>prompts.json</code>，再运行 <code>node tools/build-data.mjs</code> 同步 file 回退包。</p>
+        <div class="num">→</div>
+        <h3>怎么用</h3>
+        <p>逛词库或打开对照表 → 看效果 → 复制提示词 → 粘贴到你常用的 AI 工具里微调使用。</p>
       </div>
     </div>
+    <p class="about-credit">
+      部分效果图示例参考了社区公开词库资源（MIT），已重新编排进本站结构。
+      本站域名 <strong>lingdongtech.de5.net</strong> · 作者 <strong id="aboutAuthor">Lingdong</strong>
+    </p>
   </section>
 
   <footer class="site-footer">
-    <p>© <span id="footerYear">2026</span> <span id="footerName">Spark Prompts</span> · 纯静态开源友好站点</p>
-    <p>方案文档见 <code>docs/完整方案.md</code> · 可自由二次定制</p>
+    <p class="footer-brand">© <span id="footerYear">2026</span> <span id="footerName">灵动词库</span> · Made by <span id="footerAuthor">me</span></p>
+    <p class="footer-sub">个人提示词作品集 · <a href="https://lingdongtech.de5.net/" id="footerSite">lingdongtech.de5.net</a></p>
   </footer>
 
   <!-- Modal -->
