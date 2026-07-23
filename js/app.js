@@ -211,10 +211,14 @@
     grid.innerHTML = list
       .map((item) => {
         const fav = state.favorites.has(item.id);
+        const anime = item.category === "二次元";
         return `
-        <article class="card" data-id="${item.id}" tabindex="0" role="button" aria-label="查看 ${escapeHtml(item.title)}">
+        <article class="card ${anime ? "card-anime" : ""}" data-id="${item.id}" tabindex="0" role="button" aria-label="查看 ${escapeHtml(item.title)}">
           <div class="card-cover" style="background:${item.cover}">
+            <span class="card-shine" aria-hidden="true"></span>
+            <span class="card-corner" aria-hidden="true"></span>
             <span class="card-emoji">${item.emoji || "✨"}</span>
+            ${anime ? `<span class="card-badge-anime">萌</span>` : ""}
             <div class="card-actions">
               <button type="button" class="card-icon-btn card-copy" data-copy="${item.id}" aria-label="快速复制" title="快速复制">${copyIconSvg()}</button>
               <button type="button" class="card-icon-btn card-fav ${fav ? "active" : ""}" data-fav="${item.id}" aria-label="${fav ? "取消收藏" : "收藏"}" title="${fav ? "取消收藏" : "收藏"}">
@@ -612,6 +616,13 @@
 
     $("#themeToggle").addEventListener("click", toggleTheme);
 
+    $("#jumpAnime")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      setCategory("二次元");
+      const gal = $("#gallery");
+      if (gal) gal.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
     window.addEventListener("hashchange", () => {
       if (location.hash.startsWith("#p=")) openFromHash();
       else if ($("#modalBackdrop").classList.contains("open")) {
@@ -643,7 +654,7 @@
       document.title = `${cfg.name} — ${cfg.tagline || "AI 提示词画廊"}`;
       const logo = document.querySelector(".logo");
       if (logo) {
-        logo.innerHTML = `<span class="logo-mark">🌸</span> ${escapeHtml(cfg.name)}`;
+        logo.innerHTML = `<span class="logo-mark">🌸</span><span class="logo-text"><strong>${escapeHtml(cfg.name)}</strong><small>星闪词库 · 二次元友好</small></span>`;
       }
     }
     if (cfg.githubUrl) {
@@ -708,16 +719,33 @@
     const field = $("#sakuraField");
     if (!field || field.dataset.ready) return;
     field.dataset.ready = "1";
-    const count = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 18;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const count = reduce ? 0 : 28;
+    const kinds = ["", " petal-b", " petal-c"];
     for (let i = 0; i < count; i++) {
       const p = document.createElement("span");
-      p.className = "petal";
+      p.className = "petal" + kinds[i % kinds.length];
       p.style.left = `${Math.random() * 100}%`;
-      p.style.animationDuration = `${8 + Math.random() * 12}s`;
-      p.style.animationDelay = `${-Math.random() * 12}s`;
-      p.style.opacity = String(0.35 + Math.random() * 0.45);
-      p.style.transform = `scale(${0.6 + Math.random() * 0.9})`;
+      p.style.animationDuration = `${7 + Math.random() * 14}s`;
+      p.style.animationDelay = `${-Math.random() * 14}s`;
+      p.style.opacity = String(0.3 + Math.random() * 0.55);
+      p.style.setProperty("--drift", `${(Math.random() * 80 - 40).toFixed(0)}px`);
+      p.style.transform = `scale(${0.55 + Math.random() * 1.1})`;
       field.appendChild(p);
+    }
+
+    const stars = $("#starfield");
+    if (stars && !stars.dataset.ready && !reduce) {
+      stars.dataset.ready = "1";
+      for (let i = 0; i < 24; i++) {
+        const s = document.createElement("span");
+        s.className = "twinkle";
+        s.style.left = `${Math.random() * 100}%`;
+        s.style.top = `${Math.random() * 70}%`;
+        s.style.animationDelay = `${Math.random() * 4}s`;
+        s.style.animationDuration = `${2 + Math.random() * 3}s`;
+        stars.appendChild(s);
+      }
     }
   }
 

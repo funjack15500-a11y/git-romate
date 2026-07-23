@@ -14,14 +14,15 @@
   <!-- 在线字体可选；离线时自动回退系统字体，见 css/styles.css -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body>
+<body class="anime-skin">
   <div class="bg-layer" aria-hidden="true">
     <div class="orb orb-a"></div>
     <div class="orb orb-b"></div>
     <div class="orb orb-c"></div>
+    <div class="starfield" id="starfield"></div>
     <div class="grid-glow"></div>
     <div class="sakura-field" id="sakuraField"></div>
   </div>
@@ -29,7 +30,10 @@
   <header class="site-header">
     <a href="#" class="logo">
       <span class="logo-mark">🌸</span>
-      Spark Prompts
+      <span class="logo-text">
+        <strong>Spark Prompts</strong>
+        <small>星闪词库 · 二次元友好</small>
+      </span>
     </a>
     <div class="header-actions">
       <button type="button" class="icon-btn" id="themeToggle" aria-label="切换主题"></button>
@@ -44,26 +48,35 @@
 
   <section class="hero">
     <div class="hero-glow" aria-hidden="true"></div>
-    <div class="hero-badge">🌸 AI Prompt Gallery · 樱感画廊</div>
-    <h1>更好的提示词<br /><span>像樱花一样好用</span></h1>
-    <p>
-      精选图像、二次元、写作、编程与办公提示词。搜索、筛选、收藏、复制 ——
-      支持 <code>prompts.json</code> 热更新，轻松部署到 GitHub Pages。
+    <div class="hero-deco" aria-hidden="true">
+      <span class="deco-float d1">✦</span>
+      <span class="deco-float d2">♡</span>
+      <span class="deco-float d3">✧</span>
+      <span class="deco-float d4">❀</span>
+      <span class="deco-float d5">☆</span>
+    </div>
+    <div class="hero-badge">🌸 二次元风 · AI 提示词画廊</div>
+    <p class="hero-kicker">ようこそ · Prompt Gallery</p>
+    <h1 class="hero-title">更好的提示词<br /><span>像樱花一样好用</span></h1>
+    <p class="hero-lead">
+      收集图像、角色、写作与编程灵感。搜索、筛选、收藏、一键复制 ——
+      把灵感像贴纸一样贴进对话框。
     </p>
     <div class="hero-actions">
-      <a href="#gallery" class="btn btn-primary">浏览提示词</a>
-      <a href="#howto" class="btn btn-secondary">如何部署</a>
+      <a href="#gallery" class="btn btn-primary">逛词库 ✨</a>
+      <a href="#gallery" class="btn btn-secondary" id="jumpAnime" data-cat-jump="二次元">二次元专区</a>
+      <a href="#howto" class="btn btn-ghost">如何部署</a>
     </div>
     <div class="stats">
-      <div class="stat">
+      <div class="stat bubble-stat">
         <strong id="totalCount">0</strong>
         <span>提示词</span>
       </div>
-      <div class="stat">
+      <div class="stat bubble-stat">
         <strong id="resultCount">0</strong>
         <span>当前结果</span>
       </div>
-      <div class="stat">
+      <div class="stat bubble-stat">
         <strong id="favCount">0</strong>
         <span>我的收藏</span>
       </div>
