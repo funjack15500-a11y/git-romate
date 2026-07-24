@@ -952,7 +952,8 @@
         const sub = cfg.nameEn
           ? `${escapeHtml(cfg.nameEn)} · ${escapeHtml(cfg.brandNote || "Prompt Gallery")}`
           : escapeHtml(cfg.brandNote || "Prompt Gallery");
-        logo.innerHTML = `<span class="logo-mark">✦</span><span class="logo-text"><strong>${escapeHtml(cfg.name)}</strong><small>${sub}</small></span>`;
+        logo.innerHTML = `<span class="logo-mark" aria-hidden="true"><img src="assets/logo-mark.svg" width="40" height="40" alt="" decoding="async" /></span><span class="logo-text"><strong>${escapeHtml(cfg.name)}</strong><small>${sub}</small></span>`;
+        logo.setAttribute("aria-label", `${cfg.name}首页`);
       }
     }
     if (cfg.githubUrl) {
