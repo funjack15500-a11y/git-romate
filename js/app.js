@@ -230,8 +230,11 @@
     const line = $("#resultLine");
     if (line) {
       const q = state.query.trim();
-      line.innerHTML = q
-        ? `找到 <strong>${count}</strong> 条与「${escapeHtml(q)}」相关`
+      const parts = [];
+      if (q) parts.push(`「${escapeHtml(q)}」`);
+      if (state.tag) parts.push(`标签「${escapeHtml(state.tag)}」`);
+      line.innerHTML = parts.length
+        ? `找到 <strong>${count}</strong> 条与 ${parts.join(" · ")} 相关`
         : `共 <strong id="resultCountInline">${count}</strong> 条`;
     }
   }
@@ -263,10 +266,10 @@
             <h3 class="card-title">${escapeHtml(item.title)}</h3>
             <p class="card-summary">${escapeHtml(item.summary)}</p>
             <div class="card-meta">
-              <span class="tag accent">${escapeHtml(item.category)}</span>
+              <span class="tag accent" data-cat="${escapeHtml(item.category)}">${escapeHtml(item.category)}</span>
               ${(item.tags || [])
                 .slice(0, 2)
-                .map((t) => `<span class="tag">${escapeHtml(t)}</span>`)
+                .map((t) => `<span class="tag" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</span>`)
                 .join("")}
               <span class="card-date">${escapeHtml(item.date || "")}</span>
             </div>
@@ -587,7 +590,10 @@
     }
   }
 
-  function collectTagStats(limit = 28) {
+  const TAG_CLOUD_LIMIT = 32;
+  const TAG_CLOUD_COLLAPSED = 12;
+
+  function collectTagStats(limit = TAG_CLOUD_LIMIT) {
     const counts = new Map();
     for (const p of window.PROMPT_DATA || []) {
       for (const t of p.tags || []) {
@@ -614,8 +620,9 @@
   function initTagCloud() {
     const cloud = $("#tagCloud");
     const wrap = $("#tagCloudWrap");
+    const toggle = $("#tagCloudToggle");
     if (!cloud) return;
-    const stats = collectTagStats(28);
+    const stats = collectTagStats(TAG_CLOUD_LIMIT);
     if (!stats.length) {
       if (wrap) wrap.hidden = true;
       return;
@@ -625,19 +632,42 @@
     const min = Math.min(...nums);
     const max = Math.max(...nums);
     cloud.innerHTML = stats
-      .map(([tag, n]) => {
+      .map(([tag, n], i) => {
         const w = weightClass(n, min, max);
         const active = state.tag === tag ? " active" : "";
-        return `<button type="button" class="tag-cloud-item ${w}${active}" role="listitem" data-tag="${escapeHtml(tag)}" title="${escapeHtml(tag)} · ${n} 条">${escapeHtml(tag)}<span class="tc-n">${n}</span></button>`;
+        const extra = i >= TAG_CLOUD_COLLAPSED ? " is-extra" : "";
+        return `<button type="button" class="tag-cloud-item ${w}${extra}${active}" role="listitem" data-tag="${escapeHtml(tag)}" title="${escapeHtml(tag)} · ${n} 条">${escapeHtml(tag)}<span class="tc-n">${n}</span></button>`;
       })
       .join("");
+
+    if (toggle) {
+      const hasExtra = stats.length > TAG_CLOUD_COLLAPSED;
+      toggle.hidden = !hasExtra;
+      cloud.classList.add("is-collapsed");
+      toggle.textContent = "展开";
+      toggle.setAttribute("aria-expanded", "false");
+    }
   }
 
   function setTag(tag) {
-    state.tag = state.tag === tag ? "" : tag || "";
+    const next = tag || "";
+    state.tag = state.tag === next ? "" : next;
     resetVisible();
     updateChips();
     renderGrid();
+    // 选中被折叠的标签时自动展开
+    if (state.tag) {
+      const cloud = $("#tagCloud");
+      const active = cloud?.querySelector(`.tag-cloud-item.active`);
+      if (active?.classList.contains("is-extra") && cloud?.classList.contains("is-collapsed")) {
+        cloud.classList.remove("is-collapsed");
+        const toggle = $("#tagCloudToggle");
+        if (toggle) {
+          toggle.textContent = "收起";
+          toggle.setAttribute("aria-expanded", "true");
+        }
+      }
+    }
   }
 
   function syncSearchClear() {
@@ -767,12 +797,21 @@
     });
 
     $("#tagCloud")?.addEventListener("click", (e) => {
-      const btn = e.target.closest("[data-tag]");
+      const btn = e.target.closest(".tag-cloud-item[data-tag]");
       if (!btn) return;
       setTag(btn.dataset.tag);
     });
 
     $("#tagCloudClear")?.addEventListener("click", () => setTag(""));
+
+    $("#tagCloudToggle")?.addEventListener("click", () => {
+      const cloud = $("#tagCloud");
+      const toggle = $("#tagCloudToggle");
+      if (!cloud || !toggle) return;
+      const collapsed = cloud.classList.toggle("is-collapsed");
+      toggle.textContent = collapsed ? "展开" : "收起";
+      toggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+    });
 
     $("#promptsGrid").addEventListener("click", (e) => {
       if (e.target.closest("#emptyReset")) {
@@ -790,6 +829,18 @@
       if (fav) {
         e.stopPropagation();
         toggleFavorite(fav.dataset.fav);
+        return;
+      }
+      const tagEl = e.target.closest(".tag[data-tag]");
+      if (tagEl) {
+        e.stopPropagation();
+        setTag(tagEl.dataset.tag);
+        return;
+      }
+      const catEl = e.target.closest(".tag[data-cat]");
+      if (catEl) {
+        e.stopPropagation();
+        setCategory(catEl.dataset.cat);
         return;
       }
       const card = e.target.closest(".card[data-id]");
@@ -1130,7 +1181,7 @@
     if (!field || field.dataset.ready) return;
     field.dataset.ready = "1";
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const count = reduce ? 0 : 28;
+    const count = reduce ? 0 : window.innerWidth < 700 ? 10 : 16;
     const kinds = ["", " petal-b", " petal-c"];
     for (let i = 0; i < count; i++) {
       const p = document.createElement("span");
