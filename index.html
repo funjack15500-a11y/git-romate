@@ -7,7 +7,7 @@
   <meta name="description" content="灵动词库：可搜索、可筛选、一键复制的 AI 提示词库。覆盖图像生成/编辑、海报、二次元、写作、编程与提示工程等分类。" />
   <meta name="keywords" content="灵动词库, AI 提示词, Prompt, 提示词库, 二次元, 图像生成, Lingdong" />
   <meta name="author" content="Lingdong" />
-  <meta name="theme-color" content="#c026d3" />
+  <meta name="theme-color" content="#4f6ef7" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="灵动词库 — AI 提示词库" />
   <meta property="og:description" content="可搜索筛选的提示词画廊，一键复制即用。" />
@@ -151,9 +151,18 @@
       <div class="active-chips" id="activeChips" hidden></div>
     </div>
 
-    <div class="announcement" id="announcement">
+    <div class="announcement" id="announcement" aria-live="polite">
+      <span class="announcement-icon" aria-hidden="true">i</span>
       <div id="announcementSlides"></div>
       <div class="announcement-dots" id="announcementDots"></div>
+    </div>
+
+    <div class="tag-cloud-wrap" id="tagCloudWrap">
+      <div class="tag-cloud-head">
+        <span>热门标签</span>
+        <button type="button" class="tag-cloud-clear" id="tagCloudClear" hidden>清除标签</button>
+      </div>
+      <div class="tag-cloud" id="tagCloud" role="list" aria-label="热门标签"></div>
     </div>
 
     <div id="promptsGrid" class="grid" aria-live="polite"></div>

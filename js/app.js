@@ -19,6 +19,7 @@
     activeId: null,
     visible: PAGE_SIZE,
     randomSeed: Date.now(),
+    tag: "",
   };
 
   function loadFavorites() {
@@ -98,6 +99,7 @@
       if (state.filter === "edit" && item.type !== "edit") return false;
       if (state.filter === "recent-week" && !isWithinDays(item.date, 7)) return false;
       if (state.filter === "favorites" && !state.favorites.has(item.id)) return false;
+      if (state.tag && !(item.tags || []).includes(state.tag)) return false;
       if (!q) return true;
       const hay = [item.title, item.summary, item.prompt, item.category, ...(item.tags || [])]
         .join(" ")
@@ -180,7 +182,8 @@
     return (
       state.query.trim() !== "" ||
       state.category !== "全部" ||
-      state.filter !== "all"
+      state.filter !== "all" ||
+      !!state.tag
     );
   }
 
@@ -203,10 +206,20 @@
         `<button type="button" class="chip" data-chip="filter">类型：${escapeHtml(filterLabel(state.filter))} <span aria-hidden="true">×</span></button>`
       );
     }
+    if (state.tag) {
+      parts.push(
+        `<button type="button" class="chip" data-chip="tag">标签：${escapeHtml(state.tag)} <span aria-hidden="true">×</span></button>`
+      );
+    }
     chips.innerHTML = parts.join("");
     chips.hidden = parts.length === 0;
     const reset = $("#resetFilters");
     if (reset) reset.classList.toggle("visible", hasActiveFilters());
+    const clearTag = $("#tagCloudClear");
+    if (clearTag) clearTag.hidden = !state.tag;
+    $$(".tag-cloud-item").forEach((el) => {
+      el.classList.toggle("active", el.dataset.tag === state.tag);
+    });
   }
 
   function updateResultLine(count) {
@@ -508,6 +521,7 @@
 
   function resetFilters() {
     state.query = "";
+    state.tag = "";
     resetVisible();
     const input = $("#searchInput");
     if (input) input.value = "";
@@ -515,48 +529,115 @@
     if (clear) clear.hidden = true;
     setCategory("全部");
     setFilter("all");
+    updateChips();
   }
 
   function initAnnouncements() {
     const list = window.ANNOUNCEMENTS || [];
+    const root = $("#announcement");
     if (!list.length) {
-      $("#announcement").style.display = "none";
+      if (root) root.style.display = "none";
       return;
     }
     const slides = $("#announcementSlides");
     const dots = $("#announcementDots");
+    if (!slides) return;
+
     slides.innerHTML = list
       .map(
         (a, i) => `
       <div class="announcement-slide ${i === 0 ? "active" : ""}" data-i="${i}">
         <strong>${escapeHtml(a.title)}</strong>
-        <p>${escapeHtml(a.body)}</p>
+        <span class="ann-sep" aria-hidden="true">·</span>
+        <span class="ann-body">${escapeHtml(a.body)}</span>
       </div>`
       )
       .join("");
-    dots.innerHTML = list
-      .map(
-        (_, i) =>
-          `<button type="button" class="${i === 0 ? "active" : ""}" data-i="${i}" aria-label="公告 ${i + 1}"></button>`
-      )
-      .join("");
+
+    if (dots) {
+      dots.innerHTML = list
+        .map(
+          (_, i) =>
+            `<button type="button" class="${i === 0 ? "active" : ""}" data-i="${i}" aria-label="提示 ${i + 1}"></button>`
+        )
+        .join("");
+    }
 
     let idx = 0;
     const go = (n) => {
-      idx = n;
+      idx = ((n % list.length) + list.length) % list.length;
       $$(".announcement-slide", slides).forEach((el, i) =>
         el.classList.toggle("active", i === idx)
       );
-      $$("button", dots).forEach((el, i) => el.classList.toggle("active", i === idx));
+      if (dots) {
+        $$("button", dots).forEach((el, i) => el.classList.toggle("active", i === idx));
+      }
     };
 
-    dots.addEventListener("click", (e) => {
+    dots?.addEventListener("click", (e) => {
       const btn = e.target.closest("button[data-i]");
       if (!btn) return;
       go(Number(btn.dataset.i));
     });
 
-    setInterval(() => go((idx + 1) % list.length), 5000);
+    if (list.length > 1) {
+      setInterval(() => go(idx + 1), 6500);
+    } else if (dots) {
+      dots.style.display = "none";
+    }
+  }
+
+  function collectTagStats(limit = 28) {
+    const counts = new Map();
+    for (const p of window.PROMPT_DATA || []) {
+      for (const t of p.tags || []) {
+        if (!t || String(t).length > 18) continue;
+        counts.set(t, (counts.get(t) || 0) + 1);
+      }
+    }
+    return [...counts.entries()]
+      .filter(([, n]) => n >= 2)
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "zh-CN"))
+      .slice(0, limit);
+  }
+
+  function weightClass(n, min, max) {
+    if (max <= min) return "w3";
+    const t = (n - min) / (max - min);
+    if (t >= 0.8) return "w5";
+    if (t >= 0.55) return "w4";
+    if (t >= 0.3) return "w3";
+    if (t >= 0.12) return "w2";
+    return "w1";
+  }
+
+  function initTagCloud() {
+    const cloud = $("#tagCloud");
+    const wrap = $("#tagCloudWrap");
+    if (!cloud) return;
+    const stats = collectTagStats(28);
+    if (!stats.length) {
+      if (wrap) wrap.hidden = true;
+      return;
+    }
+    if (wrap) wrap.hidden = false;
+    const nums = stats.map(([, n]) => n);
+    const min = Math.min(...nums);
+    const max = Math.max(...nums);
+    cloud.innerHTML = stats
+      .map(([tag, n]) => {
+        const w = weightClass(n, min, max);
+        const active = state.tag === tag ? " active" : "";
+        return `<button type="button" class="tag-cloud-item ${w}${active}" role="listitem" data-tag="${escapeHtml(tag)}" title="${escapeHtml(tag)} · ${n} 条">${escapeHtml(tag)}<span class="tc-n">${n}</span></button>`;
+      })
+      .join("");
+  }
+
+  function setTag(tag) {
+    state.tag = state.tag === tag ? "" : tag || "";
+    resetVisible();
+    updateChips();
+    renderGrid();
   }
 
   function syncSearchClear() {
@@ -678,9 +759,20 @@
       } else if (kind === "filter") {
         setFilter("all");
         return;
+      } else if (kind === "tag") {
+        setTag("");
+        return;
       }
       renderGrid();
     });
+
+    $("#tagCloud")?.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-tag]");
+      if (!btn) return;
+      setTag(btn.dataset.tag);
+    });
+
+    $("#tagCloudClear")?.addEventListener("click", () => setTag(""));
 
     $("#promptsGrid").addEventListener("click", (e) => {
       if (e.target.closest("#emptyReset")) {
@@ -1074,6 +1166,7 @@
     await loadPromptBundle();
     initCategories();
     initAnnouncements();
+    initTagCloud();
     initHeroTicker();
     initSpotlight();
     bindEvents();
