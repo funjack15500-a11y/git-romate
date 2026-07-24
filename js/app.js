@@ -8,6 +8,8 @@
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
+  const PAGE_SIZE = 36;
+
   const state = {
     query: "",
     category: "全部",
@@ -15,6 +17,8 @@
     sort: loadSort(),
     favorites: loadFavorites(),
     activeId: null,
+    visible: PAGE_SIZE,
+    randomSeed: Date.now(),
   };
 
   function loadFavorites() {
@@ -116,10 +120,37 @@
           return c || a.title.localeCompare(b.title, "zh-CN");
         });
         break;
+      case "random": {
+        const seed = state.randomSeed || 1;
+        const score = (id) => {
+          let h = seed;
+          const s = String(id);
+          for (let i = 0; i < s.length; i++) {
+            h = (Math.imul(h ^ s.charCodeAt(i), 2654435761) >>> 0) + 0x9e3779b9;
+          }
+          return h >>> 0;
+        };
+        list.sort((a, b) => score(a.id) - score(b.id));
+        break;
+      }
       default:
         list.sort(byDate);
     }
     return list;
+  }
+
+  function resetVisible() {
+    state.visible = PAGE_SIZE;
+  }
+
+  function categoryCounts() {
+    const data = window.PROMPT_DATA || [];
+    const map = { 全部: data.length };
+    for (const p of data) {
+      const c = p.category || "其他";
+      map[c] = (map[c] || 0) + 1;
+    }
+    return map;
   }
 
   function heartSvg(filled) {
@@ -192,27 +223,10 @@
     }
   }
 
-  function renderGrid() {
-    const grid = $("#promptsGrid");
-    const list = getFiltered();
-    updateResultLine(list.length);
-    updateChips();
-
-    if (!list.length) {
-      grid.innerHTML = `
-        <div class="empty">
-          <strong>没有找到匹配的提示词</strong>
-          <p>试试调整搜索词或筛选条件</p>
-          <button type="button" class="btn btn-secondary" id="emptyReset">清除筛选</button>
-        </div>`;
-      return;
-    }
-
-    grid.innerHTML = list
-      .map((item) => {
-        const fav = state.favorites.has(item.id);
-        const anime = item.category === "二次元";
-        return `
+  function cardHtml(item) {
+    const fav = state.favorites.has(item.id);
+    const anime = item.category === "二次元";
+    return `
         <article class="card ${anime ? "card-anime" : ""}" data-id="${item.id}" tabindex="0" role="button" aria-label="查看 ${escapeHtml(item.title)}">
           <div class="card-cover" style="background:${item.cover}">
             ${
@@ -245,8 +259,55 @@
             </div>
           </div>
         </article>`;
-      })
-      .join("");
+  }
+
+  function renderGrid() {
+    const grid = $("#promptsGrid");
+    const list = getFiltered();
+    updateResultLine(list.length);
+    updateChips();
+
+    if (!list.length) {
+      grid.innerHTML = `
+        <div class="empty">
+          <strong>没有找到匹配的提示词</strong>
+          <p>试试调整搜索词或筛选条件</p>
+          <button type="button" class="btn btn-secondary" id="emptyReset">清除筛选</button>
+        </div>`;
+      const more = $("#loadMoreWrap");
+      if (more) more.hidden = true;
+      return;
+    }
+
+    if (state.visible > list.length) state.visible = list.length;
+    const shown = list.slice(0, state.visible);
+    grid.innerHTML = shown.map(cardHtml).join("");
+
+    const more = $("#loadMoreWrap");
+    const moreBtn = $("#loadMoreBtn");
+    const moreHint = $("#loadMoreHint");
+    if (more) {
+      const remain = list.length - shown.length;
+      more.hidden = remain <= 0;
+      if (moreHint) {
+        moreHint.textContent =
+          remain > 0
+            ? `已显示 ${shown.length} / ${list.length}，还有 ${remain} 条`
+            : `已全部显示 ${list.length} 条`;
+      }
+      if (moreBtn) {
+        moreBtn.hidden = remain <= 0;
+        moreBtn.textContent =
+          remain > PAGE_SIZE ? `加载更多（+${PAGE_SIZE}）` : remain > 0 ? `加载剩余 ${remain} 条` : "已全部加载";
+      }
+    }
+  }
+
+  function loadMore() {
+    const total = getFiltered().length;
+    if (state.visible >= total) return;
+    state.visible = Math.min(state.visible + PAGE_SIZE, total);
+    renderGrid();
   }
 
   function escapeHtml(str) {
@@ -305,10 +366,41 @@
     favBtn.classList.toggle("active", fav);
 
     $("#copyBtn").dataset.prompt = item.prompt;
+    updateModalNav();
     setHashForPrompt(id);
     backdrop.classList.add("open");
     document.body.style.overflow = "hidden";
     $("#modalClose").focus();
+  }
+
+  function updateModalNav() {
+    const list = getFiltered();
+    const idx = list.findIndex((p) => p.id === state.activeId);
+    const pos = $("#modalPos");
+    if (pos) {
+      pos.textContent =
+        idx >= 0 && list.length ? `${idx + 1} / ${list.length}` : "";
+    }
+    const prev = $("#modalPrev");
+    const next = $("#modalNext");
+    if (prev) prev.disabled = idx <= 0;
+    if (next) next.disabled = idx < 0 || idx >= list.length - 1;
+  }
+
+  function navigateModal(dir) {
+    if (!$("#modalBackdrop")?.classList.contains("open")) return;
+    const list = getFiltered();
+    if (!list.length) return;
+    let idx = list.findIndex((p) => p.id === state.activeId);
+    if (idx < 0) idx = 0;
+    const next = idx + dir;
+    if (next < 0 || next >= list.length) return;
+    // ensure target card is in visible page for focus restore
+    if (next + 1 > state.visible) {
+      state.visible = Math.min(list.length, Math.ceil((next + 1) / PAGE_SIZE) * PAGE_SIZE);
+      renderGrid();
+    }
+    openModal(list[next].id);
   }
 
   function closeModal() {
@@ -380,17 +472,21 @@
 
   function initCategories() {
     const options = $("#categoryOptions");
+    if (!options) return;
     const cats = window.CATEGORIES || ["全部"];
+    const counts = categoryCounts();
     options.innerHTML = cats
       .map((c) => {
         const label = c === "全部" ? "全部分类" : c;
-        return `<button type="button" class="category-option ${c === state.category ? "active" : ""}" role="option" data-cat="${escapeHtml(c)}" aria-selected="${c === state.category}">${escapeHtml(label)}</button>`;
+        const n = counts[c] ?? 0;
+        return `<button type="button" class="category-option ${c === state.category ? "active" : ""}" role="option" data-cat="${escapeHtml(c)}" aria-selected="${c === state.category}"><span class="cat-label">${escapeHtml(label)}</span><span class="cat-count">${n}</span></button>`;
       })
       .join("");
   }
 
   function setCategory(cat) {
     state.category = cat;
+    resetVisible();
     const text = cat === "全部" ? "全部分类" : cat;
     $("#categoryText").textContent = text;
     $$(".category-option").forEach((el) => {
@@ -403,6 +499,7 @@
 
   function setFilter(filter) {
     state.filter = filter;
+    resetVisible();
     $$(".filter-btn[data-filter]").forEach((b) =>
       b.classList.toggle("active", b.dataset.filter === filter)
     );
@@ -411,6 +508,7 @@
 
   function resetFilters() {
     state.query = "";
+    resetVisible();
     const input = $("#searchInput");
     if (input) input.value = "";
     const clear = $("#searchClear");
@@ -481,14 +579,20 @@
 
   function bindEvents() {
     const searchInput = $("#searchInput");
+    let searchTimer = 0;
     searchInput.addEventListener("input", (e) => {
       state.query = e.target.value;
       syncSearchClear();
-      renderGrid();
+      window.clearTimeout(searchTimer);
+      searchTimer = window.setTimeout(() => {
+        resetVisible();
+        renderGrid();
+      }, 160);
     });
 
     $("#searchClear")?.addEventListener("click", () => {
       state.query = "";
+      resetVisible();
       searchInput.value = "";
       syncSearchClear();
       searchInput.focus();
@@ -526,9 +630,37 @@
       sortSelect.value = state.sort;
       sortSelect.addEventListener("change", () => {
         state.sort = sortSelect.value;
+        if (state.sort === "random") state.randomSeed = Date.now();
         saveSort();
+        resetVisible();
         renderGrid();
       });
+    }
+
+    $("#shuffleBtn")?.addEventListener("click", () => {
+      state.sort = "random";
+      state.randomSeed = Date.now();
+      if (sortSelect) sortSelect.value = "random";
+      saveSort();
+      resetVisible();
+      renderGrid();
+      showToast("已随机打乱词库 🎲");
+      const gal = $("#gallery");
+      if (gal) gal.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    $("#loadMoreBtn")?.addEventListener("click", loadMore);
+
+    // 触底自动加载更多
+    const sentinel = $("#loadMoreSentinel");
+    if (sentinel && "IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((e) => e.isIntersecting)) loadMore();
+        },
+        { rootMargin: "240px 0px" }
+      );
+      io.observe(sentinel);
     }
 
     $("#activeChips")?.addEventListener("click", (e) => {
@@ -537,6 +669,7 @@
       const kind = chip.dataset.chip;
       if (kind === "query") {
         state.query = "";
+        resetVisible();
         searchInput.value = "";
         syncSearchClear();
       } else if (kind === "category") {
@@ -584,8 +717,18 @@
       if (e.target === $("#modalBackdrop")) closeModal();
     });
     document.addEventListener("keydown", (e) => {
+      const modalOpen = $("#modalBackdrop").classList.contains("open");
       if (e.key === "Escape") {
-        if ($("#modalBackdrop").classList.contains("open")) closeModal();
+        if (modalOpen) closeModal();
+        return;
+      }
+      // 弹窗内左右键切换
+      if (modalOpen && (e.key === "ArrowLeft" || e.key === "ArrowRight")) {
+        const tag = (e.target && e.target.tagName) || "";
+        if (tag !== "INPUT" && tag !== "TEXTAREA") {
+          e.preventDefault();
+          navigateModal(e.key === "ArrowLeft" ? -1 : 1);
+        }
         return;
       }
       // / 聚焦搜索（非输入态）
@@ -604,6 +747,9 @@
         searchInput.select();
       }
     });
+
+    $("#modalPrev")?.addEventListener("click", () => navigateModal(-1));
+    $("#modalNext")?.addEventListener("click", () => navigateModal(1));
 
     $("#copyBtn").addEventListener("click", () => {
       copyText($("#modalPrompt").textContent);

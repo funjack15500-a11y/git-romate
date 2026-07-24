@@ -138,8 +138,10 @@
             <option value="oldest">最早优先</option>
             <option value="title">标题 A–Z</option>
             <option value="category">按分类</option>
+            <option value="random">随机浏览</option>
           </select>
         </label>
+        <button type="button" class="filter-btn" id="shuffleBtn" title="随机打乱">随机</button>
         <button type="button" class="filter-btn filter-reset" id="resetFilters" title="重置筛选">重置</button>
       </div>
     </div>
@@ -155,6 +157,12 @@
     </div>
 
     <div id="promptsGrid" class="grid" aria-live="polite"></div>
+
+    <div class="load-more-wrap" id="loadMoreWrap" hidden>
+      <p class="load-more-hint" id="loadMoreHint"></p>
+      <button type="button" class="btn btn-secondary" id="loadMoreBtn">加载更多</button>
+      <div class="load-more-sentinel" id="loadMoreSentinel" aria-hidden="true"></div>
+    </div>
   </section>
 
   <footer class="site-footer">
@@ -181,6 +189,11 @@
           <span class="prompt-date" id="modalDate"></span>
         </div>
         <div class="prompt-box" id="modalPrompt"></div>
+        <div class="modal-nav-row">
+          <button type="button" class="btn btn-ghost modal-nav-btn" id="modalPrev" aria-label="上一条">‹ 上一条</button>
+          <span class="modal-pos" id="modalPos"></span>
+          <button type="button" class="btn btn-ghost modal-nav-btn" id="modalNext" aria-label="下一条">下一条 ›</button>
+        </div>
         <div class="modal-actions">
           <button type="button" class="btn btn-primary" id="copyBtn">复制提示词</button>
           <button type="button" class="btn btn-secondary" id="modalFavBtn">收藏</button>
