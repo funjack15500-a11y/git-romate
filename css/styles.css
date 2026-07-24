@@ -450,18 +450,18 @@ img {
   inset: -20% -10% auto;
   height: 70%;
   background:
-    radial-gradient(ellipse 50% 60% at 50% 0%, rgba(244, 114, 182, 0.28), transparent 70%),
-    radial-gradient(ellipse 40% 50% at 80% 20%, rgba(168, 85, 247, 0.18), transparent 65%),
-    radial-gradient(ellipse 35% 45% at 15% 30%, rgba(34, 211, 238, 0.12), transparent 60%);
+    radial-gradient(ellipse 50% 60% at 50% 0%, rgba(61, 122, 140, 0.16), transparent 70%),
+    radial-gradient(ellipse 40% 50% at 80% 20%, rgba(109, 127, 168, 0.12), transparent 65%),
+    radial-gradient(ellipse 35% 45% at 15% 30%, rgba(74, 154, 173, 0.1), transparent 60%);
   pointer-events: none;
   z-index: -1;
 }
 
 [data-theme="dark"] .hero-glow {
   background:
-    radial-gradient(ellipse 50% 60% at 50% 0%, rgba(244, 114, 182, 0.22), transparent 70%),
-    radial-gradient(ellipse 40% 50% at 80% 20%, rgba(181, 140, 255, 0.16), transparent 65%),
-    radial-gradient(ellipse 35% 45% at 15% 30%, rgba(126, 240, 255, 0.1), transparent 60%);
+    radial-gradient(ellipse 50% 60% at 50% 0%, rgba(110, 182, 197, 0.14), transparent 70%),
+    radial-gradient(ellipse 40% 50% at 80% 20%, rgba(143, 160, 196, 0.1), transparent 65%),
+    radial-gradient(ellipse 35% 45% at 15% 30%, rgba(110, 182, 197, 0.08), transparent 60%);
 }
 
 .hero-deco {
