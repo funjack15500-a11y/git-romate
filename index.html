@@ -8,9 +8,15 @@
   <meta name="keywords" content="灵动词库, AI 提示词, Prompt, 提示词库, 二次元, 图像生成, Lingdong" />
   <meta name="author" content="Lingdong" />
   <meta name="theme-color" content="#3d7a8c" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:url" content="https://lingdongtech.de5.net/" />
   <meta property="og:title" content="灵动词库 — AI 提示词库" />
   <meta property="og:description" content="可搜索筛选的提示词画廊，一键复制即用。" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="canonical" href="https://lingdongtech.de5.net/" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="assets/logo-mark.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,6 +25,7 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body class="anime-skin brand-lingdong">
+  <a class="skip-link" href="#gallery">跳到提示词库</a>
   <div class="bg-layer" aria-hidden="true">
     <div class="orb orb-a"></div>
     <div class="orb orb-b"></div>
@@ -119,18 +126,18 @@
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
-        <input type="search" id="searchInput" placeholder="搜索提示词、标签、内容…（/ 聚焦）" autocomplete="off" />
+        <input type="search" id="searchInput" placeholder="搜索提示词、标签、内容…（/ 聚焦）" autocomplete="off" aria-label="搜索提示词" aria-controls="promptsGrid" />
         <button type="button" class="search-clear" id="searchClear" aria-label="清除搜索" hidden>×</button>
       </div>
       <div class="filters">
         <div class="category-dropdown">
-          <button type="button" class="category-trigger" id="categoryTrigger" aria-haspopup="listbox" aria-expanded="false">
+          <button type="button" class="category-trigger" id="categoryTrigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="categoryOptions">
             <span id="categoryText">全部分类</span>
             <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
               <path d="M1 1L5 5L9 1" />
             </svg>
           </button>
-          <div class="category-options" id="categoryOptions" role="listbox"></div>
+          <div class="category-options" id="categoryOptions" role="listbox" aria-label="提示词分类"></div>
         </div>
         <button type="button" class="filter-btn active" data-filter="all">全部类型</button>
         <button type="button" class="filter-btn" data-filter="recent-week">近一周</button>
@@ -176,7 +183,12 @@
       <div class="tag-cloud is-collapsed" id="tagCloud" role="list" aria-label="热门标签"></div>
     </div>
 
-    <div id="promptsGrid" class="grid" aria-live="polite"></div>
+    <div id="promptsGrid" class="grid" aria-live="polite" aria-busy="true">
+      <div class="loading-state" role="status">
+        <span class="loading-spinner" aria-hidden="true"></span>
+        <strong>正在加载词库…</strong>
+      </div>
+    </div>
 
     <div class="load-more-wrap" id="loadMoreWrap" hidden>
       <p class="load-more-hint" id="loadMoreHint"></p>
@@ -191,8 +203,8 @@
   </footer>
 
   <!-- Modal -->
-  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal">
+  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalSummary" aria-hidden="true">
+    <div class="modal" tabindex="-1">
       <div class="modal-cover" id="modalCover">
         <button type="button" class="modal-close" id="modalClose" aria-label="关闭">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -231,8 +243,8 @@
 
   <div class="toast" id="toast" role="status"></div>
 
-  <script src="js/config.js"></script>
-  <script src="js/data.js"></script>
-  <script src="js/app.js"></script>
+  <noscript><p class="noscript">此页面需要启用 JavaScript 才能搜索、筛选和复制提示词。</p></noscript>
+  <script src="js/config.js" defer></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>

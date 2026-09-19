@@ -17,7 +17,7 @@ if %ERRORLEVEL%==0 (
   echo  地址:  http://127.0.0.1:8080/
   echo  按 Ctrl+C 停止
   echo.
-  start "" "http://127.0.0.1:8080/"
+  powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\open-chrome.ps1" -Target "http://127.0.0.1:8080/"
   python -m http.server 8080 --bind 127.0.0.1
   goto :eof
 )
@@ -28,7 +28,7 @@ if %ERRORLEVEL%==0 (
   echo  地址:  http://127.0.0.1:8080/
   echo  按 Ctrl+C 停止
   echo.
-  start "" "http://127.0.0.1:8080/"
+  powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\open-chrome.ps1" -Target "http://127.0.0.1:8080/"
   py -3 -m http.server 8080 --bind 127.0.0.1
   goto :eof
 )
@@ -37,7 +37,7 @@ where node >nul 2>&1
 if %ERRORLEVEL%==0 (
   echo  [模式] Node npx serve
   echo.
-  start "" "http://127.0.0.1:3000/"
+  powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\open-chrome.ps1" -Target "http://127.0.0.1:3000/"
   npx --yes serve -l 3000 .
   goto :eof
 )

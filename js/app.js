@@ -9,6 +9,12 @@
   const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
   const PAGE_SIZE = 36;
+  const runtime = {
+    byId: new Map(),
+    search: new Map(),
+    dates: new Map(),
+  };
+  let previousFocus = null;
 
   const state = {
     query: "",
@@ -22,56 +28,72 @@
     tag: "",
   };
 
+  function readStorage(key, fallback = null) {
+    try {
+      return localStorage.getItem(key) ?? fallback;
+    } catch {
+      return fallback;
+    }
+  }
+
+  function writeStorage(key, value) {
+    try {
+      localStorage.setItem(key, value);
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
   function loadFavorites() {
     try {
-      return new Set(JSON.parse(localStorage.getItem(FAV_KEY) || "[]"));
+      const parsed = JSON.parse(readStorage(FAV_KEY, "[]"));
+      return new Set(Array.isArray(parsed) ? parsed : []);
     } catch {
       return new Set();
     }
   }
 
   function saveFavorites() {
-    try {
-      localStorage.setItem(FAV_KEY, JSON.stringify([...state.favorites]));
-    } catch {
-      /* file:// 或隐私模式可能不可写，忽略 */
-    }
+    writeStorage(FAV_KEY, JSON.stringify([...state.favorites]));
   }
 
   function loadSort() {
-    try {
-      return localStorage.getItem(SORT_KEY) || "newest";
-    } catch {
-      return "newest";
-    }
+    const value = readStorage(SORT_KEY, "newest");
+    return ["newest", "oldest", "title", "category", "random"].includes(value)
+      ? value
+      : "newest";
   }
 
   function saveSort() {
-    try {
-      localStorage.setItem(SORT_KEY, state.sort);
-    } catch {
-      /* ignore */
-    }
+    writeStorage(SORT_KEY, state.sort);
   }
 
   function initTheme() {
-    const saved = localStorage.getItem(THEME_KEY);
+    const saved = readStorage(THEME_KEY);
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const theme = saved || (prefersDark ? "dark" : "light");
+    const theme = ["light", "dark"].includes(saved)
+      ? saved
+      : prefersDark
+        ? "dark"
+        : "light";
     document.documentElement.setAttribute("data-theme", theme);
     updateThemeIcon(theme);
+    updateThemeColor(theme);
   }
 
   function toggleTheme() {
     const cur = document.documentElement.getAttribute("data-theme") || "light";
     const next = cur === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", next);
-    try {
-      localStorage.setItem(THEME_KEY, next);
-    } catch {
-      /* ignore */
-    }
+    writeStorage(THEME_KEY, next);
     updateThemeIcon(next);
+    updateThemeColor(next);
+  }
+
+  function updateThemeColor(theme) {
+    const meta = $('meta[name="theme-color"]');
+    if (meta) meta.content = theme === "dark" ? "#12151a" : "#f5f4f1";
   }
 
   function updateThemeIcon(theme) {
@@ -85,14 +107,38 @@
   }
 
   function isWithinDays(dateStr, days) {
-    const d = new Date(dateStr);
-    if (Number.isNaN(d.getTime())) return false;
-    const now = new Date();
-    return now - d <= days * 24 * 60 * 60 * 1000;
+    const time = runtime.dates.get(dateStr) ?? new Date(dateStr).getTime();
+    if (!Number.isFinite(time)) return false;
+    const diff = Date.now() - time;
+    return diff >= 0 && diff <= days * 24 * 60 * 60 * 1000;
+  }
+
+  function normalizeSearchText(value) {
+    return String(value || "")
+      .normalize("NFKC")
+      .toLocaleLowerCase("zh-CN");
+  }
+
+  function buildRuntimeIndexes() {
+    runtime.byId.clear();
+    runtime.search.clear();
+    runtime.dates.clear();
+    for (const item of window.PROMPT_DATA || []) {
+      runtime.byId.set(String(item.id), item);
+      runtime.search.set(
+        String(item.id),
+        normalizeSearchText(
+          [item.title, item.summary, item.prompt, item.category, ...(item.tags || [])].join(" ")
+        )
+      );
+      if (item.date && !runtime.dates.has(item.date)) {
+        runtime.dates.set(item.date, new Date(item.date).getTime());
+      }
+    }
   }
 
   function getFiltered() {
-    const q = state.query.trim().toLowerCase();
+    const tokens = normalizeSearchText(state.query).trim().split(/\s+/).filter(Boolean);
     let list = (window.PROMPT_DATA || []).filter((item) => {
       if (state.category !== "全部" && item.category !== state.category) return false;
       if (state.filter === "generate" && item.type !== "generate") return false;
@@ -100,18 +146,17 @@
       if (state.filter === "recent-week" && !isWithinDays(item.date, 7)) return false;
       if (state.filter === "favorites" && !state.favorites.has(item.id)) return false;
       if (state.tag && !(item.tags || []).includes(state.tag)) return false;
-      if (!q) return true;
-      const hay = [item.title, item.summary, item.prompt, item.category, ...(item.tags || [])]
-        .join(" ")
-        .toLowerCase();
-      return hay.includes(q);
+      if (!tokens.length) return true;
+      const hay = runtime.search.get(String(item.id)) || "";
+      return tokens.every((token) => hay.includes(token));
     });
 
     list = list.slice();
-    const byDate = (a, b) => new Date(b.date) - new Date(a.date);
+    const dateValue = (item) => runtime.dates.get(item.date) || 0;
+    const byDate = (a, b) => dateValue(b) - dateValue(a);
     switch (state.sort) {
       case "oldest":
-        list.sort((a, b) => new Date(a.date) - new Date(b.date));
+        list.sort((a, b) => dateValue(a) - dateValue(b));
         break;
       case "title":
         list.sort((a, b) => a.title.localeCompare(b.title, "zh-CN"));
@@ -279,6 +324,8 @@
 
   function renderGrid() {
     const grid = $("#promptsGrid");
+    if (!grid) return;
+    grid.setAttribute("aria-busy", "false");
     const list = getFiltered();
     updateResultLine(list.length);
     updateChips();
@@ -335,7 +382,7 @@
   }
 
   function findById(id) {
-    return (window.PROMPT_DATA || []).find((p) => p.id === id);
+    return runtime.byId.get(String(id));
   }
 
   function promptDeepLink(id) {
@@ -353,6 +400,8 @@
   function openModal(id) {
     const item = findById(id);
     if (!item) return;
+    const wasOpen = $("#modalBackdrop")?.classList.contains("open");
+    if (!wasOpen) previousFocus = document.activeElement;
     state.activeId = id;
     const backdrop = $("#modalBackdrop");
     $("#modalCover").style.background = item.cover;
@@ -385,6 +434,7 @@
     updateModalNav();
     setHashForPrompt(id);
     backdrop.classList.add("open");
+    backdrop.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
     $("#modalClose").focus();
   }
@@ -420,15 +470,39 @@
   }
 
   function closeModal() {
-    $("#modalBackdrop").classList.remove("open");
+    const backdrop = $("#modalBackdrop");
+    backdrop.classList.remove("open");
+    backdrop.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
-    if (state.activeId) {
-      const card = $(`.card[data-id="${state.activeId}"]`);
-      if (card) card.focus();
-    }
     state.activeId = null;
     if (location.hash.startsWith("#p=")) {
       history.replaceState(null, "", location.pathname + location.search + "#gallery");
+    }
+    if (previousFocus instanceof HTMLElement && document.contains(previousFocus)) {
+      previousFocus.focus();
+    }
+    previousFocus = null;
+  }
+
+  function trapModalFocus(event) {
+    if (event.key !== "Tab") return;
+    const modal = $("#modalBackdrop.open .modal");
+    if (!modal) return;
+    const focusable = $$('a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])', modal)
+      .filter((el) => !el.hidden && el.getClientRects().length > 0);
+    if (!focusable.length) {
+      event.preventDefault();
+      modal.focus();
+      return;
+    }
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
     }
   }
 
@@ -711,23 +785,55 @@
     });
 
     const catTrigger = $("#categoryTrigger");
+    const categoryOptions = $("#categoryOptions");
+    const setCategoryOpen = (open, focus = false) => {
+      categoryOptions.classList.toggle("open", open);
+      catTrigger.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open && focus) {
+        const active = categoryOptions.querySelector(".category-option.active");
+        (active || categoryOptions.querySelector(".category-option"))?.focus();
+      }
+    };
     catTrigger.addEventListener("click", (e) => {
       e.stopPropagation();
-      const open = $("#categoryOptions").classList.toggle("open");
-      catTrigger.setAttribute("aria-expanded", open ? "true" : "false");
+      setCategoryOpen(!categoryOptions.classList.contains("open"));
     });
 
-    $("#categoryOptions").addEventListener("click", (e) => {
+    catTrigger.addEventListener("keydown", (e) => {
+      if (!["ArrowDown", "ArrowUp", "Enter", " "].includes(e.key)) return;
+      e.preventDefault();
+      setCategoryOpen(true, true);
+    });
+
+    categoryOptions.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-cat]");
       if (!btn) return;
       setCategory(btn.dataset.cat);
-      $("#categoryOptions").classList.remove("open");
-      catTrigger.setAttribute("aria-expanded", "false");
+      setCategoryOpen(false);
+      catTrigger.focus();
+    });
+
+    categoryOptions.addEventListener("keydown", (e) => {
+      const options = $$(".category-option", categoryOptions);
+      const current = options.indexOf(document.activeElement);
+      if (e.key === "Escape") {
+        e.preventDefault();
+        setCategoryOpen(false);
+        catTrigger.focus();
+        return;
+      }
+      if (!["ArrowDown", "ArrowUp", "Home", "End"].includes(e.key)) return;
+      e.preventDefault();
+      let next = current;
+      if (e.key === "Home") next = 0;
+      else if (e.key === "End") next = options.length - 1;
+      else if (e.key === "ArrowDown") next = (current + 1 + options.length) % options.length;
+      else next = (current - 1 + options.length) % options.length;
+      options[next]?.focus();
     });
 
     document.addEventListener("click", () => {
-      $("#categoryOptions").classList.remove("open");
-      catTrigger.setAttribute("aria-expanded", "false");
+      setCategoryOpen(false);
     });
 
     $$(".filter-btn[data-filter]").forEach((btn) => {
@@ -861,6 +967,10 @@
     });
     document.addEventListener("keydown", (e) => {
       const modalOpen = $("#modalBackdrop").classList.contains("open");
+      if (modalOpen && e.key === "Tab") {
+        trapModalFocus(e);
+        return;
+      }
       if (e.key === "Escape") {
         if (modalOpen) closeModal();
         return;
@@ -922,8 +1032,13 @@
       if (location.hash.startsWith("#p=")) openFromHash();
       else if ($("#modalBackdrop").classList.contains("open")) {
         $("#modalBackdrop").classList.remove("open");
+        $("#modalBackdrop").setAttribute("aria-hidden", "true");
         document.body.style.overflow = "";
         state.activeId = null;
+        if (previousFocus instanceof HTMLElement && document.contains(previousFocus)) {
+          previousFocus.focus();
+        }
+        previousFocus = null;
       }
     });
 
@@ -1146,8 +1261,42 @@
     return Array.isArray(window.PROMPT_DATA) && window.PROMPT_DATA.length > 0;
   }
 
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
+      const existing = document.querySelector(`script[data-dynamic-src="${src}"]`);
+      if (existing) {
+        if (existing.dataset.loaded === "true") resolve();
+        else existing.addEventListener("load", resolve, { once: true });
+        return;
+      }
+      const script = document.createElement("script");
+      script.src = src;
+      script.defer = true;
+      script.dataset.dynamicSrc = src;
+      script.addEventListener(
+        "load",
+        () => {
+          script.dataset.loaded = "true";
+          resolve();
+        },
+        { once: true }
+      );
+      script.addEventListener("error", () => reject(new Error(`无法加载 ${src}`)), {
+        once: true,
+      });
+      document.head.appendChild(script);
+    });
+  }
+
+  async function loadEmbeddedBundle() {
+    if ((window.PROMPT_DATA || []).length) return true;
+    await loadScript("js/data.js");
+    return !!(window.PROMPT_DATA || []).length;
+  }
+
   /**
-   * HTTP(S) 下优先拉取 prompts.json；file:// 或失败时使用 data.js 内嵌数据。
+   * HTTP(S) 下只拉取 prompts.json；file:// 或请求失败时再按需加载 data.js。
+   * 这样线上首屏不会重复下载两份完整词库。
    */
   async function loadPromptBundle() {
     const cfg = window.SITE_CONFIG || {};
@@ -1155,26 +1304,58 @@
     const isHttp = /^https?:$/i.test(location.protocol);
 
     if (!isHttp) {
-      if (cfg.debug) console.info("[Spark Prompts] file:// 使用内嵌 data.js");
-      return { source: "embedded", ok: !!(window.PROMPT_DATA || []).length };
+      try {
+        const ok = await loadEmbeddedBundle();
+        if (cfg.debug) console.info("[Lingdong] file:// 使用 data.js", { ok });
+        return { source: "embedded", ok };
+      } catch (err) {
+        console.error("[Lingdong] 本地词库加载失败", err);
+        return { source: "embedded", ok: false, error: err };
+      }
     }
 
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 10000);
     try {
-      const res = await fetch(url, { cache: "no-cache" });
+      const res = await fetch(url, {
+        cache: "default",
+        headers: { Accept: "application/json" },
+        signal: controller.signal,
+      });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
       if (!applyBundle(data)) throw new Error("invalid prompts.json");
       if (cfg.debug) {
-        console.info("[Spark Prompts] loaded", url, "count:", window.PROMPT_DATA.length);
+        console.info("[Lingdong] loaded", url, "count:", window.PROMPT_DATA.length);
       }
       return { source: "json", ok: true };
     } catch (err) {
-      console.warn("[Spark Prompts] prompts.json 加载失败，回退 data.js", err);
-      return {
-        source: "embedded-fallback",
-        ok: !!(window.PROMPT_DATA || []).length,
-      };
+      console.warn("[Lingdong] prompts.json 加载失败，尝试 data.js", err);
+      try {
+        const ok = await loadEmbeddedBundle();
+        return { source: "embedded-fallback", ok, error: err };
+      } catch (fallbackError) {
+        console.error("[Lingdong] 备用词库加载失败", fallbackError);
+        return { source: "failed", ok: false, error: fallbackError };
+      }
+    } finally {
+      window.clearTimeout(timeout);
     }
+  }
+
+  function renderLoadError() {
+    const grid = $("#promptsGrid");
+    if (!grid) return;
+    grid.setAttribute("aria-busy", "false");
+    grid.innerHTML = `
+      <div class="empty load-error" role="alert">
+        <strong>词库加载失败</strong>
+        <p>请检查网络后刷新页面；如果是本地打开，请确认 <code>js/data.js</code> 文件存在。</p>
+        <button type="button" class="btn btn-secondary" id="reloadPage">重新加载</button>
+      </div>`;
+    $("#reloadPage")?.addEventListener("click", () => location.reload());
+    const more = $("#loadMoreWrap");
+    if (more) more.hidden = true;
   }
 
   function initSakuraField() {
@@ -1215,7 +1396,8 @@
     applySiteConfig();
     initTheme();
     initSakuraField();
-    await loadPromptBundle();
+    const bundle = await loadPromptBundle();
+    buildRuntimeIndexes();
     initCategories();
     initAnnouncements();
     initTagCloud();
@@ -1224,8 +1406,12 @@
     bindEvents();
     updateTotalStat();
     updateFavStat();
-    renderGrid();
-    openFromHash();
+    if (bundle.ok) {
+      renderGrid();
+      openFromHash();
+    } else {
+      renderLoadError();
+    }
   }
 
   if (document.readyState === "loading") {

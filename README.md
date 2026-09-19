@@ -32,17 +32,23 @@
 3. `npx serve`
 4. 内置 **PowerShell 静态服务器**（`tools/local-server.ps1`，无需 Python/Node）
 
-浏览器会自动打开 `http://127.0.0.1:8080/`（或脚本提示的端口）。  
+Google Chrome 会自动打开 `http://127.0.0.1:8080/`（或脚本提示的端口）；未安装 Chrome 时才回退到系统默认浏览器。
 关闭黑色命令行窗口即停止服务。
 
 ### 方式二：直接打开网页（零依赖）
 
-双击 **`打开网页.bat`**，或直接双击 **`index.html`**。
+双击 **`打开网页.bat`** 可用 Google Chrome 打开；直接双击 **`index.html`** 时则由 Windows 默认浏览器决定。
 
 - 搜索、筛选、收藏、弹窗均可使用  
 - 部分浏览器在 `file://` 下可能限制剪贴板 API；若复制失败，请改用方式一  
 
 更详细的中文说明见：`本地使用说明.txt`。
+
+提交前可运行零依赖自检：
+
+```bash
+node tools/validate-site.mjs
+```
 
 ### 方式三：命令行
 

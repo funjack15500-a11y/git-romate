@@ -80,8 +80,10 @@ Write-Host "  Press Ctrl+C to stop"
 Write-Host ""
 
 try {
-  Start-Process $prefix
-} catch {}
+  & (Join-Path $PSScriptRoot "open-chrome.ps1") -Target $prefix
+} catch {
+  Write-Warning "无法自动打开浏览器，请手动访问 $prefix"
+}
 
 while ($listener.IsListening) {
   $ctx = $null

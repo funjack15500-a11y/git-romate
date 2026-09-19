@@ -4,12 +4,13 @@ Spark Prompts — 本地使用说明
 【推荐】方式一：一键本地服务器（双击即可）
   双击  start.bat
   - 自动选择 Python / Node / PowerShell 启动本地服务
-  - 浏览器会打开 http://127.0.0.1:8080/
+  - Google Chrome 会打开 http://127.0.0.1:8080/
+  - 未安装 Chrome 时自动回退到系统默认浏览器
   - 关闭黑色窗口即停止服务
 
 【最简单】方式二：直接打开 HTML
   双击  打开网页.bat
-  或直接双击  index.html
+  或直接双击  index.html（此时由系统默认浏览器打开）
   - 不需要安装任何软件
   - 页面、搜索、筛选、收藏均可使用
   - 若「复制提示词」在某些浏览器受限，请改用方式一
@@ -35,6 +36,9 @@ Spark Prompts — 本地使用说明
 
 【完整方案（架构/上线/路线图）】
   打开 docs\完整方案.md
+
+【提交前自检】
+  node tools\validate-site.mjs
 
 【以后分享到 GitHub】
   1. 改 js\config.js 里的 githubUrl
