@@ -232,6 +232,22 @@ function bindControls() {
     event.preventDefault();
     openSite();
   });
+
+  const mailLink = $("#mailLink");
+  if (mailLink) {
+    mailLink.addEventListener("click", (event) => {
+      event.preventDefault();
+      chrome.tabs.create({ url: "mailto:funjack15500@gmail.com" });
+    });
+  }
+
+  const issuesLink = $("#issuesLink");
+  if (issuesLink) {
+    issuesLink.addEventListener("click", (event) => {
+      event.preventDefault();
+      chrome.tabs.create({ url: "https://github.com/funjack15500-a11y/git-romate/issues" });
+    });
+  }
 }
 
 async function boot() {

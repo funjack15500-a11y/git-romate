@@ -3049,84 +3049,159 @@ img {
   color: var(--text-3);
 }
 
-/* —— 导航「联系」悬停小窗 —— */
-.nav-contact {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
 
-.contact-pop {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  width: 268px;
-  margin-top: 10px;
-  padding: 10px;
+/* —— 悬浮联系球 / 联系面板 —— */
+.contact-widget {
+  position: fixed;
+  right: 20px;
+  bottom: 82px;
+  z-index: 260;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  border-radius: 14px;
+  align-items: flex-end;
+}
+
+.cw-ball {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(140deg, #3d7a8c 0%, #6eb6c5 100%);
+  box-shadow: 0 10px 24px rgba(24, 58, 68, 0.28);
+  transition: transform 0.18s var(--ease), box-shadow 0.18s var(--ease);
+}
+
+.cw-ball:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(24, 58, 68, 0.34);
+}
+
+.cw-ball:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.cw-ball svg {
+  width: 23px;
+  height: 23px;
+}
+
+.contact-widget.is-open .cw-ball {
+  display: none;
+}
+
+.cw-panel {
+  width: 302px;
+  margin-bottom: 10px;
+  padding: 12px 0 10px;
   border: 1px solid var(--border);
+  border-radius: 16px;
   background: var(--surface);
   box-shadow: var(--shadow-md);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-6px);
+  transform: translateY(10px) scale(0.98);
   pointer-events: none;
-  transition: opacity 0.16s var(--ease), transform 0.16s var(--ease), visibility 0.16s;
-  z-index: 220;
+  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease), visibility 0.2s;
 }
 
-.contact-pop::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -12px;
-  height: 12px;
-}
-
-.nav-contact:hover .contact-pop,
-.nav-contact:focus-within .contact-pop {
+.contact-widget.is-open .cw-panel {
   opacity: 1;
   visibility: visible;
   transform: none;
   pointer-events: auto;
 }
 
-.contact-pop-item {
+.cw-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 14px 8px;
+}
+
+.cw-head h3 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.cw-min {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-2);
+  font-size: 0.95rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.cw-min:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.cw-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 8px;
+}
+
+.cw-item {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  padding: 8px 10px;
+  padding: 9px 10px;
   border-radius: 10px;
   text-decoration: none;
   transition: background 0.15s;
 }
 
-.contact-pop-item:hover {
+.cw-item:hover {
   background: var(--accent-soft);
 }
 
-.contact-pop-item .contact-pop-label {
+.cw-label {
   font-size: 0.72rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-3);
 }
 
-.contact-pop-item .contact-pop-value {
+.cw-value {
   font-size: 0.86rem;
   font-weight: 600;
   color: var(--text);
   word-break: break-all;
 }
 
-.contact-pop-note {
-  margin: 2px 0 0;
-  padding: 0 10px;
+.cw-note {
+  margin: 6px 0 0;
+  padding: 0 18px;
   font-size: 0.74rem;
   line-height: 1.5;
   color: var(--text-3);
+}
+
+@media (max-width: 640px) {
+  .contact-widget {
+    right: 14px;
+    bottom: 76px;
+  }
+
+  .cw-panel {
+    width: min(302px, calc(100vw - 28px));
+  }
 }
