@@ -1473,7 +1473,26 @@
     }
   }
 
+  // 首次打开一律落在首页（hero + 精选 + 热门标签），不让上次的锚点或滚动位置把首页顶掉
+  function ensureHomeLanding() {
+    const hash = location.hash || "";
+    const isDeepLink = hash.startsWith("#p=");
+    if (hash && !isDeepLink) {
+      try {
+        history.replaceState(null, "", location.pathname + location.search);
+      } catch {
+        /* 老浏览器不支持时忽略 */
+      }
+    }
+    if (isDeepLink) return;
+    const toTop = () => window.scrollTo(0, 0);
+    toTop();
+    setTimeout(toTop, 120);
+    window.addEventListener("load", toTop, { once: true });
+  }
+
   async function boot() {
+    ensureHomeLanding();
     applySiteConfig();
     initTheme();
     initSakuraField();
