@@ -3048,3 +3048,85 @@ img {
   font-size: 0.8rem;
   color: var(--text-3);
 }
+
+/* —— 导航「联系」悬停小窗 —— */
+.nav-contact {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.contact-pop {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 268px;
+  margin-top: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity 0.16s var(--ease), transform 0.16s var(--ease), visibility 0.16s;
+  z-index: 220;
+}
+
+.contact-pop::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -12px;
+  height: 12px;
+}
+
+.nav-contact:hover .contact-pop,
+.nav-contact:focus-within .contact-pop {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  pointer-events: auto;
+}
+
+.contact-pop-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.contact-pop-item:hover {
+  background: var(--accent-soft);
+}
+
+.contact-pop-item .contact-pop-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.contact-pop-item .contact-pop-value {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text);
+  word-break: break-all;
+}
+
+.contact-pop-note {
+  margin: 2px 0 0;
+  padding: 0 10px;
+  font-size: 0.74rem;
+  line-height: 1.5;
+  color: var(--text-3);
+}
