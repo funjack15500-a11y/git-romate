@@ -9,6 +9,8 @@
   const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
   const PAGE_SIZE = 36;
+  // 首页默认落在科研提示词（数据里没有该分类时退回全部）
+  const DEFAULT_CATEGORY = "科研提示词";
   const runtime = {
     byId: new Map(),
     search: new Map(),
@@ -18,7 +20,7 @@
 
   const state = {
     query: "",
-    category: "全部",
+    category: DEFAULT_CATEGORY,
     filter: "all", // all | recent-week | generate | edit | favorites
     sort: loadSort(),
     favorites: loadFavorites(),
@@ -560,6 +562,32 @@
     toastTimer = setTimeout(() => t.classList.remove("show"), 2000);
   }
 
+  function resolveDefaultCategory() {
+    const cats = window.CATEGORIES || [];
+    const data = window.PROMPT_DATA || [];
+    const exists =
+      cats.includes(DEFAULT_CATEGORY) ||
+      data.some((p) => p.category === DEFAULT_CATEGORY);
+    return exists ? DEFAULT_CATEGORY : "全部";
+  }
+
+  function syncCategoryLabel() {
+    const text = state.category === "全部" ? "全部分类" : state.category;
+    const el = $("#categoryText");
+    if (el) el.textContent = text;
+    $$(".category-option").forEach((el) => {
+      const on = el.dataset.cat === state.category;
+      el.classList.toggle("active", on);
+      el.setAttribute("aria-selected", on ? "true" : "false");
+    });
+  }
+
+  function categoryHasTag(cat, tag) {
+    return (window.PROMPT_DATA || []).some(
+      (p) => (cat === "全部" || p.category === cat) && (p.tags || []).includes(tag)
+    );
+  }
+
   function initCategories() {
     const options = $("#categoryOptions");
     if (!options) return;
@@ -577,13 +605,11 @@
   function setCategory(cat) {
     state.category = cat;
     resetVisible();
-    const text = cat === "全部" ? "全部分类" : cat;
-    $("#categoryText").textContent = text;
-    $$(".category-option").forEach((el) => {
-      const on = el.dataset.cat === state.category;
-      el.classList.toggle("active", on);
-      el.setAttribute("aria-selected", on ? "true" : "false");
-    });
+    // 切换分类后，原先选中的标签若在该分类下不存在就清掉，避免出现 0 条
+    if (state.tag && !categoryHasTag(cat, state.tag)) state.tag = "";
+    syncCategoryLabel();
+    initTagCloud();
+    updateChips();
     renderGrid();
   }
 
@@ -666,12 +692,14 @@
 
   const TAG_CLOUD_LIMIT = 32;
   const TAG_CLOUD_COLLAPSED = 12;
-  // 数据来源/品牌类标签不进热门标签
-  const TAG_CLOUD_BLOCKLIST = new Set(["banana"]);
+  // 数据来源/品牌类标签、以及等同分类名的标签不进热门标签
+  const TAG_CLOUD_BLOCKLIST = new Set(["banana", "科研"]);
 
   function collectTagStats(limit = TAG_CLOUD_LIMIT) {
     const counts = new Map();
     for (const p of window.PROMPT_DATA || []) {
+      // 热门标签跟随当前分类：只看该分类下的条目
+      if (state.category !== "全部" && p.category !== state.category) continue;
       for (const t of p.tags || []) {
         if (!t || String(t).length > 18) continue;
         if (TAG_CLOUD_BLOCKLIST.has(String(t).trim().toLowerCase())) continue;
@@ -699,9 +727,14 @@
     const wrap = $("#tagCloudWrap");
     const toggle = $("#tagCloudToggle");
     if (!cloud) return;
+    // 分类切换后重建标签云时，保留用户已展开的状态
+    const keepExpanded =
+      cloud.childElementCount > 0 && !cloud.classList.contains("is-collapsed");
     const stats = collectTagStats(TAG_CLOUD_LIMIT);
     if (!stats.length) {
       if (wrap) wrap.hidden = true;
+      cloud.innerHTML = "";
+      if (toggle) toggle.hidden = true;
       return;
     }
     if (wrap) wrap.hidden = false;
@@ -720,9 +753,9 @@
     if (toggle) {
       const hasExtra = stats.length > TAG_CLOUD_COLLAPSED;
       toggle.hidden = !hasExtra;
-      cloud.classList.add("is-collapsed");
-      toggle.textContent = "展开";
-      toggle.setAttribute("aria-expanded", "false");
+      cloud.classList.toggle("is-collapsed", !keepExpanded);
+      toggle.textContent = keepExpanded ? "收起" : "展开";
+      toggle.setAttribute("aria-expanded", keepExpanded ? "true" : "false");
     }
   }
 
@@ -1401,9 +1434,13 @@
     initSakuraField();
     const bundle = await loadPromptBundle();
     buildRuntimeIndexes();
+    // 默认落在科研提示词分类（分类不存在时退回全部分类）
+    state.category = resolveDefaultCategory();
     initCategories();
+    syncCategoryLabel();
     initAnnouncements();
     initTagCloud();
+    updateChips();
     initHeroTicker();
     initSpotlight();
     bindEvents();
