@@ -90,6 +90,19 @@ spark-prompts/
 
 同步维护 `CATEGORIES` 与可选的 `ANNOUNCEMENTS`。
 
+### 内容过滤（NSFW）
+
+`prompts.json` 是权威源，`js/data.js` 是它的内嵌副本，两者必须同步改。
+
+```bash
+node tools/purge-nsfw.mjs           # 试算：列出硬命中与擦边的条目，不写盘
+node tools/purge-nsfw.mjs --apply   # 实际剔除，并同步 prompts.json、js/data.js、banana 原始缓存
+```
+
+- 判定规则在 `tools/nsfw-filter.mjs`，导入脚本（`import-banana.mjs` / `import-sakura.mjs`）也复用它，重新导入不会再把内容带回来。
+- 标题看不出问题、正文属内衣/写真类的条目，加进 `purge-nsfw.mjs` 的 `MANUAL_REMOVE` 再执行。
+- **不要**运行 `tools/build-data.mjs`：它只用最初那批硬编码模板重建词库，会把现网数百条覆盖掉（脚本已加条数倒退保护）。
+
 ## 部署到 GitHub Pages
 
 1. 新建 GitHub 仓库（例如 `spark-prompts`）。

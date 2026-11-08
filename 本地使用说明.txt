@@ -40,6 +40,11 @@ Spark Prompts — 本地使用说明
 【提交前自检】
   node tools\validate-site.mjs
 
+【内容过滤（NSFW）】
+  node tools\purge-nsfw.mjs            试算，列出要删和擦边的条目
+  node tools\purge-nsfw.mjs --apply    真正剔除，并同步 prompts.json + js\data.js
+  注意：不要跑 tools\build-data.mjs，那会用旧模板覆盖整个词库（已加保护会直接中止）
+
 【以后分享到 GitHub】
   1. 改 js\config.js 里的 githubUrl
   2. 见 README.md 与 docs\完整方案.md 第 5 节

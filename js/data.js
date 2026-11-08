@@ -4839,26 +4839,6 @@ window.PROMPT_DATA = [
     "source": "banana"
   },
   {
-    "id": "bn-换装越南奥黛风艺术照-487bdc4e",
-    "title": "换装越南奥黛风艺术照",
-    "category": "生活场景",
-    "tags": [
-      "编辑",
-      "生活",
-      "Banana",
-      "生活场景"
-    ],
-    "type": "edit",
-    "date": "2026-07-24",
-    "cover": "linear-gradient(135deg, #14532d 0%, #4ade80 50%, #ecfccb 100%)",
-    "emoji": "🌿",
-    "summary": "旅行、日常、生活美学类画面。；分类：生活）",
-    "prompt": "创建一个超写实的人物肖像（保留确切的真实面部和身体特征，不做任何改动），8K高分辨率的超现实肖像画。\n画面中是一位年轻、优雅的女性，穿着传统的白色丝绸肚兜和飘逸的深绿色长裙。她身体微微倾斜，右手优雅地弯曲手肘，在右脸颊附近举着一朵新鲜的白莲花。她的左手轻轻地放在大腿上。她的头微微倾向莲花，眼神宁静而梦幻地看着花朵，带着一丝微妙的微笑。她的黑发盘成一个高高的波浪形发髻，几缕发丝勾勒出她白皙、容光焕发的脸庞。\n背景是渐变的橄榄绿色，带有柔和、温暖的光晕，突出了丝绸肚兜的质感、娇嫩的莲花花瓣和她光滑的皮肤。旁边一张雕刻精美的木桌上放着一个装满白莲花的大白花瓶。\n电影般的构图，背景虚化，超清晰的细节，逼真的阴影，杰作，照片级真实感。",
-    "preview": "https://pbs.twimg.com/media/G5YBkPtbYAAVDEr?format=jpg&name=medium",
-    "author": "@ShreyaYadav___",
-    "source": "banana"
-  },
-  {
     "id": "bn-黄金时段肖像-a66d74db",
     "title": "黄金时段肖像",
     "category": "生活场景",
@@ -5427,27 +5407,6 @@ window.PROMPT_DATA = [
     "prompt": "时尚心情板拼贴。用剪裁的模特所穿的单个物品围绕肖像。添加手写笔记和草图，使用俏皮的马克笔风格字体，并用英语标注每个物品的品牌名称和来源。整体美学应创意且可爱。",
     "preview": "https://pbs.twimg.com/media/GzwhyfabAAAZpHO.jpg?format=jpg&name=large",
     "author": "@tetumemo",
-    "source": "banana"
-  },
-  {
-    "id": "bn-维多利亚的秘密华丽拍摄-b1bfce16",
-    "title": "维多利亚的秘密华丽拍摄",
-    "category": "生活场景",
-    "tags": [
-      "编辑",
-      "生活",
-      "Banana",
-      "生活场景",
-      "风格"
-    ],
-    "type": "edit",
-    "date": "2026-07-24",
-    "cover": "linear-gradient(135deg, #14532d 0%, #4ade80 50%, #ecfccb 100%)",
-    "emoji": "🌿",
-    "summary": "旅行、日常、生活美学类画面。；分类：生活）",
-    "prompt": "以维多利亚的秘密风格创建一个华丽拍摄。一个年轻女人上传参考图像中附带的（保持参考图像中人物的面部100%准确）几乎侧身站立，略微前弯，在表演前的最终准备中。化妆师给她涂口红（框架中只可见他们的手）。她穿着装饰珠绣和水晶的紧身胸衣，带有短蓬松裙，以及大型羽毛翅膀。图像具有“后台”效果。\n背景是黑暗照明的房间，可能在讲台下。主要强调女孩的脸和她服装的细节。强调目光的表现力和服装的奢华外观。照片由相机闪光照明，强调胸衣上的珠子和水晶的光芒，以及女孩闪亮的皮肤。维多利亚的秘密风格：感性、奢侈、魅力。非常细节。重要：不要改变脸。",
-    "preview": "https://pbs.twimg.com/media/G6TSEuEWEAAaR7N.jpg?format=jpg&name=large",
-    "author": "@NanoBanana_labs",
     "source": "banana"
   },
   {

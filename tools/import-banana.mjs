@@ -7,6 +7,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import https from "https";
+import { shouldSkipPrompt } from "./nsfw-filter.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
@@ -155,6 +156,10 @@ async function main() {
       prompt: String(item.prompt).trim(),
       source: "banana-prompt-quicker",
     };
+    if (shouldSkipPrompt(rec)) {
+      skipped++;
+      return;
+    }
     imported.push(rec);
     existingIds.add(id);
     existingTitles.add(title.toLowerCase());

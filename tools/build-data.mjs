@@ -885,6 +885,20 @@ const payload = {
 };
 
 const jsonPath = path.join(root, "prompts.json");
+
+// 保险：本脚本只用下面硬编码的 PROMPTS 重建词库。现网词库已由 import-banana /
+// import-sakura 扩充到数百条，直接跑会把它们覆盖掉。条数倒退就中止。
+if (fs.existsSync(jsonPath)) {
+  const current = JSON.parse(fs.readFileSync(jsonPath, "utf8"));
+  if (Array.isArray(current.prompts) && current.prompts.length > PROMPTS.length) {
+    console.error(
+      `中止：prompts.json 现有 ${current.prompts.length} 条，多于本脚本硬编码的 ${PROMPTS.length} 条。\n` +
+        `这个脚本只用于最初的空库重建；现网数据请用 tools/import-*.mjs 扩充、tools/purge-nsfw.mjs 清理。`
+    );
+    process.exit(1);
+  }
+}
+
 fs.writeFileSync(jsonPath, JSON.stringify(payload, null, 2), "utf8");
 
 const dataJs = `/**

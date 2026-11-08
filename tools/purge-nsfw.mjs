@@ -1,122 +1,144 @@
 /**
- * Remove NSFW prompts from prompts.json + banana-showcase + data.js
+ * 清理 NSFW / 成人向提示词
+ *
+ * 当前数据链路（注意：不要跑 build-data.mjs，那是旧版硬编码生成器，会把词库覆盖回几十条）：
+ *   权威源   ：根目录 prompts.json
+ *   派生副本 ：js/data.js（file:// 或 prompts.json 拉取失败时的内嵌回退包）
+ *   导入缓存 ：tools/banana-prompts-raw.json（banana 重新导入的原料，不清会复活）
+ *
+ * 用法：
+ *   node tools/purge-nsfw.mjs            # 只试算，打印命中清单，不写盘
+ *   node tools/purge-nsfw.mjs --apply     # 写回 prompts.json + js/data.js + 原始缓存
  */
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { classifyPrompt } from "./nsfw-filter.mjs";
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
+const APPLY = process.argv.includes("--apply");
 
-const TITLE_RE =
-  /nsfw|nude|naked|porn|hentai|lewd|xxx|r-?18|色情|成人向|全裸|情色|情趣|出浴|半透蕾丝|蕾丝内衣|费洛蒙|亲密场景|触摸身体|素体|小便|枕头遮挡|透明比基尼|堕落过程|破烂护士|人体科普|18-22岁|快递箱摆拍|包裹快递|健身房喝水|磨砂厕所|宫殿跪地|奇怪角度|高叉紧身|微胖|湿身|内衣穿搭|露脐|丁字裤|t-back|micro\s*bikini|see-?through|topless|bottomless|ahegao|巨乳|豪乳|丰乳|淫纹|翻白眼|吐舌头/i;
+/**
+ * 人工复核后确认要删的擦边条目（标题看不出问题、正文是内衣/肚兜/露胸式造型）。
+ * 命中 soft 默认只提示不删，需要删就往这里加。
+ */
+const MANUAL_REMOVE = {
+  "bn-维多利亚的秘密华丽拍摄-b1bfce16":
+    "维多利亚的秘密后台内衣秀：紧身胸衣 + 羽毛翅膀，正文强调性感、皮肤光泽",
+  "bn-换装越南奥黛风艺术照-487bdc4e":
+    "白色丝绸肚兜（露肩胸衣式）+ 大腿特写，写真向",
+};
 
-const BODY_RE =
-  /\bnsfw\b|\bnude\b|\bnaked\b|\bporn\b|\bhentai\b|\blewd\b|uncensored|nipples?|areola|\bpussy\b|\bpenis\b|vagina|genital|ahegao|cameltoe|underboob|topless|bottomless|micro\s*t-back|t-back\s*thong|highleg\s*micro|bimbofication|全裸|裸露|色情|情色|性交|做爱|口交|自慰|射精|阴茎|阴道|淫纹|翻白眼.*吐舌|情趣内衣|半透明内衣|蕾丝内衣|丁字裤|巨硕豪乳|丰乳肥臀|敏感部位|不露出任何敏感|内衣.*诱惑|脱光|裸身|裸体/i;
-
-const KEEP_IDS = new Set(["write-story-beats"]); // 故事「高潮」误报
-
-function isNsfw(p) {
-  if (KEEP_IDS.has(p.id)) return false;
-  const tags = (p.tags || []).map(String);
-  if (tags.some((t) => /^nsfw$/i.test(t.trim()) || /成人|色情|r-?18/i.test(t))) return true;
-  // banana showcase / import: category or mode labeled NSFW
-  const cat = `${p.category || ""} ${p.subCategory || ""} ${p.mode || ""} ${p.sub_category || ""}`;
-  if (/\bnsfw\b|成人|色情|r-?18/i.test(cat)) return true;
-  const title = p.title || "";
-  if (TITLE_RE.test(title)) return true;
-  // title is only "Girl" with sexual content nearby handled by body
-  if (/^girl$/i.test(title.trim())) return true;
-  const body = `${p.prompt || ""}\n${p.summary || ""}`;
-  if (BODY_RE.test(body)) return true;
-  // banana tagged NSFW already caught; extra: explicit clothing fetish prompts
-  if (/半透|透明衣|湿身|湿透|入浴|淋浴间|更衣室.*脱|脱衣|漏出.*内脏.*丁字/i.test(body) && /女|少女|角色|cos/i.test(title + body)) {
-    // only if also suggestive
-    if (/内衣|裸|胸|臀|腿根|乳|性感|魅惑|羞耻|诱惑/i.test(body)) return true;
-  }
-  return false;
-}
-
-// prompts.json
 const sparkPath = path.join(root, "prompts.json");
 const spark = JSON.parse(fs.readFileSync(sparkPath, "utf8"));
-const beforeP = spark.prompts.length;
-const removed = spark.prompts.filter(isNsfw);
-spark.prompts = spark.prompts.filter((p) => !isNsfw(p));
-spark.updatedAt = new Date().toISOString().slice(0, 10);
-spark.announcements = [
-  {
-    title: "欢迎来到灵动词库 · 我的作品集",
-    body: "整站视觉与交互由我搭建。词库可搜可藏，对照表可看效果再复制。内容已做安全过滤。",
-  },
-  {
-    title: "效果图对照表",
-    body: "导航点「对照表」，边看预览边拿提示词。已移除不适宜内容。",
-  },
-  {
-    title: "持续更新中",
-    body: "我会继续补自己的模板与精选条目，欢迎收藏本站。",
-  },
-];
-fs.writeFileSync(sparkPath, JSON.stringify(spark, null, 2), "utf8");
 
-// banana showcase
-const bnPath = path.join(root, "banana-showcase.json");
-const bn = JSON.parse(fs.readFileSync(bnPath, "utf8"));
-const beforeB = bn.rows.length;
-bn.rows = bn.rows.filter((r) => !isNsfw(r));
-bn.rows.forEach((r, i) => {
-  r.no = i + 1;
+const rows = spark.prompts.map((p) => {
+  const auto = classifyPrompt(p);
+  const manual = MANUAL_REMOVE[p.id];
+  return { p, auto, manual, drop: Boolean(manual) || auto?.level === "hard" };
 });
-bn.total = bn.rows.length;
-bn.updatedAt = new Date().toISOString().slice(0, 10);
-fs.writeFileSync(bnPath, JSON.stringify(bn, null, 2), "utf8");
 
-const bnJs = `/**
- * 灵动词库 · 效果图对照数据（已过滤 NSFW）
+const drop = rows.filter((r) => r.drop);
+const soft = rows.filter((r) => !r.drop && r.auto?.level === "soft");
+
+console.log(`总条目 ${spark.prompts.length}；删除 ${drop.length}；擦边待复核 ${soft.length}`);
+
+console.log("\n== 将删除 ==");
+for (const r of drop) {
+  const why = r.manual || r.auto?.why;
+  console.log(`- ${r.p.id} | ${r.p.title} | ${r.p.category} | 原因：${why}`);
+}
+
+console.log("\n== 擦边（保留，仅提示） ==");
+for (const r of soft) {
+  const body = `${r.p.prompt || ""}`.replace(/\s+/g, " ").slice(0, 60);
+  console.log(`- ${r.p.id} | ${r.p.title} | ${r.auto.why} | ${body}`);
+}
+
+if (!APPLY) {
+  console.log("\n（试算模式，未写盘。确认后加 --apply）");
+  process.exit(0);
+}
+
+const dropIds = new Set(drop.map((r) => r.p.id));
+const before = spark.prompts.length;
+spark.prompts = spark.prompts.filter((p) => !dropIds.has(p.id));
+spark.updatedAt = new Date().toISOString().slice(0, 10);
+
+/**
+ * 原文件是单行紧凑 JSON（线上靠 HTTP 拉取，体积更重要），
+ * 所以这里按原格式做最小改动：只摘掉目标条目，不重新排版，避免整文件 diff 噪音。
  */
-window.BANANA_SHOWCASE = ${JSON.stringify(bn)};
-`;
-fs.writeFileSync(path.join(root, "js", "banana-showcase.js"), bnJs, "utf8");
+const rawText = fs.readFileSync(sparkPath, "utf8");
+const compactSingleLine = !rawText.includes("\n");
 
-const dataJs = `/**
- * 灵动词库 — 内嵌回退数据（已过滤 NSFW）
+if (compactSingleLine) {
+  let out = rawText;
+  for (const p of drop.map((r) => r.p)) {
+    const ser = JSON.stringify(p);
+    const idx = out.indexOf(ser);
+    if (idx === -1) throw new Error(`找不到待删条目的序列化片段：${p.id}`);
+    if (out[idx + ser.length] === ",") {
+      out = out.slice(0, idx) + out.slice(idx + ser.length + 1);
+    } else if (out[idx - 1] === ",") {
+      out = out.slice(0, idx - 1) + out.slice(idx + ser.length);
+    } else {
+      throw new Error(`无法确定逗号位置：${p.id}`);
+    }
+  }
+  out = out.replace(/("updatedAt":")[^"]*(")/, `$1${spark.updatedAt}$2`);
+  const check = JSON.parse(out);
+  if (check.prompts.length !== spark.prompts.length) {
+    throw new Error(`删除后条数不符：${check.prompts.length} != ${spark.prompts.length}`);
+  }
+  fs.writeFileSync(sparkPath, out, "utf8");
+} else {
+  fs.writeFileSync(sparkPath, JSON.stringify(spark, null, 2), "utf8");
+}
+
+/**
+ * js/data.js 是多行缩进格式，但公告用的是紧凑单行写法（{ title: ..., body: ... }），
+ * JSON.stringify 会把公告也重排成多行。这里按条目整块删除，其余字节保持原样。
  */
-window.PROMPT_DATA = ${JSON.stringify(spark.prompts, null, 2)};
+const dataJsPath = path.join(root, "js", "data.js");
+const dataJsText = fs.readFileSync(dataJsPath, "utf8");
+let dataOut = dataJsText;
+for (const p of drop.map((r) => r.p)) {
+  const esc = p.id.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const blockRe = new RegExp(`  \\{\\r?\\n    "id": "${esc}",\\r?\\n[\\s\\S]*?\\r?\\n  \\},(?:\\r?\\n)?`);
+  if (!blockRe.test(dataOut)) throw new Error(`js/data.js 里找不到条目块：${p.id}`);
+  dataOut = dataOut.replace(blockRe, "");
+}
+const dataCount = (dataOut.match(/\r?\n    "id": "/g) || []).length;
+if (dataCount !== spark.prompts.length) {
+  throw new Error(`js/data.js 删除后条数不符：${dataCount} != ${spark.prompts.length}`);
+}
+fs.writeFileSync(dataJsPath, dataOut, "utf8");
 
-window.ANNOUNCEMENTS = ${JSON.stringify(spark.announcements, null, 2)};
-
-window.CATEGORIES = ${JSON.stringify(spark.categories, null, 2)};
-`;
-fs.writeFileSync(path.join(root, "js", "data.js"), dataJs, "utf8");
-
-// also purge raw banana cache for future imports
+// 原始缓存：按同样规则剔除，避免下次 import-banana 重新导回
 const rawPath = path.join(root, "tools", "banana-prompts-raw.json");
+let rawBefore = 0;
+let rawAfter = 0;
 if (fs.existsSync(rawPath)) {
   const raw = JSON.parse(fs.readFileSync(rawPath, "utf8"));
+  rawBefore = raw.length;
   const cleaned = raw.filter((item) => {
+    if (/nsfw/i.test(item.title || "")) return false;
     const fake = {
       id: item.title,
       title: item.title,
-      prompt: item.prompt,
+      category: item.category || "",
+      sub_category: item.sub_category || "",
+      mode: item.mode || "",
+      prompt: item.prompt || "",
       summary: "",
       tags: [item.sub_category, item.category, item.mode].filter(Boolean),
     };
-    // map banana mode NSFW from title
-    if (/nsfw/i.test(item.title || "")) return false;
-    return !isNsfw(fake);
+    return classifyPrompt(fake)?.level !== "hard";
   });
+  rawAfter = cleaned.length;
   fs.writeFileSync(rawPath, JSON.stringify(cleaned, null, 2), "utf8");
-  console.log("raw banana", raw.length, "->", cleaned.length);
 }
 
-console.log(
-  JSON.stringify(
-    {
-      prompts: { before: beforeP, after: spark.prompts.length, removed: beforeP - spark.prompts.length },
-      showcase: { before: beforeB, after: bn.rows.length, removed: beforeB - bn.rows.length },
-      removedTitles: removed.map((p) => p.title),
-    },
-    null,
-    2
-  )
-);
+console.log(`\n已写盘：prompts.json ${before} -> ${spark.prompts.length}；js/data.js 已同步`);
+if (rawPath) console.log(`banana 原始缓存 ${rawBefore} -> ${rawAfter}`);

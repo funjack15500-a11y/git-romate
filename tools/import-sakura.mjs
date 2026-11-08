@@ -4,6 +4,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { shouldSkipPrompt } from "./nsfw-filter.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
@@ -111,6 +112,7 @@ for (const s of sakura) {
   const id = "sakura-" + s.id;
   if (existing.has(id)) continue;
   const tags = s.tags || [];
+  if (shouldSkipPrompt({ id, title: s.title, tags, prompt: s.prompt })) continue;
   extras.push({
     id,
     title: s.title,
