@@ -19,6 +19,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    (function () {
+      var key = "spark-prompts-theme";
+      var theme = "dark";
+      try {
+        var saved = localStorage.getItem(key);
+        if (saved === "light" || saved === "dark") theme = saved;
+      } catch (error) {
+        /* 隐私模式下忽略 */
+      }
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
 </head>
 <body class="anime-skin brand-lingdong">
   <a class="skip-link" href="#install">跳到安装说明</a>
@@ -43,9 +56,10 @@
     <nav class="header-nav" aria-label="站内导航">
       <a href="index.html#gallery">词库</a>
       <a href="extension.html" aria-current="page">插件</a>
-      <a href="index.html#contact" data-open-contact>联系</a>
+      <a href="mailto:funjack15500@gmail.com" data-open-contact>联系</a>
     </nav>
     <div class="header-actions">
+      <button type="button" class="icon-btn" id="themeToggle" aria-label="切换主题"></button>
       <a class="btn btn-secondary" href="https://github.com/funjack15500-a11y/git-romate" target="_blank" rel="noopener" style="padding: 8px 14px; height: 40px;">
         <span class="header-github-text">源码</span>
       </a>
@@ -55,10 +69,6 @@
   <section class="plugin-hero">
     <p class="hero-kicker">BROWSER EXTENSION</p>
     <h1 class="plugin-title">灵动词库 · 浏览器插件</h1>
-    <p class="plugin-lead">
-      装好后点一下浏览器右上角的图标，会弹出一个小窗，按分类列出全部提示词；
-      点任意一条，整段提示词正文就直接进剪贴板，条目右侧的 ♡ 还能把常用提示词收进「我的收藏」。切到 ChatGPT / Claude 粘贴即用。
-    </p>
     <div class="plugin-meta">
       <span>v1.0.2</span>
       <span>403 条提示词</span>
@@ -125,7 +135,7 @@
 
   <footer class="site-footer">
     <p class="footer-brand">© <span id="footerYear">2026</span> 灵动词库</p>
-    <p class="footer-sub">AI 提示词库 · <a href="https://lingdongtech.de5.net/">lingdongtech.de5.net</a> · <a href="index.html#contact">联系我们</a></p>
+    <p class="footer-sub">AI 提示词库 · <a href="https://lingdongtech.de5.net/">lingdongtech.de5.net</a> · <a href="mailto:funjack15500@gmail.com" data-open-contact>联系我们</a></p>
   </footer>
 
   <div class="contact-widget" data-contact-widget>
@@ -162,6 +172,37 @@
     (function () {
       var y = document.getElementById("footerYear");
       if (y) y.textContent = String(new Date().getFullYear());
+
+      var KEY = "spark-prompts-theme";
+      var btn = document.getElementById("themeToggle");
+      var sun =
+        '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>';
+      var moon =
+        '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+
+      function paint(theme) {
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.content = theme === "dark" ? "#12151a" : "#f5f4f1";
+        if (!btn) return;
+        btn.innerHTML = theme === "dark" ? sun : moon;
+        btn.setAttribute("aria-label", theme === "dark" ? "切换浅色模式" : "切换深色模式");
+      }
+
+      paint(document.documentElement.getAttribute("data-theme") || "dark");
+
+      if (btn) {
+        btn.addEventListener("click", function () {
+          var cur = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+          var next = cur === "dark" ? "light" : "dark";
+          document.documentElement.setAttribute("data-theme", next);
+          try {
+            localStorage.setItem(KEY, next);
+          } catch (error) {
+            /* 隐私模式下忽略 */
+          }
+          paint(next);
+        });
+      }
     })();
   </script>
   <script src="js/contact-widget.js" defer></script>

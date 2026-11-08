@@ -75,12 +75,7 @@
 
   function initTheme() {
     const saved = readStorage(THEME_KEY);
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const theme = ["light", "dark"].includes(saved)
-      ? saved
-      : prefersDark
-        ? "dark"
-        : "light";
+    const theme = ["light", "dark"].includes(saved) ? saved : "dark";
     document.documentElement.setAttribute("data-theme", theme);
     updateThemeIcon(theme);
     updateThemeColor(theme);

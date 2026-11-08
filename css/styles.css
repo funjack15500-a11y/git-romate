@@ -3106,7 +3106,7 @@ img {
   visibility: hidden;
   transform: translateY(10px) scale(0.98);
   pointer-events: none;
-  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease), visibility 0.2s;
+  transition: none;
 }
 
 .contact-widget.is-open .cw-panel {
@@ -3193,6 +3193,22 @@ img {
   font-size: 0.74rem;
   line-height: 1.5;
   color: var(--text-3);
+}
+
+/* 导航「联系」悬停时弹出的同一块面板 */
+.contact-widget.is-hover .cw-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  pointer-events: auto;
+  transition: none;
+}
+
+.cw-panel.is-anchored {
+  position: fixed;
+  right: auto;
+  margin: 0;
+  z-index: 270;
 }
 
 @media (max-width: 640px) {
