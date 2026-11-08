@@ -6,7 +6,7 @@ window.SITE_CONFIG = {
   nameEn: "Lingdong Prompts",
   tagline: "AI 提示词库",
   description:
-    "可搜索、可筛选、一键复制的 AI 提示词库。图像生成/编辑、海报、二次元、写作、编程与提示工程等分类。",
+    "可搜索、可筛选、一键复制的 AI 提示词库。分科研提示词与有趣提示词两类，支持搜索、筛选与收藏。",
   author: "Lingdong",
   brandNote: "Prompt Gallery",
   githubUrl: "https://github.com/funjack15500-a11y/git-romate",

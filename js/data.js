@@ -5,7 +5,7 @@ window.PROMPT_DATA = [
   {
     "id": "img-3d-icon",
     "title": "3D 拟物图标",
-    "category": "图像生成",
+    "category": "有趣提示词",
     "tags": [
       "3D",
       "图标",
@@ -22,7 +22,7 @@ window.PROMPT_DATA = [
   {
     "id": "img-flat-illustration",
     "title": "扁平插画角色",
-    "category": "图像生成",
+    "category": "有趣提示词",
     "tags": [
       "插画",
       "扁平",
@@ -39,7 +39,7 @@ window.PROMPT_DATA = [
   {
     "id": "img-food-photo",
     "title": "餐厅级美食摄影",
-    "category": "图像生成",
+    "category": "有趣提示词",
     "tags": [
       "美食",
       "摄影",
@@ -56,7 +56,7 @@ window.PROMPT_DATA = [
   {
     "id": "img-iso-city",
     "title": "等距未来城市",
-    "category": "图像生成",
+    "category": "有趣提示词",
     "tags": [
       "场景",
       "科幻",
@@ -73,7 +73,7 @@ window.PROMPT_DATA = [
   {
     "id": "img-cinematic-portrait",
     "title": "电影感人像",
-    "category": "图像生成",
+    "category": "有趣提示词",
     "tags": [
       "人像",
       "电影感",
@@ -90,7 +90,7 @@ window.PROMPT_DATA = [
   {
     "id": "img-product-minimal",
     "title": "极简产品摄影",
-    "category": "图像生成",
+    "category": "有趣提示词",
     "tags": [
       "产品",
       "电商",
@@ -107,7 +107,7 @@ window.PROMPT_DATA = [
   {
     "id": "img-architecture-night",
     "title": "建筑夜景长曝",
-    "category": "图像生成",
+    "category": "有趣提示词",
     "tags": [
       "建筑",
       "夜景",
@@ -124,7 +124,7 @@ window.PROMPT_DATA = [
   {
     "id": "img-cyberpunk-street",
     "title": "赛博朋克街景",
-    "category": "图像生成",
+    "category": "有趣提示词",
     "tags": [
       "赛博朋克",
       "街景",
@@ -141,7 +141,7 @@ window.PROMPT_DATA = [
   {
     "id": "img-watercolor-food",
     "title": "水彩美食插画",
-    "category": "图像生成",
+    "category": "有趣提示词",
     "tags": [
       "插画",
       "美食",
@@ -158,7 +158,7 @@ window.PROMPT_DATA = [
   {
     "id": "img-nature-macro",
     "title": "微距自然纹理",
-    "category": "图像生成",
+    "category": "有趣提示词",
     "tags": [
       "自然",
       "微距",
@@ -175,7 +175,7 @@ window.PROMPT_DATA = [
   {
     "id": "img-pixel-art",
     "title": "像素风角色",
-    "category": "图像生成",
+    "category": "有趣提示词",
     "tags": [
       "像素",
       "游戏",
@@ -192,7 +192,7 @@ window.PROMPT_DATA = [
   {
     "id": "img-logo-concept",
     "title": "Logo 概念草图",
-    "category": "图像生成",
+    "category": "有趣提示词",
     "tags": [
       "Logo",
       "品牌",
@@ -209,7 +209,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-包装贴合效果-80fabe88",
     "title": "包装贴合效果",
-    "category": "图像编辑",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "工作",
@@ -229,7 +229,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-电商模特试穿-6ee93f82",
     "title": "电商模特试穿",
-    "category": "图像编辑",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "电商",
@@ -250,7 +250,7 @@ window.PROMPT_DATA = [
   {
     "id": "edit-color-grade",
     "title": "电影调色",
-    "category": "图像编辑",
+    "category": "有趣提示词",
     "tags": [
       "调色",
       "电影",
@@ -267,7 +267,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-高端编辑产品摄影-9d8fdc19",
     "title": "高端编辑产品摄影",
-    "category": "图像编辑",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "工作",
@@ -287,7 +287,7 @@ window.PROMPT_DATA = [
   {
     "id": "edit-style-transfer",
     "title": "画风迁移",
-    "category": "图像编辑",
+    "category": "有趣提示词",
     "tags": [
       "风格迁移",
       "编辑",
@@ -304,7 +304,7 @@ window.PROMPT_DATA = [
   {
     "id": "edit-bg-remove-style",
     "title": "换背景并统一风格",
-    "category": "图像编辑",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "换背景",
@@ -321,7 +321,7 @@ window.PROMPT_DATA = [
   {
     "id": "edit-face-consistency",
     "title": "角色一致性改图",
-    "category": "图像编辑",
+    "category": "有趣提示词",
     "tags": [
       "角色",
       "一致性",
@@ -338,7 +338,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-商务照-e4e2bf7c",
     "title": "商务照",
-    "category": "图像编辑",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "工作",
@@ -359,7 +359,7 @@ window.PROMPT_DATA = [
   {
     "id": "edit-upscale-detail",
     "title": "细节增强与清晰化",
-    "category": "图像编辑",
+    "category": "有趣提示词",
     "tags": [
       "增强",
       "清晰度",
@@ -376,7 +376,7 @@ window.PROMPT_DATA = [
   {
     "id": "edit-remove-object",
     "title": "移除杂物补全",
-    "category": "图像编辑",
+    "category": "有趣提示词",
     "tags": [
       "修复",
       "去杂物",
@@ -393,7 +393,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-专业电商商品图-36c23123",
     "title": "专业电商商品图",
-    "category": "图像编辑",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "电商",
@@ -414,7 +414,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-1950年代海报-fa7d5660",
     "title": "1950年代海报",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "工作",
@@ -435,7 +435,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-1990年代风格肖像转换-318ff063",
     "title": "1990年代风格肖像转换",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -456,7 +456,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-3d-q版迷你概念店-8839218a",
     "title": "3D Q版迷你概念店",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -476,7 +476,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-3d皮克斯风格渲染-9756383a",
     "title": "3D皮克斯风格渲染",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -497,7 +497,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-8位像素图标-f274e2e5",
     "title": "8位像素图标",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -518,7 +518,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-餐饮过敏警示卡-0284e65e",
     "title": "餐饮过敏警示卡",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "工作",
@@ -538,7 +538,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-产品原型图-8b9b4002",
     "title": "产品原型图",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "工作",
@@ -558,7 +558,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-城市海报艺术生成-875c03b8",
     "title": "城市海报艺术生成",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -579,7 +579,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-城市天气蛋糕3d场景-e32cfc1a",
     "title": "城市天气蛋糕3D场景",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -599,7 +599,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-创意丝绸宇宙-e3d49dd8",
     "title": "创意丝绸宇宙",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -620,7 +620,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-地标问路-打车卡-bab9f242",
     "title": "地标问路/打车卡",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "旅游",
@@ -641,7 +641,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-镀铬emoji徽章-33f2f0b6",
     "title": "镀铬emoji徽章",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -662,7 +662,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-疯狂动物城海报-372e0b9a",
     "title": "疯狂动物城海报",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "海报",
@@ -683,7 +683,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-讽刺海报生成-68f6c06d",
     "title": "讽刺海报生成",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -704,7 +704,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-讽刺漫画海报-1a2f644d",
     "title": "讽刺漫画海报",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -725,7 +725,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-复古宣传海报-a4440b99",
     "title": "复古宣传海报",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "工作",
@@ -746,7 +746,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-高级二维码-796a5890",
     "title": "高级二维码",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "工作",
@@ -767,7 +767,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-光影人偶打光参考-0b67c959",
     "title": "光影人偶打光参考",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "工作",
@@ -787,7 +787,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-海报-3e420a67",
     "title": "海报",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "工作",
@@ -808,7 +808,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-户型图生成全屋设计方案-9d6dfd6e",
     "title": "户型图生成全屋设计方案",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "装修",
@@ -829,7 +829,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-怀旧动漫风格电影海报-a228ba87",
     "title": "怀旧动漫风格电影海报",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -850,7 +850,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-渐变玻璃风格-ppt-bc68872f",
     "title": "渐变玻璃风格 PPT",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "PPT",
@@ -871,7 +871,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-键盘esc键帽微型立体模型-f0c881f7",
     "title": "键盘ESC键帽微型立体模型",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -891,7 +891,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-将你的任何文字变成发布会现场-fce3ccdc",
     "title": "将你的任何文字变成发布会现场",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "工作",
@@ -911,7 +911,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-卡帕多西亚醒来-f05ae502",
     "title": "卡帕多西亚醒来",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -931,7 +931,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-旅行手账插画生成-7bc96c56",
     "title": "旅行手账插画生成",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "旅游",
@@ -952,7 +952,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-骡马假日海报-a78cf7aa",
     "title": "骡马假日海报",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -973,7 +973,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-毛茸茸emoji物体-3ae73863",
     "title": "毛茸茸emoji物体",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -994,7 +994,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-名画人物麦片广告-e3805585",
     "title": "名画人物麦片广告",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "有趣",
@@ -1015,7 +1015,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-名人名言金句卡-cfae9e98",
     "title": "名人名言金句卡",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "工作",
@@ -1035,7 +1035,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-品牌化键盘键帽-4731ff79",
     "title": "品牌化键盘键帽",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -1055,7 +1055,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-苹果风格海报-f2230dcb",
     "title": "苹果风格海报",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "海报",
@@ -1076,7 +1076,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-破旧的船长航海日志-21068e4e",
     "title": "破旧的船长航海日志",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -1097,7 +1097,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-汽车发动机工作原理3d剖面图-714aec5b",
     "title": "汽车发动机工作原理3D剖面图",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "学习",
@@ -1117,7 +1117,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-设计宣传画-b053e3cf",
     "title": "设计宣传画",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "工作",
@@ -1137,7 +1137,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-社交媒体相框融合-a870600b",
     "title": "社交媒体相框融合",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "有趣",
@@ -1158,7 +1158,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-生成角色游戏状态屏-4fd7884d",
     "title": "生成角色游戏状态屏",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -1179,7 +1179,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-生成可爱k-pop风格女友照片-85d43a57",
     "title": "生成可爱K-pop风格女友照片",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -1200,7 +1200,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-生成商业促销海报-d7cb1f84",
     "title": "生成商业促销海报",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "封面",
@@ -1221,7 +1221,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-生成自媒体爆款封面-ade6fa73",
     "title": "生成自媒体爆款封面",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "封面",
@@ -1242,7 +1242,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-时尚杂志封面风格-f692823b",
     "title": "时尚杂志封面风格",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "工作",
@@ -1263,7 +1263,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-手绘草图转专业流程图-55bdf769",
     "title": "手绘草图转专业流程图",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "工作",
@@ -1284,7 +1284,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-手绘食谱烹饪流程图生成-ac132951",
     "title": "手绘食谱烹饪流程图生成",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "美食",
@@ -1305,7 +1305,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-手绘信息图卡片-ip版-080ae280",
     "title": "手绘信息图卡片（IP版）",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -1326,7 +1326,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-水边安静下午-40684868",
     "title": "水边安静下午",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "想象",
@@ -1347,7 +1347,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-思维导图-3ac2f9e2",
     "title": "思维导图",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "总结",
@@ -1368,7 +1368,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-特色城市天气预报-15ee0fad",
     "title": "特色城市天气预报",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -1388,7 +1388,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-天气应用3d卡通界面-b2be4380",
     "title": "天气应用3D卡通界面",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -1408,7 +1408,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-透视3d出屏效果-eb6d22e3",
     "title": "透视3D出屏效果",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "有趣",
@@ -1428,7 +1428,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-文章排版成精美杂志-b8af2be8",
     "title": "文章排版成精美杂志",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "封面",
@@ -1449,7 +1449,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-文章转卡通信息图-b1caa318",
     "title": "文章转卡通信息图",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "总结",
@@ -1470,7 +1470,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-小红书封面设计-0b6c21f0",
     "title": "小红书封面设计",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "工作",
@@ -1490,7 +1490,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-颜值打分-3161a8db",
     "title": "颜值打分",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -1511,7 +1511,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-影视剧小说场景海报生成-c71fe2ed",
     "title": "影视剧小说场景海报生成",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "海报",
@@ -1532,7 +1532,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-掌控整个派对-c832665a",
     "title": "掌控整个派对",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -1553,7 +1553,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-照片放入复古诺基亚手机-y2k千禧年风格-602be0ef",
     "title": "照片放入复古诺基亚手机(Y2K千禧年风格)",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -1574,7 +1574,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-照片转皮克斯风格头像-2e16f2e6",
     "title": "照片转皮克斯风格头像",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -1595,7 +1595,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-纸艺风格-emoji-图标-5b7d56f5",
     "title": "纸艺风格 Emoji 图标",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -1616,7 +1616,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-坐在巨型可爱卡通怪物旁-38978635",
     "title": "坐在巨型可爱卡通怪物旁",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "有趣",
@@ -1636,7 +1636,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-neogradient标志设计-f2cc5c5c",
     "title": "NeoGradient标志设计",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "工作",
@@ -1657,7 +1657,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-ppt-816a08dc",
     "title": "PPT",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "工作",
@@ -1677,7 +1677,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-q版人物instagram相框-da489afa",
     "title": "Q版人物Instagram相框",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "有趣",
@@ -1698,7 +1698,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-ui-手绘稿转高保真原型-036260b2",
     "title": "UI 手绘稿转高保真原型",
-    "category": "海报物料",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "工作",
@@ -1718,7 +1718,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-概念可视化-知识地图-564a2b48",
     "title": "概念可视化/知识地图",
-    "category": "信息图",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "学习",
@@ -1739,7 +1739,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-根据已有食材做菜-7a3fccef",
     "title": "根据已有食材做菜",
-    "category": "信息图",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "美食",
@@ -1760,7 +1760,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-旅行手账图-e8b6098f",
     "title": "旅行手账图",
-    "category": "信息图",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "旅游",
@@ -1781,7 +1781,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-论文转教授白板板书-中英转换-cb0ab4b6",
     "title": "论文转教授白板板书（中英转换）",
-    "category": "信息图",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "总结",
@@ -1802,7 +1802,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-锐评世间万物-9f9b56a0",
     "title": "锐评世间万物",
-    "category": "信息图",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "信息图",
@@ -1822,7 +1822,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-实物与手绘涂鸦创意广告-715ede0f",
     "title": "实物与手绘涂鸦创意广告",
-    "category": "信息图",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "工作",
@@ -1842,7 +1842,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-泰坦尼克号-模仿-770ecc68",
     "title": "《泰坦尼克号》模仿",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -1862,7 +1862,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-24格q版人物表情包制作器-dfe81d15",
     "title": "24格Q版人物表情包制作器",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "表情包",
@@ -1883,7 +1883,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-3d-全家福婚纱照-1e5112eb",
     "title": "3D 全家福婚纱照",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -1903,7 +1903,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-3d-q版大学拟人化形象-c26f2cfc",
     "title": "3D Q版大学拟人化形象",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -1923,7 +1923,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-3d-q版风格转换-0f1ba884",
     "title": "3D Q版风格转换",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -1944,7 +1944,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-3d-q版情侣水晶球-31da2e0b",
     "title": "3D Q版情侣水晶球",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -1964,7 +1964,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-3d-q版中式婚礼图-bd26fac7",
     "title": "3D Q版中式婚礼图",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -1985,7 +1985,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-3d等距视角家庭办公插画-a01a3bd3",
     "title": "3D等距视角家庭办公插画",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "插画",
@@ -2006,7 +2006,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-3d情侣珠宝盒摆件-7ae6fc13",
     "title": "3D情侣珠宝盒摆件",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -2026,7 +2026,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-扁平贴纸设计-83783697",
     "title": "扁平贴纸设计",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -2047,7 +2047,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-潮流插画风格-一个穿着国潮服饰的少年-04163c38",
     "title": "潮流插画风格，一个穿着国潮服饰的少年",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -2068,7 +2068,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-橙白锦鲤插画-0c79941c",
     "title": "橙白锦鲤插画",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -2089,7 +2089,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-串场漫画-fcc6838d",
     "title": "串场漫画",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -2109,7 +2109,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-定制动漫手办-80cafcae",
     "title": "定制动漫手办",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -2130,7 +2130,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-定制q版钥匙串-b6682cdf",
     "title": "定制Q版钥匙串",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -2151,7 +2151,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-动漫贴纸集合-cd786be5",
     "title": "动漫贴纸集合",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -2172,7 +2172,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-动漫与现实-分裂肖像画-457b8697",
     "title": "动漫与现实：分裂肖像画",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -2193,7 +2193,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-动物硅胶腕托-7a5bfd39",
     "title": "动物硅胶腕托",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -2214,7 +2214,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-儿童图书插画风格蜡笔画-0804bcdb",
     "title": "儿童图书插画风格蜡笔画",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -2235,7 +2235,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-儿童涂色页插画-6837b667",
     "title": "儿童涂色页插画",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "生活",
@@ -2256,7 +2256,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-二次元表情-3ad790ad",
     "title": "二次元表情",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -2276,7 +2276,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-二次元风格徽章-44fa280f",
     "title": "二次元风格徽章",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -2297,7 +2297,7 @@ window.PROMPT_DATA = [
   {
     "id": "anime-character-sheet",
     "title": "二次元角色设定",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "角色",
       "人设",
@@ -2314,7 +2314,7 @@ window.PROMPT_DATA = [
   {
     "id": "anime-dialog-style",
     "title": "二次元口吻对话",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "人设",
       "对话",
@@ -2331,7 +2331,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-发光线条解剖图-f06b7a7d",
     "title": "发光线条解剖图",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -2352,7 +2352,7 @@ window.PROMPT_DATA = [
   {
     "id": "anime-mecha-girl",
     "title": "机甲少女立绘",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "机甲",
       "立绘",
@@ -2369,7 +2369,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-极简主义3d插画-832ca157",
     "title": "极简主义3D插画",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -2390,7 +2390,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-极简主义3d插画-json配置版-eab6efbf",
     "title": "极简主义3D插画（JSON配置版）",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -2410,7 +2410,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-角色穿越传送门-982e9725",
     "title": "角色穿越传送门",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "有趣",
@@ -2430,7 +2430,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-科普插画-f3a6e539",
     "title": "科普插画",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "学习",
@@ -2450,7 +2450,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-名画人物ootd-b83c995a",
     "title": "名画人物OOTD",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -2470,7 +2470,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-拍立得照片出框效果-728e1db8",
     "title": "拍立得照片出框效果",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -2491,7 +2491,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-奇幻卡通插画-a518cfd7",
     "title": "奇幻卡通插画",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -2512,7 +2512,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-全家福婚纱照q版转换-9d98aeed",
     "title": "全家福婚纱照Q版转换",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -2532,7 +2532,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-权游角色护照-3027f99a",
     "title": "权游角色护照",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "有趣",
@@ -2552,7 +2552,7 @@ window.PROMPT_DATA = [
   {
     "id": "anime-storyboard",
     "title": "日系分镜脚本",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "分镜",
       "动画",
@@ -2569,7 +2569,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-日系双格漫画-1e30d48e",
     "title": "日系双格漫画",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "有趣",
@@ -2590,7 +2590,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-生成-3d-盲盒风格头像-dcce8e16",
     "title": "生成 3D 盲盒风格头像",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "头像",
@@ -2611,7 +2611,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-手办真人同框合影-57044fd3",
     "title": "手办真人同框合影",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -2632,7 +2632,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-水晶球故事场景-bd6659ad",
     "title": "水晶球故事场景",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -2652,7 +2652,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-微型立体场景-孙悟空三打白骨精-ec0e9a7a",
     "title": "微型立体场景（孙悟空三打白骨精）",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -2672,7 +2672,7 @@ window.PROMPT_DATA = [
   {
     "id": "anime-colorize-lineart",
     "title": "线稿上色",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "上色",
       "线稿",
@@ -2689,7 +2689,7 @@ window.PROMPT_DATA = [
   {
     "id": "anime-sakura-scene",
     "title": "樱花大道场景",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "场景",
       "樱花",
@@ -2706,7 +2706,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-游戏角色试图从电视屏幕爬到客厅-6c582e59",
     "title": "游戏角色试图从电视屏幕爬到客厅",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -2726,7 +2726,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-与动漫人物的鱼眼自拍-8923db26",
     "title": "与动漫人物的鱼眼自拍",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -2747,7 +2747,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-原创宝可梦生成-2da6f563",
     "title": "原创宝可梦生成",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "有趣",
@@ -2767,7 +2767,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-照片变插画并附带绘画过程-1473c1ad",
     "title": "照片变插画并附带绘画过程",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "工作",
@@ -2787,7 +2787,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-制作宠物表情包-411d5dc2",
     "title": "制作宠物表情包",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "表情包",
@@ -2808,7 +2808,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-中国神话角色q版组合插画-54edd80d",
     "title": "中国神话角色Q版组合插画",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -2829,7 +2829,7 @@ window.PROMPT_DATA = [
   {
     "id": "anime-chibi-emoji",
     "title": "Q 版表情包",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "Q版",
       "表情包",
@@ -2846,7 +2846,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-q版表情包制作-bb4a0f5d",
     "title": "Q版表情包制作",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -2867,7 +2867,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-q版角色表情包制作-ce407189",
     "title": "Q版角色表情包制作",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -2888,7 +2888,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-q版角色line风格表情包生成-20fbfb47",
     "title": "Q版角色LINE风格表情包生成",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "表情包",
@@ -2909,7 +2909,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-q版可爱俄罗斯套娃-43694e7c",
     "title": "Q版可爱俄罗斯套娃",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -2929,7 +2929,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-rpg-风格角色卡片制作-d2fa3cc0",
     "title": "RPG 风格角色卡片制作",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -2950,7 +2950,7 @@ window.PROMPT_DATA = [
   {
     "id": "anime-vtuber-model",
     "title": "VTuber 立绘设定",
-    "category": "二次元",
+    "category": "有趣提示词",
     "tags": [
       "VTuber",
       "立绘",
@@ -2967,7 +2967,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-极其平凡-的iphone自拍-668ae48e",
     "title": "“极其平凡”的iPhone自拍",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -2987,7 +2987,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-35mm胶片风格飞岛-e0e24424",
     "title": "35mm胶片风格飞岛",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3008,7 +3008,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-阿凡达合照-eb40d3b1",
     "title": "阿凡达合照",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "有趣",
@@ -3028,7 +3028,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-超现实交互场景-de6a94a2",
     "title": "超现实交互场景",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3049,7 +3049,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-创意绿植花盆-5b40ad3b",
     "title": "创意绿植花盆",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3070,7 +3070,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-戴珍珠耳环的猫猫-66470a92",
     "title": "戴珍珠耳环的猫猫",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3090,7 +3090,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-东京地铁楼梯模糊快照-1b0f1dfe",
     "title": "东京地铁楼梯模糊快照",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3110,7 +3110,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-东京巨型雕像照片-9fb0a009",
     "title": "东京巨型雕像照片",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3130,7 +3130,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-短片图文故事-5a292dae",
     "title": "短片图文故事",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "有趣",
@@ -3150,7 +3150,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-粉红色的星之卡吐泡泡-41f2cad6",
     "title": "粉红色的星之卡吐泡泡",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3170,7 +3170,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-复古crt电脑启动屏幕-a552e71d",
     "title": "复古CRT电脑启动屏幕",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3190,7 +3190,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-孤独的宇航员坐在普通城市公交站-等去火星的42路-aad333e7",
     "title": "孤独的宇航员坐在普通城市公交站,等去火星的42路车",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3210,7 +3210,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-谷歌地图变身古代藏宝图-73cbbe93",
     "title": "谷歌地图变身古代藏宝图",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "有趣",
@@ -3231,7 +3231,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-贵妇与小黄人-a844afc7",
     "title": "贵妇与小黄人",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3251,7 +3251,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-国家一级摆烂许可证-dcb6851e",
     "title": "国家一级摆烂许可证",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3271,7 +3271,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-哈利波特的魔法-bbeafcd5",
     "title": "哈利波特的魔法",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3292,7 +3292,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-何以解忧-唯有暴富-f7857c86",
     "title": "何以解忧，唯有暴富",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3312,7 +3312,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-和尚道长师太三格漫画-444ddafc",
     "title": "和尚道长师太三格漫画",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3333,7 +3333,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-剪影艺术-75d1b2a3",
     "title": "剪影艺术",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3353,7 +3353,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-巨物恐惧症风格-好莱坞灾难片质感-a5ca7fcd",
     "title": "巨物恐惧症风格，好莱坞灾难片质感",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3374,7 +3374,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-乐高城市景观-24f12cb9",
     "title": "乐高城市景观",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3395,7 +3395,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-乐高风格的微缩摄影-9e98f761",
     "title": "乐高风格的微缩摄影",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3416,7 +3416,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-李小龙与尤达大师以武会友-39a4239d",
     "title": "李小龙与尤达大师以武会友",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3436,7 +3436,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-两条锦鲤形成的太极图-6ab243a0",
     "title": "两条锦鲤形成的太极图",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3456,7 +3456,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-马里奥-路易吉给碧奇公主修理厨房-5d61c394",
     "title": "马里奥、路易吉给碧奇公主修理厨房",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3476,7 +3476,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-马斯克教爱因斯坦拍照-f0e6822f",
     "title": "马斯克教爱因斯坦拍照",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3496,7 +3496,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-明星合照的幕后花絮-c3201ecd",
     "title": "明星合照的幕后花絮",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3516,7 +3516,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-模拟着色作业过程-f5b3fb8d",
     "title": "模拟着色作业过程",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "有趣",
@@ -3536,7 +3536,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-磨砂玻璃后的虚实对比剪影-ff6e76b7",
     "title": "磨砂玻璃后的虚实对比剪影",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3556,7 +3556,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-拿去当壁纸吧-这大鲸鱼-这彩虹-5521b24b",
     "title": "拿去当壁纸吧，这大鲸鱼，这彩虹",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3576,7 +3576,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-你好地球人-885daf94",
     "title": "你好地球人！",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3596,7 +3596,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-派大星和海绵宝宝穿唐朝服饰-5dbff300",
     "title": "派大星和海绵宝宝穿唐朝服饰",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3617,7 +3617,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-奇幻水下场景冰棒-4d711f7b",
     "title": "奇幻水下场景冰棒",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3638,7 +3638,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-蔷薇少女墙绘-c19160f8",
     "title": "蔷薇少女墙绘",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3658,7 +3658,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-清明上河图芝加哥版-b03f0272",
     "title": "清明上河图芝加哥版",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3679,7 +3679,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-柔和风格3d广告-1614eb5d",
     "title": "柔和风格3D广告",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3700,7 +3700,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-三只动物与地标自拍-06abd85d",
     "title": "三只动物与地标自拍",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3721,7 +3721,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-社恐模式-请勿靠近-内有恶犬-99e19b69",
     "title": "社恐模式：请勿靠近，内有恶犬",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3741,7 +3741,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-师父别念了-7cdcb2d8",
     "title": "师父别念了",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3761,7 +3761,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-时空复现-ba3186ab",
     "title": "时空复现",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3781,7 +3781,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-使用图像参考创建漫画-1312cc05",
     "title": "使用图像参考创建漫画",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3801,7 +3801,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-双重曝光-f23cf0ba",
     "title": "双重曝光",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3822,7 +3822,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-水墨画风格与写实摄影的结合-b27df6a6",
     "title": "水墨画风格与写实摄影的结合",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3843,7 +3843,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-糖果粉碎传奇风格城市地图-50743216",
     "title": "糖果粉碎传奇风格城市地图",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3864,7 +3864,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-特朗普壁画-76a8663d",
     "title": "特朗普壁画",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3884,7 +3884,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-贴吧老哥疯狂吐槽批注-3b6d67ac",
     "title": "贴吧老哥疯狂吐槽批注",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "吐槽",
@@ -3905,7 +3905,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-玩具盒中的国家立体模型-44a186fe",
     "title": "玩具盒中的国家立体模型",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3926,7 +3926,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-微型立体场景移轴摄影-9c7228c1",
     "title": "微型立体场景移轴摄影",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3946,7 +3946,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-伪造抖音截图-14eadb5f",
     "title": "伪造抖音截图",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3966,7 +3966,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-伪造微信聊天记录-fa5bac77",
     "title": "伪造微信聊天记录",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -3986,7 +3986,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-温暖的日式居酒屋暖黄灯光-04a6c049",
     "title": "温暖的日式居酒屋暖黄灯光",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -4006,7 +4006,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-卧室时代对比图像-978872c7",
     "title": "卧室时代对比图像",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -4026,7 +4026,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-仙女站扫地机器人-eee16d6b",
     "title": "仙女站扫地机器人",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -4046,7 +4046,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-咸鱼翻身还是咸鱼-7735e8b7",
     "title": "咸鱼翻身还是咸鱼",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -4066,7 +4066,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-小黄人建造金字塔-4635238d",
     "title": "小黄人建造金字塔",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -4086,7 +4086,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-一张极具电影感的画面-2fed356d",
     "title": "一张极具电影感的画面",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -4107,7 +4107,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-一张极其逼真的重庆火锅特写-6861d330",
     "title": "一张极其逼真的重庆火锅特写",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -4127,7 +4127,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-拥挤的北京地铁车厢-但乘客全是神话人物-bd8259ab",
     "title": "拥挤的北京地铁车厢，但乘客全是神话人物",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -4147,7 +4147,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-游戏界面-121c1b74",
     "title": "游戏界面",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -4167,7 +4167,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-游泳晒太阳-西瓜汁畅饮-872aa4cf",
     "title": "游泳晒太阳，西瓜汁畅饮",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -4187,7 +4187,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-月亮不睡我不睡-我是秃头小宝贝-752925d2",
     "title": "月亮不睡我不睡，我是秃头小宝贝",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -4207,7 +4207,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-云彩艺术-deed771d",
     "title": "云彩艺术",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -4227,7 +4227,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-战术监控风格拼贴图像生成-5ba6f982",
     "title": "战术监控风格拼贴图像生成",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "有趣",
@@ -4248,7 +4248,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-折叠式纸雕立体绘本-aa53108a",
     "title": "折叠式纸雕立体绘本",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -4269,7 +4269,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-这个跳舞的妹子-裙摆好特别-金黄金黄的-7f2f53bd",
     "title": "这个跳舞的妹子，裙摆好特别，金黄金黄的",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -4289,7 +4289,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-这这这-川剧的变脸绝技什么时候泄露的-74704826",
     "title": "这这这，川剧的变脸绝技什么时候泄露的？",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -4309,7 +4309,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-真实摄影风格-一只肥胖的狸花猫-4b5d2c6b",
     "title": "真实摄影风格，一只肥胖的狸花猫",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -4330,7 +4330,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-治愈系-宇航员坐在弯弯的月亮边钓星星-34501c9d",
     "title": "治愈系，宇航员坐在弯弯的月亮边钓星星",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -4350,7 +4350,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-字母与单词含义融合-1e9249f1",
     "title": "字母与单词含义融合",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -4370,7 +4370,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-nano-banana梗图-85f2389b",
     "title": "Nano Banana梗图",
-    "category": "趣味创意",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -4390,7 +4390,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-自己画自己-的自画像-78fea5e0",
     "title": "'自己画自己'的自画像",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "想象",
@@ -4411,7 +4411,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-1920年代童话插图-6a0e4603",
     "title": "1920年代童话插图",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -4432,7 +4432,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-3d模型手办-复杂背景-f5c631be",
     "title": "3D模型手办 (复杂背景)",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -4452,7 +4452,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-北极光下孤独女子三联画-eace8ab5",
     "title": "北极光下孤独女子三联画",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -4472,7 +4472,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-玻璃材质重塑-78efd62e",
     "title": "玻璃材质重塑",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -4492,7 +4492,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-捕蟹船上-ce715626",
     "title": "捕蟹船上",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -4512,7 +4512,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-餐食热量密度标注-66f803a4",
     "title": "餐食热量密度标注",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -4532,7 +4532,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-创建自己的超真实微型版本-4a2d9844",
     "title": "创建自己的超真实微型版本",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -4552,7 +4552,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-登山时刻-ec259826",
     "title": "登山时刻",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -4573,7 +4573,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-迪拜vip俱乐部放松-29e21a0d",
     "title": "迪拜VIP俱乐部放松",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -4594,7 +4594,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-电影森林时刻-692e36df",
     "title": "电影森林时刻",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -4615,7 +4615,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-调皮猫街头时刻-7e1f205a",
     "title": "调皮猫街头时刻",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -4636,7 +4636,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-冬季工作室拍摄-96287a67",
     "title": "冬季工作室拍摄",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -4656,7 +4656,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-冬季锐利肖像-1e52471e",
     "title": "冬季锐利肖像",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -4676,7 +4676,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-复古传奇-ffafb979",
     "title": "复古传奇",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -4696,7 +4696,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-复刻90年代末宝丽来派对氛围感照片-8ed9d604",
     "title": "复刻90年代末宝丽来派对氛围感照片",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "滤镜",
@@ -4717,7 +4717,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-个性化房间设计-f6491efe",
     "title": "个性化房间设计",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -4738,7 +4738,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-各年龄段的样子-08faa948",
     "title": "各年龄段的样子",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -4758,7 +4758,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-狗狗耳语秘密-de334c00",
     "title": "狗狗耳语秘密",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -4778,7 +4778,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-黑白装逼肖像-fdbd754a",
     "title": "黑白装逼肖像",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -4799,7 +4799,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-换发型-45c5de00",
     "title": "换发型",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "穿搭",
@@ -4820,7 +4820,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-换装-d1796386",
     "title": "换装",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "穿搭",
@@ -4841,7 +4841,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-黄金时段肖像-a66d74db",
     "title": "黄金时段肖像",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -4861,7 +4861,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-激流漂流-adbcb690",
     "title": "激流漂流",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -4881,7 +4881,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-家具软装预览-f87072f6",
     "title": "家具软装预览",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "装修",
@@ -4902,7 +4902,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-胶片感写真-57188627",
     "title": "胶片感写真",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "滤镜",
@@ -4923,7 +4923,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-街头风格肖像-da6ca9b4",
     "title": "街头风格肖像",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -4944,7 +4944,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-金属硬币肖像-10d3e0b0",
     "title": "金属硬币肖像",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -4964,7 +4964,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-金字塔前站立-98a2c827",
     "title": "金字塔前站立",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -4984,7 +4984,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-惊险火车之旅时刻-a7a235de",
     "title": "惊险火车之旅时刻",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "想象",
@@ -5005,7 +5005,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-居家光影三联画-6b9cd9de",
     "title": "居家光影三联画",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5025,7 +5025,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-科洛塞姆开始一天-5cc5efeb",
     "title": "科洛塞姆开始一天",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5045,7 +5045,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-老照片恢复与现代化-4b72954f",
     "title": "老照片恢复与现代化",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5065,7 +5065,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-乐高人偶收藏展示-5566cf79",
     "title": "乐高人偶收藏展示",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5086,7 +5086,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-里约站立-770f9f16",
     "title": "里约站立",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5106,7 +5106,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-连环画-e9223014",
     "title": "连环画",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "生活",
@@ -5126,7 +5126,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-领导哈士奇队伍-f3c8b5a0",
     "title": "领导哈士奇队伍",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5146,7 +5146,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-遛六只斑点狗-804e74be",
     "title": "遛六只斑点狗",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5166,7 +5166,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-楼梯时尚女性拼贴-4f81ddd1",
     "title": "楼梯时尚女性拼贴",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5186,7 +5186,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-马赛克风格头像-0d80bb23",
     "title": "马赛克风格头像",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5207,7 +5207,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-漫画-梗图汉化-32b473eb",
     "title": "漫画/梗图汉化",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5228,7 +5228,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-欧洲晨间例行-b3d74c0e",
     "title": "欧洲晨间例行",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5248,7 +5248,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-欧洲花店工作-7c5e4e31",
     "title": "欧洲花店工作",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5268,7 +5268,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-汽车三视图-246948df",
     "title": "汽车三视图",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5288,7 +5288,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-热带海滩放松-242074eb",
     "title": "热带海滩放松",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5308,7 +5308,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-沙漠骑行-e0d1a789",
     "title": "沙漠骑行",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5328,7 +5328,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-沙漠战士-8fbe530d",
     "title": "沙漠战士",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5349,7 +5349,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-时光滤镜-a1b121d0",
     "title": "时光滤镜",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5370,7 +5370,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-时尚编辑黑白肖像-3fdb3cae",
     "title": "时尚编辑黑白肖像",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5391,7 +5391,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-时尚心情板拼贴-bec7ed2f",
     "title": "时尚心情板拼贴",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5412,7 +5412,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-新古典高时尚女性肖像-6fe3dee8",
     "title": "新古典高时尚女性肖像",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5432,7 +5432,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-虚拟试妆-3eff1da0",
     "title": "虚拟试妆",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5452,7 +5452,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-岩石上休闲肖像-6fdca898",
     "title": "岩石上休闲肖像",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5472,7 +5472,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-一级方程式赛车手-9bb95518",
     "title": "一级方程式赛车手",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5492,7 +5492,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-一键智能修图-47b574e0",
     "title": "一键智能修图",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5512,7 +5512,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-艺术画廊女性凝视肖像-a7b39c82",
     "title": "艺术画廊女性凝视肖像",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5532,7 +5532,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-优雅房间举杯-083dcc60",
     "title": "优雅房间举杯",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "想象",
@@ -5553,7 +5553,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-与海豚自拍-b497a7cf",
     "title": "与海豚自拍",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5573,7 +5573,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-与狮子幼崽放松-b8637345",
     "title": "与狮子幼崽放松",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5593,7 +5593,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-原生感菜单翻译-25d39eec",
     "title": "原生感菜单翻译",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "旅游",
@@ -5614,7 +5614,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-云上放松-d8e35d4a",
     "title": "云上放松",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5634,7 +5634,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-在车后备箱吸烟-76e79bb0",
     "title": "在车后备箱吸烟",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5654,7 +5654,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-掌控迪拜夜晚-d589da50",
     "title": "掌控迪拜夜晚",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "想象",
@@ -5675,7 +5675,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-证件照-18afb2d4",
     "title": "证件照",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5695,7 +5695,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-智能扩图-拯救构图-9ee3ecc8",
     "title": "智能扩图/拯救构图",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5715,7 +5715,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-智能消除路人-清场-5c13085b",
     "title": "智能消除路人/清场",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5735,7 +5735,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-中秋月下秋千照片-918f6372",
     "title": "中秋月下秋千照片",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5755,7 +5755,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-自拍生成摇头娃娃-d9402d4a",
     "title": "自拍生成摇头娃娃",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5775,7 +5775,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-自信坐姿-24e0c140",
     "title": "自信坐姿",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5795,7 +5795,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-funko-pop公仔制作-0f734fc2",
     "title": "Funko Pop公仔制作",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5816,7 +5816,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-gorillaz风格插图-120f4bf4",
     "title": "Gorillaz风格插图",
-    "category": "生活场景",
+    "category": "有趣提示词",
     "tags": [
       "编辑",
       "生活",
@@ -5837,7 +5837,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-古诗句配图-b16d1f82",
     "title": "古诗句配图",
-    "category": "学习科普",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "学习",
@@ -5857,7 +5857,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-广角镜头拍摄荒凉的废土世界-58950077",
     "title": "广角镜头拍摄荒凉的废土世界",
-    "category": "学习科普",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "有趣",
@@ -5877,7 +5877,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-人物关系图-3ea47987",
     "title": "人物关系图",
-    "category": "学习科普",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "学习",
@@ -5897,7 +5897,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-瑞克和莫蒂风格科普-c5f1b670",
     "title": "瑞克和莫蒂风格科普",
-    "category": "学习科普",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "学习",
@@ -5918,7 +5918,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-生物标本展示图-f8228b28",
     "title": "生物标本展示图",
-    "category": "学习科普",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "学习",
@@ -5938,7 +5938,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-手稿页-6f1d848d",
     "title": "手稿页",
-    "category": "学习科普",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "学习",
@@ -5959,7 +5959,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-条漫-19dd8945",
     "title": "条漫",
-    "category": "学习科普",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "学习",
@@ -5979,7 +5979,7 @@ window.PROMPT_DATA = [
   {
     "id": "bn-文章转漫画风格总结图-3db2daa4",
     "title": "文章转漫画风格总结图",
-    "category": "学习科普",
+    "category": "有趣提示词",
     "tags": [
       "生成",
       "总结",
@@ -6000,7 +6000,7 @@ window.PROMPT_DATA = [
   {
     "id": "code-explain",
     "title": "代码讲解与注释",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "讲解",
       "注释",
@@ -6017,7 +6017,7 @@ window.PROMPT_DATA = [
   {
     "id": "code-review",
     "title": "代码审查清单",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "Code Review",
       "质量",
@@ -6034,7 +6034,7 @@ window.PROMPT_DATA = [
   {
     "id": "code-unit-tests",
     "title": "单元测试生成",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "测试",
       "Jest",
@@ -6051,7 +6051,7 @@ window.PROMPT_DATA = [
   {
     "id": "code-debug",
     "title": "调试根因分析",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "Debug",
       "根因",
@@ -6068,7 +6068,7 @@ window.PROMPT_DATA = [
   {
     "id": "write-story-beats",
     "title": "短故事节拍表",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "故事",
       "结构",
@@ -6085,7 +6085,7 @@ window.PROMPT_DATA = [
   {
     "id": "write-script-shortvideo",
     "title": "短视频分镜脚本",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "短视频",
       "脚本",
@@ -6102,7 +6102,7 @@ window.PROMPT_DATA = [
   {
     "id": "ld-反谄媚注入-4e1efd58",
     "title": "反谄媚注入",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "论坛精选",
       "写作对话"
@@ -6118,7 +6118,7 @@ window.PROMPT_DATA = [
   {
     "id": "write-wechat-official",
     "title": "公众号长文结构",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "公众号",
       "结构",
@@ -6135,7 +6135,7 @@ window.PROMPT_DATA = [
   {
     "id": "write-blog-outline",
     "title": "技术博客大纲",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "博客",
       "技术",
@@ -6152,7 +6152,7 @@ window.PROMPT_DATA = [
   {
     "id": "ld-论文-科普-阶梯写作-fd286846",
     "title": "论文→科普 阶梯写作",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "论坛精选",
       "写作对话"
@@ -6168,7 +6168,7 @@ window.PROMPT_DATA = [
   {
     "id": "design-landing-copy",
     "title": "落地页文案结构",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "落地页",
       "文案",
@@ -6185,7 +6185,7 @@ window.PROMPT_DATA = [
   {
     "id": "write-rewrite-concise",
     "title": "冗长文案精简",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "精简",
       "编辑",
@@ -6202,7 +6202,7 @@ window.PROMPT_DATA = [
   {
     "id": "write-email-pro",
     "title": "商务邮件撰写",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "邮件",
       "商务",
@@ -6219,7 +6219,7 @@ window.PROMPT_DATA = [
   {
     "id": "design-design-system",
     "title": "设计系统 Tokens",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "Design System",
       "Token",
@@ -6236,7 +6236,7 @@ window.PROMPT_DATA = [
   {
     "id": "ld-双语认知处理-中文输入-英文推理-双语输出-7cd50a3b",
     "title": "双语认知处理（中文输入·英文推理·双语输出）",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "论坛精选",
       "写作对话"
@@ -6252,7 +6252,7 @@ window.PROMPT_DATA = [
   {
     "id": "write-prompt-improve",
     "title": "提示词优化器",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "Prompt",
       "优化",
@@ -6269,7 +6269,7 @@ window.PROMPT_DATA = [
   {
     "id": "write-system-assistant",
     "title": "通用助手 System Prompt",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "System",
       "助手",
@@ -6286,7 +6286,7 @@ window.PROMPT_DATA = [
   {
     "id": "design-icon-set",
     "title": "统一图标套件",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "图标",
       "UI",
@@ -6303,7 +6303,7 @@ window.PROMPT_DATA = [
   {
     "id": "write-xiaohongshu",
     "title": "小红书种草文案",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "小红书",
       "种草",
@@ -6320,7 +6320,7 @@ window.PROMPT_DATA = [
   {
     "id": "design-user-flow",
     "title": "用户流程图文案",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "流程",
       "UX",
@@ -6337,7 +6337,7 @@ window.PROMPT_DATA = [
   {
     "id": "write-debate-sides",
     "title": "正反方辩论提纲",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "辩论",
       "论证",
@@ -6354,7 +6354,7 @@ window.PROMPT_DATA = [
   {
     "id": "code-regex-helper",
     "title": "正则表达式助手",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "正则",
       "文本",
@@ -6371,7 +6371,7 @@ window.PROMPT_DATA = [
   {
     "id": "write-translate-polish",
     "title": "中英互译润色",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "翻译",
       "润色",
@@ -6388,7 +6388,7 @@ window.PROMPT_DATA = [
   {
     "id": "code-refactor-plan",
     "title": "重构方案",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "重构",
       "架构",
@@ -6405,7 +6405,7 @@ window.PROMPT_DATA = [
   {
     "id": "code-changelog",
     "title": "Changelog 撰写",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "发布",
       "文档",
@@ -6422,7 +6422,7 @@ window.PROMPT_DATA = [
   {
     "id": "code-git-message",
     "title": "Git Commit 信息",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "Git",
       "规范",
@@ -6439,7 +6439,7 @@ window.PROMPT_DATA = [
   {
     "id": "code-api-design",
     "title": "REST API 设计",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "API",
       "设计",
@@ -6456,7 +6456,7 @@ window.PROMPT_DATA = [
   {
     "id": "code-sql-optimize",
     "title": "SQL 优化建议",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "SQL",
       "性能",
@@ -6473,7 +6473,7 @@ window.PROMPT_DATA = [
   {
     "id": "design-ui-critique",
     "title": "UI 设计评审",
-    "category": "写作对话",
+    "category": "有趣提示词",
     "tags": [
       "UI",
       "评审",
@@ -6490,7 +6490,7 @@ window.PROMPT_DATA = [
   {
     "id": "ld-互动叙事-选项生成规则-7e36e277",
     "title": "互动叙事 / 选项生成规则",
-    "category": "角色人设",
+    "category": "有趣提示词",
     "tags": [
       "论坛精选",
       "角色人设"
@@ -6506,7 +6506,7 @@ window.PROMPT_DATA = [
   {
     "id": "ld-角色定位-全能中文ai助理-092ed753",
     "title": "角色定位：全能中文AI助理",
-    "category": "角色人设",
+    "category": "有趣提示词",
     "tags": [
       "论坛精选",
       "角色人设"
@@ -6522,7 +6522,7 @@ window.PROMPT_DATA = [
   {
     "id": "ld-命运编织者-叙事推演-1572267f",
     "title": "命运编织者 · 叙事推演",
-    "category": "角色人设",
+    "category": "有趣提示词",
     "tags": [
       "论坛精选",
       "角色人设"
@@ -6538,7 +6538,7 @@ window.PROMPT_DATA = [
   {
     "id": "ld-英文核心行为原则人设-ba1073ce",
     "title": "英文核心行为原则人设",
-    "category": "角色人设",
+    "category": "有趣提示词",
     "tags": [
       "论坛精选",
       "角色人设"
@@ -6554,7 +6554,7 @@ window.PROMPT_DATA = [
   {
     "id": "ld-interactive-feedback-mcp-485bfe69",
     "title": "Interactive Feedback / MCP 协作提示",
-    "category": "编程开发",
+    "category": "有趣提示词",
     "tags": [
       "论坛精选",
       "编程开发"
@@ -6570,7 +6570,7 @@ window.PROMPT_DATA = [
   {
     "id": "ld-linus-torvalds-代码审查人格-f703cb49",
     "title": "Linus Torvalds 代码审查人格",
-    "category": "编程开发",
+    "category": "有趣提示词",
     "tags": [
       "论坛精选",
       "编程开发"
@@ -6586,7 +6586,7 @@ window.PROMPT_DATA = [
   {
     "id": "ld-system-instruction-系统指令模-0e267a52",
     "title": "System Instruction 系统指令模板",
-    "category": "编程开发",
+    "category": "有趣提示词",
     "tags": [
       "论坛精选",
       "编程开发",
@@ -6603,7 +6603,7 @@ window.PROMPT_DATA = [
   {
     "id": "ld-多轮澄清后生成-system-prompt-951eccab",
     "title": "多轮澄清后生成 System Prompt",
-    "category": "提示工程",
+    "category": "有趣提示词",
     "tags": [
       "论坛精选",
       "提示工程"
@@ -6619,7 +6619,7 @@ window.PROMPT_DATA = [
   {
     "id": "ld-conceptual-cataclysm-概念引-57055844",
     "title": "Conceptual Cataclysm 概念引擎",
-    "category": "提示工程",
+    "category": "有趣提示词",
     "tags": [
       "论坛精选",
       "提示工程"
@@ -6635,7 +6635,7 @@ window.PROMPT_DATA = [
   {
     "id": "ld-prompt-生成-prompt-思路-399b0b2c",
     "title": "Prompt 生成 Prompt 思路",
-    "category": "提示工程",
+    "category": "有趣提示词",
     "tags": [
       "论坛精选",
       "提示工程"
@@ -6651,7 +6651,7 @@ window.PROMPT_DATA = [
   {
     "id": "ld-weaver-动态认知伙伴-长系统提示-4a3ec87a",
     "title": "WEAVER 动态认知伙伴（长系统提示）",
-    "category": "提示工程",
+    "category": "有趣提示词",
     "tags": [
       "论坛精选",
       "提示工程"
@@ -6667,7 +6667,7 @@ window.PROMPT_DATA = [
   {
     "id": "biz-meeting-summary",
     "title": "会议纪要生成",
-    "category": "效率办公",
+    "category": "有趣提示词",
     "tags": [
       "会议",
       "纪要",
@@ -6684,7 +6684,7 @@ window.PROMPT_DATA = [
   {
     "id": "ld-机器人义务感-对话语气-507b104f",
     "title": "机器人义务感 · 对话语气",
-    "category": "效率办公",
+    "category": "有趣提示词",
     "tags": [
       "论坛精选",
       "效率办公"
@@ -6700,7 +6700,7 @@ window.PROMPT_DATA = [
   {
     "id": "write-resume-bullet",
     "title": "简历项目量化",
-    "category": "效率办公",
+    "category": "有趣提示词",
     "tags": [
       "简历",
       "求职",
@@ -6717,7 +6717,7 @@ window.PROMPT_DATA = [
   {
     "id": "biz-interview-prep",
     "title": "面试题拆解",
-    "category": "效率办公",
+    "category": "有趣提示词",
     "tags": [
       "面试",
       "准备",
@@ -6734,7 +6734,7 @@ window.PROMPT_DATA = [
   {
     "id": "biz-prd-lite",
     "title": "轻量 PRD 模板",
-    "category": "效率办公",
+    "category": "有趣提示词",
     "tags": [
       "PRD",
       "产品",
@@ -6751,7 +6751,7 @@ window.PROMPT_DATA = [
   {
     "id": "ld-商业投资老鸟-新闻洞察-ca115dcb",
     "title": "商业投资老鸟 · 新闻洞察",
-    "category": "效率办公",
+    "category": "有趣提示词",
     "tags": [
       "论坛精选",
       "效率办公"
@@ -6767,7 +6767,7 @@ window.PROMPT_DATA = [
   {
     "id": "ld-数学考生-严谨解题-a4e8fbca",
     "title": "数学考生 · 严谨解题",
-    "category": "效率办公",
+    "category": "有趣提示词",
     "tags": [
       "论坛精选",
       "效率办公"
@@ -6783,7 +6783,7 @@ window.PROMPT_DATA = [
   {
     "id": "biz-risk-register",
     "title": "项目风险清单",
-    "category": "效率办公",
+    "category": "有趣提示词",
     "tags": [
       "风险",
       "项目管理",
@@ -6800,7 +6800,7 @@ window.PROMPT_DATA = [
   {
     "id": "biz-job-jd",
     "title": "招聘 JD 撰写",
-    "category": "效率办公",
+    "category": "有趣提示词",
     "tags": [
       "招聘",
       "JD",
@@ -6817,7 +6817,7 @@ window.PROMPT_DATA = [
   {
     "id": "biz-weekly-report",
     "title": "周报结构化",
-    "category": "效率办公",
+    "category": "有趣提示词",
     "tags": [
       "周报",
       "汇报",
@@ -6834,7 +6834,7 @@ window.PROMPT_DATA = [
   {
     "id": "biz-okr",
     "title": "OKR 起草助手",
-    "category": "效率办公",
+    "category": "有趣提示词",
     "tags": [
       "OKR",
       "目标",
@@ -6851,7 +6851,7 @@ window.PROMPT_DATA = [
   {
     "id": "biz-swot",
     "title": "SWOT 分析",
-    "category": "效率办公",
+    "category": "有趣提示词",
     "tags": [
       "战略",
       "分析",
@@ -6875,17 +6875,6 @@ window.ANNOUNCEMENTS = [
 
 window.CATEGORIES = [
   "全部",
-  "图像生成",
-  "图像编辑",
-  "海报物料",
-  "信息图",
-  "二次元",
-  "趣味创意",
-  "生活场景",
-  "学习科普",
-  "写作对话",
-  "角色人设",
-  "编程开发",
-  "提示工程",
-  "效率办公"
+  "科研提示词",
+  "有趣提示词"
 ];

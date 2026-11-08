@@ -666,12 +666,15 @@
 
   const TAG_CLOUD_LIMIT = 32;
   const TAG_CLOUD_COLLAPSED = 12;
+  // 数据来源/品牌类标签不进热门标签
+  const TAG_CLOUD_BLOCKLIST = new Set(["banana"]);
 
   function collectTagStats(limit = TAG_CLOUD_LIMIT) {
     const counts = new Map();
     for (const p of window.PROMPT_DATA || []) {
       for (const t of p.tags || []) {
         if (!t || String(t).length > 18) continue;
+        if (TAG_CLOUD_BLOCKLIST.has(String(t).trim().toLowerCase())) continue;
         counts.set(t, (counts.get(t) || 0) + 1);
       }
     }
