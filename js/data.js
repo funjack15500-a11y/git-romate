@@ -7850,7 +7850,7 @@ window.PROMPT_DATA = [
 window.ANNOUNCEMENTS = [
   { title: "搜索与筛选", body: "按分类、标签或关键词快速缩小范围" },
   { title: "一键复制", body: "打开卡片复制提示词，粘贴到常用 AI 工具" },
-  { title: "本地收藏", body: "收藏存在本机浏览器，筛选「收藏」即可找回" }
+  { title: "我的收藏", body: "卡片右上角点 ♡ 收藏，切到「我的收藏」分类即可找回" }
 ];
 
 window.CATEGORIES = [

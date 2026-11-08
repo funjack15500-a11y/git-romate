@@ -23,6 +23,12 @@ extension/
 3. 点「加载已解压的扩展程序」，选中该目录。
 4. 点击工具栏上的「灵动词库」图标打开小窗。
 
+## 收藏
+
+- 条目右侧的 ♡ 点一下就把该提示词加入「我的收藏」，再点一下取消。
+- 「我的收藏」和「科研提示词」「有趣提示词」是同一层的分类，点标签即可只看收藏。
+- 收藏用 `chrome.storage.local` 存在本机（键名 `ld.favorites`），不占配额、不上传，换浏览器不会同步。
+
 ## 数据来源
 
 - 打开小窗时先请求 `https://lingdongtech.de5.net/prompts.json`（4 秒超时），拿到就用**线上最新**数据。
@@ -49,7 +55,7 @@ powershell -ExecutionPolicy Bypass -File tools\build-extension.ps1
 
 | 权限 | 用途 |
 |------|------|
-| `storage` | 预留（保存窗口状态） |
+| `storage` | 保存「我的收藏」列表（`chrome.storage.local`） |
 | `clipboardWrite` | 点击条目时写入剪贴板 |
 | `host_permissions: https://lingdongtech.de5.net/*` | 拉取线上最新词库 |
 

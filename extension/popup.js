@@ -1,6 +1,8 @@
 const LIVE_URL = "https://lingdongtech.de5.net/prompts.json";
 const LOCAL_URL = "data/prompts.json";
 const DEFAULT_CAT = "科研提示词";
+const FAV_CAT = "我的收藏";
+const FAV_KEY = "ld.favorites";
 const MAX_RENDER = 120;
 
 const state = {
@@ -10,6 +12,7 @@ const state = {
   query: "",
   rendered: MAX_RENDER,
   expanded: new Set(),
+  favorites: new Set(),
 };
 
 const $ = (sel) => document.querySelector(sel);
@@ -50,9 +53,28 @@ async function loadData() {
   return { data: await local.json(), live: false };
 }
 
+async function loadFavorites() {
+  try {
+    const got = await chrome.storage.local.get(FAV_KEY);
+    const list = got && Array.isArray(got[FAV_KEY]) ? got[FAV_KEY] : [];
+    state.favorites = new Set(list.map((id) => String(id)));
+  } catch (error) {
+    state.favorites = new Set();
+  }
+}
+
+function saveFavorites() {
+  try {
+    chrome.storage.local.set({ [FAV_KEY]: [...state.favorites] });
+  } catch (error) {
+    /* 存储不可用时只保留当前会话状态 */
+  }
+}
+
 function categories() {
   const cats = (state.data && state.data.categories) || [];
   const withAll = ["全部"].concat(cats.filter((c) => c !== "全部"));
+  if (!withAll.includes(FAV_CAT)) withAll.push(FAV_CAT);
   return withAll;
 }
 
@@ -60,7 +82,11 @@ function currentItems() {
   if (!state.data) return [];
   const q = state.query.trim().toLowerCase();
   return state.data.prompts.filter((item) => {
-    if (state.category !== "全部" && item.category !== state.category) return false;
+    if (state.category === FAV_CAT) {
+      if (!state.favorites.has(String(item.id))) return false;
+    } else if (state.category !== "全部" && item.category !== state.category) {
+      return false;
+    }
     if (!q) return true;
     const haystack = [item.title, item.summary, (item.tags || []).join(" "), item.prompt]
       .filter(Boolean)
@@ -74,10 +100,11 @@ function renderCats() {
   const el = $("#cats");
   el.innerHTML = categories()
     .map((cat) => {
-      const count =
-        cat === "全部"
-          ? (state.data ? state.data.prompts.length : 0)
-          : (state.data ? state.data.prompts.filter((p) => p.category === cat).length : 0);
+      let count = 0;
+      if (!state.data) count = 0;
+      else if (cat === "全部") count = state.data.prompts.length;
+      else if (cat === FAV_CAT) count = state.favorites.size;
+      else count = state.data.prompts.filter((p) => p.category === cat).length;
       return `<button type="button" class="cat-btn" role="tab" data-cat="${escapeHtml(cat)}" aria-selected="${
         cat === state.category ? "true" : "false"
       }">${escapeHtml(cat)} ${count}</button>`;
@@ -85,8 +112,16 @@ function renderCats() {
     .join("");
 }
 
+function heartSvg(filled) {
+  if (filled) {
+    return `<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>`;
+  }
+  return `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`;
+}
+
 function rowHtml(item) {
   const expanded = state.expanded.has(item.id);
+  const fav = state.favorites.has(String(item.id));
   const tags = (item.tags || []).slice(0, 3);
   return `
     <article class="row" data-id="${escapeHtml(item.id)}" tabindex="0" role="button" aria-label="复制 ${escapeHtml(item.title)}">
@@ -94,6 +129,9 @@ function rowHtml(item) {
         <span class="emoji" aria-hidden="true">${escapeHtml(item.emoji || "✨")}</span>
         <div class="row-title"><span>${escapeHtml(item.title)}</span></div>
         <span class="cat-badge">${escapeHtml(item.category)}</span>
+        <button type="button" class="row-fav ${fav ? "active" : ""}" data-fav="${escapeHtml(item.id)}" title="${
+          fav ? "取消收藏" : "加入我的收藏"
+        }" aria-label="${fav ? "取消收藏" : "加入我的收藏"}">${heartSvg(fav)}</button>
         <button type="button" class="row-toggle" aria-expanded="${expanded}" title="${
           expanded ? "收起正文" : "展开正文"
         }">${expanded ? "收起" : "正文"}</button>
@@ -110,7 +148,14 @@ function render() {
   const items = currentItems();
   $("#listCount").textContent = `${items.length} 条`;
   if (!items.length) {
-    listEl.innerHTML = `<div class="empty-state">没有匹配的提示词，换个关键词试试。</div>`;
+    if (state.category === FAV_CAT && state.favorites.size === 0) {
+      listEl.innerHTML = `<div class="empty-state">还没有收藏：点条目右侧的 ♡，就能把它收进「我的收藏」，随时回来复制。</div>`;
+      return;
+    }
+    listEl.innerHTML =
+      state.category === FAV_CAT
+        ? `<div class="empty-state">这个关键词下没有收藏的提示词，换个词试试。</div>`
+        : `<div class="empty-state">没有匹配的提示词，换个关键词试试。</div>`;
     return;
   }
   const shown = items.slice(0, state.rendered);
@@ -165,11 +210,28 @@ function toggleExpand(id) {
   render();
 }
 
+function toggleFavorite(id) {
+  const key = String(id);
+  const adding = !state.favorites.has(key);
+  if (adding) state.favorites.add(key);
+  else state.favorites.delete(key);
+  saveFavorites();
+  renderCats();
+  state.rendered = MAX_RENDER;
+  render();
+  showToast(adding ? "已加入我的收藏" : "已取消收藏");
+}
+
 function bindList() {
   listEl.addEventListener("click", (event) => {
     const row = event.target.closest(".row");
     if (!row) return;
     if (event.target.closest(".preview")) return;
+    const favBtn = event.target.closest("[data-fav]");
+    if (favBtn) {
+      toggleFavorite(favBtn.dataset.fav);
+      return;
+    }
     if (event.target.closest(".row-toggle")) {
       toggleExpand(row.dataset.id);
       return;
@@ -253,6 +315,7 @@ function bindControls() {
 async function boot() {
   bindControls();
   bindList();
+  await loadFavorites();
 
   let loaded = null;
   try {

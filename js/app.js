@@ -11,6 +11,8 @@
   const PAGE_SIZE = 36;
   // 首页默认落在科研提示词（数据里没有该分类时退回全部）
   const DEFAULT_CATEGORY = "科研提示词";
+  // 与真实分类平级的虚拟分类：只显示本地收藏的提示词
+  const FAVORITE_CATEGORY = "我的收藏";
   const runtime = {
     byId: new Map(),
     search: new Map(),
@@ -142,7 +144,11 @@
   function getFiltered() {
     const tokens = normalizeSearchText(state.query).trim().split(/\s+/).filter(Boolean);
     let list = (window.PROMPT_DATA || []).filter((item) => {
-      if (state.category !== "全部" && item.category !== state.category) return false;
+      if (state.category === FAVORITE_CATEGORY) {
+        if (!state.favorites.has(item.id)) return false;
+      } else if (state.category !== "全部" && item.category !== state.category) {
+        return false;
+      }
       if (state.filter === "generate" && item.type !== "generate") return false;
       if (state.filter === "edit" && item.type !== "edit") return false;
       if (state.filter === "recent-week" && !isWithinDays(item.date, 7)) return false;
@@ -199,6 +205,7 @@
       const c = p.category || "其他";
       map[c] = (map[c] || 0) + 1;
     }
+    map[FAVORITE_CATEGORY] = state.favorites.size;
     return map;
   }
 
@@ -343,7 +350,15 @@
     updateChips();
 
     if (!list.length) {
-      grid.innerHTML = `
+      const favsEmpty = state.category === FAVORITE_CATEGORY && state.favorites.size === 0;
+      grid.innerHTML = favsEmpty
+        ? `
+        <div class="empty">
+          <strong>我的收藏还是空的</strong>
+          <p>在任意卡片右上角点 ♡，收藏的提示词就会集中到这里，随时一键复制</p>
+          <button type="button" class="btn btn-secondary" id="emptyReset">去看全部提示词</button>
+        </div>`
+        : `
         <div class="empty">
           <strong>没有找到匹配的提示词</strong>
           <p>试试调整搜索词或筛选条件</p>
@@ -519,11 +534,26 @@
   }
 
   function toggleFavorite(id) {
-    if (state.favorites.has(id)) state.favorites.delete(id);
-    else state.favorites.add(id);
+    const adding = !state.favorites.has(id);
+    if (adding) state.favorites.add(id);
+    else state.favorites.delete(id);
     saveFavorites();
-    renderGrid();
+    initCategories();
+    syncCategoryLabel();
     updateFavStat();
+    // 只改当前卡片的按钮状态，避免整页重绘
+    $$("[data-fav]").forEach((btn) => {
+      if (btn.dataset.fav !== id) return;
+      btn.classList.toggle("active", adding);
+      btn.setAttribute("aria-label", adding ? "取消收藏" : "收藏");
+      btn.setAttribute("title", adding ? "取消收藏" : "收藏");
+      btn.innerHTML = heartSvg(adding);
+    });
+    if (state.category === FAVORITE_CATEGORY) {
+      initTagCloud();
+      renderGrid();
+    }
+    showToast(adding ? "已加入「我的收藏」" : "已取消收藏");
     const modalOpen = $("#modalBackdrop").classList.contains("open");
     if (modalOpen && $("#modalFavBtn").dataset.id === id) {
       const fav = state.favorites.has(id);
@@ -593,6 +623,11 @@
   }
 
   function categoryHasTag(cat, tag) {
+    if (cat === FAVORITE_CATEGORY) {
+      return (window.PROMPT_DATA || []).some(
+        (p) => state.favorites.has(p.id) && (p.tags || []).includes(tag)
+      );
+    }
     return (window.PROMPT_DATA || []).some(
       (p) => (cat === "全部" || p.category === cat) && (p.tags || []).includes(tag)
     );
@@ -601,7 +636,8 @@
   function initCategories() {
     const options = $("#categoryOptions");
     if (!options) return;
-    const cats = window.CATEGORIES || ["全部"];
+    const cats = (window.CATEGORIES || ["全部"]).slice();
+    if (!cats.includes(FAVORITE_CATEGORY)) cats.push(FAVORITE_CATEGORY);
     const counts = categoryCounts();
     options.innerHTML = cats
       .map((c) => {
@@ -708,8 +744,12 @@
   function collectTagStats(limit = TAG_CLOUD_LIMIT) {
     const counts = new Map();
     for (const p of window.PROMPT_DATA || []) {
-      // 热门标签跟随当前分类：只看该分类下的条目
-      if (state.category !== "全部" && p.category !== state.category) continue;
+      // 热门标签跟随当前分类：只看该分类下的条目（收藏分类只看收藏条目）
+      if (state.category === FAVORITE_CATEGORY) {
+        if (!state.favorites.has(p.id)) continue;
+      } else if (state.category !== "全部" && p.category !== state.category) {
+        continue;
+      }
       for (const t of p.tags || []) {
         if (!t || String(t).length > 18) continue;
         if (TAG_CLOUD_BLOCKLIST.has(String(t).trim().toLowerCase())) continue;

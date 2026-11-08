@@ -273,6 +273,31 @@ body {
   border-color: rgba(120, 168, 190, 0.45);
 }
 
+.row-fav {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-2);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.row-fav:hover {
+  color: #f78fa7;
+  border-color: rgba(247, 143, 167, 0.5);
+}
+
+.row-fav.active {
+  color: #ff5a76;
+  border-color: rgba(244, 63, 94, 0.55);
+  background: rgba(244, 63, 94, 0.14);
+}
+
 .row-meta {
   display: flex;
   align-items: center;

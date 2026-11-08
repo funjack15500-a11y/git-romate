@@ -43,20 +43,7 @@
     <nav class="header-nav" aria-label="站内导航">
       <a href="index.html#gallery">词库</a>
       <a href="extension.html" aria-current="page">插件</a>
-      <div class="nav-contact">
-        <a href="index.html#contact" aria-describedby="contactPop">联系</a>
-        <div class="contact-pop" id="contactPop">
-          <a class="contact-pop-item" href="mailto:funjack15500@gmail.com">
-            <span class="contact-pop-label">Email</span>
-            <span class="contact-pop-value">funjack15500@gmail.com</span>
-          </a>
-          <a class="contact-pop-item" href="https://github.com/funjack15500-a11y/git-romate/issues" target="_blank" rel="noopener">
-            <span class="contact-pop-label">GitHub Issues</span>
-            <span class="contact-pop-value">提问题 · 投稿 · 报错</span>
-          </a>
-          <p class="contact-pop-note">邮件直接点开写信，Issues 里公开反馈。</p>
-        </div>
-      </div>
+      <a href="index.html#contact" data-open-contact>联系</a>
     </nav>
     <div class="header-actions">
       <a class="btn btn-secondary" href="https://github.com/funjack15500-a11y/git-romate" target="_blank" rel="noopener" style="padding: 8px 14px; height: 40px;">
@@ -70,12 +57,12 @@
     <h1 class="plugin-title">灵动词库 · 浏览器插件</h1>
     <p class="plugin-lead">
       装好后点一下浏览器右上角的图标，会弹出一个小窗，按分类列出全部提示词；
-      点任意一条，整段提示词正文就直接进剪贴板，切到 ChatGPT / Claude 粘贴即用。
+      点任意一条，整段提示词正文就直接进剪贴板，条目右侧的 ♡ 还能把常用提示词收进「我的收藏」。切到 ChatGPT / Claude 粘贴即用。
     </p>
     <div class="plugin-meta">
-      <span>v1.0.1</span>
+      <span>v1.0.2</span>
       <span>403 条提示词</span>
-      <span>约 175 KB</span>
+      <span>约 176 KB</span>
       <span>2026-11-08 更新</span>
     </div>
     <div class="plugin-actions">
@@ -87,7 +74,7 @@
   <section class="plugin-grid">
     <figure class="plugin-shot">
       <img src="assets/extension-preview.png" alt="插件小窗：搜索框、分类切换和提示词列表" loading="lazy" decoding="async" />
-      <figcaption>小窗就是这个样子：搜索、切分类、点一条就复制。</figcaption>
+      <figcaption>小窗就是这个样子：搜索、切分类、♡ 收藏，点一条就复制。</figcaption>
     </figure>
 
     <div class="plugin-steps" id="install">
@@ -123,6 +110,11 @@
       <span class="plugin-feature-icon" aria-hidden="true">⌕</span>
       <h3>搜标题也能搜正文</h3>
       <p>搜索会同时命中标题、摘要、标签和提示词正文；分类与条数实时切换。</p>
+    </div>
+    <div class="plugin-feature">
+      <span class="plugin-feature-icon" aria-hidden="true">♡</span>
+      <h3>收藏常用的几条</h3>
+      <p>条目右侧点 ♡ 就收进「我的收藏」，它和科研提示词、有趣提示词是同一层分类；收藏保存在本机浏览器里。</p>
     </div>
     <div class="plugin-feature">
       <span class="plugin-feature-icon" aria-hidden="true">↺</span>
