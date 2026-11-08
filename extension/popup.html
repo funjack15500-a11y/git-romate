@@ -39,7 +39,7 @@
 
   <div class="list-head">
     <span id="listCount">0 条</span>
-    <span class="tip">点卡片复制正文 · ♡ 收藏</span>
+    <span class="tip">点条目查看 · 点正文复制 · ♡ 收藏</span>
   </div>
 
   <main class="list" id="list" aria-live="polite">
@@ -54,6 +54,24 @@
       <a href="https://github.com/funjack15500-a11y/git-romate/issues" id="issuesLink" target="_blank" rel="noopener">反馈</a>
     </span>
   </footer>
+
+  <section class="detail" id="detail" aria-hidden="true" hidden>
+    <div class="d-head">
+      <button type="button" class="d-back" id="detailBack" aria-label="返回列表">‹ 返回</button>
+      <span class="cat-badge" id="detailCat"></span>
+      <button type="button" class="row-fav d-fav" id="detailFav" aria-label="加入我的收藏"></button>
+    </div>
+    <h2 class="d-title" id="detailTitle"></h2>
+    <div class="d-tags" id="detailTags"></div>
+    <p class="d-summary" id="detailSummary"></p>
+    <div class="d-body-wrap">
+      <div class="d-body" id="detailBody" role="button" tabindex="0" title="点击复制全文"></div>
+      <p class="d-hint">点击上面这段正文即可复制</p>
+    </div>
+    <footer class="d-foot">
+      <button type="button" class="d-copy" id="detailCopy">复制全文</button>
+    </footer>
+  </section>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 

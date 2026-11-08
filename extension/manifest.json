@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "灵动词库 · AI 提示词助手",
-  "version": "1.0.2",
-  "description": "在浏览器里弹出小窗浏览灵动词库的提示词，点一下即可复制整段提示词正文。",
+  "version": "1.0.3",
+  "description": "在浏览器里弹出小窗浏览灵动词库的提示词，点开先看正文，再点正文即可复制。",
   "action": {
     "default_title": "打开灵动词库小窗",
     "default_icon": {

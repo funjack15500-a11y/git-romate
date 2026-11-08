@@ -11,8 +11,8 @@ const state = {
   category: DEFAULT_CAT,
   query: "",
   rendered: MAX_RENDER,
-  expanded: new Set(),
   favorites: new Set(),
+  detailId: null,
 };
 
 const $ = (sel) => document.querySelector(sel);
@@ -120,11 +120,10 @@ function heartSvg(filled) {
 }
 
 function rowHtml(item) {
-  const expanded = state.expanded.has(item.id);
   const fav = state.favorites.has(String(item.id));
   const tags = (item.tags || []).slice(0, 3);
   return `
-    <article class="row" data-id="${escapeHtml(item.id)}" tabindex="0" role="button" aria-label="复制 ${escapeHtml(item.title)}">
+    <article class="row" data-id="${escapeHtml(item.id)}" tabindex="0" role="button" aria-label="查看 ${escapeHtml(item.title)}">
       <div class="row-head">
         <span class="emoji" aria-hidden="true">${escapeHtml(item.emoji || "✨")}</span>
         <div class="row-title"><span>${escapeHtml(item.title)}</span></div>
@@ -132,15 +131,12 @@ function rowHtml(item) {
         <button type="button" class="row-fav ${fav ? "active" : ""}" data-fav="${escapeHtml(item.id)}" title="${
           fav ? "取消收藏" : "加入我的收藏"
         }" aria-label="${fav ? "取消收藏" : "加入我的收藏"}">${heartSvg(fav)}</button>
-        <button type="button" class="row-toggle" aria-expanded="${expanded}" title="${
-          expanded ? "收起正文" : "展开正文"
-        }">${expanded ? "收起" : "正文"}</button>
       </div>
+      ${item.summary ? `<p class="row-sum">${escapeHtml(item.summary)}</p>` : ""}
       <div class="row-meta">
         ${tags.map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join("")}
         <span class="row-len">${item.prompt.length.toLocaleString()} 字符</span>
       </div>
-      ${expanded ? `<div class="preview">${escapeHtml(item.prompt)}</div>` : ""}
     </article>`;
 }
 
@@ -193,21 +189,83 @@ function showToast(text) {
   toastTimer = setTimeout(() => el.classList.remove("show"), 1500);
 }
 
-async function handleCopy(row, item) {
+async function copyPrompt(item, node) {
   const ok = await copyText(item.prompt);
   if (!ok) {
-    showToast("复制失败，点「正文」手动选取");
+    if (node && node.isConnected) {
+      const range = document.createRange();
+      range.selectNodeContents(node);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      showToast("已选中正文，按 Ctrl+C 复制");
+    } else {
+      showToast("复制失败，请手动选取正文");
+    }
     return;
   }
-  row.classList.add("copied");
-  setTimeout(() => row.classList.remove("copied"), 1200);
+  if (node) {
+    node.classList.add("copied");
+    setTimeout(() => node.classList.remove("copied"), 1200);
+  }
   showToast(`已复制：${item.title}`);
 }
 
-function toggleExpand(id) {
-  if (state.expanded.has(id)) state.expanded.delete(id);
-  else state.expanded.add(id);
-  render();
+function itemById(id) {
+  if (!state.data) return null;
+  return state.data.prompts.find((p) => p.id === id) || null;
+}
+
+function paintDetailFav(item) {
+  const btn = $("#detailFav");
+  if (!btn) return;
+  const fav = state.favorites.has(String(item.id));
+  btn.classList.toggle("active", fav);
+  btn.innerHTML = heartSvg(fav);
+  btn.title = fav ? "取消收藏" : "加入我的收藏";
+  btn.setAttribute("aria-label", fav ? "取消收藏" : "加入我的收藏");
+}
+
+function openDetail(id) {
+  const item = itemById(id);
+  if (!item) return;
+  state.detailId = item.id;
+
+  $("#detailCat").textContent = item.category || "";
+  $("#detailTitle").textContent = item.title || "";
+
+  const tagsEl = $("#detailTags");
+  tagsEl.innerHTML = (item.tags || [])
+    .map((t) => `<span class="tag">${escapeHtml(t)}</span>`)
+    .join("");
+
+  const sumEl = $("#detailSummary");
+  sumEl.textContent = item.summary || "";
+  sumEl.hidden = !item.summary;
+
+  const body = $("#detailBody");
+  body.textContent = item.prompt || "";
+  body.classList.remove("copied");
+  body.scrollTop = 0;
+
+  paintDetailFav(item);
+
+  const detail = $("#detail");
+  detail.hidden = false;
+  detail.setAttribute("aria-hidden", "false");
+  $("#detailBack").focus();
+}
+
+function closeDetail() {
+  state.detailId = null;
+  const detail = $("#detail");
+  detail.hidden = true;
+  detail.setAttribute("aria-hidden", "true");
+  $("#search").focus();
+}
+
+function currentDetailItem() {
+  return state.detailId ? itemById(state.detailId) : null;
 }
 
 function toggleFavorite(id) {
@@ -226,27 +284,21 @@ function bindList() {
   listEl.addEventListener("click", (event) => {
     const row = event.target.closest(".row");
     if (!row) return;
-    if (event.target.closest(".preview")) return;
     const favBtn = event.target.closest("[data-fav]");
     if (favBtn) {
       toggleFavorite(favBtn.dataset.fav);
       return;
     }
-    if (event.target.closest(".row-toggle")) {
-      toggleExpand(row.dataset.id);
-      return;
-    }
-    const item = state.data.prompts.find((p) => p.id === row.dataset.id);
-    if (item) handleCopy(row, item);
+    openDetail(row.dataset.id);
   });
 
   listEl.addEventListener("keydown", (event) => {
     if (event.key !== "Enter" && event.key !== " ") return;
     const row = event.target.closest(".row");
     if (!row) return;
+    if (event.target.closest("[data-fav]")) return;
     event.preventDefault();
-    const item = state.data.prompts.find((p) => p.id === row.dataset.id);
-    if (item) handleCopy(row, item);
+    openDetail(row.dataset.id);
   });
 
   listEl.addEventListener("scroll", () => {
@@ -255,6 +307,40 @@ function bindList() {
     if (state.rendered >= total) return;
     state.rendered = Math.min(total, state.rendered + MAX_RENDER);
     render();
+  });
+}
+
+function bindDetail() {
+  const body = $("#detailBody");
+
+  $("#detailBack").addEventListener("click", closeDetail);
+
+  body.addEventListener("click", () => {
+    const item = currentDetailItem();
+    if (item) copyPrompt(item, body);
+  });
+
+  body.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    const item = currentDetailItem();
+    if (item) copyPrompt(item, body);
+  });
+
+  $("#detailCopy").addEventListener("click", () => {
+    const item = currentDetailItem();
+    if (item) copyPrompt(item, body);
+  });
+
+  $("#detailFav").addEventListener("click", () => {
+    const item = currentDetailItem();
+    if (!item) return;
+    toggleFavorite(item.id);
+    paintDetailFav(item);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && state.detailId) closeDetail();
   });
 }
 
@@ -314,6 +400,7 @@ function bindControls() {
 
 async function boot() {
   bindControls();
+  bindDetail();
   bindList();
   await loadFavorites();
 

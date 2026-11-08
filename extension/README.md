@@ -1,7 +1,13 @@
 # 灵动词库 · 浏览器插件
 
 把灵动词库（https://lingdongtech.de5.net/）的词库装进浏览器：点工具栏图标弹出一个 460×720 的小窗，
-按分类列出全部提示词，**点任意一条即复制整段提示词正文**。
+按分类列出全部提示词，**先点条目看正文，再点正文复制**（与网页版卡片 → 弹窗 → 复制一致）。
+
+## 用法
+
+- 点任意一条：进入该提示词的详情页（标题、分类、标签、摘要、完整正文）。
+- 在详情页点正文任意位置：整段提示词写进剪贴板，弹出「已复制」提示；也可以直接点底部「复制全文」。
+- 详情页左上角「‹ 返回」回到列表，右上角 ♡ 可直接收藏。
 
 ## 目录
 
@@ -11,7 +17,7 @@ extension/
 ├── background.js        # 点击图标打开/聚焦小窗
 ├── popup.html           # 小窗页面
 ├── popup.css
-├── popup.js             # 载入数据、搜索、分类、点击复制
+├── popup.js             # 载入数据、搜索、分类、详情页与复制
 ├── data/prompts.json    # 词库快照（由 tools/build-extension.ps1 从根目录 prompts.json 复制）
 └── icons/               # 16 / 48 / 128 图标
 ```
@@ -56,7 +62,7 @@ powershell -ExecutionPolicy Bypass -File tools\build-extension.ps1
 | 权限 | 用途 |
 |------|------|
 | `storage` | 保存「我的收藏」列表（`chrome.storage.local`） |
-| `clipboardWrite` | 点击条目时写入剪贴板 |
+| `clipboardWrite` | 详情页点正文时写入剪贴板 |
 | `host_permissions: https://lingdongtech.de5.net/*` | 拉取线上最新词库 |
 
 不读取浏览记录、不注入任何页面，除了拉取 `prompts.json` 外不发起网络请求。
