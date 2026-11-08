@@ -6864,6 +6864,82 @@ window.PROMPT_DATA = [
     "summary": "围绕业务问题的 SWOT 与行动建议。",
     "prompt": "对「{{对象}}」做 SWOT 分析。\n\n背景：{{背景}}\n目标：{{目标}}\n\n输出四象限要点 + 交叉策略（SO/WO/ST/WT）+ 90 天行动清单（P0/P1）。",
     "source": "curated"
+  },
+  {
+    "id": "sci-latex-convert",
+    "title": "LaTeX 章节格式转换",
+    "category": "科研提示词",
+    "tags": [
+      "科研",
+      "LaTeX",
+      "排版",
+      "论文写作"
+    ],
+    "type": "generate",
+    "date": "2026-11-08",
+    "cover": "linear-gradient(135deg, #0f172a 0%, #1d4ed8 50%, #93c5fd 100%)",
+    "emoji": "📄",
+    "summary": "把任意格式的文稿按 chapter / section 层级转成 LaTeX，图、表、公式、代码都预留标准环境与 label。",
+    "prompt": "<instruction>\n请你将以下文本转换为latex代码，标题层级分别为chapter, section, subsection。以下是一些额外的要求，请你注意遵守：\n1. 当需要有序列表时，请你注意使用enumrate环境。将转换后的代码输出在代码块之中。\n2. 当你需要引用时，请参考ref.bib中的参考文献索引。\n3. 对于图片，请你预留一个figure的位置，并且填充好对应的label和caption，并预设其名为对应序号。比如若你可以从caption中知道该图序号为“2-1”，那么文件名就是\"2-1.png\"。我会在你填写的对应位置放置对应图片的（假设图片都放在figs文件夹内）\n4. 对于行间公式，请你预留一个equation环境，并且填充好对应的label，并预设其名为对应序号。比如若你可以从文本中知道该公式序号为“2-1”，那么该公式名就是\"eq:2-1\"。我会在你填写的对应位置放置对应公式的，你可以使用注释%Todo来提醒我。\n5. 当你需要建立表格时，请使用sometable环境。\n6. 当你需要编写代码时，请使用lstlisting环境。若代码语言未知，请统一设置为language=Python或language=C。代码缩进以4个空格为1单位。\n7. latex中要显示换行是需要空一行的，请你在输出的代码中注意这一点。\n8. 注意使用数学环境和转义字符来处理公式和特殊字符。\n9. 当你插入代码或图片时，请使用\\label命令来标记它们，以便在文中使用\\ref引用。\n</instruction>\n<templete>\nfigure环境模板：\n\\begin{figure}[h]\n    \\centering\n    \\includegraphics[width=0.5\\textwidth]{figs/2-1.png}\n    \\caption{Alpha-Muse系统用例图}\n    \\label{fig:2-1}\n\\end{figure}\nsometable环境模板：\n\\begin{sometable}{红警2名词解释}{tab:abbr_table}\n    \\begin{tabularx}{\\textwidth}{llX}\n        \\toprule\n        \\textbf{术语类别} & \\textbf{缩略语} & \\textbf{解释} \\\\ \\midrule\n        & 兵营 & 兵营（Barracks），《命令与征服\\ 红色警戒2：尤里的复仇》游戏中的一种生产建筑，用以生产步兵单位 \\\\ \\cmidrule(l){2-3}\n        & 建造场 & 建造场（Construction Yard），《命令与征服\\ 红色警戒2：尤里的复仇》游戏中的一种基础建筑，用以支持其他建筑的建造 \\\\ \\cmidrule(l){2-3}\n        & 矿厂 & 矿石精炼厂（Ore Refinery），《命令与征服\\ 红色警戒2：尤里的复仇》游戏中的一种资源建筑，用以将矿车采集的矿石转化为游戏资金 \\\\ \\cmidrule(l){2-3}\n        游戏 & 空指 & 空指部（Airforce Command Headquarters），《命令与征服\\ 红色警戒2：尤里的复仇》游戏中的一种资源建筑，用以提供雷达功能和T2科技及生产部分空军单位 \\\\ \\cmidrule(l){2-3}\n        & 相机 & 游戏术语，特指游戏内的观察区域和视角 \\\\ \\cmidrule(l){2-3}\n        & 重工 & 战车工厂（War Factory），《命令与征服\\ 红色警戒2：尤里的复仇》游戏中的一种生产建筑，用以生产载具单位 \\\\ \\cmidrule(l){2-3}\n        & 战争迷雾 & 游戏术语，《命令与征服\\ 红色警戒2：尤里的复仇》中指黑色的未探索区域 \\\\ \\bottomrule\n    \\end{tabularx}\n\\end{sometable}\nlstlisting环境模板：\n\\begin{lstlisting}[language=Python, caption=低秩矩阵权重表示（Mat\\_Weight 简化实现）, label=lst:mat_weight_detail, tabsize=4]\nclass Mat_Weight(nn.Module):\n    def __init__(self, in_features, out_features, rank, init_type_mag, requires_grad=\"left-right\"):\n        super().__init__()\n        self.rank = rank\n        self.init_type_mag = init_type_mag # 初始化幅度相关参数\n        self.requires_grad_flags = requires_grad # 控制哪个因子可训练\n        # 左因子矩阵 L (out_features x rank)\n        self.left = nn.Parameter(torch.zeros(size=(out_features, self.rank)),\n                               requires_grad=bool(\"left\" in self.requires_grad_flags))\n        # 右因子矩阵 R (rank x in_features)\n        self.right = nn.Parameter(torch.zeros(size=(self.rank, in_features)),\n                                requires_grad=bool(\"right\" in self.requires_grad_flags))\n        self.init_parameters() # 调用初始化方法\n    def init_parameters(self, seed=1234):\n        # 此处实现具体的初始化逻辑，例如根据 init_type_mag 进行正态或均匀初始化\n        # 通常将其中一个因子初始化为零，另一个因子进行非零初始化\n        # ... (初始化代码) ...\n        pass # Placeholder for actual initialization code\n    def forward(self):\n        # 通过矩阵乘法重构完整 (或更新) 权重 W = L * R\n        return torch.mm(self.left, self.right)\n\\end{lstlisting}\n</templete>\n<input>\n（在此粘贴你要处理的论文正文）\n</input>",
+    "author": "@KidNobodyZ",
+    "source": "curated"
+  },
+  {
+    "id": "sci-academic-polish",
+    "title": "学术风格润色",
+    "category": "科研提示词",
+    "tags": [
+      "科研",
+      "润色",
+      "论文写作",
+      "去 AI 味"
+    ],
+    "type": "generate",
+    "date": "2026-11-08",
+    "cover": "linear-gradient(135deg, #1e293b 0%, #0891b2 50%, #a5f3fc 100%)",
+    "emoji": "✍️",
+    "summary": "把 AI 生成的报告改写成自然的论文正文，删冗余、去「首先其次」腔调，直接输出 LaTeX。",
+    "prompt": "<instruction>\n1. 请你润色以下文本内容。它需要更流畅、自然，并且保持原意。\n2. 请注意不要改变文本的核心信息。请确保润色后的文本符合中文的语言习惯和学术化的风格。\n3. 它有一些不重要的细节需要删除或简化，去除一些冗余的描述，使文本更精炼和简洁。\n4. 此外，以下文本是由AI生成的，所以在文本结构上太过于注重结构化的语言。但我需要将这段本文润色以符合论文的要求，通常地，学术论文的语言需要更自然流畅，而不是过于机械化或结构化，也要避免使用太多“首先”、“其次”等连接词。\n5. 请保持使用Latex代码输出，避免md语法在其中。特别是`code`，请使用\\texttt{code}来代替。\n6. 请你把完整处理后的文本输出到代码块之中。\n7. 请尽量避免使用\\subsection和\\subsubsection等命令。\n8. 尽量避免使用括号进行补充说明，例如“如通过引入条件输入（如指定的和弦、节奏、风格标签）来指导生成过程”。\n9. 你的输出应直接从\\chapter开始，无需再声明包与文档类型，也无需\\begin{document}等命令。\n</instruction>\n<input>\n（在此粘贴你要处理的论文正文）\n</input>",
+    "author": "@KidNobodyZ",
+    "source": "curated"
+  },
+  {
+    "id": "sci-citation-expand",
+    "title": "带引用的扩写润色",
+    "category": "科研提示词",
+    "tags": [
+      "科研",
+      "引用",
+      "参考文献",
+      "论文写作"
+    ],
+    "type": "generate",
+    "date": "2026-11-08",
+    "cover": "linear-gradient(135deg, #312e81 0%, #7c3aed 50%, #ddd6fe 100%)",
+    "emoji": "📚",
+    "summary": "面向引言与相关工作，边扩写边补中英文文献，正文用 \\cite 标注并同步输出 BibTeX 条目。",
+    "prompt": "<instruction>\n1. 请你扩写和润色以下文本内容。它需要更流畅、自然，并且保持原意，并且使它的信息量更丰富，所以请你在必要的地方添加更多的细节和解释。\n2. 请注意不要改变文本的核心信息。请确保润色后的文本符合中文的语言习惯和学术化的风格。\n3. 如果你需要新增引用，请你在bib.tex中添加相应的引用条目，并在文本中使用\\cite{引用标识}来引用。\n4. 目前这段文本的引用文献太少，我希望你可以增加一些相关的引用文献，以增强文本的学术性和权威性。中文与英文的文献都要有。为了增加文献引用，你可以在适当的地方添加相关的文本内容，只要不偏离原意即可。\n5. 请保持使用Latex代码输出，避免md语法在其中。特别是`code`，请使用\\texttt{code}来代替。\n6. 请你把完整处理后的文本输出到代码块之中。Latex代码的输出应直接从\\chapter开始，无需再声明包与文档类型，也无需\\begin{document}等命令。对于新增的bib条目，请你输出在另一个代码块中，并且使用bibtex格式。\n</instruction>\n<bibtex>\n% [1]\n@article{Dhariwal2020Jukebox,\n  author    = {Dhariwal, P. and Jun, H. and Payne, C. and Kim, J. W. and Radford, A. and Sutskever, I.},\n  title     = {Jukebox: A Generative Model for Music},\n  journal   = {arXiv:2005.00341},\n  year      = {2020}\n}\n% [2]\n@article{Engel2017Neural,\n  author    = {Engel, J. and Resnick, C. and Roberts, A. and Dieleman, S. and Eck, D. and Simonyan, K. and Norouzi, M.},\n  title     = {Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders},\n  journal   = {arXiv:1704.01279},\n  year      = {2017}\n}\n% [3]\n@article{Hennequin2020Spleeter,\n  author    = {Hennequin, Romain and Khlif, Anis and Voituret, Felix and Moussallam, Manuel},\n  title     = {Spleeter: a fast and efficient music source separation tool with pre-trained models},\n  journal   = {Journal of Open Source Software},\n  volume    = {5},\n  number    = {50},\n  pages     = {2154},\n  year      = {2020},\n  doi       = {10.21105/joss.02154},\n  url       = {https://doi.org/10.21105/joss.02154}\n}\n% [4]\n@article{Chen2020WaveGrad,\n  author    = {Chen, X. and Zhang, H. and Arik, S. O. and Fong, J. and Tarjan, D. and Piech, C. and Li, M.},\n  title     = {WaveGrad: Estimating Gradients for Waveform Generation},\n  journal   = {arXiv:2009.00713},\n  year      = {2020}\n}\n</bibtex>\n<input>\n（在此粘贴你要处理的论文正文）\n</input>",
+    "author": "@KidNobodyZ",
+    "source": "curated"
+  },
+  {
+    "id": "sci-mermaid-figure",
+    "title": "论文配图 Mermaid",
+    "category": "科研提示词",
+    "tags": [
+      "科研",
+      "配图",
+      "Mermaid",
+      "架构图"
+    ],
+    "type": "generate",
+    "date": "2026-11-08",
+    "cover": "linear-gradient(135deg, #064e3b 0%, #10b981 50%, #a7f3d0 100%)",
+    "emoji": "📊",
+    "summary": "给一整段架构描述生成 Mermaid 示意图，覆盖总体架构、模块划分与核心流程，并附图表标题。",
+    "prompt": "<instruction>\n    1. 我需要你根据我目前的项目设计架构生成相应的Mermaid示意图。\n    2. 图的种类你可以自己决定。在Mermaid代码中，你不要在说明内使用\"\\n\"来换行，所有说明都尽量控制在一句话结束。也不要在任何插入括号与空格，仅仅使用中文字符。此外，禁止在其中使用任何注释。\n    3. （可替换为你自己的模块清单）主要为这些内容生成图片：总体架构、核心功能模块、模块间数据流、关键处理流程。\n    4. 注意将Mermaid代码放在代码块中，并注明代码块的语言类型为mermaid。\n    5. 在代码块外为我注明该图的标题Caption。\n    6. 你绘制的图片复杂度可以适当提高，但不要超过我提供的内容。\n</instruction>\n<input>\n（在此粘贴你要处理的论文正文）\n</input>",
+    "author": "@KidNobodyZ",
+    "source": "curated"
   }
 ];
 
