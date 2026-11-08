@@ -2747,3 +2747,219 @@ img {
     width: 100%;
   }
 }
+
+/* —— 浏览器插件下载页 —— */
+.plugin-hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px clamp(16px, 4vw, 32px) 8px;
+  text-align: center;
+}
+
+.plugin-title {
+  margin: 12px 0 14px;
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.plugin-lead {
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--text-2);
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+.plugin-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+  font-size: 0.78rem;
+  color: var(--text-2);
+}
+
+.plugin-meta span {
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--accent-soft);
+}
+
+.plugin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 24px 0 8px;
+}
+
+.plugin-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(20px, 4vw, 48px);
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 40px clamp(16px, 4vw, 32px);
+  align-items: start;
+}
+
+.plugin-shot {
+  margin: 0;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+}
+
+.plugin-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.plugin-shot figcaption {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: var(--text-2);
+  text-align: center;
+}
+
+.plugin-steps h2 {
+  margin: 0 0 16px;
+  font-family: var(--display);
+  font-size: 1.4rem;
+  color: var(--text);
+}
+
+.plugin-steps ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  counter-reset: step;
+}
+
+.plugin-steps li {
+  position: relative;
+  padding: 16px 18px 16px 52px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  counter-increment: step;
+}
+
+.plugin-steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2f7f95, #7fd3b6);
+  color: #04131a;
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.plugin-steps li strong {
+  display: block;
+  font-size: 0.98rem;
+  color: var(--text);
+}
+
+.plugin-steps li p {
+  margin: 6px 0 0;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--text-2);
+}
+
+.plugin-steps code,
+.plugin-feature code {
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: var(--surface-2);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85em;
+  color: var(--accent);
+}
+
+.plugin-note {
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px dashed rgba(120, 168, 190, 0.26);
+  font-size: 0.84rem;
+  line-height: 1.7;
+  color: var(--text-2);
+}
+
+.plugin-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 32px) 72px;
+}
+
+.plugin-feature {
+  padding: 18px 20px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.plugin-feature-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 10px;
+  border-radius: 9px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+.plugin-feature h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.plugin-feature p {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.7;
+  color: var(--text-2);
+}
+
+@media (max-width: 800px) {
+  .plugin-hero {
+    padding-top: 44px;
+  }
+
+  .plugin-grid {
+    grid-template-columns: minmax(0, 1fr);
+    padding-top: 24px;
+  }
+
+  .plugin-shot {
+    order: 2;
+  }
+
+  .plugin-steps {
+    order: 1;
+  }
+}

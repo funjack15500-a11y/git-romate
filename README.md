@@ -150,6 +150,20 @@ prompts.example.com
 - 本地收藏（`localStorage`）
 - 深色 / 浅色主题
 - 公告轮播
+- 无配图封面自动补一句 10–15 字的用途说明
+
+## 浏览器插件
+
+`extension/` 是一个 Manifest V3 插件：点工具栏图标弹出小窗，列出全部提示词，点一条即复制正文。
+网站上的下载入口是 [`extension.html`](extension.html)，安装包放在 `downloads/lingdong-prompts-extension.zip`。
+
+更新词库后重新打包（会同步 `extension/data/prompts.json` 并重打 zip）：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File tools\build-extension.ps1
+```
+
+细节见 [`extension/README.md`](extension/README.md)。
 
 ## License
 

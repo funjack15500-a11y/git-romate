@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>浏览器插件 — 灵动词库</title>
+  <meta name="description" content="下载灵动词库浏览器插件：点一下图标弹出小窗，列出全部 AI 提示词，点任意一条即复制整段正文。" />
+  <meta name="theme-color" content="#3d7a8c" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="浏览器插件 — 灵动词库" />
+  <meta property="og:description" content="小窗浏览，一键复制提示词正文。" />
+  <meta property="og:url" content="https://lingdongtech.de5.net/extension.html" />
+  <link rel="canonical" href="https://lingdongtech.de5.net/extension.html" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/logo-mark.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="anime-skin brand-lingdong">
+  <a class="skip-link" href="#install">跳到安装说明</a>
+  <div class="bg-layer" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="orb orb-c"></div>
+    <div class="starfield" id="starfield"></div>
+    <div class="grid-glow"></div>
+  </div>
+
+  <header class="site-header">
+    <a href="index.html" class="logo" aria-label="灵动词库首页">
+      <span class="logo-mark" aria-hidden="true">
+        <img src="assets/logo-mark.svg" width="38" height="38" alt="" decoding="async" />
+      </span>
+      <span class="logo-text">
+        <strong>灵动词库</strong>
+        <small>Lingdong · Prompt Gallery</small>
+      </span>
+    </a>
+    <nav class="header-nav" aria-label="站内导航">
+      <a href="index.html#gallery">词库</a>
+      <a href="extension.html" aria-current="page">插件</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-secondary" href="https://github.com/funjack15500-a11y/git-romate" target="_blank" rel="noopener" style="padding: 8px 14px; height: 40px;">
+        <span class="header-github-text">源码</span>
+      </a>
+    </div>
+  </header>
+
+  <section class="plugin-hero">
+    <p class="hero-kicker">BROWSER EXTENSION</p>
+    <h1 class="plugin-title">灵动词库 · 浏览器插件</h1>
+    <p class="plugin-lead">
+      装好后点一下浏览器右上角的图标，会弹出一个小窗，按分类列出全部提示词；
+      点任意一条，整段提示词正文就直接进剪贴板，切到 ChatGPT / Claude 粘贴即用。
+    </p>
+    <div class="plugin-meta">
+      <span>v1.0.0</span>
+      <span>403 条提示词</span>
+      <span>约 173 KB</span>
+      <span>2026-11-08 更新</span>
+    </div>
+    <div class="plugin-actions">
+      <a class="btn btn-primary" href="downloads/lingdong-prompts-extension.zip" download="lingdong-prompts-extension.zip">下载插件（.zip）</a>
+      <a class="btn btn-secondary" href="#install">怎么安装</a>
+    </div>
+  </section>
+
+  <section class="plugin-grid">
+    <figure class="plugin-shot">
+      <img src="assets/extension-preview.png" alt="插件小窗：搜索框、分类切换和提示词列表" loading="lazy" decoding="async" />
+      <figcaption>小窗就是这个样子：搜索、切分类、点一条就复制。</figcaption>
+    </figure>
+
+    <div class="plugin-steps" id="install">
+      <h2>安装三步</h2>
+      <ol>
+        <li>
+          <strong>下载并解压</strong>
+          <p>点击上面的「下载插件（.zip）」按钮，把压缩包解压到任意固定位置（解压后能看到 <code>manifest.json</code> 就对了）。</p>
+        </li>
+        <li>
+          <strong>打开扩展管理页</strong>
+          <p>Chrome / Edge 地址栏输入 <code>chrome://extensions</code>（Edge 是 <code>edge://extensions</code>），打开右上角「开发者模式」。</p>
+        </li>
+        <li>
+          <strong>加载已解压的扩展程序</strong>
+          <p>点「加载已解压的扩展程序」，选中刚才解压出来的那个文件夹（里面有 <code>manifest.json</code> 的那层）。装好后点工具栏上的「灵动词库」图标即可打开小窗。</p>
+        </li>
+      </ol>
+      <p class="plugin-note">
+        插件优先读取线上最新词库；断网或站点临时不可用时自动退回安装包内置的快照，功能和文案照常可用。
+        更新词库后，重新下载新包、在扩展管理页点「重新加载」即可。
+      </p>
+    </div>
+  </section>
+
+  <section class="plugin-features">
+    <div class="plugin-feature">
+      <span class="plugin-feature-icon" aria-hidden="true">↧</span>
+      <h3>点一条就复制</h3>
+      <p>整段提示词正文进剪贴板，附带「已复制」提示；需要先核对内容时点「正文」展开原文。</p>
+    </div>
+    <div class="plugin-feature">
+      <span class="plugin-feature-icon" aria-hidden="true">⌕</span>
+      <h3>搜标题也能搜正文</h3>
+      <p>搜索会同时命中标题、摘要、标签和提示词正文；分类与条数实时切换。</p>
+    </div>
+    <div class="plugin-feature">
+      <span class="plugin-feature-icon" aria-hidden="true">↺</span>
+      <h3>词库自动跟上</h3>
+      <p>每次打开小窗都会先拉线上最新 <code>prompts.json</code>，失败才用内置快照，不会卡在旧数据上。</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p class="footer-brand">© <span id="footerYear">2026</span> 灵动词库</p>
+    <p class="footer-sub">AI 提示词库 · <a href="https://lingdongtech.de5.net/">lingdongtech.de5.net</a></p>
+  </footer>
+
+  <script>
+    (function () {
+      var y = document.getElementById("footerYear");
+      if (y) y.textContent = String(new Date().getFullYear());
+    })();
+  </script>
+</body>
+</html>
