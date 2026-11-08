@@ -286,12 +286,21 @@
     }
   }
 
+  // 无配图的封面：用一句 10–15 字说明用途，避免大片空白
+  function coverLabel(item) {
+    if (item.preview) return "";
+    const text = String(item.coverText || "").trim();
+    if (text) return text;
+    return (item.tags || []).filter(Boolean).slice(0, 2).join(" · ");
+  }
+
   function cardHtml(item) {
     const fav = state.favorites.has(item.id);
     const anime = item.category === "二次元";
+    const label = coverLabel(item);
     return `
         <article class="card ${anime ? "card-anime" : ""}" data-id="${item.id}" tabindex="0" role="button" aria-label="查看 ${escapeHtml(item.title)}">
-          <div class="card-cover" style="background:${item.cover}">
+          <div class="card-cover${label ? " has-label" : ""}" style="background:${item.cover}">
             ${
               item.preview
                 ? `<img class="card-preview-img" src="${escapeHtml(item.preview)}" alt="" loading="lazy" decoding="async" />`
@@ -299,7 +308,8 @@
             }
             <span class="card-shine" aria-hidden="true"></span>
             <span class="card-corner" aria-hidden="true"></span>
-            <span class="card-emoji">${item.preview ? "" : item.emoji || "✨"}</span>
+            <span class="card-emoji${label ? " card-emoji-sm" : ""}">${item.preview ? "" : item.emoji || "✨"}</span>
+            ${label ? `<span class="card-cover-label">${escapeHtml(label)}</span>` : ""}
             ${anime ? `<span class="card-badge-anime">萌</span>` : ""}
             ${item.preview ? `<span class="card-badge-img">图</span>` : ""}
             <div class="card-actions">
